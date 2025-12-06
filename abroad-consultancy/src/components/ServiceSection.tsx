@@ -127,7 +127,7 @@ const ServicesSection: React.FC = () => {
     imagePosition: "object-top"
   },
   {
-    image: "/onboarding-img.png",
+    image: "/onboarding-img1.png",
     title: "Pre-Departure & Onboarding Support",
     description: "Help with flights, arrival guidance, and complete travel support.",
     icon: <Globe className="h-8 w-8 text-blue-600" />,
