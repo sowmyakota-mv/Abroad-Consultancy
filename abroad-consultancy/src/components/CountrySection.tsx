@@ -8,12 +8,12 @@ const CountriesSection: React.FC = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);      // show animation
+          setIsVisible(true);
         } else {
-          setIsVisible(false);     // reset animation when out of view
+          setIsVisible(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }   // ✅ FIX: Animation will trigger on mobile also
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -55,40 +55,45 @@ const CountriesSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {countries.map((country, index) => (
             <div key={index}>
-              <div className="relative overflow-hidden rounded-xl shadow-lg">
-                <div className="h-48 relative">
 
-                  {/* Image */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={country.image}
-                      alt={country.name}
-                      className="w-full h-full object-cover"
-                    />
+              {/* 60% WIDTH WRAPPER */}
+              <div className="w-[60%] md:w-full mx-auto">   {/* ✅ FIX: Image cards now use 60% width */}
+                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                  <div className="h-48 relative">
+
+                    {/* Image */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      <img
+                        src={country.image}
+                        alt={country.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Overlay Animation */}
+                    <div
+                      className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
+                        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                      }`}
+                    ></div>
+
+                    {/* Title Animation */}
+                    <div
+                      className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
+                        isVisible
+                          ? "opacity-100 translate-y-0 scale-100"
+                          : "opacity-0 translate-y-6 scale-75"
+                      }`}
+                    >
+                      <h3 className="text-xl font-bold text-white">
+                        {country.name}
+                      </h3>
+                    </div>
+
                   </div>
-
-                  {/* ONLY OVERLAY ZOOMS */}
-                  <div
-                    className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl  ${
-                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}
-                  ></div>
-
-                  {/* ONLY TITLE ZOOMS */}
-                  <div
-                    className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0 scale-100"
-                        : "opacity-0 translate-y-6 scale-75"
-                    }`}
-                  >
-                    <h3 className="text-xl font-bold text-white">
-                      {country.name}
-                    </h3>
-                  </div>
-
                 </div>
               </div>
+
             </div>
           ))}
         </div>

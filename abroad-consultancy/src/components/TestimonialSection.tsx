@@ -203,7 +203,7 @@ const TestimonialsSection: React.FC = () => {
           </button>
 
           {/* 3 Card Layout - 80% width */}
-          <div className="w-4/5 relative h-[300px] flex items-center justify-center">
+          <div className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center">
             {getDisplayTestimonials().map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}

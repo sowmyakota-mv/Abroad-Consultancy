@@ -3,12 +3,12 @@ import React from "react";
 const StatsSection: React.FC = () => {
   const stats = [
     {
-      icon: "/university-icon1.png", // Replace with your image path
+      icon: "/university-icon1.png",
       count: "3000+",
       title: "Universities Processed"
     },
     {
-      icon: "/program-icon.png", // Replace with your image path
+      icon: "/program-icon.png",
       count: "100K+",
       title: "Programs Available"
     },
@@ -48,26 +48,26 @@ const StatsSection: React.FC = () => {
           {stats.map((stat, index) => (
             <div key={index} className="last:border-r-0">
               {/* Grid with 3 rows */}
-              <div className="grid grid-rows-3 h-26 pt-2">
-                {/* Row 1: Icon - Top aligned */}
-                <div className="flex items-start justify-center ">
+              <div className="grid grid-rows-3 h-26">
+                {/* Row 1: Icon - Top aligned with NO top padding */}
+                <div className="flex items-start justify-center">
                   <img 
                     src={stat.icon} 
                     alt={stat.title}
-                    className="h-8 w-8 md:h-8 md:w- 8object-contain"
+                    className="h-8 w-8 md:h-8 md:w-8 object-contain"
                   />
                 </div>
                 
-                {/* Row 2: Count - Middle of its own row */}
-                <div className="flex items-center justify-center -mt-4">
+                {/* Row 2: Count - Center aligned */}
+                <div className="flex items-center justify-center">
                   <div className="text-sm font-bold text-black">
                     {stat.count}
                   </div>
                 </div>
                 
-                {/* Row 3: Title - Bottom aligned */}
-                <div className="flex items-end justify-center pb-6">
-                  <div className="text-sm font-medium text-black text-center px-2">
+                {/* Row 3: Title - Top aligned (not bottom) with NO bottom padding */}
+                <div className="flex items-start justify-center min-h-0">
+                  <div className="text-sm font-medium text-black text-center px-2 leading-tight">
                     {stat.title}
                   </div>
                 </div>
@@ -81,11 +81,11 @@ const StatsSection: React.FC = () => {
           {/* Table 1 */}
           <div className="grid grid-cols-4">
             {stats.slice(0, 4).map((stat, index) => (
-              <div key={index} className="bg-gray-300 border-r border-gray-300">
+              <div key={index} className="">
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-28">
-                  {/* Row 1: Icon */}
-                  <div className="flex items-start justify-center pt-3">
+                <div className="grid grid-rows-3 h-24">
+                  {/* Row 1: Icon - NO top padding */}
+                  <div className="flex items-start justify-center">
                     <img 
                       src={stat.icon} 
                       alt={stat.title}
@@ -95,14 +95,14 @@ const StatsSection: React.FC = () => {
                   
                   {/* Row 2: Count */}
                   <div className="flex items-center justify-center">
-                    <div className="text-base font-bold text-blue-700">
+                    <div className="text-base font-bold text">
                       {stat.count}
                     </div>
                   </div>
                   
-                  {/* Row 3: Title */}
-                  <div className="flex items-end justify-center pb-3">
-                    <div className="text-xs font-medium text-black text-center px-1">
+                  {/* Row 3: Title - Top aligned (not bottom) with NO bottom padding */}
+                  <div className="flex items-start justify-center">
+                    <div className="text-xs font-medium text-black text-center px-1 leading-tight">
                       {stat.title}
                     </div>
                   </div>
@@ -112,13 +112,13 @@ const StatsSection: React.FC = () => {
           </div>
           
           {/* Table 2 */}
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 mt-2">
             {stats.slice(4).map((stat, index) => (
-              <div key={index + 4} className="bg-gray-300 border-r border-gray-300">
+              <div key={index + 4} className="">
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-28">
-                  {/* Row 1: Icon */}
-                  <div className="flex items-start justify-center pt-3">
+                <div className="grid grid-rows-3 h-24">
+                  {/* Row 1: Icon - NO top padding */}
+                  <div className="flex items-start justify-center">
                     <img 
                       src={stat.icon} 
                       alt={stat.title}
@@ -128,14 +128,14 @@ const StatsSection: React.FC = () => {
                   
                   {/* Row 2: Count */}
                   <div className="flex items-center justify-center">
-                    <div className="text-base font-bold text-blue-700">
+                    <div className="text-base font-bold text">
                       {stat.count}
                     </div>
                   </div>
                   
-                  {/* Row 3: Title */}
-                  <div className="flex items-end justify-center pb-3">
-                    <div className="text-xs font-medium text-black text-center px-1">
+                  {/* Row 3: Title - Top aligned (not bottom) with NO bottom padding */}
+                  <div className="flex items-start justify-center">
+                    <div className="text-xs font-medium text-black text-center px-1 leading-tight">
                       {stat.title}
                     </div>
                   </div>
@@ -143,7 +143,7 @@ const StatsSection: React.FC = () => {
               </div>
             ))}
             {/* Empty column */}
-            <div className="bg-gray-300 h-28"></div>
+            <div className="h-28"></div>
           </div>
         </div>
 

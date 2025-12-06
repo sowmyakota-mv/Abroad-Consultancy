@@ -46,7 +46,7 @@ const ServicesSection: React.FC = () => {
     {
       icon: "/loan-support-icon.png",
       count: "100%",
-      title: "Loan Approvals",
+      title: "Loan Approvals Support",
       description: "Through partnered banks & NBFCs"
     },
     {
@@ -202,7 +202,7 @@ const ServicesSection: React.FC = () => {
           {/* Table 1 */}
           <div className="grid grid-cols-4">
             {stats.slice(0, 4).map((stat, index) => (
-              <div key={index} className="bg-gray-300 border-r border-black">
+              <div key={index} className="">
                 {/* Grid with 3 rows */}
                 <div className="grid grid-rows-3 h-28">
                   {/* Row 1: Icon */}
@@ -217,15 +217,15 @@ const ServicesSection: React.FC = () => {
                   </div>
                   
                   {/* Row 2: Count */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center mt-3">
                     <div className="text-base font-bold text-blue-700">
                       {stat.count}
                     </div>
                   </div>
                   
                   {/* Row 3: Title */}
-                  <div className="flex items-end justify-center pb-3">
-                    <div className="text-xs font-medium text-black text-center px-1">
+                  <div className="flex items-end justify-center pb-2">
+                    <div className="text-xs font-medium text-black text-center px-6">
                       <span className="block line-clamp-2">
                         {stat.title}
                       </span>
@@ -239,7 +239,7 @@ const ServicesSection: React.FC = () => {
           {/* Table 2 */}
           <div className="grid grid-cols-4">
             {stats.slice(4).map((stat, index) => (
-              <div key={index + 4} className="bg-gray-300 border-r border-black">
+              <div key={index + 4} className="">
                 {/* Grid with 3 rows */}
                 <div className="grid grid-rows-3 h-28">
                   {/* Row 1: Icon */}
@@ -254,15 +254,15 @@ const ServicesSection: React.FC = () => {
                   </div>
                   
                   {/* Row 2: Count */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center mt-3">
                     <div className="text-base font-bold text-blue-700">
                       {stat.count}
                     </div>
                   </div>
                   
                   {/* Row 3: Title */}
-                  <div className="flex items-end justify-center pb-3">
-                    <div className="text-xs font-medium text-black text-center px-1">
+                  <div className="flex items-end justify-center pb-2">
+                    <div className="text-xs font-medium text-black text-center px-6">
                       <span className="block line-clamp-2">
                         {stat.title}
                       </span>
@@ -288,7 +288,7 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Services Grid - Using 80% width with 10% margin on both sides */}
-        <div className="w-[80%] mx-auto">
+        <div className="w-[50%] md:w-[80%] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div

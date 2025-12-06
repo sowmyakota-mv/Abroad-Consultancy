@@ -3,11 +3,11 @@ import StatsSection from "./StatsSection";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#EBF1FA] text-black py-24 md:py-2 px-6">
+    <section className="w-full bg-[#EBF1FA] text-black py-12 md:py-2 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-10 gap-2 items-center">
         
         {/* LEFT CONTENT - 70% (7 columns out of 10) */}
-        <div className="md:col-span-7 mt-28">
+        <div className="md:col-span-7 mt-12 md:mt-28">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Build Your Future <span className="">With Confidence</span>
           </h1>
