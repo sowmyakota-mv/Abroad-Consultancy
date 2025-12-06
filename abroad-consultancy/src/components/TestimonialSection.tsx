@@ -243,18 +243,20 @@ const TestimonialsSection: React.FC = () => {
           >
             {getDisplayTestimonials().map((testimonial, index) => (
               <div
-                key={`${testimonial.id}-${index}`}
-                className={`absolute transition-all duration-500 ease-in-out touch-none ${
-                  index === 0 
-                    ? 'left-0 scale-90 opacity-30 blur-xxs -translate-y-8' 
-                    : index === 1 
-                    ? 'left-1/2 transform -translate-x-1/2 z-10 scale-100 opacity-100' 
-                    : 'right-0 scale-90 opacity-30 blur-xxs -translate-y-8'
-                }`}
-                style={{
-                  width: index === 1 ? '280px' : '200px',
-                }}
-              >
+  key={`${testimonial.id}-${index}`}
+  className={`absolute transition-all duration-500 ease-in-out touch-none ${
+    index === 0 
+      ? 'left-0 scale-90 opacity-30 blur-xxs -translate-y-8' 
+      : index === 1 
+      ? 'left-1/2 transform -translate-x-1/2 z-10 scale-100 opacity-100' 
+      : 'right-0 scale-90 opacity-30 blur-xxs -translate-y-8'
+  } ${
+    // Center card widths
+    index === 1 
+      ? 'w-[280px] sm:w-[320px] md:w-[380px]' 
+      : 'w-[220px] sm:w-[280px] md:w-[320px]'
+  }`}
+>
                 <TestimonialCard 
                   testimonial={testimonial} 
                   isCenter={index === 1}
