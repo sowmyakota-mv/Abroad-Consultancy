@@ -21,12 +21,12 @@ const HeroSection: React.FC = () => {
           <div className="mt-6 flex gap-4">
             
             {/* Filled Button */}
-            <button className="px-6 py-3 bg-[#FF6603] text-white font-semibold rounded-3xl shadow hover:bg-[#FB8234] transition">
+            <button className="px-6 py-3 bg-purple-700 text-white font-semibold rounded-3xl shadow hover:bg-purple-700 hover:scale-105 transition">
               Get Started
             </button>
 
             {/* Border Button */}
-            <button className="px-6 py-3 border border-[#FF6603] text-[#FF6603] font-semibold rounded-3xl hover:bg-[#FB8234] hover:text-white transition">
+            <button className="px-6 py-3 border border-purple-700 text-purple-700 font-semibold rounded-3xl hover:bg-purple-700 hover:scale-105 hover:text-white transition">
               Contact Us
             </button>
           </div>

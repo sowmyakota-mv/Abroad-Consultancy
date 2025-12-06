@@ -293,7 +293,7 @@ const ServicesSection: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-[#FB8234] hover:border-[#FF6603] group transform hover:scale-105"
+                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 hover:border-purple-700 group transform hover:scale-105"
               >
                 <div className="w-full h-36  relative overflow-hidden">
                   <img
@@ -306,7 +306,7 @@ const ServicesSection: React.FC = () => {
                 <div className="p-2">
                   <h3 className="text-med font-bold text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 text-xs mb-2 leading-relaxed ">{service.description}</p>
-                  <button className="w-full py-3 bg-[#FB8234] text-white font-semibold rounded-lg group-hover:bg-[#FF6603] transition-all duration-300">
+                  <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg group-hover:bg-purple-700 transition-all duration-300">
                     Learn More
                   </button>
                 </div>

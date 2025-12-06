@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                   to={link.href}
                   className={`font-medium transition-all duration-200 ${
                     link.isCta
-                      ? 'bg-[#FF6603] text-white px-5 py-2.5 rounded-3xl hover:bg-[#FB8234] hover:shadow-md'
+                      ? 'bg-purple-700 text-white px-5 py-2.5 rounded-3xl hover:bg-purple-700 hover:scale-105 hover:shadow-md'
                       : 'text-gray-700 hover:text-[blue-600] hover:scale-105'
                   }`}
                 >
