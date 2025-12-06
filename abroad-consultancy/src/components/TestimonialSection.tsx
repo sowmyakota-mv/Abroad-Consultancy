@@ -236,7 +236,7 @@ const TestimonialsSection: React.FC = () => {
           {/* 3 Card Layout - 80% width with touch/swipe area */}
           <div 
             ref={containerRef}
-            className="w-2/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
+            className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -252,7 +252,7 @@ const TestimonialsSection: React.FC = () => {
                     : 'right-0 scale-90 opacity-30 blur-xxs -translate-y-8'
                 }`}
                 style={{
-                  width: index === 1 ? '380px' : '320px',
+                  width: index === 1 ? '280px' : '200px',
                 }}
               >
                 <TestimonialCard 
