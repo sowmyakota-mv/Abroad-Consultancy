@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 const TestimonialsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Start with middle card active
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Minimum swipe distance
+  const minSwipeDistance = 50;
   
   const testimonials = [
     {
@@ -145,6 +151,32 @@ const TestimonialsSection: React.FC = () => {
     });
   };
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      scrollRight(); // Swipe left = next
+    }
+    
+    if (isRightSwipe) {
+      scrollLeft(); // Swipe right = previous
+    }
+  };
+
   // Get the three testimonials to display (left, center, right)
   const getDisplayTestimonials = () => {
     const prevIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
@@ -157,7 +189,7 @@ const TestimonialsSection: React.FC = () => {
     ];
   };
 
-  // Auto-scroll effect - added this function
+  // Auto-scroll effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => {
@@ -168,7 +200,6 @@ const TestimonialsSection: React.FC = () => {
       });
     }, 5000); // Auto-scroll every 5 seconds
 
-    // Clean up the interval on component unmount
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
@@ -196,18 +227,24 @@ const TestimonialsSection: React.FC = () => {
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95 md:hidden lg:block"
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="h-6 w-6 text-gray-700" />
           </button>
 
-          {/* 3 Card Layout - 80% width */}
-          <div className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center">
+          {/* 3 Card Layout - 80% width with touch/swipe area */}
+          <div 
+            ref={containerRef}
+            className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {getDisplayTestimonials().map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className={`absolute transition-all duration-500 ease-in-out ${
+                className={`absolute transition-all duration-500 ease-in-out touch-none ${
                   index === 0 
                     ? 'left-0 scale-90 opacity-30 blur-xxs -translate-y-8' 
                     : index === 1 
@@ -224,12 +261,19 @@ const TestimonialsSection: React.FC = () => {
                 />
               </div>
             ))}
+            
+            {/* Mobile swipe instructions (only on mobile) */}
+            <div className="md:hidden absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500">
+              <div className="flex items-center space-x-2">
+                <span>Swipe left/right to navigate</span>
+              </div>
+            </div>
           </div>
 
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95 md:hidden lg:block"
             aria-label="Next testimonials"
           >
             <ChevronRight className="h-6 w-6 text-gray-700" />
@@ -240,7 +284,7 @@ const TestimonialsSection: React.FC = () => {
   );
 };
 
-// Modified Testimonial Card Component
+// Testimonial Card Component (unchanged)
 const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ testimonial, isCenter }) => {
   return (
     <div className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 transition-all duration-500 ${
