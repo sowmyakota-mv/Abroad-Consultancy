@@ -288,7 +288,7 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Services Grid - Using 80% width with 10% margin on both sides */}
-        <div className="w-[50%] md:w-[80%] mx-auto">
+        <div className="w-[70%] md:w-[80%] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div
