@@ -78,12 +78,12 @@ const WhyChooseUsSection: React.FC = () => {
                 
                 {/* Horizontal Line - Fixed width w-12 */}
                 <div className="flex-shrink-0 mt-3">
-                  <div className="h-1 w-12 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
+                  <div className="h-1 w-8 md:w-10 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
                 </div>
                 
                 {/* Title - Aligned with line with gap-2 */}
                 <div className="flex-shrink-0">
-                  <h3 className="text-lg font-bold text-gray-900 ">
+                  <h3 className="text-med md:text-lg font-bold text-gray-900 ">
                     {reason.title}
                   </h3>
                 </div>
