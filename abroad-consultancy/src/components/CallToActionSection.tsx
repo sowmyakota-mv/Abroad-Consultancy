@@ -14,18 +14,18 @@ const CallToActionSection: React.FC = () => {
               <div className="lg:col-span-2 p-12 flex items-center">
                 <div className="w-full">
 
-                  <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-lg md:text-4xl font-bold text-gray-900 mb-4">
                     Ready to Start Your 
                     <span className="text-purple-700 block">Study Abroad Journey?</span>
                   </h2>
 
-                  <p className="text-gray-700 mb-4 leading-relaxed text-sm">
+                  <p className="text-gray-700 mb-4 leading-relaxed text-sx">
                     Get personalized guidance from our experienced counselors.
                     We'll help you choose the right university, prepare documents,
                     and navigate the entire admission process successfully.
                   </p>
 
-                  <button className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-sm hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
+                  <button className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-xs hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
                     <MessageCircle className="h-5 w-5 mr-3" />
                     Talk to a Counsellor
                     <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
