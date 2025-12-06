@@ -14,7 +14,7 @@ const CallToActionSection: React.FC = () => {
               <div className="lg:col-span-2 p-12 flex items-center">
                 <div className="w-full">
 
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4">
                     Ready to Start Your 
                     <span className="text-purple-700 block">Study Abroad Journey?</span>
                   </h2>
@@ -25,7 +25,7 @@ const CallToActionSection: React.FC = () => {
                     and navigate the entire admission process successfully.
                   </p>
 
-                  <button className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-lg hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
+                  <button className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-sm hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
                     <MessageCircle className="h-5 w-5 mr-3" />
                     Talk to a Counsellor
                     <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
@@ -39,7 +39,7 @@ const CallToActionSection: React.FC = () => {
               <div className="lg:col-span-1 relative -ml-8">
                 <div className="h-full min-h-[200px] flex items-center justify-center p-2">
                   <div className="relative z-10 text-center">
-                    <div className="h-84 w-84 mx-auto flex items-center justify-center">
+                    <div className="w-60 h-60 md:h-84 md:w-84 mx-auto flex items-center justify-center">
                       <img
                         src="/contact-hero1.png"
                         alt="Study Abroad Counsellor"
