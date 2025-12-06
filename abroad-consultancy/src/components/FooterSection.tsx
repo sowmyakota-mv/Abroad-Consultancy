@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, MapPin, Download, ChevronRight } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 
 const FooterSection: React.FC = () => {
   return (

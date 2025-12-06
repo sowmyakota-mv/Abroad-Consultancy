@@ -182,7 +182,7 @@ const FAQSection: React.FC = () => {
                           {category.title}
                         </h3>
                         <div className="space-y-0">
-                          {category.questions.map((item, index) => (
+                          {category.questions.map((item) => (
                             <div key={item.id} className="border-b border-gray-100 last:border-b-0">
                               <button
                                 className="w-full text-left py-5 flex items-center justify-between hover:text-gray-900 transition-colors duration-200"
