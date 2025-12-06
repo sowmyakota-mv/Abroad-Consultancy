@@ -224,7 +224,7 @@ const ServicesSection: React.FC = () => {
                   </div>
                   
                   {/* Row 3: Title */}
-                  <div className="flex items-end justify-center pb-2">
+                  <div className="flex items justify-center pb-2">
                     <div className="text-xs font-medium text-black text-center px-2">
                       <span className="block line-clamp-2">
                         {stat.title}
