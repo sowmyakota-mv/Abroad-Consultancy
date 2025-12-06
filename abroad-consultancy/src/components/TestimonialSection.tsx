@@ -236,7 +236,7 @@ const TestimonialsSection: React.FC = () => {
           {/* 3 Card Layout - 80% width with touch/swipe area */}
           <div 
             ref={containerRef}
-            className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
+            className="w-2/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -261,13 +261,6 @@ const TestimonialsSection: React.FC = () => {
                 />
               </div>
             ))}
-            
-            {/* Mobile swipe instructions (only on mobile) */}
-            <div className="md:hidden absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <span>Swipe left/right to navigate</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Arrow */}
@@ -289,8 +282,8 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ te
   return (
     <div className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 transition-all duration-500 ${
       isCenter 
-        ? 'p-8 min-h-[200px] shadow-xl' 
-        : 'p-6 min-h-[200px] shadow-md'
+        ? 'p-8 min-h-[240px] shadow-xl' 
+        : 'p-6 min-h-[200px] shadow-md mt-12'
     }`}>
       {/* Rating - Only show in center card */}
       {isCenter && (
