@@ -186,7 +186,7 @@ const ServicesSection: React.FC = () => {
                 
                 {/* Row 3: Title - Fixed 2 lines with consistent spacing */}
                 <div className="flex items-start justify-center pb-2">
-                  <div className="text-sm font-medium text-black text-center px-8 leading-tight h-[40px] flex items-center justify-center">
+                  <div className="text-sm font-medium text-black text-center px-6 leading-tight h-[40px] flex items-center justify-center">
                     <span className="block line-clamp-2">
                       {stat.title}
                     </span>
