@@ -225,7 +225,7 @@ const ServicesSection: React.FC = () => {
                   
                   {/* Row 3: Title */}
                   <div className="flex items-end justify-center pb-2">
-                    <div className="text-xs font-medium text-black text-center px-6">
+                    <div className="text-xs font-medium text-black text-center px-2 md:px-6">
                       <span className="block line-clamp-2">
                         {stat.title}
                       </span>
@@ -262,7 +262,7 @@ const ServicesSection: React.FC = () => {
                   
                   {/* Row 3: Title */}
                   <div className="flex items-end justify-center pb-2">
-                    <div className="text-xs font-medium text-black text-center px-6">
+                    <div className="text-xs font-medium text-black text-center px-2 md:px-6">
                       <span className="block line-clamp-2">
                         {stat.title}
                       </span>
