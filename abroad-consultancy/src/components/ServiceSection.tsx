@@ -306,7 +306,7 @@ const ServicesSection: React.FC = () => {
                 <div className="p-2">
                   <h3 className="text-med font-bold text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 text-xs mb-2 leading-relaxed ">{service.description}</p>
-                  <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg group-hover:bg-purple-700 transition-all duration-300">
+                  <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-3xl group-hover:bg-purple-700 transition-all duration-300">
                     Learn More
                   </button>
                 </div>
