@@ -132,7 +132,7 @@ const FAQSection: React.FC = () => {
       <div className="relative">
         <div className="absolute top-0 left-0 right-0 overflow-hidden -translate-y-1">
           <svg 
-            className="w-full h-16 text-whit" 
+            className="w-full h-16 text-white" 
             viewBox="0 0 900 200" 
             preserveAspectRatio="none"
           >
