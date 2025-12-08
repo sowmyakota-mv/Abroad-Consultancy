@@ -114,21 +114,17 @@ const FAQSection: React.FC = () => {
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="h-72 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <div className="text-6xl mb-4">❓</div>
-                  <h3 className="text-2xl font-bold mb-2">Got Questions?</h3>
-                  <p className="opacity-90">We have answers for everything you need to know</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange-100 rounded-2xl -z-10"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-50 rounded-2xl -z-10"></div>
-          </div>
+<div className="relative">
+  <div className="relative overflow-hidden ">
+
+    {/* IMAGE FROM PUBLIC FOLDER */}
+    <img
+      src="/faq-hero.png"          // <-- replace with your actual image file
+      alt="About section visual"
+      className="w-full h-72 object-contain"
+    />
+  </div>
+</div>
         </div>
       </div>
 
@@ -137,7 +133,7 @@ const FAQSection: React.FC = () => {
         <div className="absolute top-0 left-0 right-0 overflow-hidden -translate-y-1">
           <svg 
             className="w-full h-16 text-white" 
-            viewBox="0 0 900 200" 
+            viewBox="0 0 900 160" 
             preserveAspectRatio="none"
           >
             <path 
