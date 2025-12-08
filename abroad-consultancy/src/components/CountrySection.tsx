@@ -27,9 +27,11 @@ const CountriesSection: React.FC = () => {
     { name: "Study in UK", image: "/uk-img.jpg" },
     { name: "Study in USA", image: "/usa-img.jpg" },
     { name: "Study in Canada", image: "/canada-img.jpg" },
-    { name: "Study in Australia", image: "/australia-img.png" },
-    { name: "Study in Germany", image: "/germany-img.png" },
-    { name: "Study in New Zealand", image: "/newzealand-img.png" }
+    { name: "Study in Australia", image: "/australia-img2.png" },
+    { name: "Study in Germany", image: "/germany-img2.png" },
+    { name: "Study in New Zealand", image: "/newzealand-img2.png" },
+    { name: "Study in Europe", image: "/europe-img1.png" },
+    { name: "Study in Ireland", image: "/ireland-img.png" }
   ];
 
   return (
@@ -52,21 +54,21 @@ const CountriesSection: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {countries.map((country, index) => (
             <div key={index}>
 
               {/* 60% WIDTH WRAPPER */}
               <div className="w-[60%] md:w-full mx-auto">   {/* ✅ FIX: Image cards now use 60% width */}
                 <div className="relative overflow-hidden rounded-xl shadow-lg">
-                  <div className="h-48 relative">
+                  <div className="h-40 relative">
 
                     {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">
                       <img
                         src={country.image}
                         alt={country.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                       />
                     </div>
 

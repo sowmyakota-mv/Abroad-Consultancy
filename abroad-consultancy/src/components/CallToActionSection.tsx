@@ -43,7 +43,7 @@ const CallToActionSection: React.FC = () => {
                       <img
                         src="/contact-hero1.png"
                         alt="Study Abroad Counsellor"
-                        className="w-full h-full object-cover md:mt-20"
+                        className="w-full h-full object-cover md:mt-16"
                       />
                     </div>
                   </div>

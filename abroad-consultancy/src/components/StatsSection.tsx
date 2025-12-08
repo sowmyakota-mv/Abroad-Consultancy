@@ -27,11 +27,11 @@ const StatsSection: React.FC = () => {
       count: "100%",
       title: "Visa Success"
     },
-    {
-      icon: "/feedback-icon.png", 
-      count: "90%+",
-      title: "Referrals"
-    },
+    // {
+    //   icon: "/feedback-icon.png", 
+    //   count: "90%+",
+    //   title: "Referrals"
+    // },
     {
       icon: "/loan-icon.png", 
       count: "100%",
@@ -40,15 +40,15 @@ const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full">
+    <section className="w-[90%] mx-auto">
       <div className="max-w-full">
         
         {/* Desktop: 7 columns */}
-        <div className="hidden md:grid md:grid-cols-7">
+        <div className="hidden md:grid md:grid-cols-6">
           {stats.map((stat, index) => (
             <div key={index} className="last:border-r-0">
               {/* Grid with 3 rows */}
-              <div className="grid grid-rows-3 h-26">
+              <div className="grid grid-rows-3 h-20">
                 {/* Row 1: Icon - Top aligned with NO top padding */}
                 <div className="flex items-start justify-center">
                   <img 
@@ -79,11 +79,11 @@ const StatsSection: React.FC = () => {
         {/* Mobile: 2 tables */}
         <div className="md:hidden">
           {/* Table 1 */}
-          <div className="grid grid-cols-4">
-            {stats.slice(0, 4).map((stat, index) => (
+          <div className="grid grid-cols-3">
+            {stats.slice(0, 3).map((stat, index) => (
               <div key={index} className="">
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-24">
+                <div className="grid grid-rows-3 h-20">
                   {/* Row 1: Icon - NO top padding */}
                   <div className="flex items-start justify-center">
                     <img 
@@ -112,11 +112,11 @@ const StatsSection: React.FC = () => {
           </div>
           
           {/* Table 2 */}
-          <div className="grid grid-cols-4 mt-2">
-            {stats.slice(4).map((stat, index) => (
+          <div className="grid grid-cols-3 mt-2">
+            {stats.slice(3).map((stat, index) => (
               <div key={index + 4} className="">
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-24">
+                <div className="grid grid-rows-3 h-20">
                   {/* Row 1: Icon - NO top padding */}
                   <div className="flex items-start justify-center">
                     <img 
@@ -143,7 +143,7 @@ const StatsSection: React.FC = () => {
               </div>
             ))}
             {/* Empty column */}
-            <div className="h-28"></div>
+            {/* <div className="h-28"></div> */}
           </div>
         </div>
 

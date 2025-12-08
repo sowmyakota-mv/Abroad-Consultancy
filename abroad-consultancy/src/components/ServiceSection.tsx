@@ -1,6 +1,6 @@
 import React from "react";
 import { 
-   Users, Award, BookOpen, Briefcase, Home, DollarSign, 
+  Users, Award, BookOpen, Briefcase, Home, DollarSign, 
   GraduationCap, Globe, Target, HeartHandshake, ClipboardList 
 } from "lucide-react";
 
@@ -13,30 +13,18 @@ const ServicesSection: React.FC = () => {
       title: "Services Support",
       description: "Core assistance for every student"
     },
-    // {
-    //   icon: "/students-icon.png",
-    //   count: "10,000+",
-    //   title: "Students Guided",
-    //   description: "Trusted by students across India"
-    // },
-    // {
-    //   icon: "/country-icon.png",
-    //   count: "25+",
-    //   title: "Countries Supported",
-    //   description: "Top destinations for study abroad"
-    // },
     {
-  icon: "/application-icon.png",
-  count: "25,000+",
-  title: "Applications Processed",
-  description: "Successfully submitted student applications globally."
-},
-{
-  icon: "/visa-interview-icon.png",
-  count: "100%",
-  title: "Visa Interview Success ",
-  description: "Expert coaching to help students clear visa interviews confidently."
-},
+      icon: "/application-icon.png",
+      count: "25,000+",
+      title: "Applications Processed",
+      description: "Successfully submitted student applications globally."
+    },
+    {
+      icon: "/visa-interview-icon.png",
+      count: "100%",
+      title: "Visa Interview Success ",
+      description: "Expert coaching to help students clear visa interviews confidently."
+    },
     {
       icon: "/admission-icon.png",
       count: "100%",
@@ -69,92 +57,92 @@ const ServicesSection: React.FC = () => {
     }
   ];
 
- const services = [
-  {
-    image: "/student-profile.png",
-    title: "Comprehensive Student Profile Analysis",
-    description: "Quick review of academics and goals to create your study plan.",
-    icon: <Target className="h-8 w-8 text-blue-500" />,
-    imagePosition: "object-center"
-  },
-  {
-    image: "/career-img2.png",
-    title: "Professional Career Guidance",
-    description: "Guidance to choose the right program and long-term career path.",
-    icon: <Target className="h-8 w-8 text-teal-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/exam-img-3.png",
-    title: "IELTS/TOEFL/PTE Preparation",
-    description: "Focused training with mock tests and materials for exam success.",
-    icon: <BookOpen className="h-8 w-8 text-green-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/counselling-img.png",
-    title: "One-on-One Expert Counselling",
-    description: "Personal sessions to guide your entire study abroad process.",
-    icon: <HeartHandshake className="h-8 w-8 text-rose-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/university-img.png",
-    title: "University Application Support",
-    description: "Support for SOP, LOR, documents, and complete applications.",
-    icon: <ClipboardList className="h-8 w-8 text-pink-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/scholar-img1.png",
-    title: "Scholarship & Financial Aid Assistance",
-    description: "Help in identifying scholarships and preparing strong applications.",
-    icon: <Award className="h-8 w-8 text-yellow-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/bank-img.png",
-    title: "Education Loan Processing Support",
-    description: "End-to-end support for bank loans and financial approval steps.",
-    icon: <DollarSign className="h-8 w-8 text-emerald-500" />,
-    imagePosition: "object-right-top"
-  },
-  {
-    image: "/mock-img2.png",
-    title: "Mock Visa Interviews Support",
-    description: "Practice interviews with tips to confidently clear visa rounds.",
-    icon: <Users className="h-10 w-10 text-purple-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/onboarding-img1.png",
-    title: "Pre-Departure & Onboarding Support",
-    description: "Help with flights, arrival guidance, and complete travel support.",
-    icon: <Globe className="h-8 w-8 text-blue-600" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/accommodation-img.png",
-    title: "Student Accommodation Assistance",
-    description: "Guidance to find safe and affordable stays near your campus.",
-    icon: <Home className="h-8 w-8 text-orange-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/parttime-img.png",
-    title: "Abroad Part-Time Job Support",
-    description: "Help with resumes, job search, and interview preparation abroad.",
-    icon: <Briefcase className="h-8 w-8 text-indigo-500" />,
-    imagePosition: "object-top"
-  },
-  {
-    image: "/internship-img1.png",
-    title: "Post-Masters Internship Placement",
-    description: "Connections and guidance to secure internships after graduation.",
-    icon: <GraduationCap className="h-8 w-8 text-red-500" />,
-    imagePosition: "object-top"
-  }
-];
+  const services = [
+    {
+      image: "/student-profile.png",
+      title: "Comprehensive Student Profile Analysis",
+      description: "Quick review of academics and goals to create your study plan.",
+      icon: <Target className="h-8 w-8 text-blue-500" />,
+      imagePosition: "object-center"
+    },
+    {
+      image: "/career-img2.png",
+      title: "Professional Career Guidance",
+      description: "Guidance to choose the right program and long-term career path.",
+      icon: <Target className="h-8 w-8 text-teal-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/exam-img-3.png",
+      title: "IELTS/TOEFL/PTE Preparation",
+      description: "Focused training with mock tests and materials for exam success.",
+      icon: <BookOpen className="h-8 w-8 text-green-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/counselling-img.png",
+      title: "One-on-One Expert Counselling",
+      description: "Personal sessions to guide your entire study abroad process.",
+      icon: <HeartHandshake className="h-8 w-8 text-rose-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/university-img.png",
+      title: "University Application Support",
+      description: "Support for SOP, LOR, documents, and complete applications.",
+      icon: <ClipboardList className="h-8 w-8 text-pink-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/scholar-img1.png",
+      title: "Scholarship & Financial Aid Assistance",
+      description: "Help in identifying scholarships and preparing strong applications.",
+      icon: <Award className="h-8 w-8 text-yellow-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/bank-img.png",
+      title: "Education Loan Processing Support",
+      description: "End-to-end support for bank loans and financial approval steps.",
+      icon: <DollarSign className="h-8 w-8 text-emerald-500" />,
+      imagePosition: "object-right-top"
+    },
+    {
+      image: "/mock-img2.png",
+      title: "Mock Visa Interviews Support",
+      description: "Practice interviews with tips to confidently clear visa rounds.",
+      icon: <Users className="h-10 w-10 text-purple-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/onboarding-img1.png",
+      title: "Pre-Departure & Onboarding Support",
+      description: "Help with flights, arrival guidance, and complete travel support.",
+      icon: <Globe className="h-8 w-8 text-blue-600" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/accommodation-img.png",
+      title: "Student Accommodation Assistance",
+      description: "Guidance to find safe and affordable stays near your campus.",
+      icon: <Home className="h-8 w-8 text-orange-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/parttime-img.png",
+      title: "Abroad Part-Time Job Support",
+      description: "Help with resumes, job search, and interview preparation abroad.",
+      icon: <Briefcase className="h-8 w-8 text-indigo-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/internship-img1.png",
+      title: "Post-Masters Internship Placement",
+      description: "Connections and guidance to secure internships after graduation.",
+      icon: <GraduationCap className="h-8 w-8 text-red-500" />,
+      imagePosition: "object-top"
+    }
+  ];
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white">
@@ -293,9 +281,10 @@ const ServicesSection: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 hover:border-purple-700 group transform hover:scale-105"
+                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 md:border-[#FB8234] hover:border-purple-700 md:hover:border-[#FF6603] group transform hover:scale-105 h-full flex flex-col"
               >
-                <div className="w-full h-36  relative overflow-hidden">
+                {/* Row 1: Image - Fixed height */}
+                <div className="w-full h-36 relative overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -303,12 +292,28 @@ const ServicesSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="p-2">
-                  <h3 className="text-med font-bold text-gray-900">{service.title}</h3>
-                  <p className="text-gray-600 text-xs mb-2 leading-relaxed ">{service.description}</p>
-                  <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-3xl group-hover:bg-purple-700 transition-all duration-300">
-                    Learn More
-                  </button>
+                {/* Content Container - Flex column with space between */}
+                <div className="flex flex-col flex-grow p-2">
+                  {/* Row 2: Title - Aligned to top, consistent height */}
+                  <div className="mb- min-h-[42px] flex items-start">
+                    <h3 className="text-base font-bold text-gray-900 leading-tight">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  {/* Row 3: Description - Aligned to top, flexible */}
+                  <div className="mb-2 flex-grow">
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Row 4: Button - Aligned to bottom */}
+                  <div className="mt-auto">
+                    <button className="w-full py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300">
+                      Learn More
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

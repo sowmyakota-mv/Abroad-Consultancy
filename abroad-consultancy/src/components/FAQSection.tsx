@@ -4,8 +4,12 @@ import { ChevronDown, ChevronUp, Mail, Phone } from "lucide-react";
 const FAQSection: React.FC = () => {
   const [openQuestions, setOpenQuestions] = useState<Record<string, boolean>>({
     "doc-1": true,
+    "doc-2": false,
     "adm-1": false,
-    "fin-1": false
+    "adm-2": false,
+    "adm-3": false,
+    "fin-1": false,
+    "fin-2": false,
   });
 
   const faqData = [
@@ -73,7 +77,7 @@ const FAQSection: React.FC = () => {
 
   return (
     <section className="w-full py-16">
-      {/* Hero Section */}
+      {/* Hero Section - UNCHANGED */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Title & Description */}
@@ -128,92 +132,226 @@ const FAQSection: React.FC = () => {
         </div>
       </div>
 
-      {/* FAQ Content */}
-      <div className="bg-gray-50 py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-4/5 mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Left Column - 30% - Titles */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-24">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8">
-                    Important Categories
-                  </h2>
-                  <div className="space-y-1">
-                    {faqData.map((category) => (
-                      <div key={category.id} className="mb-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 px-4">
-                          {category.title}
-                        </h3>
-                        {/* <div className="space-y-0">
-                          {category.questions.map((item) => (
-                            <button
-                              key={item.id}
-                              onClick={() => toggleQuestion(item.id)}
-                              className={`w-full text-left px-4 py-3 flex items-center justify-between transition-colors duration-200 ${
-                                openQuestions[item.id] 
-                                  ? 'text-orange-700 font-semibold' 
-                                  : 'text-gray-800 hover:text-gray-900'
-                              }`}
-                            >
-                              <span className="text-sm pr-4">{item.question}</span>
-                              {openQuestions[item.id] ? (
-                                <ChevronUp className="h-4 w-4 text-orange-600 flex-shrink-0" />
-                              ) : (
-                                <ChevronDown className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                              )}
-                            </button>
-                          ))}
-                        </div> */}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+      {/* Wave shape ABOVE the FAQ content - Using orange color for visibility */}
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 overflow-hidden -translate-y-1">
+          <svg 
+            className="w-full h-16 text-white" 
+            viewBox="0 0 900 200" 
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </div>
 
-              {/* Right Column - 50% - Questions & Answers */}
-              <div className="lg:col-span-2">
-                <div className="bg-white p-8">
-                  {/* Questions List */}
-                  <div className="space-y-0">
-                    {faqData.map((category) => (
-                      <div key={category.id} className="mb-8 last:mb-0">
-                        <h3 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
-                          {category.title}
-                        </h3>
-                        <div className="space-y-0">
-                          {category.questions.map((item) => (
-                            <div key={item.id} className="border-b border-gray-100 last:border-b-0">
-                              <button
-                                className="w-full text-left py-5 flex items-center justify-between hover:text-gray-900 transition-colors duration-200"
-                                onClick={() => toggleQuestion(item.id)}
-                              >
-                                <h4 className="font-semibold text-gray-900 pr-4 text-base">
-                                  {item.question}
-                                </h4>
-                                {openQuestions[item.id] ? (
-                                  <ChevronUp className="h-5 w-5 text-orange-600 flex-shrink-0" />
-                                ) : (
-                                  <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
-                                )}
-                              </button>
-                              
-                              {openQuestions[item.id] && (
-                                <div className="pb-5 animate-fadeIn">
-                                  <p className="text-gray-600 leading-relaxed text-sm">
-                                    {item.answer}
-                                  </p>
-                                </div>
-                              )}
-                            </div>
-                          ))}
+      {/* FAQ Content - WITH MULTIPLE BORDER RADIUS CONTAINERS */}
+      <div className="bg-gray-100 pt-16 pb-12">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+          {/* 80% width container */}
+          <div className="w-full px-4 space-y-0">
+            
+            {/* FIRST FAQ SECTION - Documents & Requirements */}
+            <div className="bg-gray-100 overflow-hidden mb-0">
+              {/* Main container with 2 columns */}
+              <div className="flex flex-col lg:flex-row">
+                
+                {/* LEFT COLUMN - 30% width */}
+                <div className="lg:w-3/12">
+                  <div className="p-4 h-full flex flex-col">
+                    {/* Left side title - Documents */}
+                    <div className="flex flex-col space-y-0">
+                      <div className="flex items-start flex-grow">
+                        <div className="bg-gray-100 p-5 transition-colors duration-200 w-full h-full flex flex-col border-2 border-transparent ">
+                          <h3 className="text-lg font-bold text-gray-900">
+                            {faqData[0].title}
+                          </h3>
                         </div>
                       </div>
-                    ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT COLUMN - 70% width */}
+                <div className="lg:w-9/12 border-l border-gray-100">
+                  {/* Main container for right side */}
+                  <div className="p-4">
+                    {/* Questions for Documents category */}
+                    <div className="flex flex-col space-y-0">
+                      {faqData[0].questions.map((item, questionIndex) => (
+                        <React.Fragment key={item.id}>
+                          {/* Question container with borders */}
+                          <div 
+                            className="border-2 border-transparent hover:border-gray-100 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                          >
+                            <button
+                              className="w-full text-left p-5 flex items-center justify-between hover:bg-gray-50 rounded-lg transition-colors"
+                              onClick={() => toggleQuestion(item.id)}
+                            >
+                              <h4 className="font-semibold text-gray-900 pr-4 text-base">
+                                {item.question}
+                              </h4>
+                              {openQuestions[item.id] ? (
+                                <ChevronUp className="h-5 w-5 text-orange-600 flex-shrink-0" />
+                              ) : (
+                                <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                              )}
+                            </button>
+                            
+                            {openQuestions[item.id] && (
+                              <div className="px-5 pb-5 animate-fadeIn border-t border-gray-100 pt-4">
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                  {item.answer}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* Horizontal line after EVERY question (including last one) */}
+                          <div className="h-px bg-gray-200 mt-0 mb-0.5"></div>
+                        </React.Fragment>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* SECOND FAQ SECTION - Admission Process */}
+            <div className="bg-gray-100 overflow-hidden -mt-4 mb-0">
+              {/* Main container with 2 columns */}
+              <div className="flex flex-col lg:flex-row">
+                
+                {/* LEFT COLUMN - 30% width */}
+                <div className="lg:w-3/12">
+                  <div className="p-4 h-full flex flex-col">
+                    {/* Left side title - Admission */}
+                    <div className="flex flex-col space-y-0">
+                      <div className="flex items-start flex-grow">
+                        <div className="bg-gray-100 rounded-lg p-5 transition-colors duration-200 w-full h-full flex flex-col border-2 border-transparent ">
+                          <h3 className="text-lg font-bold text-gray-900">
+                            {faqData[1].title}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT COLUMN - 70% width */}
+                <div className="lg:w-9/12 border-l border-gray-100">
+                  {/* Main container for right side */}
+                  <div className="p-4">
+                    {/* Questions for Admission category */}
+                    <div className="flex flex-col space-y-0">
+                      {faqData[1].questions.map((item, questionIndex) => (
+                        <React.Fragment key={item.id}>
+                          {/* Question container with borders */}
+                          <div 
+                            className="border-2 border-transparent hover:border-gray-100 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                          >
+                            <button
+                              className="w-full text-left p-5 flex items-center justify-between hover:bg-gray-50 rounded-lg transition-colors"
+                              onClick={() => toggleQuestion(item.id)}
+                            >
+                              <h4 className="font-semibold text-gray-900 pr-4 text-base">
+                                {item.question}
+                              </h4>
+                              {openQuestions[item.id] ? (
+                                <ChevronUp className="h-5 w-5 text-orange-600 flex-shrink-0" />
+                              ) : (
+                                <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                              )}
+                            </button>
+                            
+                            {openQuestions[item.id] && (
+                              <div className="px-5 pb-5 animate-fadeIn border-t border-gray-100 pt-4">
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                  {item.answer}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* Horizontal line after EVERY question (including last one) */}
+                          <div className="h-px bg-gray-200 mt-0 mb-0.5"></div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* THIRD FAQ SECTION - Finances & Scholarships */}
+            <div className="bg-gray-100 overflow-hidden -mt-4">
+              {/* Main container with 2 columns */}
+              <div className="flex flex-col lg:flex-row">
+                
+                {/* LEFT COLUMN - 30% width */}
+                <div className="lg:w-3/12">
+                  <div className="p-4 h-full flex flex-col">
+                    {/* Left side title - Finance */}
+                    <div className="flex flex-col space-y-0">
+                      <div className="flex items-start flex-grow">
+                        <div className="bg-gray-100 rounded-lg p-5 transition-colors duration-200 w-full h-full flex flex-col border-2 border-transparent ">
+                          <h3 className="text-lg font-bold text-gray-900">
+                            {faqData[2].title}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT COLUMN - 70% width */}
+                <div className="lg:w-9/12 border-l border-gray-50">
+                  {/* Main container for right side */}
+                  <div className="p-4">
+                    {/* Questions for Finance category */}
+                    <div className="flex flex-col space-y-0">
+                      {faqData[2].questions.map((item, questionIndex) => (
+                        <React.Fragment key={item.id}>
+                          {/* Question container with borders */}
+                          <div 
+                            className="border-2 border-transparent hover:border-gray-100 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                          >
+                            <button
+                              className="w-full text-left p-5 flex items-center justify-between hover:bg-gray-50 rounded-lg transition-colors"
+                              onClick={() => toggleQuestion(item.id)}
+                            >
+                              <h4 className="font-semibold text-gray-900 pr-4 text-base">
+                                {item.question}
+                              </h4>
+                              {openQuestions[item.id] ? (
+                                <ChevronUp className="h-5 w-5 text-orange-600 flex-shrink-0" />
+                              ) : (
+                                <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                              )}
+                            </button>
+                            
+                            {openQuestions[item.id] && (
+                              <div className="px-5 pb-5 animate-fadeIn border-t border-gray-100 pt-4">
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                  {item.answer}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* Horizontal line after EVERY question (including last one) */}
+                          <div className="h-px bg-gray-300 mt-0 mb-0.5"></div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
