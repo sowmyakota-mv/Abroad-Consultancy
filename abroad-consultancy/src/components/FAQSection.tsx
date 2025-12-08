@@ -145,7 +145,7 @@ const FAQSection: React.FC = () => {
                         <h3 className="text-lg font-bold text-gray-900 mb-4 px-4">
                           {category.title}
                         </h3>
-                        <div className="space-y-0">
+                        {/* <div className="space-y-0">
                           {category.questions.map((item) => (
                             <button
                               key={item.id}
@@ -164,7 +164,7 @@ const FAQSection: React.FC = () => {
                               )}
                             </button>
                           ))}
-                        </div>
+                        </div> */}
                       </div>
                     ))}
                   </div>
@@ -210,22 +210,6 @@ const FAQSection: React.FC = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
-
-                  {/* View More Section */}
-                  <div className="mt-12 pt-8 border-t border-gray-200">
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-4">
-                        Didn't find what you were looking for?
-                      </p>
-                      <a 
-                        href="/faq" 
-                        className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors duration-300"
-                      >
-                        View all FAQ questions
-                        <ChevronDown className="h-4 w-4 ml-2 rotate-[-90deg]" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>

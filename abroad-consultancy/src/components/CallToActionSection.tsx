@@ -3,7 +3,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 const CallToActionSection: React.FC = () => {
   return (
-    <section className="w-full py-12 relative z-20 -mb-40">
+    <section className="w-full py-8 relative z-20 -mb-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="w-[90%] md:w-[80%] mx-auto">
@@ -14,12 +14,12 @@ const CallToActionSection: React.FC = () => {
               <div className="lg:col-span-2 p-12 flex items-center">
                 <div className="w-full">
 
-                  <h2 className="text-lg md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-lg md:text-4xl font-bold text-gray-900 mb-2">
                     Ready to Start Your 
                     <span className="text-purple-700 block">Study Abroad Journey?</span>
                   </h2>
 
-                  <p className="text-gray-700 mb-4 leading-relaxed text-sx">
+                  <p className="text-gray-700 mb-2 leading-relaxed text-xs md:text-sm">
                     Get personalized guidance from our experienced counselors.
                     We'll help you choose the right university, prepare documents,
                     and navigate the entire admission process successfully.
@@ -43,7 +43,7 @@ const CallToActionSection: React.FC = () => {
                       <img
                         src="/contact-hero1.png"
                         alt="Study Abroad Counsellor"
-                        className="w-full h-full object-cover mt- md:mt-20"
+                        className="w-full h-full object-cover md:mt-20"
                       />
                     </div>
                   </div>

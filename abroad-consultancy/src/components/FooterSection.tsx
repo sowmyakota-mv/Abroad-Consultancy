@@ -250,7 +250,7 @@ const FooterSection: React.FC = () => {
             {/* Copyright */}
             <div className="mb-4 md:mb-0">
               <p className="text-gray-400 text-sm">
-                © 2025 Leap Scholar. All rights reserved
+                © 2025 Consultancy. All rights reserved
               </p>
             </div>
 
