@@ -147,15 +147,15 @@ const ServicesSection: React.FC = () => {
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white">
       {/* Full Width Stats Section */}
-      <div className="w-full ">
+      {/* <div className="w-full "> */}
         {/* Desktop: 8 columns full width */}
-        <div className="hidden md:grid md:grid-cols-8">
+        {/* <div className="hidden md:grid md:grid-cols-8">
           {stats.map((stat, index) => (
             <div key={index} className="last:border-r-0">
               {/* Grid with 3 rows */}
-              <div className="grid grid-rows-3 h-[100px]">
+              {/* <div className="grid grid-rows-3 h-[100px]"> */}
                 {/* Row 1: Icon - Top aligned */}
-                <div className="flex items-center justify-center pt-3">
+                {/* <div className="flex items-center justify-center pt-3">
                   <div className="h-13 w-13 rounded-full border-2 border-black flex items-center justify-center bg-white">
                     <img 
                       src={stat.icon} 
@@ -163,17 +163,17 @@ const ServicesSection: React.FC = () => {
                       className="h-8 w-8 md:h-9 md:w-9 object-contain"
                     />
                   </div>
-                </div>
+                </div>  */}
                 
                 {/* Row 2: Count - Middle aligned */}
-                <div className="flex items-center justify-center mt-4">
+                {/* <div className="flex items-center justify-center mt-4">
                   <div className="text-lg font-bold text-blue-700">
                     {stat.count}
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Row 3: Title - Fixed 2 lines with consistent spacing */}
-                <div className="flex items-start justify-center pb-2">
+                {/* <div className="flex items-start justify-center pb-2">
                   <div className="text-sm font-medium text-black text-center px-6 leading-tight h-[40px] flex items-center justify-center">
                     <span className="block line-clamp-2">
                       {stat.title}
@@ -183,18 +183,18 @@ const ServicesSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Mobile: 2 tables */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden"> */}
           {/* Table 1 */}
-          <div className="grid grid-cols-4">
+          {/* <div className="grid grid-cols-4">
             {stats.slice(0, 4).map((stat, index) => (
               <div key={index} className="">
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-28">
+                {/* <div className="grid grid-rows-3 h-28"> */}
                   {/* Row 1: Icon */}
-                  <div className="flex items-start justify-center pt-3">
+                  {/* <div className="flex items-start justify-center pt-3">
                     <div className="h-10 w-10 rounded-full border-2 border-black flex items-center justify-center bg-white">
                       <img 
                         src={stat.icon} 
@@ -202,17 +202,17 @@ const ServicesSection: React.FC = () => {
                         className="h-6 w-6 object-contain"
                       />
                     </div>
-                  </div>
+                  </div>  */}
                   
                   {/* Row 2: Count */}
-                  <div className="flex items-center justify-center mt-3">
+                  {/* <div className="flex items-center justify-center mt-3">
                     <div className="text-base font-bold text-blue-700">
                       {stat.count}
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Row 3: Title */}
-                  <div className="flex items justify-center pb-2">
+                  {/* <div className="flex items justify-center pb-2">
                     <div className="text-xs font-medium text-black text-center px-2">
                       <span className="block line-clamp-2">
                         {stat.title}
@@ -222,16 +222,16 @@ const ServicesSection: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           
           {/* Table 2 */}
-          <div className="grid grid-cols-4">
+          {/* <div className="grid grid-cols-4">
             {stats.slice(4).map((stat, index) => (
-              <div key={index + 4} className="">
+              <div key={index + 4} className=""> */}
                 {/* Grid with 3 rows */}
-                <div className="grid grid-rows-3 h-28">
+                {/* <div className="grid grid-rows-3 h-28"> */}
                   {/* Row 1: Icon */}
-                  <div className="flex items-start justify-center pt-3">
+                  {/* <div className="flex items-start justify-center pt-3">
                     <div className="h-10 w-10 rounded-full border-2 border-black flex items-center justify-center bg-white">
                       <img 
                         src={stat.icon} 
@@ -239,17 +239,17 @@ const ServicesSection: React.FC = () => {
                         className="h-6 w-6 object-contain"
                       />
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Row 2: Count */}
-                  <div className="flex items-center justify-center mt-3">
+                  {/* <div className="flex items-center justify-center mt-3">
                     <div className="text-base font-bold text-blue-700">
                       {stat.count}
                     </div>
-                  </div>
+                  </div> */}
                   
                   {/* Row 3: Title */}
-                  <div className="flex items justify-center pb-2">
+                  {/* <div className="flex items justify-center pb-2">
                     <div className="text-xs font-medium text-black text-center px-2">
                       <span className="block line-clamp-2">
                         {stat.title}
@@ -261,10 +261,10 @@ const ServicesSection: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Rest of the Services Section */}
-      <div className="w-full py-12">
+      <div className="w-full py-2">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
