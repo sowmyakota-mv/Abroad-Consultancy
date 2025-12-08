@@ -72,7 +72,7 @@ const Header: React.FC = () => {
                     to={link.href}
                     className={`text-center py-2.5 transition-colors duration-200 ${
                       link.isCta
-                        ? 'bg-[#FF6603] text-white px-4 rounded-lg hover:bg-[#FB8234]'
+                        ? 'bg-purple-700 text-white px-4 rounded-lg hover:bg-purple-700 hover:scale-105'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
