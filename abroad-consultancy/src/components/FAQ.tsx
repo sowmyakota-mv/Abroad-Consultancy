@@ -64,25 +64,11 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF7F0] via-[#FFE5EF] to-[#E8F1FF] py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Frequently Asked Questions & Contact
-        </h1>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column with full multiple light background */}
-          <div className="relative overflow-hidden rounded-2xl shadow-xl">
-            {/* Multiple Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-70"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-green-50 via-yellow-50 to-orange-50 opacity-50"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-cyan-50 via-indigo-50 to-violet-50 opacity-40"></div>
-            
-            {/* Animated Background Elements */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-            
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Left Column - 60% width (3/5 of the grid) */}
+          <div className="lg:col-span-3 relative overflow-hidden">
             <div className="relative z-10 h-full p-8 flex flex-col">
               {/* Top Title Section */}
               <div className="mb-8">
@@ -93,74 +79,86 @@ const FAQ: React.FC = () => {
                   Find answers to common questions about our services. If you need more information, feel free to contact us.
                 </p>
               </div>
+              <div className="mt-4 relative">
+                <img
+                  src="/faq-hero.png"
+                  alt="FAQ illustration"
+                  className="w-[80%] object-cover relative z-10"
+                />
+                <div className="absolute -bottom-2 left-66 -translate-x-1/2 w-3/4 h-6 blur- bg-black/40"></div>
+              </div>
 
               {/* Bottom Contact Information */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/40 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-3">
+              <div className="backdrop-blur-sm mt-20">
+                <div className="grid grid-cols-2 ">
+                  {/* 1*1 - Location */}
+                  <div className="flex items-start space-x-2 p-4">
                     <div className="bg-blue-100 p-3 rounded-full">
                       <FaMapMarkerAlt className="text-blue-600 text-xl" />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-700">Our Location</p>
-                      <p className="text-gray-600">123 Business Street, Suite 100<br />New York, NY 10001</p>
+                      <p className="font-medium text-sm text-gray-700">Our Location</p>
+                      <p className="text-gray-600 text-xs">
+                        123 Business Street, Suite 100 <br />
+                        New York, NY 10001
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <FaPhone className="text-green-600 text-xl" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-700">Contact Number</p>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                  {/* 1*2 - Social Media */}
+                  <div className="p-4">
+                    <p className="font-medium text-sm text-gray-700 mb-">Follow Us</p>
+                    <div className="flex ">
+                      {socialLinks.map((social, index) => (
+                        <a
+                          key={index}
+                          href={social.href}
+                          aria-label={social.label}
+                          className="p-3 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1"
+                        >
+                          <social.icon className="text-gray-600 text-xl hover:text-blue-600" />
+                        </a>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
+                  {/* 2*1 - Email */}
+                  <div className="flex items-start space-x-2 p-4">
                     <div className="bg-yellow-100 p-3 rounded-full">
                       <FaEnvelope className="text-yellow-600 text-xl" />
                     </div>
                     <div>
-                      <p className="font-medium text-gray-700">Email Address</p>
-                      <p className="text-gray-600">info@services.com</p>
+                      <p className="font-medium text-sm text-gray-700">Email Address</p>
+                      <p className="text-gray-600 text-xs">info@services.com</p>
                     </div>
                   </div>
-                </div>
 
-                {/* Social Media Links */}
-                <div className="pt-6 border-t border-gray-200">
-                  <p className="font-medium text-gray-700 mb-4">Follow Us</p>
-                  <div className="flex space-x-3">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                        aria-label={social.label}
-                      >
-                        <social.icon className="text-gray-600 text-xl hover:text-blue-600 transition-colors" />
-                      </a>
-                    ))}
+                  {/* 2*2 - Contact Number */}
+                  <div className="flex items-start space-x-3 p-4">
+                    <div className="bg-green-100 p-3 rounded-full">
+                      <FaPhone className="text-green-600 text-xl" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm text-gray-700">Contact Number</p>
+                      <p className="text-gray-600 text-xs">+1 (555) 123-4567</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Form (Unchanged) */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          {/* Right Column - 40% width (2/5 of the grid) */}
+          <div className="h-[86%] mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
               Get in Touch
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 text-sm mb-8">
               Fill out the form below and we'll get back to you shortly.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     First Name *
@@ -171,7 +169,7 @@ const FAQ: React.FC = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                     placeholder="John"
                   />
                 </div>
@@ -186,33 +184,36 @@ const FAQ: React.FC = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                     placeholder="Doe"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Country *
-                </label>
-                <select
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                >
-                  <option value="">Select your country</option>
-                  {countries.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              {/* Country + Phone Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Country */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Country *
+                  </label>
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                  >
+                    <option value="">Select your country</option>
+                    {countries.map((country) => (
+                      <option key={country} value={country}>
+                        {country}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Phone */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
@@ -223,32 +224,33 @@ const FAQ: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
+              {/* Email Full Width */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                  placeholder="john@example.com"
+                />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Type of Query *
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-2">
                   {queryTypes.map((type) => (
                     <label
                       key={type.value}
@@ -284,7 +286,7 @@ const FAQ: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                   placeholder="Please describe your query in detail..."
                 />
               </div>
