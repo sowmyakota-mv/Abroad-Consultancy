@@ -6,9 +6,10 @@ import CountriesSection from './components/CountrySection';
 import ServicesSection from './components/ServiceSection';
 import WhyChooseUsSection from './components/WhyChooseUsSection';
 import TestimonialsSection from './components/TestimonialSection';
-import FAQSection from './components/FAQSection';
+
 import CallToActionSection from './components/CallToActionSection';
 import FooterSection from './components/FooterSection';
+import FAQ from './components/FAQ';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <ServicesSection/>
         <WhyChooseUsSection/>
         <TestimonialsSection/>
-        <FAQSection/>
+        <FAQ/>
         <CallToActionSection/>
       </div> }/>
        </Routes> 
