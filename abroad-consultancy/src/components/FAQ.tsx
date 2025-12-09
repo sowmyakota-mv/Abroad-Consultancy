@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 type QueryType = 'document' | 'visa' | 'accommodation' | 'loan' | 'other';
@@ -35,6 +37,14 @@ const FAQ: React.FC = () => {
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
     }
+  };
+
+  const handlePhoneChange = (value: string, country: any) => {
+    setFormData(prev => ({ 
+      ...prev, 
+      phone: value,
+      country: country?.name || ''
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -89,7 +99,7 @@ const FAQ: React.FC = () => {
               </div>
 
               {/* Bottom Contact Information */}
-              <div className="backdrop-blur-sm mt-20">
+              <div className="backdrop-blur-sm mt-4">
                 <div className="grid grid-cols-2 ">
                   {/* 1*1 - Location */}
                   <div className="flex items-start space-x-2 p-4">
@@ -149,7 +159,7 @@ const FAQ: React.FC = () => {
           </div>
 
           {/* Right Column - 40% width (2/5 of the grid) */}
-          <div className="h-[86%] mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          <div className="h-[84%] mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
               Get in Touch
             </h2>
@@ -193,7 +203,7 @@ const FAQ: React.FC = () => {
               {/* Country + Phone Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Country */}
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Country *
                   </label>
@@ -211,24 +221,63 @@ const FAQ: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                </div>
+                </div> */}
 
-                {/* Phone */}
+                {/* Phone with react-phone-input-2 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
                   </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                    placeholder="+1 (555) 123-4567"
-                  />
+                  <div className="react-phone-input-custom">
+                    <PhoneInput
+                      country={'us'}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
+                      inputProps={{
+                        name: 'phone',
+                        required: true,
+                        autoFocus: false
+                      }}
+                      inputStyle={{
+                        width: '100%',
+                        height: '42px',
+                        paddingLeft: '48px',
+                        borderRadius: '0.5rem',
+                        border: '1px solid #d1d5db',
+                        fontSize: '0.875rem',
+                        transition: 'all 0.2s'
+                      }}
+                      buttonStyle={{
+                        border: '1px solid #d1d5db',
+                        borderRight: 'none',
+                        background: 'white',
+                        borderTopLeftRadius: '0.5rem',
+                        borderBottomLeftRadius: '0.5rem',
+                        padding: '4px'
+                      }}
+                      dropdownStyle={{
+                        borderRadius: '0.5rem',
+                        marginTop: '4px',
+                        fontSize: '0.875rem'
+                      }}
+                      containerStyle={{
+                        width: '100%'
+                      }}
+                      placeholder="+1 (555) 123-4567"
+                      searchPlaceholder="Search country..."
+                      enableSearch={true}
+                      disableSearchIcon={true}
+                      searchStyle={{
+                        padding: '8px',
+                        margin: '4px',
+                        borderRadius: '0.375rem',
+                        border: '1px solid #d1d5db',
+                        fontSize: '0.875rem'
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
+              
 
               {/* Email Full Width */}
               <div>
@@ -244,6 +293,7 @@ const FAQ: React.FC = () => {
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                   placeholder="john@example.com"
                 />
+              </div>
               </div>
 
               <div>
