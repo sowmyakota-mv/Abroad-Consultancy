@@ -53,11 +53,6 @@ const FAQ: React.FC = () => {
     // Add your form submission logic here
   };
 
-  const countries = [
-    'United States', 'Canada', 'United Kingdom', 'Australia', 
-    'Germany', 'France', 'Japan', 'India', 'China', 'Other'
-  ];
-
   const queryTypes: { value: QueryType; label: string }[] = [
     { value: 'document', label: 'Document Services' },
     { value: 'visa', label: 'Visa Assistance' },
@@ -180,7 +175,7 @@ const FAQ: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                    placeholder="John"
+                    placeholder="Enter your First Name"
                   />
                 </div>
 
@@ -195,7 +190,7 @@ const FAQ: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                    placeholder="Doe"
+                    placeholder="Enter your Last Name"
                   />
                 </div>
               </div>
@@ -291,7 +286,7 @@ const FAQ: React.FC = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="Enter Your Email Address"
                 />
               </div>
               </div>
