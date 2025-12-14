@@ -6,10 +6,10 @@ import CountriesSection from './components/CountrySection';
 import ServicesSection from './components/ServiceSection';
 import WhyChooseUsSection from './components/WhyChooseUsSection';
 import TestimonialsSection from './components/TestimonialSection';
-
 import CallToActionSection from './components/CallToActionSection';
 import FooterSection from './components/FooterSection';
 import FAQ from './components/FAQ';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -22,11 +22,12 @@ function App() {
         <HeroSection/>
         <CountriesSection/>
         <ServicesSection/>
+        <CallToActionSection/>
         <WhyChooseUsSection/>
         <TestimonialsSection/>
         <FAQ/>
-        <CallToActionSection/>
       </div> }/>
+      <Route path='/about-dartglobe' element={<AboutPage/>}/>
        </Routes> 
         <FooterSection/>       
         </Router>

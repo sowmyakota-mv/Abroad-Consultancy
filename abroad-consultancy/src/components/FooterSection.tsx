@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, MapPin, C
 
 const FooterSection: React.FC = () => {
   return (
-    <footer className="w-full bg-gray-900 text-white pt-40">
+    <footer className="w-full bg-gray-900 text-white pt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  
+  const navigate=useNavigate()
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/aboutus' },
+    { name: 'About Us', href: '/about-dartglobe' },
     { name: 'Study Abroad', href: location.pathname === '/' ? '#services' : '/#services' },
     { name: 'Our Services', href: location.pathname === '/' ? '#process' : '/#process' },
     { name: 'Why Choose Us', href: location.pathname === '/' ? '#why-choose-us' : '/#why-choose-us' },
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               <img 
                 src="/logo" 
                 alt="consultancy"
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain" onClick={()=>navigate("/")}
               />
             </div>
 
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                   to={link.href}
                   className={`font-medium transition-all duration-200 ${
                     link.isCta
-                      ? 'bg-purple-700 text-white px-5 py-2.5 rounded-3xl hover:bg-purple-700 hover:scale-105 hover:shadow-md'
+                      ? 'bg-purple-700  md:bg-[#FB8234] text-white px-5 py-2.5 rounded-3xl hover:bg-purple-700 md:hover:bg-[#FF6603] hover:scale-105 hover:shadow-md'
                       : 'text-gray-700 hover:text-[blue-600] hover:scale-105'
                   }`}
                 >

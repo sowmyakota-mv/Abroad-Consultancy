@@ -3,7 +3,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 const CallToActionSection: React.FC = () => {
   return (
-    <section className="w-full py-8 relative z-20 -mb-40">
+    <section className="w-full py-8 relative z-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="w-[90%] md:w-[80%] mx-auto">
