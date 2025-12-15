@@ -1,7 +1,9 @@
 import React from "react";
 import StatsSection from "./StatsSection";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const navigate=useNavigate()
   return (
     <section className="w-full bg-[#EBF1FA] text-black py-12 md:py-2 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-10 gap-2 items-center">
@@ -21,14 +23,14 @@ const HeroSection: React.FC = () => {
           <div className="mt-6 flex gap-4">
             
             {/* Filled Button */}
-            <button className="px-6 py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl shadow hover:bg-purple-700 md:hover:bg-[#FF6603] hover:scale-105 transition">
+            <button onClick={()=>navigate("/contact")} className="px-6 py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl shadow hover:bg-purple-700 md:hover:bg-[#FF6603] hover:scale-105 transition">
               Get Started
             </button>
 
             {/* Border Button */}
-            <button className="px-6 py-3 border border-purple-700 md:border-[#FB8234] text-purple-700 md:text-[#FB8234] font-semibold rounded-3xl hover:bg-purple-700 hover:scale-105 md:hover:bg-[#FF6603] hover:text-white transition">
+            {/* <button className="px-6 py-3 border border-purple-700 md:border-[#FB8234] text-purple-700 md:text-[#FB8234] font-semibold rounded-3xl hover:bg-purple-700 hover:scale-105 md:hover:bg-[#FF6603] hover:text-white transition">
               Contact Us
-            </button>
+            </button> */}
           </div>
         </div>
 

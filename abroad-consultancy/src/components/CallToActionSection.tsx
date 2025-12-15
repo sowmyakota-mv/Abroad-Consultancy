@@ -1,7 +1,9 @@
 import React from "react";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CallToActionSection: React.FC = () => {
+  const navigate=useNavigate()
   return (
     <section className="w-full py-8 relative z-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +27,7 @@ const CallToActionSection: React.FC = () => {
                     and navigate the entire admission process successfully.
                   </p>
 
-                  <button className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-xs md:text-lg hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
+                  <button onClick={()=>navigate("/contact")} className="group relative px-6 py-3 bg-purple-700 text-white rounded-4xl font-bold text-xs md:text-lg hover:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center">
                     <MessageCircle className="h-5 w-5 mr-3" />
                     Talk to a Counsellor
                     <ArrowRight className="h-5 w-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />

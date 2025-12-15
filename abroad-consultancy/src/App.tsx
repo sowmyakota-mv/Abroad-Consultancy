@@ -31,6 +31,7 @@ import ScholarshipFinancial from './pages/Services/ScholarshipFinancial';
 import UniversityApplication from './pages/Services/UniversityApplication';
 import VisaAssistance from './pages/Services/VisaAssistance';
 import FAQPage from './pages/FAQPage';
+import ContactForm from './components/ContactForm';
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
       <Route path='/services/university-application' element={<UniversityApplication/>}/>
       <Route path='/services/visa-assistance' element={<VisaAssistance/>}/>
       <Route path='/faq' element={<FAQPage/>}/>
+      <Route path='/contact' element={<ContactForm/>}/>
        </Routes> 
         <FooterSection/>       
         </Router>

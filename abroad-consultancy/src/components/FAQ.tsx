@@ -47,11 +47,51 @@ const FAQ: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const payload = {
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    phoneNumber: `+${formData.phone}`,
+    email: formData.email,
+    queryType: formData.queryType,
+    message: formData.message
   };
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxKvgNEJ4idu4E0Ki48hVHlfZfPS1GLfrr8Z743j9P3NfVqpifCiQsOj9YFiSlGxMNf/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }
+    );
+
+    alert(
+      "Your form is submitted successfully.\nWe will get in touch within 24 hours.\nThank you for contacting us."
+    );
+
+    // ✅ RESET FORM AFTER OK CLICK
+    setFormData({
+      firstName: '',
+      lastName: '',
+      country: '',
+      phone: '',
+      email: '',
+      queryType: 'document',
+      message: '',
+      agreeTerms: false,
+    });
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+  }
+};
 
   const queryTypes: { value: QueryType; label: string }[] = [
     { value: 'document', label: 'Document Services' },
