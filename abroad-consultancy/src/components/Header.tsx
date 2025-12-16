@@ -230,48 +230,166 @@ const Header: React.FC = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-              <div className="lg:hidden mt-4 border-t pt-4">
-                <nav className="flex flex-col space-y-3">
+{isMobileMenuOpen && (
+  <div className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto">
+    <nav className="flex flex-col space-y-1 p-4">
+      
+      {/* Home */}
+      {navLinks
+        .filter(link => link.name === 'Home')
+        .map((link) => (
+          <Link
+            key={link.name}
+            to={link.href}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
 
-                  {/* Study Abroad Mobile */}
-                  <button
-                    className="flex justify-center gap-1 py-2"
-                    onClick={() => setIsStudyOpen(!isStudyOpen)}
-                  >
-                    Study Abroad
-                    <ArrowDownLeft className={`${isStudyOpen && 'rotate-180'} transition-transform`} />
-                  </button>
+      {/* About Us */}
+      {navLinks
+        .filter(link => link.name === 'About Us')
+        .map((link) => (
+          <Link
+            key={link.name}
+            to={link.href}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
 
-                  {isStudyOpen &&
-                    studyAbroadCountries.map((c) => (
-                      <Link key={c.name} to={c.path} className="text-center py-1">
-                        Study in {c.name}
-                      </Link>
-                    ))}
+      {/* Study Abroad */}
+      <div className="pt-1">
+        <button
+          className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          onClick={() => setIsStudyOpen(!isStudyOpen)}
+        >
+          <span>Study Abroad</span>
+          <ArrowDownLeft className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
+        </button>
 
-                  {/* ✅ Services Mobile (Scrollable) */}
-                  <button
-                    className="flex justify-center gap-1 py-2"
-                    onClick={() => setIsServiceOpen(!isServiceOpen)}
-                  >
-                    Our Services
-                    <ArrowDownLeft className={`${isServiceOpen && 'rotate-180'} transition-transform`} />
-                  </button>
+        {isStudyOpen && (
+          <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
+            {studyAbroadCountries.map((c) => (
+              <Link
+                key={c.name}
+                to={c.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
+              >
+                Study in {c.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
 
-                  {isServiceOpen && (
-                    <div className="max-h-56 overflow-y-auto">
-                      {servicesList.map((s) => (
-                        <Link key={s.name} to={s.path} className="block text-center py-1">
-                          {s.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+      {/* Services */}
+      <div className="pt-1">
+        <button
+          className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          onClick={() => setIsServiceOpen(!isServiceOpen)}
+        >
+          <span>Our Services</span>
+          <ArrowDownLeft className={`${isServiceOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
+        </button>
 
-                </nav>
-              </div>
-            )}
+        {isServiceOpen && (
+          <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
+            {servicesList.map((s) => (
+              <Link
+                key={s.name}
+                to={s.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
+              >
+                {s.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Why Choose Us */}
+      {navLinks
+        .filter(link => link.name === 'Why Choose Us')
+        .map((link) => (
+          <Link
+            key={link.name}
+            to={link.href}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
+
+      {/* Our Success */}
+      {navLinks
+        .filter(link => link.name === 'Our Success')
+        .map((link) => (
+          <Link
+            key={link.name}
+            to={link.href}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
+
+      {/* FAQ */}
+      {navLinks
+        .filter(link => link.name === 'FAQ')
+        .map((link) => (
+          <Link
+            key={link.name}
+            to={link.href}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
+
+      {/* Book Free Counselling - CTA Button */}
+      {navLinks
+        .filter(link => link.isCta)
+        .map((link) => (
+          <button
+            key={link.name}
+            onClick={() => {
+              if (link.onClick) link.onClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
+          >
+            {link.name}
+          </button>
+        ))}
+
+    </nav>
+  </div>
+)}
           </div>
         </div>
       </header>

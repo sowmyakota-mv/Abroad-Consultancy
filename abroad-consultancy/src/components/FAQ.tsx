@@ -130,7 +130,7 @@ const FAQ: React.FC = () => {
                   alt="FAQ illustration"
                   className="md:w-[80%] object-cover relative z-10"
                 />
-                <div className="absolute -bottom-2 left-66 -translate-x-1/2 w-3/4 h-6 blur- bg-black/40"></div>
+                <div className="absolute -bottom-2 left-60 md:left-66 -translate-x-1/2 w-3/4 h-6 blur- bg-black/40"></div>
               </div>
 
               {/* Bottom Contact Information */}
