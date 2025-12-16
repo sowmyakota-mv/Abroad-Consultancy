@@ -128,7 +128,7 @@ const FAQ: React.FC = () => {
                 <img
                   src="/faq-hero.png"
                   alt="FAQ illustration"
-                  className="w-[80%] object-cover relative z-10"
+                  className="md:w-[80%] object-cover relative z-10"
                 />
                 <div className="absolute -bottom-2 left-66 -translate-x-1/2 w-3/4 h-6 blur- bg-black/40"></div>
               </div>

@@ -99,9 +99,9 @@ const AboutUsPage: React.FC = () => {
             {/* Image Section - 40% */}
             <div className="lg:w-2/5">
               <div className="sticky top-24">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <div className="rounded-xl overflow-hidden ">
                   <img 
-                    src="/about2.png" 
+                    src="/about3.png" 
                     alt="Benefits & Application Process" 
                     className="w-full h-auto object-cover"
                   />
@@ -185,19 +185,24 @@ const AboutUsPage: React.FC = () => {
      {/* White Cards with Hover Effects */}
 <section className="py-16 bg-white">
   <div className="container mx-auto px-6">
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+    {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
       End to End Services
     </h2>
     <p className="text-xl text-center mb-12 max-w-3xl mx-auto text-gray-600">
       Our experts will guide you through each step of the admission process.
-    </p>
+    </p> */}
     
     <div 
       className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto  transition-all duration-300 rounded-2xl p-4"
     >
       {[
         {
-          title: "9 Branches in AP & TS",
+          title: "End to End Services",
+          description: "Our experts will guide you through each step of the admission process.",
+          icon: "🎯"
+        },
+        {
+          title: "Branches in AP & TS",
           description: "We offer world-class education consultation services with 9 offices in AP and TS",
           icon: "🏢"
         },
@@ -210,22 +215,17 @@ const AboutUsPage: React.FC = () => {
           title: "24/7 Priority Support",
           description: "Extremity direction existence as dashwoods do up. Always available for our students",
           icon: "🕒"
-        },
-        {
-          title: "Comprehensive Guidance",
-          description: "From application to accommodation, we handle every aspect of your journey",
-          icon: "🎯"
         }
       ].map((point, index) => (
        <div 
   key={index} 
-  className="group border-2 border-gray-100 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600"
+  className="group border-2 border-gray-100 rounded-2xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600"
 >
   <div className="relative">
-    <div className="text-2xl text-center mb-4 transform group-hover:scale-110 transition-transform duration-300 group-hover:text-white">
+    <div className="text-xl text-center mb-2 transform group-hover:scale-110 transition-transform duration-300 group-hover:text-white">
       {point.icon}
     </div>
-    <h3 className="text-2xl text-center font-bold mb-4 text-gray-800 group-hover:text-white transition-colors duration-300">
+    <h3 className="text-2xl text-center font-bold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
       {point.title}
     </h3>
     <p className="text-gray-600 text-center group-hover:text-white transition-colors duration-300">
@@ -239,7 +239,7 @@ const AboutUsPage: React.FC = () => {
 </section>
 
       {/* CTA Section */}
-     <section className="py-20 bg-white">
+     <section className="bg-white">
   <div className="container mx-auto px-6">
     <div className="max-w-5xl mx-auto">
       <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden">
@@ -255,17 +255,17 @@ const AboutUsPage: React.FC = () => {
         </div>
         
         {/* Content Section - 70% */}
-        <div className="lg:w-8/12 w-full p-4 lg:p-12">
-          <h2 className="text-3xl md:text-sm font text-gray-800 mb-4 text-left">
+        <div className="lg:w-8/12 w-full ">
+          <h2 className="text-xs md:text-xs font text-gray-800 mb-4 text-left">
             NOT SURE WHERE TO START?
           </h2>
           <h2 className="text-3xl md:text-2xl font-bold text-blue-800 mb-4 text-left">
           Want to know more about Abroad Education?</h2>
-          <p className="text-sm text-gray-600 mb-8">
-            Want to know more about Abroad Education? Our expert consultants are here to guide you through every step of your international education journey.
+          <p className="text-sm text-gray-600 mb-4">
+            Our expert consultants are here to guide you through every step of your international education journey.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+          <div className="flex flex-col sm:flex-row">
+            <button className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
               Contact Us
             </button>
             {/* <button className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-full text-lg border-2 border-blue-600 transition-all duration-300 transform hover:scale-105">
