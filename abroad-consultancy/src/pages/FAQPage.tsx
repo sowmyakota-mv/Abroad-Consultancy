@@ -11,18 +11,19 @@ const FAQPage: React.FC = () => {
   const [expandedQuestions, setExpandedQuestions] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Countries data
+  // Countries data - Added Ireland
   const countries = [
-    { id: 'usa', name: 'United States', flag: '🇺🇸', title: 'Masters in USA', color: 'from-blue-500 to-red-500' },
-    { id: 'uk', name: 'United Kingdom', flag: '🇬🇧', title: 'Education in UK', color: 'from-blue-600 to-red-600' },
-    { id: 'canada', name: 'Canada', flag: '🇨🇦', title: 'Education in Canada', color: 'from-red-500 to-white' },
-    { id: 'germany', name: 'Germany', flag: '🇩🇪', title: 'Education in Germany', color: 'from-black to-red-500 to-yellow-500' },
-    { id: 'newzealand', name: 'New Zealand', flag: '🇳🇿', title: 'Education in New Zealand', color: 'from-blue-800 to-red-800' },
-    { id: 'europe', name: 'European Countries', flag: '🇪🇺', title: 'Education in Europe', color: 'from-blue-900 to-yellow-500' },
-    { id: 'australia', name: 'Australia', flag: '🇦🇺', title: 'Education In Australia', color: 'from-blue-700 to-red-700' },
+    { id: 'usa', name: 'United States', flag: '🇺🇸', color: 'from-blue-500 to-red-500' },
+    { id: 'uk', name: 'United Kingdom', flag: '🇬🇧', color: 'from-blue-600 to-red-600' },
+    { id: 'canada', name: 'Canada', flag: '🇨🇦', color: 'from-red-500 to-white' },
+    { id: 'australia', name: 'Australia', flag: '🇦🇺', color: 'from-blue-700 to-red-700' },
+    { id: 'germany', name: 'Germany', flag: '🇩🇪', color: 'from-black to-red-500 to-yellow-500' },
+    { id: 'newzealand', name: 'New Zealand', flag: '🇳🇿', color: 'from-blue-800 to-red-800' },
+    { id: 'ireland', name: 'Ireland', flag: '🇮🇪', color: 'from-green-500 to-white to-orange-500' },
+    { id: 'europe', name: 'Other European', flag: '🇪🇺', color: 'from-blue-900 to-yellow-500' },
   ];
 
-  // FAQ data for each country
+  // FAQ data for each country - Added Ireland
   const faqData: Record<string, Array<{id: string, question: string, answer: string}>> = {
     usa: [
       {
@@ -80,6 +81,18 @@ const FAQPage: React.FC = () => {
         answer: 'Tuition fees range from CAD 15,000-35,000 per year for undergraduate programs and CAD 10,000-30,000 for graduate programs. Living expenses are approximately CAD 10,000-15,000 per year depending on the city and lifestyle.'
       }
     ],
+    australia: [
+      {
+        id: 'au-1',
+        question: 'Why study in Australia?',
+        answer: 'Australia offers world-class education, a welcoming multicultural society, post-study work opportunities, a high standard of living, and universities consistently ranked among the top 100 globally.'
+      },
+      {
+        id: 'au-2',
+        question: 'What is the Temporary Graduate visa (subclass 485)?',
+        answer: 'The Temporary Graduate visa allows international students who have recently graduated from an Australian institution to live, study, and work in Australia temporarily. The duration varies from 18 months to 4 years depending on the qualification.'
+      }
+    ],
     germany: [
       {
         id: 'de-1',
@@ -104,6 +117,23 @@ const FAQPage: React.FC = () => {
         answer: 'International students can work up to 20 hours per week during semester and full-time during scheduled breaks. After graduation, they can apply for a post-study work visa for 1-3 years depending on their qualification level.'
       }
     ],
+    ireland: [
+      {
+        id: 'ie-1',
+        question: 'Why study in Ireland?',
+        answer: 'Ireland is known for its high-quality education system, English-speaking environment, post-study work opportunities (2 years after graduation), and being home to many multinational tech companies like Google, Facebook, and Apple.'
+      },
+      {
+        id: 'ie-2',
+        question: 'What are the popular courses in Ireland?',
+        answer: 'Popular courses include Computer Science, Data Analytics, Business, Engineering, Pharmaceuticals, and Hospitality Management. Ireland is particularly strong in technology and pharmaceutical sectors.'
+      },
+      {
+        id: 'ie-3',
+        question: 'What is the cost of living in Ireland?',
+        answer: 'Living costs in Ireland range from €7,000 to €12,000 per year, with Dublin being more expensive. Tuition fees vary from €9,000 to €25,000 per year depending on the course and institution.'
+      }
+    ],
     europe: [
       {
         id: 'eu-1',
@@ -114,18 +144,6 @@ const FAQPage: React.FC = () => {
         id: 'eu-2',
         question: 'What is the Bologna Process?',
         answer: 'The Bologna Process ensures comparability in the standards and quality of higher education qualifications across 48 European countries, making it easier for students to move between countries and have their qualifications recognized.'
-      }
-    ],
-    australia: [
-      {
-        id: 'au-1',
-        question: 'Why study in Australia?',
-        answer: 'Australia offers world-class education, a welcoming multicultural society, post-study work opportunities, a high standard of living, and universities consistently ranked among the top 100 globally.'
-      },
-      {
-        id: 'au-2',
-        question: 'What is the Temporary Graduate visa (subclass 485)?',
-        answer: 'The Temporary Graduate visa allows international students who have recently graduated from an Australian institution to live, study, and work in Australia temporarily. The duration varies from 18 months to 4 years depending on the qualification.'
       }
     ]
   };
@@ -168,16 +186,11 @@ const FAQPage: React.FC = () => {
   return (
     <div id='faq' className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-r from-blue-900 via-purple-800 to-indigo-900 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">❓</div>
-          <div className="absolute bottom-10 right-10 text-6xl">💡</div>
-        </div>
+      <section className="relative py-24 bg-gradient-to-r from-blue-900 via-purple-800 to-indigo-900 text-white">
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
-              <HelpCircle className="h-10 w-10 text-white" />
-            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Frequently Asked Questions
             </h1>
@@ -187,7 +200,7 @@ const FAQPage: React.FC = () => {
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mb-10">
+            {/* <div className="max-w-2xl mx-auto mb-10">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <input
@@ -198,233 +211,144 @@ const FAQPage: React.FC = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      {/* Country Tabs */}
-      <section className="py-8 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {countries.map((country) => (
-              <button
-                key={country.id}
-                onClick={() => setActiveCountry(country.id)}
-                className={`flex flex-col items-center justify-center w-40 p-4 rounded-xl border-2 transition-all duration-300 ${
-                  activeCountry === country.id
-                    ? `border-blue-500 bg-gradient-to-br ${country.color} text-white shadow-lg scale-105`
-                    : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300 hover:shadow-md'
-                }`}
-              >
-                <div className="text-3xl mb-2">{country.flag}</div>
-                <div className="font-bold text-center">{country.title}</div>
-                <div className="text-sm opacity-90 mt-1">{country.name}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
+      {/* Main Content - 2 Column Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Active Country Header */}
-        <div className="mb-12 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl mb-4">
-            <div className="text-3xl">
-              {countries.find(c => c.id === activeCountry)?.flag}
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Left Column - Countries (30%) */}
+          <div className="lg:w-3/12">
+            <div className="sticky top-24">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-300">
+                Select Country
+              </h2>
+              <div className="space-y-1">
+                {countries.map((country, index) => (
+                  <React.Fragment key={country.id}>
+                    <button
+                      onClick={() => setActiveCountry(country.id)}
+                      className={`w-full flex items-center p-4 transition-all duration-200 ${
+                        activeCountry === country.id
+                          ? `bg-gradient-to-r ${country.color} text-white`
+                          : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <div className="text-2xl mr-4">{country.flag}</div>
+                      <div className="text-left">
+                        <div className="font-semibold">{country.name}</div>
+                        {/* <div className="text-sm opacity-90 mt-1">
+                          {faqData[country.id]?.length || 0} questions
+                        </div> */}
+                      </div>
+                    </button>
+                    {index < countries.length - 1 && (
+                      <div className="border-t border-gray-300"></div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {countries.find(c => c.id === activeCountry)?.title}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to commonly asked questions about studying in {countries.find(c => c.id === activeCountry)?.name}
-          </p>
-        </div>
 
-        {/* FAQ Grid */}
-        <div className="space-y-6">
-          {filteredFAQs.length > 0 ? (
-            filteredFAQs.map((faq) => {
-              const isExpanded = expandedQuestions.includes(faq.id);
-              return (
-                <div
-                  key={faq.id}
-                  className="bg-white rounded-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggleQuestion(faq.id)}
-                    className="w-full p-8 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="flex items-start">
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <HelpCircle className="h-5 w-5 text-blue-600" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{faq.question}</h3>
-                        <div className="flex items-center text-gray-500 text-sm">
-                          <Globe className="h-4 w-4 mr-2" />
-                          {countries.find(c => c.id === activeCountry)?.name}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ml-4 flex-shrink-0">
-                      {isExpanded ? (
-                        <ChevronUp className="h-6 w-6 text-blue-600" />
-                      ) : (
-                        <ChevronDown className="h-6 w-6 text-gray-400" />
-                      )}
-                    </div>
-                  </button>
-                  
-                  {isExpanded && (
-                    <div className="px-8 pb-8 pt-2 border-t border-gray-100">
-                      <div className="flex">
-                        <div className="w-10 flex-shrink-0"></div>
-                        <div className="flex-1">
-                          <div className="prose prose-lg max-w-none">
-                            <p className="text-gray-700 mb-4">{faq.answer}</p>
-                            <div className="flex flex-wrap gap-3 mt-6">
-                              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-                                Study Abroad
-                              </span>
-                              <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">
+          {/* Right Column - Questions (70%) */}
+          <div className="lg:w-9/12">
+            {/* Active Country Header */}
+            <div className="mb-8 pb-6 border-b border-gray-300">
+              <div className="flex items-center mb-4">
+                <div className="text-3xl mr-4">
+                  {countries.find(c => c.id === activeCountry)?.flag}
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-900">
+                    {countries.find(c => c.id === activeCountry)?.name}
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    Common questions about studying in {countries.find(c => c.id === activeCountry)?.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Questions List */}
+            <div className="space-y-1">
+              {filteredFAQs.length > 0 ? (
+                filteredFAQs.map((faq, index) => {
+                  const isExpanded = expandedQuestions.includes(faq.id);
+                  return (
+                    <React.Fragment key={faq.id}>
+                      <div className="bg-white">
+                        <button
+                          onClick={() => toggleQuestion(faq.id)}
+                          className="w-full text-left flex justify-between items-center p-6 hover:bg-gray-50 transition-colors"
+                        >
+                          <div className="flex items-start">
+                            <div className="w-10 h-10 bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                              <HelpCircle className="h-5 w-5 text-blue-600" />
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-lg font-semibold text-gray-900 mb-1">{faq.question}</h3>
+                              {/* <div className="flex items-center text-gray-500 text-sm">
+                                <Globe className="h-3 w-3 mr-1" />
                                 {countries.find(c => c.id === activeCountry)?.name}
-                              </span>
-                              <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">
-                                International Education
-                              </span>
+                              </div> */}
                             </div>
                           </div>
-                        </div>
+                          <div className="ml-4 flex-shrink-0">
+                            {isExpanded ? (
+                              <ChevronUp className="h-5 w-5 text-blue-600" />
+                            ) : (
+                              <ChevronDown className="h-5 w-5 text-gray-400" />
+                            )}
+                          </div>
+                        </button>
+                        
+                        {isExpanded && (
+                          <div className="px-6 pb-6 pt-2">
+                            <div className="flex">
+                              <div className="w-10 flex-shrink-0"></div>
+                              <div className="flex-1">
+                                <p className="text-gray-700">{faq.answer}</p>
+                                <div className="flex flex-wrap gap-2 mt-4">
+                                  <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium">
+                                    Study Abroad
+                                  </span>
+                                  <span className="px-2 py-1 bg-green-50 text-green-700 text-xs font-medium">
+                                    {countries.find(c => c.id === activeCountry)?.name}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  )}
+                      {index < filteredFAQs.length - 1 && (
+                        <div className="border-t border-gray-300"></div>
+                      )}
+                    </React.Fragment>
+                  );
+                })
+              ) : (
+                <div className="text-center py-12 bg-white">
+                  <div className="text-6xl mb-6">🔍</div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">No questions found</h3>
+                  <p className="text-gray-600 mb-8">
+                    Try searching with different keywords or browse questions by selecting a country.
+                  </p>
+                  <button
+                    onClick={() => setSearchTerm('')}
+                    className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                  >
+                    Clear Search
+                  </button>
                 </div>
-              );
-            })
-          ) : (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-6">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">No questions found</h3>
-              <p className="text-gray-600 mb-8">
-                Try searching with different keywords or browse questions by selecting a country above.
-              </p>
-              <button
-                onClick={() => setSearchTerm('')}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                Clear Search
-              </button>
+              )}
             </div>
-          )}
-        </div>
-
-        {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-            <div className="text-gray-600">Countries Covered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
-            <div className="text-gray-600">Questions Answered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-            <div className="text-gray-600">Expert Support</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-            <div className="text-gray-600">Satisfaction Rate</div>
           </div>
         </div>
       </div>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-blue-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-12 text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mb-6">
-              <MessageSquare className="h-10 w-10 text-white" />
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              NOT SURE WHERE TO START?
-            </h2>
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-              Want to know more about Abroad Education? Our expert counselors are here to help 
-              you navigate your study abroad journey.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-5 rounded-xl font-bold text-xl hover:shadow-2xl transition-all flex items-center justify-center">
-                <Phone className="mr-3 h-6 w-6" />
-                Get Free Counseling
-              </button>
-              <button className="bg-white border-2 border-blue-600 text-blue-600 px-12 py-5 rounded-xl font-bold text-xl hover:bg-blue-50 transition-all flex items-center justify-center">
-                <Mail className="mr-3 h-6 w-6" />
-                Ask Your Question
-              </button>
-            </div>
-            <p className="mt-8 text-gray-500 text-sm">
-              Connect with our education experts within 24 hours
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Study Abroad FAQ</h3>
-              <p className="text-gray-400">
-                Your comprehensive guide to studying abroad. Find answers to all your questions 
-                about international education.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Popular Countries</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">USA</a></li>
-                <li><a href="#" className="hover:text-white">UK</a></li>
-                <li><a href="#" className="hover:text-white">Canada</a></li>
-                <li><a href="#" className="hover:text-white">Australia</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Visa Information</a></li>
-                <li><a href="#" className="hover:text-white">Scholarships</a></li>
-                <li><a href="#" className="hover:text-white">Application Process</a></li>
-                <li><a href="#" className="hover:text-white">Cost Calculator</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Need Help?</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2" />
-                  +1 (800) STUDY-ABROAD
-                </li>
-                <li className="flex items-center">
-                  <Mail className="h-4 w-4 mr-2" />
-                  faq@mastersvisa.com
-                </li>
-                <li className="flex items-center">
-                  <MessageSquare className="h-4 w-4 mr-2" />
-                  Live Chat Support
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Masters Visa Study Abroad FAQ. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

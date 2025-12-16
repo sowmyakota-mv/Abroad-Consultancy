@@ -7,8 +7,10 @@ import {
   ArrowRight, Download, ChevronDown,
   University, Target, TrendingUp, Star
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const StudyUSAPage: React.FC = () => {
+    const navigate=useNavigate()
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
@@ -123,14 +125,24 @@ const StudyUSAPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      
-     {/* Hero Banner */} 
-<section className="relative h-screen overflow-hidden bg-[url('/usa-bg1.jpg')] bg-cover bg-center bg-no-repeat">
+    {/* Hero Section */}
+<section className="relative h-[64vh] md:h-[100vh] text-white overflow-hidden bg-white">
   
-  {/* Bottom Curve (part of hero bg) */}
-  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+  {/* Background Image Wrapper */}
+  <div
+    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-center"
+    style={{
+      backgroundImage: "url('/usa-bghero1.png')",
+      backgroundSize: "100% auto" // ✅ shows full image
+    }}
+  >
+    {/* Optional Overlay */}
+    {/* <div className="absolute inset-0 bg-black/30"></div> */}
+
+    {/* Bottom Curve (part of hero bg) */}
+  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
     <svg
-      viewBox="0 0 1200 120"
+      viewBox="0 0 900 100"
       preserveAspectRatio="none"
       className="relative block w-full h-[100px]"
     >
@@ -139,15 +151,18 @@ const StudyUSAPage: React.FC = () => {
         className="fill-white"
       ></path>
     </svg>
+  </div> */}
   </div>
 
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 h-full flex items-center">
-    <div className="text-center">
-      <h1 className="text-5xl md:text-5xl font-bold text-white mb-28">
-        Study in United States
-      </h1>
-    </div>
+  {/* Content */}
+  <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
+  <div className="max-w-xl text-center md:text-left">
+    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 max-w-3xl">
+  Study in 
+  <span className=""> USA</span>
+</h1>
   </div>
+</div>
 </section>
 
       {/* Quick Stats */}
@@ -172,13 +187,13 @@ const StudyUSAPage: React.FC = () => {
     <div className="w-full lg:w-[80%] ml-auto flex flex-col lg:flex-row items-start gap-8">
 
       {/* Left Image – 30% */}
-      <div className="w-full lg:w-[30%]">
+      {/* <div className="w-full lg:w-[30%]">
         <img
           src="/usa-why-study.jpg"
           alt="Why Study in USA"
           className="w-full h-full object-cover rounded-xl"
         />
-      </div>
+      </div> */}
 
       {/* Right Content – 70% */}
       <div className="w-full lg:w-[80%]">
@@ -380,117 +395,24 @@ const StudyUSAPage: React.FC = () => {
       {/* Enrollment CTA */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-red-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-xl md:text-4xl font-bold mb-6">
             We encourage you to enroll with Masters Visa Overseas Education Consultancy.
           </h2>
-          <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-10">
+          <p className="text-xs text-gray-200 max-w-4xl mx-auto mb-10">
             Embarking on a transformative academic journey in the USA is a dream for many, and our 
             overseas education consultancy is here to turn that dream into reality. With our expert 
             guidance, navigating the intricacies of the Masters Visa process becomes seamless, 
             ensuring a smooth transition for international students.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-blue-600 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center">
+            <button onClick={()=>navigate('/contact')} className="bg-white text-blue-600 px-10 py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-gray-100 transition-colors flex items-center justify-center">
               <Phone className="mr-3 h-5 w-5" />
               Contact Us Today
             </button>
-            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
-              <Download className="mr-3 h-5 w-5" />
-              Download USA Guide
-            </button>
+            
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Contact Us
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive services cover everything from university selection and application 
-              assistance to visa documentation support. Benefit from personalized advice on course 
-              selection, financial planning, and cultural acclimatization.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-                <Phone className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
-              <p className="text-gray-600">+1 (800) 123-4567</p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
-                <Mail className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
-              <p className="text-gray-600">info@mastersvisa.com</p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-6">
-                <MapPin className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Visit Us</h3>
-              <p className="text-gray-600">456 Education Avenue, New York, NY</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold mb-6">Masters Visa</div>
-              <p className="text-gray-400">
-                Your premier overseas education consultancy for studying in USA.
-              </p>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Study Destinations</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Study in USA</a></li>
-                <li><a href="#" className="hover:text-white">Study in UK</a></li>
-                <li><a href="#" className="hover:text-white">Study in Canada</a></li>
-                <li><a href="#" className="hover:text-white">Study in Europe</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Services</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">University Selection</a></li>
-                <li><a href="#" className="hover:text-white">Visa Assistance</a></li>
-                <li><a href="#" className="hover:text-white">Scholarship Guidance</a></li>
-                <li><a href="#" className="hover:text-white">Test Preparation</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Quick Links</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} Masters Visa. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

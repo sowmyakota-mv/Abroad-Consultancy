@@ -5,8 +5,10 @@ import {
   Calendar, BookOpen, Mail, Phone,
   Target, Briefcase, Home, Shield
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ApplicationProcessPage: React.FC = () => {
+    const navigate=useNavigate()
   // Process steps data
   const processSteps = [
     {
@@ -160,7 +162,7 @@ const ApplicationProcessPage: React.FC = () => {
   return (
     <div id='/services/student-profile' className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-800 text-white overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-r from-blue-900 via-blue-700 to-purple-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 text-8xl">🎓</div>
           <div className="absolute bottom-20 right-10 text-8xl">🌍</div>
@@ -168,22 +170,19 @@ const ApplicationProcessPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Application Process with Masters Visa
+              Application Process with DartGlobe
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto mb-10">
               Embarking on a journey towards higher education abroad is an exciting yet complex process. 
-              With Masters Visa Overseas Education Consultants, streamline your efforts and enhance your chances 
+              With DartGlobe Overseas Education Consultants, streamline your efforts and enhance your chances 
               of securing admission to your dream universities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-900 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
+              <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
                 <Phone className="mr-3 h-5 w-5" />
                 Get Free Counseling
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
-                <Mail className="mr-3 h-5 w-5" />
-                Request Information
-              </button>
+              
             </div>
           </div>
         </div>
@@ -385,85 +384,30 @@ const ApplicationProcessPage: React.FC = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-16 text-center text-white">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-xl md:text-4xl font-bold mb-6">
               Join Us Now!
             </h2>
-            <p className="text-xl mb-10 max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl mb-4 max-w-2xl mx-auto">
               Join us at Masters Visa Overseas Education Consultancy for unparalleled guidance in the 
               application process for studying abroad. Our expert team offers comprehensive support for 
               all countries, ensuring a seamless journey toward your educational aspirations.
             </p>
-            <p className="text-lg mb-12 max-w-3xl mx-auto opacity-90">
+            <p className="text-sm md:text-lg mb-12 max-w-3xl mx-auto opacity-90">
               From meticulous application preparation to navigating the intricacies of the visa process, 
               we provide personalized assistance tailored to your unique needs. Your educational journey 
               begins with us – where expertise meets aspiration.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-xl hover:shadow-2xl transition-all flex items-center justify-center">
+              <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center">
                 <Phone className="mr-3 h-6 w-6" />
                 Get Free Assistance
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-12 py-5 rounded-xl font-bold text-xl hover:bg-white/10 transition-all flex items-center justify-center">
-                <Users className="mr-3 h-6 w-6" />
-                Meet Our Counselors
-              </button>
+              
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Masters Visa</h3>
-              <p className="text-gray-400">
-                Your trusted partner for overseas education consultancy. We guide students to achieve 
-                their academic dreams with personalized support and expert guidance.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Services</a></li>
-                <li><a href="#" className="hover:text-white">Countries</a></li>
-                <li><a href="#" className="hover:text-white">Universities</a></li>
-                <li><a href="#" className="hover:text-white">Scholarships</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Process</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Profile Analysis</a></li>
-                <li><a href="#" className="hover:text-white">Application</a></li>
-                <li><a href="#" className="hover:text-white">Visa Process</a></li>
-                <li><a href="#" className="hover:text-white">Post-Admission</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact Us</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2" />
-                  +1 (800) 123-4567
-                </li>
-                <li className="flex items-center">
-                  <Mail className="h-4 w-4 mr-2" />
-                  info@mastersvisa.com
-                </li>
-                <li className="flex items-center">
-                  <Home className="h-4 w-4 mr-2" />
-                  Global Education Consultancy
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Masters Visa Overseas Education Consultancy. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -8,8 +8,10 @@ import {
   Trophy, TrendingUp, Building, Heart,
   Mountain, Trees, Waves, Sunrise
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const StudyNewZealandPage: React.FC = () => {
+    const navigate=useNavigate()
   // Top Universities
   const topUniversities = [
     { name: 'University of Auckland', rank: '#1', location: 'Auckland', type: 'Public', students: '40,000+' },
@@ -87,16 +89,14 @@ const StudyNewZealandPage: React.FC = () => {
   return (
     <div id='study-abroad/new-zealand' className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-r from-green-800 via-blue-700 to-black text-white">
+      <section className="relative py-24 bg-gradient-to-r from-green-800 via-blue-700 to-black text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 text-6xl">🇳🇿</div>
           <div className="absolute bottom-10 right-10 text-6xl">🎓</div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
-              <div className="text-4xl">🇳🇿</div>
-            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Study in New Zealand
             </h1>
@@ -105,11 +105,8 @@ const StudyNewZealandPage: React.FC = () => {
               vibrant Māori culture, and a practical, hands-on learning approach.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-green-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download NZ Guide
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
+              
+              <button onClick={()=>navigate('/contact')} className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Free Consultation
               </button>
@@ -1005,45 +1002,24 @@ const StudyNewZealandPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-3xl p-12 text-white">
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-6">Study in UK / Study in USA</h3>
-              <p className="text-xl mb-8 max-w-3xl mx-auto">
+              <h3 className="text-xl md:text-3xl font-bold mb-6">Study in UK / Study in USA</h3>
+              <p className="text-sm md:text-xl mb-8 max-w-3xl mx-auto">
                 For in-depth information on our New Zealand scholarships, eligibility criteria, and the application 
                 process, enroll with Masters Visa Overseas Education Consultancy. Our dedicated team will guide 
                 you through the intricacies of the scholarship application, ensuring you have the support you need 
                 to turn your academic aspirations into a reality.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="bg-white text-green-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
+                <button onClick={()=>navigate('/contact')} className="bg-white text-green-900 px-8 py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-2xl transition-all">
                   Contact Us for New Zealand
                 </button>
-                <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
-                  Compare with UK/USA
-                </button>
+                
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      {/* Consultation CTA */}
-      <section className="bg-gradient-to-r from-green-900 to-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Need Personalized Guidance for New Zealand?</h2>
-          <p className="text-xl text-green-100 mb-10 max-w-2xl mx-auto">
-            Our New Zealand education experts will help you choose the right university and program
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-green-900 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
-              <MessageSquare className="mr-3 h-5 w-5" />
-              Book Free Consultation
-            </button>
-            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
-              <Mail className="mr-3 h-5 w-5" />
-              Email Your Queries
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

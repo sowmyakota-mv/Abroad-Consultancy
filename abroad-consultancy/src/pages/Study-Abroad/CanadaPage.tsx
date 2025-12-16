@@ -6,8 +6,10 @@ import {
   CheckCircle, Calendar, FileText, MessageSquare,
   ArrowRight, Download, ChevronDown
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const StudyCanadaPage: React.FC = () => {
+    const navigate=useNavigate()
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
@@ -143,12 +145,12 @@ const StudyCanadaPage: React.FC = () => {
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-red-600 to-white py-20">
+      <section className="relative bg-gradient-to-r from-red-600 to-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-white rounded-full mb-8 shadow-lg">
+            {/* <div className="inline-flex items-center justify-center w-24 h-24 bg-white rounded-full mb-8 shadow-lg">
               <div className="text-4xl">🍁</div>
-            </div>
+            </div> */}
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Study in Canada
             </h1>
@@ -156,7 +158,7 @@ const StudyCanadaPage: React.FC = () => {
               Canada becomes the first preference for international students to complete an 
               excellent education in a lively, multi-cultural setting.
             </p>
-            <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors flex items-center mx-auto">
+            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors flex items-center mx-auto">
               Check Your Eligibility
               <ArrowRight className="ml-3 h-5 w-5" />
             </button>
@@ -304,8 +306,8 @@ const StudyCanadaPage: React.FC = () => {
               team ensures that you are well-informed about eligibility criteria, deadlines, 
               and the application procedures specific to each scholarship opportunity.
             </p>
-            <button className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
-              Contact Masters Visa Today
+            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+              Contact DartGlobe Today
             </button>
           </div>
 
@@ -429,116 +431,24 @@ const StudyCanadaPage: React.FC = () => {
       {/* Enrollment CTA */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-xl md:text-4xl font-bold mb-6">
             We encourage you to enroll with Masters Visa Overseas Education Consultancy.
           </h2>
-          <p className="text-xl text-red-100 max-w-4xl mx-auto mb-10">
+          <p className="text-sm md:text-xl text-red-100 max-w-4xl mx-auto mb-10">
             Embark on a transformative academic journey to Study in Canada with Masters Visa, 
             your premier overseas education consultancy. Our expert team provides comprehensive 
             guidance for international students seeking to pursue higher education, ensuring a 
             seamless process from university selection to visa assistance.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-red-600 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center">
+            <button onClick={()=>navigate('/contact')} className="bg-white text-red-600 px-10 py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-gray-100 transition-colors flex items-center justify-center">
               <Phone className="mr-3 h-5 w-5" />
               Contact Us Today
             </button>
-            <button className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center">
-              <Download className="mr-3 h-5 w-5" />
-              Download Brochure
-            </button>
+            
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Contact Us
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Let Masters Visa be your trusted partner in realizing your Canadian academic dreams, 
-              offering personalized support to make your educational experience enriching and successful.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-                <Phone className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
-              <p className="text-gray-600">+1 (800) 123-4567</p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
-                <Mail className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
-              <p className="text-gray-600">info@mastersvisa.com</p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-8 text-center border border-gray-200">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-6">
-                <MapPin className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Visit Us</h3>
-              <p className="text-gray-600">123 Education Street, Toronto, ON</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold mb-6">Masters Visa</div>
-              <p className="text-gray-400">
-                Your premier overseas education consultancy for studying in Canada.
-              </p>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Study Destinations</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Study in Canada</a></li>
-                <li><a href="#" className="hover:text-white">Study in UK</a></li>
-                <li><a href="#" className="hover:text-white">Study in USA</a></li>
-                <li><a href="#" className="hover:text-white">Study in Europe</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Services</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">University Selection</a></li>
-                <li><a href="#" className="hover:text-white">Visa Assistance</a></li>
-                <li><a href="#" className="hover:text-white">Scholarship Guidance</a></li>
-                <li><a href="#" className="hover:text-white">Pre-departure Briefing</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <div className="text-lg font-semibold mb-4">Quick Links</div>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>© {new Date().getFullYear()} Masters Visa. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

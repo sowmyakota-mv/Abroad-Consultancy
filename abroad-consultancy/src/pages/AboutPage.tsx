@@ -20,7 +20,7 @@ const AboutUsPage: React.FC = () => {
     {/* Bottom Curve (part of hero bg) */}
   <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
     <svg
-      viewBox="0 0 1200 120"
+      viewBox="0 0 900 100"
       preserveAspectRatio="none"
       className="relative block w-full h-[100px]"
     >

@@ -50,7 +50,7 @@ const WhyChooseUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-blue-50/50">
+    <section id="why-choose-us" className="w-full py-16 bg-blue-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

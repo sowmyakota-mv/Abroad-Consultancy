@@ -32,11 +32,13 @@ import UniversityApplication from './pages/Services/UniversityApplication';
 import VisaAssistance from './pages/Services/VisaAssistance';
 import FAQPage from './pages/FAQPage';
 import ContactForm from './components/ContactForm';
+import ScrollToTop from './components/Animations/ScrollToTop';
 
 function App() {
   return (
     <>
     <Router>
+      <ScrollToTop/>
       <Header/>
       <Routes>
       <Route path='/' element={

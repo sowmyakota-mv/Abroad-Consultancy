@@ -7,8 +7,10 @@ import {
   Mail, MessageSquare, Shield, Target,
   Trophy, TrendingUp, Building, Heart
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const StudyUKPage: React.FC = () => {
+    const navigate=useNavigate()
   // Top Universities
   const topUniversities = [
     { name: 'University of Oxford' },
@@ -68,36 +70,44 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-r from-blue-900 via-blue-700 to-red-700 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🇬🇧</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🎓</div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
-              <div className="text-4xl">🇬🇧</div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Study in United Kingdom
-            </h1>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto mb-10">
-              Home to world-renowned universities, cutting-edge research, and a rich cultural heritage.
-              Your pathway to academic excellence starts here.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download UK Guide
-              </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
-                <Phone className="mr-2 h-5 w-5" />
-                Free Consultation
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="relative h-[64vh] md:h-[100vh] text-white overflow-hidden bg-white">
+  
+  {/* Background Image Wrapper */}
+  <div
+    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-center"
+    style={{
+      backgroundImage: "url('/uk-bghero.png')",
+      backgroundSize: "100% auto" // ✅ shows full image
+    }}
+  >
+    {/* Optional Overlay */}
+    {/* <div className="absolute inset-0 bg-black/30"></div> */}
+
+    {/* Bottom Curve (part of hero bg) */}
+  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+    <svg
+      viewBox="0 0 1000 100"
+      preserveAspectRatio="none"
+      className="relative block w-full h-[100px]"
+    >
+      <path
+        d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z"
+        className="fill-white"
+      ></path>
+    </svg>
+  </div> */}
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
+  <div className="max-w-xl text-center md:text-left">
+    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 max-w-3xl">
+  Study in <br />
+  <span className="block ml-16 mt-4">United Kingdom</span>
+</h1>
+  </div>
+</div>
+</section>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
@@ -110,7 +120,7 @@ const StudyUKPage: React.FC = () => {
               The United Kingdom has always been one of the most famous destinations for international students. With a rich history of academia and a booming culture, the UK is an unusual blend of experiences awaiting prospective students who seek quality education. If a student looks forward to constructing a career at the undergraduate level, or one looks forward to an advanced line of postgraduate studies, then the UK offers a base of resources and support to thoroughly ensure that likes of props of merit remain resource-filled indeed.
             </p>
             <div className="mt-10">
-              <button className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
+              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
                 Check Your Eligibility
               </button>
             </div>
@@ -140,7 +150,8 @@ const StudyUKPage: React.FC = () => {
             Intakes are in plenty throughout the year, thus giving the students the flexibility they need to make their decision on when to begin their studies. Outlined below are detailed intakes at a glance.
           </p>
 
-          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
+          {/* Desktop Table */}
+          <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
             <table className="w-full">
               <thead className="bg-gradient-to-r from-blue-600 to-red-600 text-white">
                 <tr>
@@ -165,6 +176,34 @@ const StudyUKPage: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="md:hidden space-y-4 mb-10">
+            {intakes.map((intake) => (
+              <div key={intake.id} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-lg">
+                <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-red-600 rounded-xl flex items-center justify-center text-white font-bold text-lg mr-4">
+                      {intake.id}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900">{intake.term}</h3>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-sm text-gray-500 font-medium mb-1">Duration</div>
+                    <div className="text-gray-700 font-medium">{intake.duration}</div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-sm text-gray-500 font-medium mb-1">Applications Open</div>
+                    <div className="text-gray-700 font-medium">{intake.application}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="bg-gradient-to-r from-blue-50 to-red-50 rounded-2xl p-10 border border-blue-100">
@@ -227,14 +266,14 @@ const StudyUKPage: React.FC = () => {
           <div className="space-y-4 mb-12">
             {topUniversities.map((uni, index) => (
               <div key={index} className="bg-gradient-to-r from-white to-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all">
-                <div className="flex items-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mr-6">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mr-6 mb-4 md:mb-0">
                     <GraduationCap className="h-8 w-8 text-blue-600" />
                   </div>
-                  <div className="flex-grow">
+                  <div className="flex-grow text-center md:text-left mb-4 md:mb-0">
                     <h3 className="text-2xl font-bold text-gray-900">{uni.name}</h3>
                   </div>
-                  <button className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 py-3 rounded-lg font-bold hover:shadow-xl transition-all">
+                  <button className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 py-3 rounded-lg font-bold hover:shadow-xl transition-all w-full md:w-auto">
                     Explore Programs
                   </button>
                 </div>
@@ -445,91 +484,20 @@ const StudyUKPage: React.FC = () => {
           </div>
 
           <div className="bg-gradient-to-r from-blue-900 to-red-800 rounded-3xl p-12 text-white text-center">
-            <h3 className="text-3xl font-bold mb-6">Your Academic Success Awaits</h3>
-            <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            <h3 className="text-xl md:text-3xl font-bold mb-6">Your Academic Success Awaits</h3>
+            <p className="text-sm md:text-xl text-blue-100 mb-4 max-w-2xl mx-auto">
               Your academic success in the UK awaits – let Masters Visa be your guide. Enroll with us today for a brighter tomorrow.
             </p>
-            <p className="text-lg text-blue-100 mb-10 max-w-3xl mx-auto">
+            <p className="text-sm md:text-lg text-blue-100 mb-10 max-w-3xl mx-auto">
               Ready to take the next step toward your educational dreams in the UK? Enroll with Masters Visa Overseas Education Consultancy for personalized guidance on the scholarship application process, detailed eligibility criteria, and insights into the educational landscape in the UK. Our expert team is dedicated to helping you navigate the scholarship journey and ensure a seamless enrollment process.
             </p>
-            <button className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto">
+            <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto">
               <MessageSquare className="mr-3 h-6 w-6" />
               Contact Us Today
             </button>
           </div>
         </section>
-
-        {/* Final CTA */}
-        <section className="text-center py-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Explore Your UK Study Journey</h2>
-          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
-            Explore UK study opportunities with Masters Visa. Trust our overseas education consultancy for expert guidance and a successful academic journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-12 py-5 rounded-xl font-bold text-xl hover:shadow-2xl transition-all flex items-center justify-center">
-              <Mail className="mr-3 h-6 w-6" />
-              Request Information
-            </button>
-            <button className="bg-white text-blue-900 border-2 border-blue-600 px-12 py-5 rounded-xl font-bold text-xl hover:bg-blue-50 transition-all flex items-center justify-center">
-              <Phone className="mr-3 h-6 w-6" />
-              Call Now
-            </button>
-          </div>
-        </section>
-
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Masters Visa</h3>
-              <p className="text-gray-400">
-                Your trusted partner for overseas education consultancy. We guide students to achieve their academic dreams in the UK.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Study Destinations</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Study in UK</a></li>
-                <li><a href="#" className="hover:text-white">Study in USA</a></li>
-                <li><a href="#" className="hover:text-white">Study in Australia</a></li>
-                <li><a href="#" className="hover:text-white">Study in Canada</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">University Admissions</a></li>
-                <li><a href="#" className="hover:text-white">Visa Application</a></li>
-                <li><a href="#" className="hover:text-white">Scholarship Guidance</a></li>
-                <li><a href="#" className="hover:text-white">Pre-Departure Briefing</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact Masters Visa</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center">
-                  <Mail className="h-4 w-4 mr-2" />
-                  info@mastersvisa.com
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2" />
-                  +1 (800) 123-4567
-                </li>
-                <li className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Global Education Consultancy
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Masters Visa Overseas Education Consultancy. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

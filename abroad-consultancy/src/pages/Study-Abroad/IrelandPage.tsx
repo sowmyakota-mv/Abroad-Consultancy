@@ -9,8 +9,10 @@ import {
   Coffee, Music, Code, Microscope,
   Book, CloudRain, Beer
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const StudyIrelandPage: React.FC = () => {
+    const navigate=useNavigate()
   // Top Universities
   const topUniversities = [
     { name: 'Trinity College Dublin', rank: '#1', location: 'Dublin', type: 'Public', students: '18,000+' },
@@ -91,16 +93,14 @@ const StudyIrelandPage: React.FC = () => {
   return (
     <div id='study-abroad/ireland' className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-16 bg-gradient-to-r from-green-600 via-white to-orange-500 text-gray-900">
+      <section className="relative py-24 bg-gradient-to-r from-green-600 via-white to-orange-500 text-gray-900">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 text-6xl">🇮🇪</div>
           <div className="absolute bottom-10 right-10 text-6xl">🎓</div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/30 rounded-full mb-6">
-              <div className="text-4xl">🇮🇪</div>
-            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Study in Ireland
             </h1>
@@ -109,11 +109,8 @@ const StudyIrelandPage: React.FC = () => {
               with friendly culture, English-speaking environment, and excellent career opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download Ireland Guide
-              </button>
-              <button className="bg-transparent border-2 border-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transition-all flex items-center justify-center">
+              
+              <button onClick={()=>navigate('/contact')} className="bg-transparent border-2 border-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transition-all flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Free Consultation
               </button>
@@ -927,80 +924,22 @@ const StudyIrelandPage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-16">
           <div className="bg-gradient-to-r from-green-700 to-orange-600 rounded-3xl p-12 text-white text-center">
-            <h2 className="text-4xl font-bold mb-6">Start Your Irish Education Journey Today!</h2>
-            <p className="text-xl mb-10 max-w-2xl mx-auto">
+            <h2 className="text-xl md:text-4xl font-bold mb-6">Start Your Irish Education Journey Today!</h2>
+            <p className="text-sm md:text-xl mb-10 max-w-2xl mx-auto">
               Join thousands of international students experiencing world-class education 
               in Ireland's welcoming and innovative environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center justify-center">
+              <button onClick={()=>navigate('/contact')} className="bg-white text-green-700 px-8 py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-2xl transition-all flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Admissions Team
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center">
-                <MessageSquare className="mr-2 h-5 w-5" />
-                Schedule Consultation
-              </button>
-            </div>
-            <div className="mt-8 text-gray-200">
-              <p className="text-sm">Email: admissions@studyireland.edu.ie | Phone: +353 1 234 5678</p>
-            </div>
+              </div>
           </div>
         </section>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Study Ireland</h3>
-              <p className="text-gray-400">
-                Your comprehensive guide to studying in Ireland. 
-                Find the perfect course, university, and start your journey today.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Universities</a></li>
-                <li><a href="#" className="hover:text-white">Courses</a></li>
-                <li><a href="#" className="hover:text-white">Scholarships</a></li>
-                <li><a href="#" className="hover:text-white">Application Process</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white">Cost Calculator</a></li>
-                <li><a href="#" className="hover:text-white">Visa Guide</a></li>
-                <li><a href="#" className="hover:text-white">Accommodation</a></li>
-                <li><a href="#" className="hover:text-white">Student Stories</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center">
-                  <Mail className="h-4 w-4 mr-2" />
-                  info@studyireland.edu.ie
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2" />
-                  +353 1 234 5678
-                </li>
-                <li className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Dublin, Ireland
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Study Ireland. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
