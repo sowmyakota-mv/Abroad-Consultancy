@@ -4,7 +4,7 @@ const AboutUsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Curved Bottom (Image Only) */}
-<section className="relative h-[100vh] text-white overflow-hidden bg-white">
+<section className="relative h-[64vh] md:h-[100vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -34,11 +34,11 @@ const AboutUsPage: React.FC = () => {
 
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
-  <div className="max-w-xl text-left">
-    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+  <div className="max-w-xl text-center md:text-left">
+    <h1 className="text-3xl md:text-6xl font-bold mb-2">
       About Us
     </h1>
-    <p className="text-xl md:text-2xl opacity-90">
+    <p className="text-lg md:text-2xl opacity-90">
       Your Trusted Partner in Global Education
     </p>
   </div>
@@ -118,7 +118,7 @@ const AboutUsPage: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Benefits Column */}
                 <div>
-                  <div className="mb-8">
+                  <div className="mb-2 md:mb-8">
                     <h3 className="text-2xl font-bold text-blue-600 mb-6 flex items-center">
                       <span className="mr-3">✨</span>
                       Our Benefits
@@ -151,7 +151,7 @@ const AboutUsPage: React.FC = () => {
 
                 {/* Application Guide Column */}
                 <div>
-                  <div className="mb-8">
+                  <div className="md:mb-8">
                     <h3 className="text-2xl font-bold text-blue-600 mb-6 flex items-center">
                       <span className="mr-3">📋</span>
                       Application Guide
@@ -183,7 +183,7 @@ const AboutUsPage: React.FC = () => {
       </section>
 
      {/* White Cards with Hover Effects */}
-<section className="py-16 bg-white">
+<section className="py-8 md:py-16 bg-white">
   <div className="container mx-auto px-6">
     {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
       End to End Services
@@ -239,10 +239,10 @@ const AboutUsPage: React.FC = () => {
 </section>
 
       {/* CTA Section */}
-     <section className="bg-white">
+<section className="bg-white py-8 md:py-12">
   <div className="container mx-auto px-6">
     <div className="max-w-5xl mx-auto">
-      <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden">
+      <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden min-h-[200px]">
         {/* Image Section - 30% */}
         <div className="lg:w-3/12 w-full">
           <div className="h-full">
@@ -255,22 +255,20 @@ const AboutUsPage: React.FC = () => {
         </div>
         
         {/* Content Section - 70% */}
-        <div className="lg:w-8/12 w-full ">
-          <h2 className="text-xs md:text-xs font text-gray-800 mb-4 text-left">
+        <div className="lg:w-9/12 w-full p-6 md:p-8 lg:p-12 flex flex-col justify-center min-h-[200px]">
+          <h2 className="text-xs md:text-sm font-semibold text-gray-800 mb-2 md:mb-3 text-left">
             NOT SURE WHERE TO START?
           </h2>
-          <h2 className="text-3xl md:text-2xl font-bold text-blue-800 mb-4 text-left">
-          Want to know more about Abroad Education?</h2>
-          <p className="text-sm text-gray-600 mb-4">
+          <h2 className="text-lg md:text-2xl font-bold text-blue-800 mb-2 md:mb-4 text-left">
+            Want to know more about Abroad Education?
+          </h2>
+          <p className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6">
             Our expert consultants are here to guide you through every step of your international education journey.
           </p>
-          <div className="flex flex-col sm:flex-row">
-            <button className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+          <div className="mt-auto">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-sm md:text-base transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
               Contact Us
             </button>
-            {/* <button className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-full text-lg border-2 border-blue-600 transition-all duration-300 transform hover:scale-105">
-              Book Free Consultation
-            </button> */}
           </div>
         </div>
       </div>

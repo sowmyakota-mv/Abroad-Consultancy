@@ -130,15 +130,15 @@ const FAQ: React.FC = () => {
                   alt="FAQ illustration"
                   className="md:w-[80%] object-cover relative z-10"
                 />
-                <div className="absolute -bottom-2 left-60 md:left-66 -translate-x-1/2 w-3/4 h-6 blur- bg-black/40"></div>
+                <div className="absolute -bottom-2 left-34 md:left-66 -translate-x-1/2 w-4/4 h-6 blur- bg-black/40"></div>
               </div>
 
               {/* Bottom Contact Information */}
-              <div className="backdrop-blur-sm mt-4">
+              <div className="backdrop-blur-sm mt-16">
                 <div className="grid grid-cols-2 ">
                   {/* 1*1 - Location */}
-                  <div className="flex items-start space-x-2 p-4">
-                    <div className="bg-blue-100 p-3 rounded-full">
+                  <div className="flex items-start space-x-2 p-4 -ml-12 md:ml-0">
+                    <div className="bg-blue-100 p-1 md:p-3 rounded-full">
                       <FaMapMarkerAlt className="text-blue-600 text-xl" />
                     </div>
                     <div>
@@ -152,24 +152,24 @@ const FAQ: React.FC = () => {
 
                   {/* 1*2 - Social Media */}
                   <div className="p-4">
-                    <p className="font-medium text-sm text-gray-700 mb-">Follow Us</p>
+                    <p className="font-medium text-sm text-gray-700 ">Follow Us</p>
                     <div className="flex ">
                       {socialLinks.map((social, index) => (
                         <a
                           key={index}
                           href={social.href}
                           aria-label={social.label}
-                          className="p-3 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1"
+                          className="p-2 md:p-3 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1"
                         >
                           <social.icon className="text-gray-600 text-xl hover:text-blue-600" />
                         </a>
                       ))}
                     </div>
                   </div>
-
+ 
                   {/* 2*1 - Email */}
                   <div className="flex items-start space-x-2 p-4">
-                    <div className="bg-yellow-100 p-3 rounded-full">
+                    <div className="bg-yellow-100 p-2 md:p-3 rounded-full -ml-12 md:ml-0">
                       <FaEnvelope className="text-yellow-600 text-xl" />
                     </div>
                     <div>
@@ -179,8 +179,8 @@ const FAQ: React.FC = () => {
                   </div>
 
                   {/* 2*2 - Contact Number */}
-                  <div className="flex items-start space-x-3 p-4">
-                    <div className="bg-green-100 p-3 rounded-full">
+                  <div className="flex items-start space-x-2 p-4">
+                    <div className="bg-green-100 p-2 md:p-3 rounded-full -ml-2 md:ml-0">
                       <FaPhone className="text-green-600 text-xl" />
                     </div>
                     <div>
@@ -194,7 +194,7 @@ const FAQ: React.FC = () => {
           </div>
 
           {/* Right Column - 40% width (2/5 of the grid) */}
-          <div className="h-[84%] mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          <div className="md:h-[84%] md:mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
               Get in Touch
             </h2>
@@ -332,34 +332,34 @@ const FAQ: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Type of Query *
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {queryTypes.map((type) => (
-                    <label
-                      key={type.value}
-                      className={`flex items-center space-x-2 p-3 rounded-lg border-2 cursor-pointer transition-all ${
-                        formData.queryType === type.value
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="queryType"
-                        value={type.value}
-                        checked={formData.queryType === type.value}
-                        onChange={handleChange}
-                        className="hidden"
-                      />
-                      <span className="text-sm font-medium text-gray-700">
-                        {type.label}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Type of Query *
+  </label>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+    {queryTypes.map((type) => (
+      <label
+        key={type.value}
+        className={`flex items-center justify-center space-x-2 p-3 rounded-lg border-2 cursor-pointer transition-all ${
+          formData.queryType === type.value
+            ? 'border-blue-500 bg-blue-50'
+            : 'border-gray-200 hover:border-gray-300'
+        }`}
+      >
+        <input
+          type="radio"
+          name="queryType"
+          value={type.value}
+          checked={formData.queryType === type.value}
+          onChange={handleChange}
+          className="hidden"
+        />
+        <span className="text-xs font-medium text-gray-700 text-center break-words whitespace-normal">
+          {type.label}
+        </span>
+      </label>
+    ))}
+  </div>
+</div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
