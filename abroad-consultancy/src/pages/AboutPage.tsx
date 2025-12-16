@@ -182,19 +182,10 @@ const AboutUsPage: React.FC = () => {
         </div>
       </section>
 
-     {/* White Cards with Hover Effects */}
-<section className="py-8 md:py-16 bg-white">
+    {/* White Cards with Hover & Click Effects */}
+<section className="md:py-16 bg-white">
   <div className="container mx-auto px-6">
-    {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-      End to End Services
-    </h2>
-    <p className="text-xl text-center mb-12 max-w-3xl mx-auto text-gray-600">
-      Our experts will guide you through each step of the admission process.
-    </p> */}
-    
-    <div 
-      className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto  transition-all duration-300 rounded-2xl p-4"
-    >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto transition-all duration-300 rounded-2xl p-4">
       {[
         {
           title: "End to End Services",
@@ -216,30 +207,47 @@ const AboutUsPage: React.FC = () => {
           description: "Extremity direction existence as dashwoods do up. Always available for our students",
           icon: "🕒"
         }
-      ].map((point, index) => (
-       <div 
-  key={index} 
-  className="group border-2 border-gray-100 rounded-2xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600"
->
-  <div className="relative">
-    <div className="text-xl text-center mb-2 transform group-hover:scale-110 transition-transform duration-300 group-hover:text-white">
-      {point.icon}
-    </div>
-    <h3 className="text-2xl text-center font-bold mb-2 text-gray-800 group-hover:text-white transition-colors duration-300">
-      {point.title}
-    </h3>
-    <p className="text-gray-600 text-center group-hover:text-white transition-colors duration-300">
-      {point.description}
-    </p>
-  </div>
-</div>
-      ))}
+      ].map((point, index) => {
+        // Create a state for each card to track click on mobile
+        const [isClicked, setIsClicked] = React.useState(false);
+        
+        return (
+          <div 
+            key={index} 
+            className={`border-2 border-gray-100 rounded-2xl p-6 shadow-lg transition-all duration-300 transform
+              hover:shadow-2xl hover:-translate-y-2 hover:bg-gradient-to-r hover:from-blue-300 hover:to-blue-600
+              ${isClicked ? 'bg-gradient-to-r from-blue-300 to-blue-600 shadow-2xl' : ''}
+              md:group`}
+            onClick={() => {
+              // Toggle click state on mobile only
+              if (window.innerWidth < 768) {
+                setIsClicked(!isClicked);
+              }
+            }}
+          >
+            <div className="relative">
+              <div className={` text-lg md:text-3xl text-center mb-3 transition-transform duration-300
+                ${isClicked ? 'text-white scale-110' : 'group-hover:text-white group-hover:scale-110'}`}>
+                {point.icon}
+              </div>
+              <h3 className={`text-xl md:text-2xl text-center font-bold mb-3 transition-colors duration-300
+                ${isClicked ? 'text-white' : 'text-gray-800 group-hover:text-white'}`}>
+                {point.title}
+              </h3>
+              <p className={`text-sm text-gray-600 text-center transition-colors duration-300
+                ${isClicked ? 'text-white' : 'group-hover:text-white'}`}>
+                {point.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   </div>
 </section>
 
       {/* CTA Section */}
-<section className="bg-white py-8 md:py-12">
+<section className="bg-white py-8 md:py-0">
   <div className="container mx-auto px-6">
     <div className="max-w-5xl mx-auto">
       <div className="flex flex-col lg:flex-row items-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl shadow-xl overflow-hidden min-h-[200px]">
