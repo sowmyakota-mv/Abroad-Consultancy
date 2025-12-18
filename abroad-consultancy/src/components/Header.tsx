@@ -149,41 +149,8 @@ const Header: React.FC = () => {
     }
   ];
 
-  // Handle click outside to close
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isChatOpen) {
-        const target = event.target as HTMLElement;
-        if (!target.closest('.ai-chat-container') && !target.closest('.ai-chat-main-icon')) {
-          setIsChatOpen(false);
-        }
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isChatOpen]);
-
-  // Helper function to render icon
-  const renderIcon = (index: number) => {
-    const item = contactItems[index];
-    const IconComponent = item.icon;
-    let iconClass = "text-blue-600";
-    
-    if (item.label === 'Contact') {
-      iconClass = "text-green-600";
-    } else if (item.label === 'WhatsApp') {
-      iconClass = "text-green-500";
-    }
-    
-    return <IconComponent size={18} className={iconClass} />;
-  };
-
   // Handle contact item click
   const handleContactClick = (item: typeof contactItems[0]) => {
-    // Close the chat menu first
-    setIsChatOpen(false);
-    
     // Use onClick handler if provided
     if (item.onClick) {
       item.onClick();
@@ -196,6 +163,21 @@ const Header: React.FC = () => {
         window.open(item.href, '_blank');
       }
     }
+  };
+
+  // Helper function to render icon with increased size
+  const renderIcon = (item: typeof contactItems[0]) => {
+    const IconComponent = item.icon;
+    let iconClass = "text-blue-600";
+    
+    if (item.label === 'Contact') {
+      iconClass = "text-green-600";
+    } else if (item.label === 'WhatsApp') {
+      iconClass = "text-green-500";
+    }
+    
+    // Increased icon sizes
+    return <IconComponent size={isMobile ? 22 : 24} className={iconClass} />;
   };
 
   return (
@@ -455,83 +437,20 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* AI Chat Widget */}
-      <div className="ai-chat-container fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50">
-        {/* Contact Sub-Icons - Always Visible Desktop Layout */}
-        {!isMobile && (
-          <div className="absolute bottom-0 right-0 flex flex-col items-center space-y-3">
-            {/* Top Center */}
+      {/* Horizontal Contact Buttons - Always Visible */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <div className="flex items-center gap-3  p-2">
+          {contactItems.map((item, index) => (
             <button
-              onClick={() => handleContactClick(contactItems[0])}
-              className="absolute -bottom-6 -left-14 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-14 -translate-x-1"
-              title={contactItems[0].label}
+              key={item.label}
+              onClick={() => handleContactClick(item)}
+              className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow hover:shadow-lg"
+              title={item.label}
             >
-              {renderIcon(0)}
+              {renderIcon(item)}
             </button>
-
-            {/* Bottom Left */}
-            <button
-              onClick={() => handleContactClick(contactItems[1])}
-              className="absolute -bottom-9 -left-10 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-7 -translate-x-12"
-              title={contactItems[1].label}
-            >
-              {renderIcon(1)}
-            </button>
-
-            {/* Right Top */}
-            <button
-              onClick={() => handleContactClick(contactItems[2])}
-              className="absolute -bottom-2 -left-15 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-14 translate-x-12"
-              title={contactItems[2].label}
-            >
-              {renderIcon(2)}
-            </button>
-          </div>
-        )}
-
-        {/* Contact Sub-Icons - Always Visible Mobile Layout */}
-        {isMobile && (
-          <div className="absolute bottom-0 right-0 flex flex-col items-center space-y-3">
-            {/* Top Center */}
-            <button
-              onClick={() => handleContactClick(contactItems[0])}
-              className="absolute -bottom-6 -left-14 w-8 h-8  rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-14 -translate-x-1"
-              title={contactItems[0].label}
-            >
-              {renderIcon(0)}
-            </button>
-
-            {/* Bottom Left */}
-            <button
-              onClick={() => handleContactClick(contactItems[1])}
-              className="absolute -bottom-9 -left-10 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-7 -translate-x-12"
-              title={contactItems[1].label}
-            >
-              {renderIcon(1)}
-            </button>
-
-            {/* Right Top */}
-            <button
-              onClick={() => handleContactClick(contactItems[2])}
-              className="absolute -bottom-2 -left-15 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer transform -translate-y-14 translate-x-12"
-              title={contactItems[2].label}
-            >
-              {renderIcon(2)}
-            </button>
-          </div>
-        )}
-
-        {/* Main Chat Icon */}
-        <button
-          className="ai-chat-main-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-white relative z-50"
-          onClick={() => setIsChatOpen(!isChatOpen)}
-        >
-          {isChatOpen ? (
-            <X size={isMobile ? 20 : 24} className="transition-transform duration-300" />
-          ) : (
-            <MessageCircle size={isMobile ? 20 : 24} />
-          )}
-        </button>
+          ))}
+        </div>
       </div>
 
       {/* Free Counselling Modal */}
@@ -604,28 +523,6 @@ const Header: React.FC = () => {
         
         .animate-popOut {
           animation: popOut 0.3s ease-out forwards;
-        }
-        
-        .ai-chat-main-icon:hover {
-          transform: scale(1.1);
-        }
-        
-        .ai-chat-main-icon:active {
-          transform: scale(0.95);
-        }
-        
-        .ai-chat-container {
-          position: fixed;
-          bottom: 1rem;
-          right: 1rem;
-          z-index: 50;
-        }
-        
-        @media (min-width: 768px) {
-          .ai-chat-container {
-            bottom: 1.5rem;
-            right: 1.5rem;
-          }
         }
       `}</style>
     </>

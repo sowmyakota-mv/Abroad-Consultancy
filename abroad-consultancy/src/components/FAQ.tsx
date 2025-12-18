@@ -194,7 +194,7 @@ const FAQ: React.FC = () => {
           </div>
 
           {/* Right Column - 40% width (2/5 of the grid) */}
-          <div className="md:h-[84%] md:mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          <div className="md:h-[76%] md:mt-24 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
               Get in Touch
             </h2>
