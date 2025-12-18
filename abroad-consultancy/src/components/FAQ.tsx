@@ -94,10 +94,10 @@ const FAQ: React.FC = () => {
 };
 
   const queryTypes: { value: QueryType; label: string }[] = [
-    { value: 'document', label: 'Document Services' },
+    { value: 'document', label: 'University Admissions' },
     { value: 'visa', label: 'Visa Assistance' },
-    { value: 'accommodation', label: 'Accommodation' },
-    { value: 'loan', label: 'Loan Services' },
+    // { value: 'accommodation', label: 'Accommodation' },
+    // { value: 'loan', label: 'Loan Services' },
     { value: 'other', label: 'Other Queries' },
   ];
 
@@ -258,61 +258,110 @@ const FAQ: React.FC = () => {
                   </select>
                 </div> */}
 
-                {/* Phone with react-phone-input-2 */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <div className="react-phone-input-custom">
-                    <PhoneInput
-                      country={'us'}
-                      value={formData.phone}
-                      onChange={handlePhoneChange}
-                      inputProps={{
-                        name: 'phone',
-                        required: true,
-                        autoFocus: false
-                      }}
-                      inputStyle={{
-                        width: '100%',
-                        height: '42px',
-                        paddingLeft: '48px',
-                        borderRadius: '0.5rem',
-                        border: '1px solid #d1d5db',
-                        fontSize: '0.875rem',
-                        transition: 'all 0.2s'
-                      }}
-                      buttonStyle={{
-                        border: '1px solid #d1d5db',
-                        borderRight: 'none',
-                        background: 'white',
-                        borderTopLeftRadius: '0.5rem',
-                        borderBottomLeftRadius: '0.5rem',
-                        padding: '4px'
-                      }}
-                      dropdownStyle={{
-                        borderRadius: '0.5rem',
-                        marginTop: '4px',
-                        fontSize: '0.875rem'
-                      }}
-                      containerStyle={{
-                        width: '100%'
-                      }}
-                      placeholder="+1 (555) 123-4567"
-                      searchPlaceholder="Search country..."
-                      enableSearch={true}
-                      disableSearchIcon={true}
-                      searchStyle={{
-                        padding: '8px',
-                        margin: '4px',
-                        borderRadius: '0.375rem',
-                        border: '1px solid #d1d5db',
-                        fontSize: '0.875rem'
-                      }}
-                    />
-                  </div>
-                </div>
-              
+               {/* Phone with react-phone-input-2 */}
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Phone Number *
+  </label>
+  <div className="react-phone-input-custom">
+    <style>{`
+      /* Create a vertical line separator after country code */
+      .react-tel-input .selected-flag {
+        position: relative;
+      }
+      
+      /* Add vertical line after the country code */
+      .react-tel-input .selected-flag::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        height: 24px;
+        width: 1px;
+        background-color: #d1d5db;
+        z-index: 2;
+      }
+      
+      /* Adjust padding to give space for the vertical line */
+      .react-tel-input .selected-flag {
+        padding-right: 12px;
+      }
+      
+      /* Ensure the country code display has proper spacing */
+      .react-tel-input .country-name {
+        margin-right: 4px;
+      }
+      
+      /* Remove the right border from the flag button */
+      .react-tel-input .flag-dropdown {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      
+      /* Adjust the input padding to account for country code width */
+      .react-tel-input .form-control {
+        padding-left: 12px !important;
+      }
+    `}</style>
+    <PhoneInput
+      country={'in'}
+      value={formData.phone}
+      onChange={handlePhoneChange}
+      inputProps={{
+        name: 'phone',
+        required: true,
+        autoFocus: false
+      }}
+      inputStyle={{
+        width: '100%',
+        height: '42px',
+        paddingLeft: '12px',
+        borderRadius: '0.5rem',
+        border: '1px solid #d1d5db',
+        borderLeft: 'none',
+        fontSize: '0.875rem',
+        transition: 'all 0.2s'
+      }}
+      buttonStyle={{
+        border: '1px solid #d1d5db',
+        borderRight: 'none',
+        background: 'white',
+        borderTopLeftRadius: '0.5rem',
+        borderBottomLeftRadius: '0.5rem',
+        padding: '4px 8px',
+        width: 'auto'
+      }}
+      dropdownStyle={{
+        borderRadius: '0.5rem',
+        marginTop: '4px',
+        fontSize: '0.875rem',
+        zIndex: 9999
+      }}
+      containerStyle={{
+        width: '100%'
+      }}
+      placeholder="(555) 123-4567"
+      searchPlaceholder="Search country..."
+      enableSearch={true}
+      disableSearchIcon={true}
+      searchStyle={{
+        padding: '8px',
+        margin: '4px',
+        borderRadius: '0.375rem',
+        border: '1px solid #d1d5db',
+        fontSize: '0.875rem'
+      }}
+      countryCodeEditable={false}
+      enableAreaCodes={false}
+      enableLongNumbers={true}
+      autoFormat={true}
+      disableDropdown={false}
+      disableCountryCode={false}
+    />
+  </div>
+</div>
 
               {/* Email Full Width */}
               <div>
@@ -339,7 +388,7 @@ const FAQ: React.FC = () => {
     {queryTypes.map((type) => (
       <label
         key={type.value}
-        className={`flex items-center justify-center space-x-2 p-3 rounded-lg border-2 cursor-pointer transition-all ${
+        className={`flex items-center justify-center space-x-2 p-2 rounded-lg border-2 cursor-pointer transition-all ${
           formData.queryType === type.value
             ? 'border-blue-500 bg-blue-50'
             : 'border-gray-200 hover:border-gray-300'
@@ -353,7 +402,7 @@ const FAQ: React.FC = () => {
           onChange={handleChange}
           className="hidden"
         />
-        <span className="text-xs font-medium text-gray-700 text-center break-words whitespace-normal">
+        <span className="text-sm font-medium text-gray-700 text-center break-words whitespace-normal">
           {type.label}
         </span>
       </label>

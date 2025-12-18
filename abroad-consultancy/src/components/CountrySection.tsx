@@ -39,18 +39,15 @@ const CountriesSection: React.FC = () => {
       ref={sectionRef}
       className="w-full py-16 bg-gradient-to-b from-white to-gray-50"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Your Global Education Pathways
+            Empowering Your Global Ambitions
           </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Discover world-class education opportunities in top study
-            destinations that offer excellent academic programs, vibrant campus
-            life, and promising career prospects.
-          </p>
+          <p className="sm:text-med md:text-lg text-center text-gray-600 max-w-4xl mx-auto">
+          Secure your place at a top-ranked international university. We provide the expert admissions and visa guidance you need to turn your study abroad goals into a global career.</p>
         </div>
 
         {/* Grid */}
@@ -59,9 +56,9 @@ const CountriesSection: React.FC = () => {
             <div key={index}>
 
               {/* 60% WIDTH WRAPPER */}
-              <div className="w-[60%] md:w-full mx-auto">   {/* ✅ FIX: Image cards now use 60% width */}
+              <div className="w-[80%] md:w-full mx-auto">   {/* ✅ FIX: Image cards now use 60% width */}
                 <div className="relative overflow-hidden rounded-xl shadow-lg">
-                  <div className="h-40 relative">
+                  <div className="h-48 relative">
 
                     {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">

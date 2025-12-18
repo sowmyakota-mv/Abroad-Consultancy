@@ -67,16 +67,9 @@ const ServicesSection: React.FC = () => {
     },
     {
       image: "/career-img2.png",
-      title: "Professional Career Guidance",
+      title: "Professional Study & Career Guidance",
       description: "Guidance to choose the right program and long-term career path.",
       icon: <Target className="h-8 w-8 text-teal-500" />,
-      imagePosition: "object-top"
-    },
-    {
-      image: "/exam-img-3.png",
-      title: "IELTS/TOEFL/PTE Preparation",
-      description: "Focused training with mock tests and materials for exam success.",
-      icon: <BookOpen className="h-8 w-8 text-green-500" />,
       imagePosition: "object-top"
     },
     {
@@ -84,6 +77,13 @@ const ServicesSection: React.FC = () => {
       title: "One-on-One Expert Counselling",
       description: "Personal sessions to guide your entire study abroad process.",
       icon: <HeartHandshake className="h-8 w-8 text-rose-500" />,
+      imagePosition: "object-top"
+    },
+    {
+      image: "/exam-img-3.png",
+      title: "IELTS/TOEFL/PTE Preparation",
+      description: "Focused training with mock tests and materials for exam success.",
+      icon: <BookOpen className="h-8 w-8 text-green-500" />,
       imagePosition: "object-top"
     },
     {
@@ -277,7 +277,7 @@ const ServicesSection: React.FC = () => {
 
         {/* Services Grid - Using 80% width with 10% margin on both sides */}
         <div className="w-[70%] md:w-[80%] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}

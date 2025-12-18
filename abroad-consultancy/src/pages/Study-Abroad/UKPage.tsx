@@ -70,7 +70,7 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[100vh] text-white overflow-hidden bg-white">
+<section className="relative h-[64vh] md:h-[70vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -110,17 +110,17 @@ const StudyUKPage: React.FC = () => {
 </section>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-12 space-y-2">
 
         {/* Study in UK - Overview */}
         <section className="scroll-mt-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Study In UK</h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-left">
+            <p className="text-sm md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-left">
               The United Kingdom has always been one of the most famous destinations for international students. With a rich history of academia and a booming culture, the UK is an unusual blend of experiences awaiting prospective students who seek quality education. If a student looks forward to constructing a career at the undergraduate level, or one looks forward to an advanced line of postgraduate studies, then the UK offers a base of resources and support to thoroughly ensure that likes of props of merit remain resource-filled indeed.
             </p>
-            <div className="mt-10">
-              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
+            <div className="mt-4 md:mt-10">
+              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold  md:text-lg hover:shadow-2xl transition-all">
                 Check Your Eligibility
               </button>
             </div>
@@ -129,24 +129,24 @@ const StudyUKPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Major Benefits of Studying in the UK: Key Reasons to Study in the UK</h2>
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Major Benefits of Studying in the UK: Key Reasons to Study in the UK</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {majorBenefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all h-full flex flex-col">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-700 flex-grow">{benefit.description}</p>
+                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-4">{benefit.title}</h3>
+                <p className="text-sm text-gray-700 flex-grow ">{benefit.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Intakes in the UK */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Intakes in the UK</h2>
-          <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
+        <section className='mt-6'>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Intakes in the UK</h2>
+          <p className="text-sm md:text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
             Intakes are in plenty throughout the year, thus giving the students the flexibility they need to make their decision on when to begin their studies. Outlined below are detailed intakes at a glance.
           </p>
 
@@ -227,16 +227,16 @@ const StudyUKPage: React.FC = () => {
 
         {/* English Requirements */}
         <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">English Proficiency Requirements for Study in UK</h2>
-          <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">English Proficiency Requirements for Study in UK</h2>
+          <p className="text-sm md:text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
             Since it is located in the UK, one needs to know how to communicate in English since most of the courses taught follow the English language. The requirements always differ in universities, but here are the common English language proficiency marks:
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {englishRequirements.map((test, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 text-center hover:shadow-lg transition-shadow">
-                <div className="text-2xl font-bold text-blue-700 mb-4">{test.test}</div>
-                <div className="text-gray-700">{test.requirement}</div>
+              <div key={index} className="bg-white rounded-xl p-4 md:p-8 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                <div className="text-lg md:text-2xl font-bold text-blue-700 mb-4">{test.test}</div>
+                <div className="text-sm md:text-2xl text-gray-700">{test.requirement}</div>
               </div>
             ))}
           </div>
@@ -248,7 +248,7 @@ const StudyUKPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Important Note</h3>
-                <p className="text-gray-700">
+                <p className="text-sm md:text-lgtext-gray-700">
                   Some universities accept the 12th grade's English score as a certificate of proof, which obviously makes it an easier way out for students for meeting their requirements.
                 </p>
               </div>
@@ -258,7 +258,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Top Universities */}
         <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Top Universities</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mt-4 mb-4 text-center">Top Universities</h2>
           <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
             The UK hosts some of the world's most renowned universities that boast of always featuring in the top lists of global rankings. The universities are known for their innovative research, the quality of teaching, and the strong links with industries.
           </p>

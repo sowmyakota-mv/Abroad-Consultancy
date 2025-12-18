@@ -4,22 +4,22 @@ const StatsSection: React.FC = () => {
   const stats = [
     {
       icon: "/university-icon1.png",
-      count: "3000+",
+      count: "500+",
       title: "Universities Processed"
     },
     {
       icon: "/program-icon.png",
-      count: "100K+",
+      count: "10K+",
       title: "Programs Available"
     },
     {
       icon: "/country-icon3.png", 
-      count: "21",
+      count: "15+",
       title: "Countries"
     },
     {
       icon: "/students-icon.png", 
-      count: "75K+",
+      count: "10K+",
       title: "Students"
     },
     {
@@ -40,7 +40,7 @@ const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-[90%] mx-auto">
+    <section className="w-full">
       <div className="max-w-full">
         
         {/* Desktop: 7 columns */}
@@ -79,7 +79,7 @@ const StatsSection: React.FC = () => {
         {/* Mobile: 2 tables */}
         <div className="md:hidden">
           {/* Table 1 */}
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 mb-4">
             {stats.slice(0, 3).map((stat, index) => (
               <div key={index} className="">
                 {/* Grid with 3 rows */}

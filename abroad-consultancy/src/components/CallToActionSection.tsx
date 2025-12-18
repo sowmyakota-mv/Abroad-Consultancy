@@ -8,12 +8,12 @@ const CallToActionSection: React.FC = () => {
     <section className="w-full py-8 relative z-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="w-[90%] md:w-[80%] mx-auto">
+        <div className="w-[90%]  md:w-[80%] mx-auto">
           <div className="rounded-3xl overflow-hidden bg-[rgb(217,214,255)] shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-0">
 
               {/* Left */}
-              <div className="lg:col-span-2 p-12 flex items-center">
+              <div className="sm:col-span-2 lg:col-span-2 p-12 flex items-center">
                 <div className="w-full">
 
                   <h2 className="text-lg md:text-4xl font-bold text-gray-900 mb-2">
@@ -38,7 +38,7 @@ const CallToActionSection: React.FC = () => {
               </div>
 
               {/* Right */}
-              <div className="lg:col-span-1 relative -ml-8">
+              <div className="lg:col-span-1 relative sm:-ml-16 md:-ml-8">
                 <div className="h-full min-h-[200px] flex items-center justify-center p-2">
                   <div className="relative z-10 text-center">
                     <div className="w-60 h-60 md:h-84 md:w-84 mx-auto flex items-center justify-center">

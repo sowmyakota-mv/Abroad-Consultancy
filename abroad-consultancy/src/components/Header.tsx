@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowDown01, ArrowDownCircle, ArrowDownFromLine, ArrowDownIcon, ArrowDownLeft, ArrowDownNarrowWideIcon, MessageCircleMore, X } from 'lucide-react';
+import { ArrowBigDown, ArrowDown, ArrowDown01, ArrowDownCircle, ArrowDownFromLine, ArrowDownIcon, ArrowDownLeft, ArrowDownNarrowWideIcon, ArrowDownUp, ChevronDown, MessageCircleMore, X } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { MessageCircle, Mail, Phone } from 'lucide-react';
@@ -222,7 +222,7 @@ const Header: React.FC = () => {
                     <div key={link.name} className="relative group">
                       <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600">
                         Study Abroad
-                        <ArrowDownLeft size={18} className="group-hover:rotate-180 transition-transform" />
+                        <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
                       </button>
 
                       <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
@@ -241,7 +241,7 @@ const Header: React.FC = () => {
                     <div key={link.name} className="relative group">
                       <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600">
                         Our Services
-                        <ArrowDownLeft size={18} className="group-hover:rotate-180 transition-transform" />
+                        <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
                       </button>
 
                       {/* ✅ Scrollable Services Dropdown */}
@@ -335,7 +335,7 @@ const Header: React.FC = () => {
                       onClick={() => setIsStudyOpen(!isStudyOpen)}
                     >
                       <span>Study Abroad</span>
-                      <ArrowDownLeft className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
+                      <ChevronDown className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
                     </button>
 
                     {isStudyOpen && (
@@ -361,7 +361,7 @@ const Header: React.FC = () => {
                       onClick={() => setIsServiceOpen(!isServiceOpen)}
                     >
                       <span>Our Services</span>
-                      <ArrowDownLeft className={`${isServiceOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
+                      <ChevronDown className={`${isServiceOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
                     </button>
 
                     {isServiceOpen && (
