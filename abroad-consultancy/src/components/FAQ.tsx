@@ -194,7 +194,7 @@ const FAQ: React.FC = () => {
           </div>
 
           {/* Right Column - 40% width (2/5 of the grid) */}
-          <div className="md:h-[76%] md:mt-24 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+          <div className="md:h-[84%] md:mt-20 lg:col-span-2 bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">
               Get in Touch
             </h2>
@@ -258,51 +258,54 @@ const FAQ: React.FC = () => {
                   </select>
                 </div> */}
 
-               {/* Phone with react-phone-input-2 */}
+                {/* Phone with react-phone-input-2 */}
 <div>
   <label className="block text-sm font-medium text-gray-700 mb-2">
     Phone Number *
   </label>
   <div className="react-phone-input-custom">
     <style>{`
-      /* Create a vertical line separator after country code */
-      .react-tel-input .selected-flag {
+      /* Add vertical line after country code */
+      .react-tel-input .form-control {
         position: relative;
       }
       
-      /* Add vertical line after the country code */
-      .react-tel-input .selected-flag::after {
+      .react-tel-input .form-control::before {
         content: "";
         position: absolute;
         top: 50%;
-        right: 0;
+        left: 50px; /* Adjust based on country code width */
         transform: translateY(-50%);
         height: 24px;
         width: 1px;
         background-color: #d1d5db;
-        z-index: 2;
+        z-index: 1;
+        pointer-events: none;
       }
       
-      /* Adjust padding to give space for the vertical line */
-      .react-tel-input .selected-flag {
-        padding-right: 12px;
-      }
-      
-      /* Ensure the country code display has proper spacing */
-      .react-tel-input .country-name {
-        margin-right: 4px;
-      }
-      
-      /* Remove the right border from the flag button */
-      .react-tel-input .flag-dropdown {
-        border-right: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-      
-      /* Adjust the input padding to account for country code width */
+      /* Adjust input padding to account for the vertical line */
       .react-tel-input .form-control {
-        padding-left: 12px !important;
+        padding-left: 60px !important;
+      }
+      
+      /* Style adjustments for better visual separation */
+      .react-tel-input .flag-dropdown {
+        border-right: 1px solid #d1d5db;
+        background: white;
+      }
+      
+      .react-tel-input .selected-flag {
+        width: auto !important;
+        padding-right: 8px;
+      }
+      
+      .react-tel-input .country-list {
+        z-index: 9999;
+      }
+      
+      /* Add subtle spacing around country code */
+      .react-tel-input .selected-flag .country-name {
+        margin-right: 4px;
       }
     `}</style>
     <PhoneInput
@@ -317,21 +320,21 @@ const FAQ: React.FC = () => {
       inputStyle={{
         width: '100%',
         height: '42px',
-        paddingLeft: '12px',
+        paddingLeft: '60px', /* Increased for vertical line */
         borderRadius: '0.5rem',
         border: '1px solid #d1d5db',
-        borderLeft: 'none',
         fontSize: '0.875rem',
-        transition: 'all 0.2s'
+        transition: 'all 0.2s',
+        position: 'relative'
       }}
       buttonStyle={{
         border: '1px solid #d1d5db',
-        borderRight: 'none',
+        borderRight: '1px solid #d1d5db', /* Keep right border */
         background: 'white',
         borderTopLeftRadius: '0.5rem',
         borderBottomLeftRadius: '0.5rem',
         padding: '4px 8px',
-        width: 'auto'
+        width: '46px' /* Allow width to adjust based on country code */
       }}
       dropdownStyle={{
         borderRadius: '0.5rem',
@@ -342,7 +345,7 @@ const FAQ: React.FC = () => {
       containerStyle={{
         width: '100%'
       }}
-      placeholder="(555) 123-4567"
+      placeholder="+1 (555) 123-4567"
       searchPlaceholder="Search country..."
       enableSearch={true}
       disableSearchIcon={true}
@@ -354,11 +357,6 @@ const FAQ: React.FC = () => {
         fontSize: '0.875rem'
       }}
       countryCodeEditable={false}
-      enableAreaCodes={false}
-      enableLongNumbers={true}
-      autoFormat={true}
-      disableDropdown={false}
-      disableCountryCode={false}
     />
   </div>
 </div>

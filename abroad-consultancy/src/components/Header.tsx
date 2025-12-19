@@ -62,7 +62,10 @@ const Header: React.FC = () => {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          // Scroll to the top of the section
+          const yOffset = -80; // Adjust this value based on your header height
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 50); // Small delay to ensure DOM is ready
     } else {
@@ -80,7 +83,10 @@ const Header: React.FC = () => {
         setTimeout(() => {
           const element = document.getElementById(sectionId);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            // Scroll to the top of the section with offset for header
+            const yOffset = -80; // Adjust this value based on your header height
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
           }
         }, 100); // Delay to ensure page is fully loaded
       }
@@ -101,7 +107,14 @@ const Header: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about-dartglobe' },
     { name: 'Study Abroad', href: '#' },
-    { name: 'Our Services', href: '#' },
+    { 
+      name: 'Our Services', 
+      href: '#services',
+      onClick: (e: React.MouseEvent) => {
+        e.preventDefault();
+        handleSectionNavigation('services');
+      }
+    },
     { 
       name: 'Why Choose Us', 
       href: '#why-choose-us',
@@ -127,6 +140,9 @@ const Header: React.FC = () => {
       icon: Mail, 
       label: 'Email', 
       href: 'mailto:info@dartglobe.com',
+      iconColor: 'text-blue-600',
+      borderColor: 'border-blue-600',
+      hoverBorderColor: 'hover:border-blue-700',
       onClick: () => {
         window.location.href = 'mailto:info@dartglobe.com?subject=Enquiry&body=Hello, I would like to get more information about your services.';
       }
@@ -135,6 +151,9 @@ const Header: React.FC = () => {
       icon: Phone, 
       label: 'Contact', 
       href: 'tel:+911234567890',
+      iconColor: 'text-green-600',
+      borderColor: 'border-green-600',
+      hoverBorderColor: 'hover:border-green-700',
       onClick: () => {
         window.location.href = 'tel:+911234567890';
       }
@@ -143,6 +162,9 @@ const Header: React.FC = () => {
       icon: MessageCircleMore, 
       label: 'WhatsApp', 
       href: 'https://wa.me/911234567890',
+      iconColor: 'text-green-500',
+      borderColor: 'border-green-500',
+      hoverBorderColor: 'hover:border-green-600',
       onClick: () => {
         window.open('https://wa.me/911234567890?text=Hello%20DartGlobe,%20I%20would%20like%20to%20know%20more%20about%20your%20services.', '_blank');
       }
@@ -168,16 +190,9 @@ const Header: React.FC = () => {
   // Helper function to render icon with increased size
   const renderIcon = (item: typeof contactItems[0]) => {
     const IconComponent = item.icon;
-    let iconClass = "text-blue-600";
-    
-    if (item.label === 'Contact') {
-      iconClass = "text-green-600";
-    } else if (item.label === 'WhatsApp') {
-      iconClass = "text-green-500";
-    }
     
     // Increased icon sizes
-    return <IconComponent size={isMobile ? 22 : 24} className={iconClass} />;
+    return <IconComponent size={isMobile ? 22 : 24} className={item.iconColor} />;
   };
 
   return (
@@ -213,26 +228,6 @@ const Header: React.FC = () => {
                             <li key={country.name}>
                               <Link to={country.path} className="block px-4 py-2 hover:bg-blue-50">
                                 Study in {country.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ) : link.name === 'Our Services' ? (
-                    <div key={link.name} className="relative group">
-                      <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600">
-                        Our Services
-                        <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
-                      </button>
-
-                      {/* ✅ Scrollable Services Dropdown */}
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                        <ul className="py-2 max-h-76 overflow-y-auto">
-                          {servicesList.map((service) => (
-                            <li key={service.name}>
-                              <Link to={service.path} className="block px-4 py-2 hover:bg-blue-50">
-                                {service.name}
                               </Link>
                             </li>
                           ))}
@@ -336,31 +331,24 @@ const Header: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Services */}
-                  <div className="pt-1">
-                    <button
-                      className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                      onClick={() => setIsServiceOpen(!isServiceOpen)}
-                    >
-                      <span>Our Services</span>
-                      <ChevronDown className={`${isServiceOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
-                    </button>
-
-                    {isServiceOpen && (
-                      <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
-                        {servicesList.map((s) => (
-                          <Link
-                            key={s.name}
-                            to={s.path}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
-                          >
-                            {s.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  {/* Services - Now scrolls to section */}
+                  {navLinks
+                    .filter(link => link.name === 'Our Services')
+                    .map((link) => (
+                      <button
+                        key={link.name}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (link.onClick) {
+                            link.onClick(e);
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                      >
+                        {link.name}
+                      </button>
+                    ))}
 
                   {/* Why Choose Us */}
                   {navLinks
@@ -373,6 +361,7 @@ const Header: React.FC = () => {
                           if (link.onClick) {
                             link.onClick(e);
                           }
+                          setIsMobileMenuOpen(false);
                         }}
                         className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                       >
@@ -391,6 +380,7 @@ const Header: React.FC = () => {
                           if (link.onClick) {
                             link.onClick(e);
                           }
+                          setIsMobileMenuOpen(false);
                         }}
                         className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                       >
@@ -438,13 +428,13 @@ const Header: React.FC = () => {
       </header>
 
       {/* Horizontal Contact Buttons - Always Visible */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <div className="flex items-center gap-3  p-2">
+      <div className="fixed bottom-4 right-0 z-50">
+        <div className="flex items-center gap-3 p-2">
           {contactItems.map((item, index) => (
             <button
               key={item.label}
               onClick={() => handleContactClick(item)}
-              className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow hover:shadow-lg"
+              className={`w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow hover:shadow-lg border-2 ${item.borderColor} ${item.hoverBorderColor}`}
               title={item.label}
             >
               {renderIcon(item)}
