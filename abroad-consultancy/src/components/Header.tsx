@@ -445,22 +445,29 @@ const Header: React.FC = () => {
 
       {/* Free Counselling Modal - Pass isModal prop to ContactForm */}
       {isCounsellingOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 ">
-          
-          {/* Modal Container */}
-          <div className="relative h-[96vh] w-full max-w-5xl mx-4 my-10 animate-popOut">
-            
-            {/* Close Button */}
-            <button
-              onClick={() => setIsCounsellingOpen(false)}
-              className="absolute top-2 right-4 text hover:scale-105 transition"
-            >
-              <X size={30} />
-            </button>
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 animate-fadeIn">
+          <div className="relative w-full max-w-5xl animate-slideUp">
+            {/* Modal Container - Full height scrolling for mobile */}
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden h-full max-h-[95vh] flex flex-col">
+              
+              {/* Header with Close Button */}
+              <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center flex-shrink-0">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 pr-4">
+                  Book Free Counselling
+                </h2>
+                <button
+                  onClick={() => setIsCounsellingOpen(false)}
+                  className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
+                  aria-label="Close modal"
+                >
+                  <X size={20} className="sm:w-6 sm:h-6 text-gray-600" />
+                </button>
+              </div>
 
-            {/* Scrollable Contact Form with isModal prop */}
-            <div className="h-full rounded-3xl shadow-2xl bg-white">
-              <ContactForm isModal={true} />
+              {/* Scrollable Contact Form Content */}
+              <div className="flex-1 overflow-y-auto">
+                <ContactForm isModal={true} />
+              </div>
             </div>
           </div>
         </div>
@@ -488,6 +495,17 @@ const Header: React.FC = () => {
           }
         }
         
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
         @keyframes popOut {
           0% {
             transform: scale(0);
@@ -511,8 +529,22 @@ const Header: React.FC = () => {
           animation: fadeIn 0.3s ease-out forwards;
         }
         
+        .animate-slideUp {
+          animation: slideUp 0.4s ease-out forwards;
+        }
+        
         .animate-popOut {
           animation: popOut 0.3s ease-out forwards;
+        }
+
+        /* Hide scrollbar for modal content */
+        .overflow-y-auto {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        
+        .overflow-y-auto::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </>
