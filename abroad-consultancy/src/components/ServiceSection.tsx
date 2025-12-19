@@ -347,7 +347,7 @@ const ServicesSection: React.FC = () => {
                   </div>
 
                   {/* Right Content - Text */}
-                  <div className="lg:w-1/2 w-full -mt-8 sm:mt-0">
+                  <div className="lg:w-1/2 w-full">
                     <div className="mb-3 sm:mb-4">
                       <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg mb-2 sm:mb-3">
                         {selectedServiceData.popupContent.description}
