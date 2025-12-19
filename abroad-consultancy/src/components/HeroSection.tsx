@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
   const navigate=useNavigate()
   return (
     <section className="w-full bg-[#EBF1FA] text-black py-12 md:py-2 px-6">
-      <div className=" grid grid-cols-1 md:grid-cols-10 gap-2 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-10 gap-2 items-center">
         
         {/* LEFT CONTENT - 70% (7 columns out of 10) */}
         <div className="md:col-span-7 mt-12 md:mt-28 text-left">
@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Stats Section - Full width and left aligned */}
-      <div className="mt-4">
+      <div className="mt-4 ">
         <StatsSection/>
       </div>
     </section>
