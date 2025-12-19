@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Users, Award, BookOpen, Briefcase, Home, DollarSign, 
   GraduationCap, Globe, Target, HeartHandshake, ClipboardList,
@@ -7,6 +7,21 @@ import {
 
 const ServicesSection: React.FC = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize - Only true for small mobile screens
+  useEffect(() => {
+    const checkMobile = () => {
+      // Only hide description on small mobile screens (phones)
+      // Tablets (640px and above) will show description
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Stats highlighting free services (8 stats only + PNG image icons)
   const stats = [
@@ -262,15 +277,15 @@ const ServicesSection: React.FC = () => {
           </div>
 
           {/* Services Grid - Using 80% width with 10% margin on both sides */}
-          <div className="w-[70%] md:w-[80%] mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="w-[90%] md:w-[80%] mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
               {services.map((service, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 md:border-[#FB8234] hover:border-purple-700 md:hover:border-[#FF6603] group transform hover:scale-105 h-full flex flex-col"
                 >
                   {/* Row 1: Image - Fixed height */}
-                  <div className="w-full h-36 relative overflow-hidden">
+                  <div className="w-full h-24 sm:h-36 md:h-36 relative overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -281,24 +296,26 @@ const ServicesSection: React.FC = () => {
                   {/* Content Container - Flex column with space between */}
                   <div className="flex flex-col flex-grow p-2">
                     {/* Row 2: Title - Aligned to top, consistent height */}
-                    <div className="mb- min-h-[42px] flex items-start">
-                      <h3 className="text-base font-bold text-gray-900 leading-tight">
+                    <div className="mb-2 md:min-h-[42px] flex items-start">
+                      <h3 className="md:text-base text-sm font-bold text-gray-900 leading-tight">
                         {service.title}
                       </h3>
                     </div>
 
-                    {/* Row 3: Description - Aligned to top, flexible */}
-                    <div className="mb-2 flex-grow">
-                      <p className="text-xs text-gray-600 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
+                    {/* Row 3: Description - Hide only on small mobile screens (phones) */}
+                    {!isMobile && (
+                      <div className="mb-2 flex-grow">
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                    )}
 
                     {/* Row 4: Button - Aligned to bottom */}
                     <div className="mt-auto">
                       <button 
                         onClick={() => service.id && setSelectedService(service.id)}
-                        className="w-full py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300"
+                        className="w-full py-0.5 sm:py-2 md:py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300"
                       >
                         Learn More
                       </button>
