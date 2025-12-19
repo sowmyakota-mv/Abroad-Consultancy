@@ -41,7 +41,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section className="w-full">
-      <div className="max-w-full">
+      <div className="max-w-full ">
         
         {/* Desktop: 7 columns */}
         <div className="hidden md:grid md:grid-cols-6">
