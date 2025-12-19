@@ -8,7 +8,11 @@ interface FormData {
   message: string;
 }
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  isModal?: boolean; // Add this prop
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ isModal = false }) => {
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -145,7 +149,7 @@ setFormData({
   };
 
   return (
-    <div id='/contact' className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div id='/contact' className={`min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 ${isModal ? 'py-12' : 'py-30'} px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Hero Section */}

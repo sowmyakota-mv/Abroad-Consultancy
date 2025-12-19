@@ -1,14 +1,14 @@
-import { ArrowBigDown, ArrowDown, ArrowDown01, ArrowDownCircle, ArrowDownFromLine, ArrowDownIcon, ArrowDownLeft, ArrowDownNarrowWideIcon, ArrowDownUp, ChevronDown, MessageCircleMore, X } from 'lucide-react';
+import {  ChevronDown, MessageCircleMore, X } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { MessageCircle, Mail, Phone } from 'lucide-react';
+import {  Mail, Phone } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isStudyOpen, setIsStudyOpen] = useState(false);
-  const [isServiceOpen, setIsServiceOpen] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  // const [isServiceOpen, setIsServiceOpen] = useState(false);
+  // const [isChatOpen, setIsChatOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
@@ -37,20 +37,20 @@ const Header: React.FC = () => {
     { name: 'Ireland', path: '/study-abroad/Ireland' },
   ];
 
-  const servicesList = [
-    { name: 'Student Profile Analysis', path: '/services/student-profile' },
-    { name: 'Professional Career Guidance', path: '/services/career-guidance' },
-    { name: 'IELTS/TOEFL/PTE Preparation', path: '/services/IELTS/TOEFL/PTE-preparation' },
-    { name: 'One-on-One Expert Counselling', path: '/services/one-on-one-expert-counselling' },
-    { name: 'University Application', path: '/services/university-application' },
-    { name: 'Scholarship & Financial Aid Assistance', path: '/services/scholarship-financial-aid-assistance' },
-    { name: 'Education Loan Processing', path: '/services/education-loan-processing' },
-    { name: 'Visa Assistance', path: '/services/visa-assistance' },
-    { name: 'Pre-Departure Support', path: '/services/pre-departure' },
-    { name: 'Accommodation Assistance', path: '/services/accommodation-assistance' },
-    { name: 'Abroad Part-Time Job', path: '/services/abroad-part-time-job' },
-    { name: 'Post-Masters Internship Placement', path: '/services/post-masters-internship' },
-  ];
+  // const servicesList = [
+  //   { name: 'Student Profile Analysis', path: '/services/student-profile' },
+  //   { name: 'Professional Career Guidance', path: '/services/career-guidance' },
+  //   { name: 'IELTS/TOEFL/PTE Preparation', path: '/services/IELTS/TOEFL/PTE-preparation' },
+  //   { name: 'One-on-One Expert Counselling', path: '/services/one-on-one-expert-counselling' },
+  //   { name: 'University Application', path: '/services/university-application' },
+  //   { name: 'Scholarship & Financial Aid Assistance', path: '/services/scholarship-financial-aid-assistance' },
+  //   { name: 'Education Loan Processing', path: '/services/education-loan-processing' },
+  //   { name: 'Visa Assistance', path: '/services/visa-assistance' },
+  //   { name: 'Pre-Departure Support', path: '/services/pre-departure' },
+  //   { name: 'Accommodation Assistance', path: '/services/accommodation-assistance' },
+  //   { name: 'Abroad Part-Time Job', path: '/services/abroad-part-time-job' },
+  //   { name: 'Post-Masters Internship Placement', path: '/services/post-masters-internship' },
+  // ];
 
   // Function to handle navigation with scroll to section
   const handleSectionNavigation = (sectionId: string) => {
@@ -430,7 +430,7 @@ const Header: React.FC = () => {
       {/* Horizontal Contact Buttons - Always Visible */}
       <div className="fixed bottom-4 right-0 z-50">
         <div className="flex items-center gap-3 p-2">
-          {contactItems.map((item, index) => (
+          {contactItems.map((item) => (
             <button
               key={item.label}
               onClick={() => handleContactClick(item)}
@@ -443,7 +443,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Free Counselling Modal */}
+      {/* Free Counselling Modal - Pass isModal prop to ContactForm */}
       {isCounsellingOpen && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 ">
           
@@ -458,9 +458,9 @@ const Header: React.FC = () => {
               <X size={30} />
             </button>
 
-            {/* Scrollable Contact Form */}
-            <div className="h-full rounded-3xl shadow-2xl bg-white ">
-              <ContactForm />
+            {/* Scrollable Contact Form with isModal prop */}
+            <div className="h-full rounded-3xl shadow-2xl bg-white">
+              <ContactForm isModal={true} />
             </div>
           </div>
         </div>
