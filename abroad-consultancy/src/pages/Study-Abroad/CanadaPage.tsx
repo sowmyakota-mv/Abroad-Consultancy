@@ -144,27 +144,45 @@ const StudyCanadaPage: React.FC = () => {
   return (
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
-      {/* Hero Banner */}
-      <section className="relative bg-gradient-to-r from-red-600 to-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* <div className="inline-flex items-center justify-center w-24 h-24 bg-white rounded-full mb-8 shadow-lg">
-              <div className="text-4xl">🍁</div>
-            </div> */}
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Study in Canada
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-10">
-              Canada becomes the first preference for international students to complete an 
-              excellent education in a lively, multi-cultural setting.
-            </p>
-            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors flex items-center mx-auto">
-              Check Your Eligibility
-              <ArrowRight className="ml-3 h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </section>
+       {/* Hero Section */}
+<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+  
+  {/* Background Image Wrapper */}
+  <div
+    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-bottom"
+    style={{
+      backgroundImage: "url('/canada-bghero2.png')",
+      backgroundSize: "100% auto" // ✅ shows full image
+    }}
+  >
+    {/* Optional Overlay */}
+    {/* <div className="absolute inset-0 bg-black/30"></div> */}
+
+    {/* Bottom Curve (part of hero bg) */}
+  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+    <svg
+      viewBox="0 0 900 100"
+      preserveAspectRatio="none"
+      className="relative block w-full h-[100px]"
+    >
+      <path
+        d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z"
+        className="fill-white"
+      ></path>
+    </svg>
+  </div> */}
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
+  <div className="max-w-xl text-center md:text-left">
+    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 max-w-3xl">
+  Study in 
+  <span className=""> Canada</span>
+</h1>
+  </div>
+</div>
+</section>
 
       {/* Why Study in Canada */}
       <section className="py-16 bg-gray-50">

@@ -126,13 +126,13 @@ const StudyUSAPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
     {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[100vh] text-white overflow-hidden bg-white">
+<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
-    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-center"
+    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-bottom"
     style={{
-      backgroundImage: "url('/usa-bghero1.png')",
+      backgroundImage: "url('/us-bghero.png')",
       backgroundSize: "100% auto" // ✅ shows full image
     }}
   >

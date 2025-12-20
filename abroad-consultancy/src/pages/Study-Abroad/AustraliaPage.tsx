@@ -102,31 +102,45 @@ const StudyAustraliaPage: React.FC = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-r from-green-900 via-green-700 to-yellow-600 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 text-6xl">🇦🇺</div>
-          <div className="absolute bottom-10 right-10 text-6xl">🎓</div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Study in Australia
-            </h1>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto mb-10">
-              Experience world-class education, vibrant multicultural cities, and excellent post-study work opportunities 
-              in one of the world's most beautiful countries.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={()=>navigate('/contact')} className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
-                <Phone className="mr-2 h-5 w-5" />
-                Free Consultation
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+  
+  {/* Background Image Wrapper */}
+  <div
+    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-center"
+    style={{
+      backgroundImage: "url('/australia-bghero.png')",
+      backgroundSize: "100% auto" // ✅ shows full image
+    }}
+  >
+    {/* Optional Overlay */}
+    {/* <div className="absolute inset-0 bg-black/30"></div> */}
+
+    {/* Bottom Curve (part of hero bg) */}
+  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+    <svg
+      viewBox="0 0 1000 100"
+      preserveAspectRatio="none"
+      className="relative block w-full h-[100px]"
+    >
+      <path
+        d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z"
+        className="fill-white"
+      ></path>
+    </svg>
+  </div> */}
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
+  <div className="max-w-xl text-center md:text-left">
+    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 max-w-3xl">
+  Study in <br />
+  <span className="block ml-16 mt-4">Australia</span>
+</h1>
+  </div>
+</div>
+</section>
 
       {/* Quick Stats */}
       <section className="py-12 bg-gray-50">
