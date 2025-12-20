@@ -70,21 +70,31 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[70vh] text-white overflow-hidden bg-white">
+<section className="relative h-[64vh] md:h-[90vh] text-white overflow-hidden bg-white">
   
-  {/* Background Image Wrapper */}
-  <div
-    className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-center"
-    style={{
-      backgroundImage: "url('/uk-bghero.png')",
-      backgroundSize: "100% auto" // ✅ shows full image
-    }}
+  {/* Background Video Wrapper */}
+<div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+  {/* Video element for background */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
   >
-    {/* Optional Overlay */}
-    {/* <div className="absolute inset-0 bg-black/30"></div> */}
+    <source src="/uk-video.mp4" type="video/mp4" />
+    {/* Fallback image if video doesn't load */}
+    <div 
+      className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+      style={{ backgroundImage: "url('/fallback-image.jpg')" }}
+    />
+  </video>
 
-    {/* Bottom Curve (part of hero bg) */}
-  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+  {/* Optional Overlay */}
+  {/* <div className="absolute inset-0 bg-black/30 z-10"></div> */}
+  
+  {/* Bottom Curve (part of hero bg) */}
+  {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20">
     <svg
       viewBox="0 0 1000 100"
       preserveAspectRatio="none"
@@ -96,7 +106,7 @@ const StudyUKPage: React.FC = () => {
       ></path>
     </svg>
   </div> */}
-  </div>
+</div>
 
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">

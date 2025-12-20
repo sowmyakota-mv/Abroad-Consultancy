@@ -267,11 +267,11 @@ const ServicesSection: React.FC = () => {
         {/* Rest of the Services Section */}
         <div className="w-full py-6">
           {/* Section Header */}
-          <div className="w-[90%] mx-auto text-left mb-12">
+          <div className="w-[90%] mx-auto text-left md:text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Complete Free Study Abroad Services
             </h2>
-            <p className="w-[90%] mx-auto text-center text-lg text-gray-600">
+            <p className="w-[90%] mx-auto -ml-0  text-lg text-gray-600">
               End-to-end free support from application to arrival.
             </p>
           </div>

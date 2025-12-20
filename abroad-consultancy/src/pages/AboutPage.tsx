@@ -71,7 +71,7 @@ const AboutUsPage: React.FC = () => {
             <div className="lg:w-1/2">
               <div className="overflow-hidden ">
                 <img 
-                  src="/about1.png" 
+                  src="/about4.png" 
                   alt="DartGlobe Consultation" 
                   className="w-full h-[70%] object-cover"
                 />
@@ -103,7 +103,7 @@ const AboutUsPage: React.FC = () => {
               <div className="sticky top-24">
                 <div className="rounded-xl overflow-hidden ">
                   <img 
-                    src="/about3.png" 
+                    src="/Advantages.png" 
                     alt="Benefits & Application Process" 
                     className="w-full h-auto object-cover"
                   />
