@@ -227,7 +227,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* English Requirements */}
         <section>
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">English Proficiency Requirements for Study in UK</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 mt-8 text-center">English Proficiency Requirements for Study in UK</h2>
           <p className="text-sm md:text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
             Since it is located in the UK, one needs to know how to communicate in English since most of the courses taught follow the English language. The requirements always differ in universities, but here are the common English language proficiency marks:
           </p>
@@ -257,7 +257,7 @@ const StudyUKPage: React.FC = () => {
         </section>
 
         {/* Top Universities */}
-        <section>
+        {/* <section>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mt-4 mb-4 text-center">Top Universities</h2>
           <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
             The UK hosts some of the world's most renowned universities that boast of always featuring in the top lists of global rankings. The universities are known for their innovative research, the quality of teaching, and the strong links with industries.
@@ -280,11 +280,11 @@ const StudyUKPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Part-time Work Opportunities */}
         <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Opportunities of Part-time Work in the UK</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8 text-center">Opportunities of Part-time Work in the UK</h2>
           <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto">
             Part-time working is allowed for international students in the UK to facilitate living requirements and gain some experience while studying.
           </p>
@@ -315,25 +315,25 @@ const StudyUKPage: React.FC = () => {
             </div>
 
             <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Job Sectors</h3>
-              <p className="text-gray-700 mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Job Sectors</h3>
+              <p className="text-gray-700 mb-2">
                 Part-time work can be found in various sectors, including:
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-xl border text-center">
-                  <div className="text-3xl mb-2">🛒</div>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white p-2 rounded-xl border text-center">
+                  <div className="text-2xl mb-1">🛒</div>
                   <div className="font-bold text-gray-900">Retail</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl border text-center">
-                  <div className="text-3xl mb-2">☕</div>
+                <div className="bg-white p-2 rounded-xl border text-center">
+                  <div className="text-2xl mb-1">☕</div>
                   <div className="font-bold text-gray-900">Hospitality</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl border text-center">
-                  <div className="text-3xl mb-2">💼</div>
+                <div className="bg-white p-2 rounded-xl border text-center">
+                  <div className="text-2xl mb-1">💼</div>
                   <div className="font-bold text-gray-900">Administration</div>
                 </div>
-                <div className="bg-white p-4 rounded-xl border text-center">
-                  <div className="text-3xl mb-2">🎓</div>
+                <div className="bg-white p-2 rounded-xl border text-center">
+                  <div className="text-2xl mb-1">🎓</div>
                   <div className="font-bold text-gray-900">University Roles</div>
                 </div>
               </div>
@@ -440,17 +440,17 @@ const StudyUKPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Scholarship Process</h3>
-              <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Scholarship Process</h3>
+              <div className="space-y-2">
                 {scholarshipProcess.map((step) => (
-                  <div key={step.step} className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl transition-shadow">
+                  <div key={step.step} className="bg-white rounded-2xl p-4 border border-gray-200 hover:shadow-xl transition-shadow">
                     <div className="flex items-start">
-                      <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-red-600 rounded-2xl flex items-center justify-center mr-6 text-white font-bold text-2xl">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-red-600 rounded-2xl flex items-center justify-center mr-6 text-white font-bold text-2xl">
                         {step.step}
                       </div>
                       <div>
                         <h4 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h4>
-                        <p className="text-gray-700">{step.description}</p>
+                        <p className="text-sm text-gray-700">{step.description}</p>
                       </div>
                     </div>
                   </div>
