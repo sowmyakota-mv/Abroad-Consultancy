@@ -126,7 +126,7 @@ const StudyUSAPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
     {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -166,8 +166,8 @@ const StudyUSAPage: React.FC = () => {
 </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -180,43 +180,25 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Why Study in USA */}
-<section className="py-16 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    {/* Content Wrapper – 80% Width */}
-    <div className="w-full lg:w-[80%] ml-auto flex flex-col lg:flex-row items-start gap-8">
-
-      {/* Left Image – 30% */}
-      {/* <div className="w-full lg:w-[30%]">
-        <img
-          src="/usa-why-study.jpg"
-          alt="Why Study in USA"
-          className="w-full h-full object-cover rounded-xl"
-        />
-      </div> */}
-
-      {/* Right Content – 70% */}
-      <div className="w-full lg:w-[80%]">
-        <div className="bg-white rounded-2xl shadow-md p-8">
-            {/* Section Title */}
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">
-        Why study in USA
-      </h2>
-      <p className="text-sm text-gray-600 max-w-4xl mx-auto">
-        The United States of America continues to be one of the most coveted places for 
+<section className="scroll-mt-20 py-5">
+          <div className="text-center mb-12 mt-8">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why study in USA</h2>
+            <p className="text-sm md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-left">
+             The United States of America continues to be one of the most coveted places for 
         higher education in the world and provides an invitation to students across the world.The USA Study is offering numerous world-class universities, sprawling with a wide 
             array of multicultural environments and numerous latest research opportunities. 
             This guide will walk you through everything you need to know about study in USA.
           </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+            <div className="mt-4 md:mt-10">
+              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold  md:text-lg hover:shadow-2xl transition-all">
+                Check Your Eligibility
+              </button>
+            </div>
+          </div>
+        </section>
 
       {/* Best Universities Section */}
-      <section className="py-16 bg-white">
+      <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -255,8 +237,8 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Intakes in USA */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Intakes in the USA
@@ -280,8 +262,8 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* English Proficiency Requirements */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               English Proficiency Requirements
@@ -302,7 +284,7 @@ const StudyUSAPage: React.FC = () => {
           </div>
 
           {/* Study Without IELTS */}
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-12 border border-blue-100">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-1 border border-blue-100">
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Study in the USA Without IELTS
             </h3>
@@ -324,8 +306,8 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Tips to Enhance Admission Chances */}
-      <section className="py-16 bg-gradient-to-r from-red-50 to-orange-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gradient-to-r from-red-50 to-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Tips to Enhance Chances of Admission
@@ -345,8 +327,8 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Eligibility Criteria */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Eligibility Criteria

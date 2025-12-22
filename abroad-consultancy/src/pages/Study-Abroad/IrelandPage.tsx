@@ -93,7 +93,7 @@ const StudyIrelandPage: React.FC = () => {
   return (
     <div id='study-abroad/ireland' className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -133,7 +133,7 @@ const StudyIrelandPage: React.FC = () => {
   </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -157,11 +157,11 @@ const StudyIrelandPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16">
         
         {/* Overview Section */}
         <section>
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 mt-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Ireland - Complete Overview</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ireland offers world-class education in an English-speaking EU country, 
@@ -318,7 +318,7 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Top Universities Section */}
-        <section>
+        {/* <section>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Top Universities in Ireland</h2>
           
           <div className="space-y-6 mb-12">
@@ -365,7 +365,7 @@ const StudyIrelandPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Popular Courses Section */}
         <section>
@@ -935,7 +935,7 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16">
+        <section className="-mb-6">
           <div className="bg-gradient-to-r from-green-700 to-orange-600 rounded-3xl p-12 text-white text-center">
             <h2 className="text-xl md:text-4xl font-bold mb-6">Start Your Irish Education Journey Today!</h2>
             <p className="text-sm md:text-xl mb-10 max-w-2xl mx-auto">

@@ -145,7 +145,7 @@ const StudyCanadaPage: React.FC = () => {
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
        {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -185,8 +185,8 @@ const StudyCanadaPage: React.FC = () => {
 </section>
 
       {/* Why Study in Canada */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Why study in Canada
@@ -202,8 +202,8 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* Major Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Major Benefits of Studying in Canada
@@ -284,8 +284,8 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* Top Universities Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Top Canadian Universities
@@ -312,8 +312,8 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* Scholarships Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Scholarships In Canada
@@ -361,8 +361,8 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* PGWP & Work Opportunities */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-emerald-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -414,7 +414,7 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* Cost Comparison */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -444,7 +444,7 @@ const StudyCanadaPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enrollment CTA */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">

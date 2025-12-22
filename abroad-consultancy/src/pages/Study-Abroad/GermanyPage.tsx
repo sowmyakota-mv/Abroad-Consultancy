@@ -88,7 +88,7 @@ const StudyGermanyPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -127,8 +127,8 @@ const StudyGermanyPage: React.FC = () => {
 </div>
 </section>
       {/* Quick Stats */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-5 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-black mb-2">0€</div>
@@ -151,11 +151,11 @@ const StudyGermanyPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8">
         
         {/* Overview Section */}
         <section>
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 mt-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Germany - Complete Overview</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Germany offers tuition-free education at public universities, world-class engineering programs, 
@@ -202,7 +202,7 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Why Germany Section */}
         <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Study in Germany?</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Why Study in Germany?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-6">
@@ -256,7 +256,7 @@ const StudyGermanyPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-8 text-white">
             <h3 className="text-3xl font-bold mb-8 text-center">German Education Excellence</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -279,8 +279,8 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Key Advantages of Studying in Germany</h2>
+        <section className='mt-8'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 ">Key Advantages of Studying in Germany</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all">
@@ -307,7 +307,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Top Universities Section */}
-        <section>
+        {/* <section>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Top Universities in Germany</h2>
           
           <div className="space-y-6 mb-12">
@@ -354,7 +354,7 @@ const StudyGermanyPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Popular Courses Section */}
         <section>

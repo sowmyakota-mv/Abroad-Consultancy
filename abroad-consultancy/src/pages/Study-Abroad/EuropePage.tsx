@@ -90,7 +90,7 @@ const StudyEuropePage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -130,7 +130,7 @@ const StudyEuropePage: React.FC = () => {
   </section>
 
       {/* Quick Stats */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -154,11 +154,11 @@ const StudyEuropePage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible without navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16">
         
         {/* Overview Section */}
         <section>
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 mt-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Europe - Complete Overview</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Europe offers unparalleled academic diversity, cultural richness, and historic excellence 
@@ -506,7 +506,7 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Top Universities Section */}
-        <section>
+        {/* <section>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Top Universities in Europe</h2>
           
           <div className="space-y-6 mb-12">
@@ -553,7 +553,7 @@ const StudyEuropePage: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Cost of Living Section */}
         <section>

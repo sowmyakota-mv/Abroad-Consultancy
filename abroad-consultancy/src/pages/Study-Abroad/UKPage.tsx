@@ -70,7 +70,7 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[54vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
