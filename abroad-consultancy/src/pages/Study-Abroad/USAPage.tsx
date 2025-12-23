@@ -126,7 +126,7 @@ const StudyUSAPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
     {/* Hero Section */}
-<section className="relative h-[40vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[36vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div

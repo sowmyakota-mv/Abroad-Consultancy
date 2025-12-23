@@ -145,7 +145,7 @@ const StudyCanadaPage: React.FC = () => {
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
        {/* Hero Section */}
-<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[36vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -185,39 +185,46 @@ const StudyCanadaPage: React.FC = () => {
 </section>
 
       {/* Why Study in Canada */}
-      <section className="py-5 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Why study in Canada
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Canada becomes the first preference for international students to complete an 
+      <section className="w-[90%] mx-auto scroll-mt-20 py-12">
+  <div className="flex justify-center">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center">
+        <h2 className="text-4xl font-bold text-gray-900 ">Study In Canada</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+             Canada becomes the first preference for international students to complete an 
               excellent education in a lively, multi-cultural setting. If you are going to 
               complete your higher education in another country, then here comes the most 
               interesting part of why studying in Canada will help you out.
             </p>
-          </div>
         </div>
-      </section>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Major Benefits Section */}
       <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-left p-4 ">
+            <h2 className="text-4xl font-bold text-gray-900 ">
               Major Benefits of Studying in Canada
             </h2>
           </div>
 
           {/* Benefits Grid - First 4 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 p-4">
             {benefits.slice(0, 4).map((benefit) => (
               <div 
                 key={benefit.id}
                 className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 ${
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-2 ${
                   benefit.color === 'blue' ? 'bg-blue-100 text-blue-600' :
                   benefit.color === 'green' ? 'bg-green-100 text-green-600' :
                   benefit.color === 'purple' ? 'bg-purple-100 text-purple-600' :
@@ -225,7 +232,7 @@ const StudyCanadaPage: React.FC = () => {
                 }`}>
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
@@ -243,13 +250,13 @@ const StudyCanadaPage: React.FC = () => {
           </div>
 
           {/* Benefits Grid - Next 4 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {benefits.slice(4, 8).map((benefit) => (
               <div 
                 key={benefit.id}
-                className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 ${
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-2 ${
                   benefit.color === 'red' ? 'bg-red-100 text-red-600' :
                   benefit.color === 'indigo' ? 'bg-indigo-100 text-indigo-600' :
                   benefit.color === 'teal' ? 'bg-teal-100 text-teal-600' :
@@ -257,7 +264,7 @@ const StudyCanadaPage: React.FC = () => {
                 }`}>
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
@@ -286,13 +293,13 @@ const StudyCanadaPage: React.FC = () => {
       {/* Top Universities Section */}
       <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-left p-4 mb-">
+            <h2 className="text-4xl font-bold text-gray-900 ">
               Top Canadian Universities
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
             {topUniversities.map((uni, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow">
                 <div className="flex items-center mb-4">
@@ -314,56 +321,57 @@ const StudyCanadaPage: React.FC = () => {
       {/* Scholarships Section */}
       <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-left p-4 mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">
               Scholarships In Canada
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-10">
+            <p className="text-lg text-gray-600 text-left mb-6">
               Masters Visa is dedicated to assisting you at every step, from identifying 
               relevant scholarship programs to aiding with application documentation. Our 
               team ensures that you are well-informed about eligibility criteria, deadlines, 
               and the application procedures specific to each scholarship opportunity.
             </p>
-            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white p-4 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
               Contact DartGlobe Today
             </button>
           </div>
 
           {/* Scholarship Process Steps */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 p-4 -mt-6">
             {scholarshipSteps.map((step, index) => (
               <div key={index} className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-xl mb-6 mx-auto">
                   <div className="text-red-600">{step.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
           </div>
 
           {/* Eligibility Criteria */}
-          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <div className='p-4'>
+          <div className="mb-12 bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 border border-gray-200">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-left">
               Eligibility Criteria
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {eligibilityCriteria.map((criteria, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-gray-100">
-                  <div className="text-3xl mb-4">{criteria.icon}</div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">{criteria.title}</h4>
+                <div key={index} className="bg-white rounded-xl p-4 border border-gray-100">
+                  <div className="text-3xl mb-2">{criteria.icon}</div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2">{criteria.title}</h4>
                   <p className="text-gray-600">{criteria.description}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </div></div>
         </div>
       </section>
 
       {/* PGWP & Work Opportunities */}
       <section className="py-5 bg-gradient-to-r from-green-50 to-emerald-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center p-4">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Post-Graduation Work Permit (PGWP)
