@@ -126,7 +126,7 @@ const StudyUSAPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
     {/* Hero Section */}
-<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[40vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -168,7 +168,7 @@ const StudyUSAPage: React.FC = () => {
       {/* Quick Stats */}
       <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-4 md:grid-cols-4 gap-8">
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
@@ -180,9 +180,9 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Why Study in USA */}
-      <section className="scroll-mt-20 py-12">
+      <section className="w-[90%] mx-auto scroll-mt-20 py-12">
   <div className="flex justify-center">
-    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-4xl mx-auto">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center">
         <h2 className="text-4xl font-bold text-gray-900 ">Study In USA</h2>
         <div className="rounded-xl p-4 md:p-4 ">
@@ -205,61 +205,65 @@ const StudyUSAPage: React.FC = () => {
 
       {/* Best Universities Section */}
       <section className="py-5 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Best Universities in the USA
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              It is home to some of the world's most prestigious universities, be it in academic 
-              excellence, research opportunities, or campus life.
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+    <div className="text-left mb-12 p-4">
+      <h2 className="text-4xl font-bold text-gray-900 mb-3">
+        Best Universities in the USA
+      </h2>
+      <p className="text-lg text-left text-gray-600">
+        It is home to some of the world's most prestigious universities, be it in academic 
+        excellence, research opportunities, or campus life.
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {topUniversities.map((uni, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
-                    <div className="font-bold text-red-600">{uni.rank}</div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{uni.name}</h3>
-                    <div className="text-gray-600 text-sm">{uni.location}</div>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <div className="text-gray-700 font-medium mb-2">Popular Programs:</div>
-                  <div className="text-gray-600">{uni.programs}</div>
-                </div>
-                <div className="text-gray-700">{uni.students} students</div>
-              </div>
-            ))}
+    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 -mt-8 p-4">
+      {topUniversities.map((uni, index) => (
+        <div 
+          key={index}
+          className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-start mb-2">
+            {/* Fixed size rank circle */}
+            <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+              <div className="font-bold text-red-600">{uni.rank}</div>
+            </div>
+            
+            {/* University name and location - will wrap if needed */}
+            <div className="min-w-0 flex-1"> {/* Added min-w-0 and flex-1 */}
+              <h3 className="text-xl font-bold text-gray-900 break-words">{uni.name}</h3>
+              <div className="text-gray-600 text-sm mt-1">{uni.location}</div>
+            </div>
           </div>
+          
+          <div className="mb-2 mt-4">
+            <div className="text-gray-700 font-medium mb-1">Popular Programs:</div>
+            <div className="text-gray-600">{uni.programs}</div>
+          </div>
+          <div className="text-gray-700">{uni.students} students</div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Intakes in USA */}
-      <section className="py-5 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+      <section className="py-5 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 mt-8">
+          <div className="text-left mb-12 p-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">
               Intakes in the USA
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 text-left">
               The academic calendar in the USA provides three intakes in main:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 -mt-8 p-4">
             {intakes.map((intake, index) => (
               <div key={index} className="bg-white rounded-xl p-8 border border-gray-200">
-                <div className="text-4xl mb-4">{intake.icon}</div>
+                <div className="text-4xl mb-2">{intake.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{intake.term}</h3>
-                <div className="text-xl text-blue-600 font-bold mb-4">{intake.months}</div>
+                <div className="text-xl text-blue-600 font-bold mb-2">{intake.months}</div>
                 <p className="text-gray-600">{intake.description}</p>
               </div>
             ))}
@@ -268,38 +272,38 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* English Proficiency Requirements */}
-      <section className="py-5 bg-white">
+      <section className="py-5 bg-white mb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-left mb-12 p-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">
               English Proficiency Requirements
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 text-left">
               Common tests accepted for studying in the USA:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-4 md:gap-8 mb-12 p-4 -mt-12">
             {englishRequirements.map((test, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-4">{test.score}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{test.test}</h3>
+              <div key={index} className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">{test.score}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{test.test}</h3>
                 <p className="text-gray-600">{test.description}</p>
               </div>
             ))}
           </div>
 
           {/* Study Without IELTS */}
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-1 border border-blue-100">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+          <div className="py-5 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-4  mb-1 border border-blue-100">
+            <h3 className="mt-8 text-3xl font-bold text-gray-900 mb-3 text-left p-4">
               Study in the USA Without IELTS
             </h3>
-            <p className="text-lg text-gray-600 mb-8 text-center">
+            <p className="text-lg text-gray-600 mb-2 -mt-6 text-left p-4">
               If you are really concerned about the eligibility criteria with regard to the 
               English Proficiency Test, then feel tension. A few numbers of institutions have an alternative pathway:
             </p>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6">
               {noIELTSoptions.map((option, index) => (
                 <div key={index} className="bg-white rounded-xl p-6">
                   <h4 className="text-lg font-bold text-gray-900 mb-3">{option.title}</h4>
@@ -313,18 +317,18 @@ const StudyUSAPage: React.FC = () => {
 
       {/* Tips to Enhance Admission Chances */}
       <section className="py-5 bg-gradient-to-r from-red-50 to-orange-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+          <div className="text-left p-4 mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 ">
               Tips to Enhance Chances of Admission
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 -mt-8">
             {admissionTips.map((tip, index) => (
               <div key={index} className="bg-white rounded-xl p-6">
-                <div className="text-2xl mb-4">💡</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{tip.title}</h3>
+                <div className="text-2xl mb-3">💡</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{tip.title}</h3>
                 <p className="text-gray-600 text-sm">{tip.description}</p>
               </div>
             ))}
@@ -334,21 +338,21 @@ const StudyUSAPage: React.FC = () => {
 
       {/* Eligibility Criteria */}
       <section className="py-5 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-center mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+          <div className="text-left p-4 mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Eligibility Criteria
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-10">
+            <p className="text-lg text-gray-600 text-left">
               To be eligible for the Masters Visa Scholarship in the USA, candidates typically must meet the following criteria.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8 p-4 -mt-8">
             {eligibilityCriteria.map((criteria, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 text-center">
-                <div className="text-4xl mb-4">{criteria.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{criteria.title}</h3>
+              <div key={index} className="bg-white rounded-xl p-4 border border-gray-200 text-center">
+                <div className="text-4xl mb-2">{criteria.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{criteria.title}</h3>
                 <p className="text-gray-600">{criteria.description}</p>
               </div>
             ))}
@@ -365,7 +369,7 @@ const StudyUSAPage: React.FC = () => {
             </h2>
             <div className="text-lg text-gray-600 space-y-4">
               <p>
-                Study in the USA—that's going to be life-changing. The education is world-class; 
+                Study in the USA - that's going to be life-changing. The education is world-class; 
                 the opportunities are endless. Knowing the intakes, targeting some of the top 
                 universities, and knowing requirements and alternatives in English proficiency 
                 will help you turn your dreams of studying in the USA into reality.

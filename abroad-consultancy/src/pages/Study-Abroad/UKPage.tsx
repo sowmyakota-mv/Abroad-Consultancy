@@ -114,9 +114,9 @@ const StudyUKPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[90%] mx-auto scroll-mt-20">
-  <div className="flex justify-center">
+  <div className="flex justify-center sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
-      <div className="text-center">
+      <div className="text-center ">
         <h2 className="text-4xl font-bold text-gray-900 ">Study In UK</h2>
         <div className="rounded-xl p-4 md:p-4 ">
           <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
