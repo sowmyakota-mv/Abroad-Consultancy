@@ -103,7 +103,7 @@ const StudyAustraliaPage: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
      {/* Hero Section */}
-<section className="relative h-[64vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[36vh] sm:h-[68vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -167,31 +167,37 @@ const StudyAustraliaPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections in one column without scrolling */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div className="space-y-2">
           
           {/* Check Eligibility Section - NEW */}
-          <section className="scroll-mt-20 py-5">
-          <div className="text-center mb-12 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why study in Australia?</h2>
-            <p className="text-sm md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-left">
-             Study in Australia as an international student presents a unique and rewarding experience 
+          <section className="w-[90%] mx-auto scroll-mt-20">
+  <div className="flex justify-center sm:mt-12">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 ">Why study in Australia?</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+            Study in Australia as an international student presents a unique and rewarding experience 
                 that sets it apart from other destinations. Here is a summary of what to expect when 
                 pursuing education in Australia.
               </p>
-            <div className="mt-4 md:mt-10">
-              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold  md:text-lg hover:shadow-2xl transition-all">
-                Check Your Eligibility
-              </button>
-            </div>
-          </div>
-        </section>
-
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+          
           {/* Overview Section */}
-          <section id="overview" className="scroll-mt-20">
-            <div className="text-center mb-8">
+          <section id="overview" className="scroll-mt-20 py-5">
+            <div className="text-left mb-4 mt-8 p-4">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Overview</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 text-left">
                 Australia offers world-class education with globally recognized degrees, 
                 cutting-edge research opportunities, and excellent post-study work options 
                 in a beautiful, multicultural environment.
@@ -215,9 +221,9 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Cost of Living and Healthcare Combined Section - NEW */}
-          <section className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-100">
-              <div className="flex items-center mb-4">
+          <section className="grid md:grid-cols-2 gap-8 py-5">
+            <div className="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-100 mt-8">
+              <div className="flex items-center mb-4 ">
                 <DollarSign className="h-8 w-8 text-yellow-600 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">Cost of Living and Tuition Fees</h3>
               </div>
@@ -232,7 +238,7 @@ const StudyAustraliaPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100">
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100 mt-8">
               <div className="flex items-center mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">Healthcare System</h3>
@@ -251,7 +257,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Post-Study Work Section - Enhanced */}
-          <section id="post-study" className="scroll-mt-20">
+          <section id="post-study" className="scroll-mt-20 py-8">
             <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-2xl p-8 text-white">
               <div className="flex items-center mb-6">
                 <Briefcase className="h-10 w-10 text-yellow-300 mr-4" />
@@ -286,13 +292,13 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Multicultural Environment Section - NEW */}
-          <section className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
-            <div className="text-center mb-8">
-              <div className="flex justify-center mb-4">
-                <Globe className="h-12 w-12 text-purple-600" />
-              </div>
+          <section className='py-5 mt-8'>
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 py-5">
+            <div className="text-left mb-8">
+              <div className="flex mb-4">
+                <Globe className="h-12 w-12 text-purple-600 mr-4" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Multicultural Environment</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              </div><p className="text-lg text-gray-700 text-left">
                 Australia's multicultural society creates a vibrant and inclusive atmosphere for 
                 international students. Students from diverse backgrounds come together, fostering 
                 a rich cultural exchange that prepares students for a globalized world.
@@ -317,10 +323,12 @@ const StudyAustraliaPage: React.FC = () => {
                 <div className="font-bold text-gray-900">Understanding</div>
               </div>
             </div>
+            </div>
           </section>
 
           {/* World-Class Education Section - Enhanced */}
-          <section className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
+          <section className='py-5 mt-8'>
+          <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg ">
             <div className="flex items-center mb-6">
               <Trophy className="h-10 w-10 text-green-600 mr-4" />
               <h2 className="text-3xl font-bold text-gray-900">World-Class Education</h2>
@@ -360,11 +368,12 @@ const StudyAustraliaPage: React.FC = () => {
                 </ul>
               </div>
             </div>
+            </div>
           </section>
 
           {/* Scholarships Section - Enhanced */}
-          <section id="scholarships" className="scroll-mt-20">
-            <div className="text-center mb-8">
+          <section id="scholarships" className="scroll-mt-20 py-5">
+            <div className="text-left p-4 mb-8 mt-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Scholarships in Australia</h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Discover exclusive scholarship opportunities for international students with Masters Visa. 

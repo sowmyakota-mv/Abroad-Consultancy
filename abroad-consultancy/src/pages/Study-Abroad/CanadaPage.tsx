@@ -185,7 +185,7 @@ const StudyCanadaPage: React.FC = () => {
 </section>
 
       {/* Why Study in Canada */}
-      <section className="w-[90%] mx-auto scroll-mt-20 py-12">
+      <section className="w-[80%] mx-auto scroll-mt-20 py-12">
   <div className="flex justify-center">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center">
@@ -210,15 +210,15 @@ const StudyCanadaPage: React.FC = () => {
 
       {/* Major Benefits Section */}
       <section className="py-5 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="text-left p-4 ">
-            <h2 className="text-4xl font-bold text-gray-900 ">
+        <div className="w-full px-4 sm:px-6 lg:px-8 mt-8">
+          <div className="text-left p- ">
+            <h2 className="text-4xl font-bold text-gray-900 mb-12">
               Major Benefits of Studying in Canada
             </h2>
           </div>
 
           {/* Benefits Grid - First 4 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 p-4">
+          <div className="grid md:grid-cols-2 gap-8 mb-12  ">
             {benefits.slice(0, 4).map((benefit) => (
               <div 
                 key={benefit.id}
@@ -325,21 +325,21 @@ const StudyCanadaPage: React.FC = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-2">
               Scholarships In Canada
             </h2>
-            <p className="text-lg text-gray-600 text-left mb-6">
+            <p className="text-lg text-gray-600 text-left mb-">
               Masters Visa is dedicated to assisting you at every step, from identifying 
               relevant scholarship programs to aiding with application documentation. Our 
               team ensures that you are well-informed about eligibility criteria, deadlines, 
               and the application procedures specific to each scholarship opportunity.
             </p>
-            <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white p-4 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+            {/* <button onClick={()=>navigate('/contact')} className="bg-red-600 text-white p-4 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
               Contact DartGlobe Today
-            </button>
+            </button> */}
           </div>
 
           {/* Scholarship Process Steps */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 p-4 -mt-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 p-4 -mt-8 bg-gradient-to-r from-blue-50 to-white rounded-2xl p-8 border border-blue-200">
             {scholarshipSteps.map((step, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center bg-white rounded-xl p-4 border border-blue-100 ">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-xl mb-6 mx-auto">
                   <div className="text-red-600">{step.icon}</div>
                 </div>
@@ -350,7 +350,7 @@ const StudyCanadaPage: React.FC = () => {
           </div>
 
           {/* Eligibility Criteria */}
-          <div className='p-4'>
+          <div className=''>
           <div className="mb-12 bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 border border-gray-200">
             <h3 className="text-3xl font-bold text-gray-900 mb-8 text-left">
               Eligibility Criteria
