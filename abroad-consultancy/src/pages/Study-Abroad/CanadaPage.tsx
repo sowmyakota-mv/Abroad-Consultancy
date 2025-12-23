@@ -145,7 +145,7 @@ const StudyCanadaPage: React.FC = () => {
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
        {/* Hero Section */}
-<section className="relative h-[32vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[32vh] sm:h-[62vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -271,7 +271,7 @@ const StudyCanadaPage: React.FC = () => {
           </div>
 
           {/* Study Permits Card */}
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-12 border border-blue-100">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8  border border-blue-100">
             <div className="flex items-start">
               <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mr-6">
                 <FileText className="h-8 w-8 text-blue-600" />
@@ -291,7 +291,7 @@ const StudyCanadaPage: React.FC = () => {
       </section>
 
       {/* Top Universities Section */}
-      <section className="py-5 bg-gray-50">
+      {/* <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           <div className="text-left p-4 mb-">
             <h2 className="text-4xl font-bold text-gray-900 ">
@@ -316,7 +316,7 @@ const StudyCanadaPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Scholarships Section */}
       <section className="py-5 bg-white">
