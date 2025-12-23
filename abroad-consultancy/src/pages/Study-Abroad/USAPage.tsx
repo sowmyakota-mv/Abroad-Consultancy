@@ -167,7 +167,7 @@ const StudyUSAPage: React.FC = () => {
 
       {/* Quick Stats */}
       <section className="py-5 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -180,22 +180,28 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Why Study in USA */}
-<section className="scroll-mt-20 py-5">
-          <div className="text-center mb-12 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why study in USA</h2>
-            <p className="text-sm md:text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed text-left">
+      <section className="scroll-mt-20">
+  <div className="flex justify-center">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-4xl mx-auto">
+      <div className="text-center">
+        <h2 className="text-4xl font-bold text-gray-900 ">Study In USA</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
              The United States of America continues to be one of the most coveted places for 
         higher education in the world and provides an invitation to students across the world.The USA Study is offering numerous world-class universities, sprawling with a wide 
             array of multicultural environments and numerous latest research opportunities. 
             This guide will walk you through everything you need to know about study in USA.
           </p>
-            <div className="mt-4 md:mt-10">
-              <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-10 py-4 rounded-xl font-bold  md:text-lg hover:shadow-2xl transition-all">
-                Check Your Eligibility
-              </button>
-            </div>
-          </div>
-        </section>
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Best Universities Section */}
       <section className="py-5 bg-white">

@@ -70,7 +70,7 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[54vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -292,7 +292,6 @@ const StudyUKPage: React.FC = () => {
           </div>
         </section> */}
 
-        {/* Part-time Work Opportunities */}
         {/* Part-time Work Opportunities */}
 <section className="bg-gray-100 w-full py-8 md:py-12">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
