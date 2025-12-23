@@ -180,7 +180,7 @@ const StudyUSAPage: React.FC = () => {
       </section>
 
       {/* Why Study in USA */}
-      <section className="scroll-mt-20">
+      <section className="scroll-mt-20 py-12">
   <div className="flex justify-center">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-4xl mx-auto">
       <div className="text-center">
