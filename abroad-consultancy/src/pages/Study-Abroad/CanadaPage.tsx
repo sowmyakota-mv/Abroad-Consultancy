@@ -145,7 +145,7 @@ const StudyCanadaPage: React.FC = () => {
     <div id='study-abroad/canada' className="min-h-screen bg-white">
       
        {/* Hero Section */}
-<section className="relative h-[36vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[32vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
