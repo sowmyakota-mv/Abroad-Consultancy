@@ -150,7 +150,7 @@ const StudyUKPage: React.FC = () => {
         </section>
 
         {/* Intakes in the UK */}
-<section className="bg-gray-100 w-full min-h-screen py-5 md:py-5">
+<section className="bg-gray-100 w-full min-h-screen py-5 md:py-5 mt-8">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-">
     <div>
       <h2 className="text-2xl md:text-4xl font-bold text-gray-900 -mb-6 text-left p-4 mt-10">Intakes in the UK</h2>
@@ -293,88 +293,89 @@ const StudyUKPage: React.FC = () => {
         </section> */}
 
         {/* Part-time Work Opportunities */}
-        <section className="bg-gray-100 w-full min-h-screen py-5 md:py-5">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-">
-    <div>
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 -mb-6 text-left p-4 mt-10">Opportunities of Part-time Work in the UK</h2>
-          <p className="text-lg text-gray-700 mb-4 text-left p-4">
-            Part-time working is allowed for international students in the UK to facilitate living requirements and gain some experience while studying.
+        {/* Part-time Work Opportunities */}
+<section className="bg-gray-100 w-full py-8 md:py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mb-8 md:mb-12">
+      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Opportunities of Part-time Work in the UK</h2>
+      <p className="text-base md:text-lg text-gray-700">
+        Part-time working is allowed for international students in the UK to facilitate living requirements and gain some experience while studying.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+      <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 md:p-8 border border-blue-100">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Work Regulations</h3>
+        <ul className="space-y-4 md:space-y-5">
+          <li className="flex items-start">
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
+              <CheckCircle className="h-3 w-3 md:h-5 md:w-5 text-blue-600" />
+            </div>
+            <span className="text-sm md:text-base text-gray-700"><strong>Term Time:</strong> Work is allowed for 20 hours per week; permitted working hours are up to 20 each week when classes are in session.</span>
+          </li>
+          <li className="flex items-start">
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
+              <CheckCircle className="h-3 w-3 md:h-5 md:w-5 text-blue-600" />
+            </div>
+            <span className="text-sm md:text-base text-gray-700"><strong>Holidays:</strong> Full-time work is allowed during holidays and breaks.</span>
+          </li>
+          <li className="flex items-start">
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
+              <CheckCircle className="h-3 w-3 md:h-5 md:w-5 text-blue-600" />
+            </div>
+            <span className="text-sm md:text-base text-gray-700"><strong>On-Campus:</strong> On-campus employment is also available in some universities.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-6 md:p-8 border border-red-100">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Job Sectors</h3>
+        <p className="text-sm md:text-base text-gray-700 mb-4">
+          Part-time work can be found in various sectors, including:
+        </p>
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
+          <div className="bg-white p-3 md:p-4 rounded-xl border border-gray-200 text-center hover:shadow-md transition-shadow">
+            <div className="text-2xl md:text-3xl mb-1 md:mb-2">🛒</div>
+            <div className="text-sm md:text-base font-bold text-gray-900">Retail</div>
+          </div>
+          <div className="bg-white p-3 md:p-4 rounded-xl border border-gray-200 text-center hover:shadow-md transition-shadow">
+            <div className="text-2xl md:text-3xl mb-1 md:mb-2">☕</div>
+            <div className="text-sm md:text-base font-bold text-gray-900">Hospitality</div>
+          </div>
+          <div className="bg-white p-3 md:p-4 rounded-xl border border-gray-200 text-center hover:shadow-md transition-shadow">
+            <div className="text-2xl md:text-3xl mb-1 md:mb-2">💼</div>
+            <div className="text-sm md:text-base font-bold text-gray-900">Administration</div>
+          </div>
+          <div className="bg-white p-3 md:p-4 rounded-xl border border-gray-200 text-center hover:shadow-md transition-shadow">
+            <div className="text-2xl md:text-3xl mb-1 md:mb-2">🎓</div>
+            <div className="text-sm md:text-base font-bold text-gray-900">University Roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-yellow-50 rounded-2xl p-6 md:p-8 border border-yellow-200">
+      <div className="flex items-start">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-yellow-100 rounded-xl flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
+          <span className="font-bold text-yellow-700 text-lg md:text-xl">!</span>
+        </div>
+        <div>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Important Note</h3>
+          <p className="text-sm md:text-base text-gray-700">
+            Some universities accept the 12th grade's English score as a certificate of proof, which obviously makes it an easier way out for students for meeting their requirements.
           </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10 mb-12">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Work Regulations</h3>
-              <ul className="space-y-5">
-                <li className="flex items-center">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700"><strong>Term Time:</strong> Work is allowed for 20 hours per week; permitted working hours are up to 20 each week when classes are in session.</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700"><strong>Holidays:</strong> Full-time work is allowed during holidays and breaks.</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700"><strong>On-Campus:</strong> On-campus employment is also available in some universities.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Job Sectors</h3>
-              <p className="text-gray-700 mb-2">
-                Part-time work can be found in various sectors, including:
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-white p-2 rounded-xl border text-center">
-                  <div className="text-2xl mb-1">🛒</div>
-                  <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-gray-900">Retail</div>
-                </div>
-                <div className="bg-white p-2 rounded-xl border text-center">
-                  <div className="text-2xl mb-1">☕</div>
-                  <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-gray-900">Hospitality</div>
-                </div>
-                <div className="bg-white p-2 rounded-xl border text-center">
-                  <div className="text-2xl mb-1">💼</div>
-                  <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-gray-900">Administration</div>
-                </div>
-                <div className="bg-white p-2 rounded-xl border text-center">
-                  <div className="text-2xl mb-1">🎓</div>
-                  <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-gray-900">University Roles</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-yellow-50 rounded-2xl p-8 border border-yellow-200">
-            <div className="flex items-start">
-              <div className="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                <span className="font-bold text-yellow-700 text-xl">!</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Important Note</h3>
-                <p className="text-sm md:text-lgtext-gray-700">
-                  Some universities accept the 12th grade's English score as a certificate of proof, which obviously makes it an easier way out for students for meeting their requirements.
-                </p>
-              </div>
-            </div>
-          </div>
-          </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Quality Education & Support */}
         <section className='py-5 mt-12'>
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 py-4">Quality Education</h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-6 bg-blue-100 p-6 rounded-2xl">
                 The UK boasts some of the world's foremost universities celebrated for their academic prowess and groundbreaking research contributions. A diverse array of undergraduate and postgraduate programs spans various disciplines, enabling students to select courses aligned with their individual interests and future career aspirations.
               </p>
               <div className="bg-blue-50 rounded-2xl p-6 mb-4">
@@ -385,9 +386,9 @@ const StudyUKPage: React.FC = () => {
               </div>
             </div>
 
-            <div>
+            <div >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Support Services</h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-6 bg-red-100 p-4 rounded-2xl">
                 To ease the transition for international students, Study in UK universities provide comprehensive support services. These include orientation programs, academic counselling, and assistance with visa applications.
               </p>
               <div className="bg-red-50 rounded-2xl p-6">
@@ -401,30 +402,30 @@ const StudyUKPage: React.FC = () => {
         </section>
 
         {/* Research Opportunities */}
-        <section className="bg-gradient-to-r from-blue-900 to-red-800 rounded-3xl p-12 text-white">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Research Opportunities</h2>
-            <p className="text- md:text-xl text-blue-100 max-w-3xl mx-auto">
-              Explore abundant research opportunities Study in UK for international students pursuing higher education.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <div className="text-4xl md:text-5xl mb-6">🔬</div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4">World-Leading Research</h3>
-              <p className="text-blue-100">
-                Renowned for its world-class universities, the UK offers a diverse range of research fields and state-of-the-art facilities. From innovative technology to groundbreaking discoveries, students can engage in cutting-edge research while enjoying a vibrant academic and cultural experience.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <div className="text-4xl md:text-5xl mb-6">🌍</div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Global Contribution</h3>
-              <p className="text-blue-100">
-                Embrace the chance to contribute to global knowledge and enhance your academic journey in the United Kingdom.
-              </p>
-            </div>
-          </div>
-        </section>
+<section className="bg-gradient-to-r from-blue-100 to-red-100 rounded-3xl p-8 md:p-12">
+  <div className="text-center mb-8 md:mb-10">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Research Opportunities</h2>
+    <p className="text-base md:text-xl text-gray-700 max-w-3xl mx-auto">
+      Explore abundant research opportunities Study in UK for international students pursuing higher education.
+    </p>
+  </div>
+  <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-shadow">
+      <div className="text-4xl md:text-5xl mb-4 md:mb-6">🔬</div>
+      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">World-Leading Research</h3>
+      <p className="text-gray-700">
+        Renowned for its world-class universities, the UK offers a diverse range of research fields and state-of-the-art facilities. From innovative technology to groundbreaking discoveries, students can engage in cutting-edge research while enjoying a vibrant academic and cultural experience.
+      </p>
+    </div>
+    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-red-100 hover:shadow-xl transition-shadow">
+      <div className="text-4xl md:text-5xl mb-4 md:mb-6">🌍</div>
+      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Global Contribution</h3>
+      <p className="text-gray-700">
+        Embrace the chance to contribute to global knowledge and enhance your academic journey in the United Kingdom.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Post-Study Work Options */}
         <section className='py-5 mt-12'>
@@ -458,15 +459,15 @@ const StudyUKPage: React.FC = () => {
         </section>
 
         {/* Scholarships Section */}
-        <section className='py-5 mt-8'>
-          <div className="text-left p-4 mb-12">
+        <section className='bg-gray-100 py-5 mt-8'>
+          <div className="text-left p-4 mb-12 mt-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Scholarships In UK</h2>
             <p className="text-med md:text-xl text-gray-700 text-left">
               Embark on a transformative educational journey in the United Kingdom with our exclusive scholarship program designed for international students.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
+          <div className="w-[96%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Scholarship Process</h3>
               <div className="space-y-2">
@@ -488,7 +489,7 @@ const StudyUKPage: React.FC = () => {
 
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Scholarship Details</h3>
-              <div className="space-y-8">
+              <div className="space-y-4">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-8 border border-blue-200">
                   <h4 className="text-2xl font-bold text-gray-900 mb-4">Coverage</h4>
                   <p className="text-gray-700">
