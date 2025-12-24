@@ -415,7 +415,7 @@ const StudyGermanyPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-red-50 to-yellow-50 rounded-2xl p-6">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Unique Study Fields in Germany</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">🚗</div>
                 <div className="font-bold text-gray-900 mb-2">Automotive Engineering</div>
