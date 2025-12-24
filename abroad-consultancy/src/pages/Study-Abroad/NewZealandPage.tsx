@@ -556,7 +556,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Cost of Living Section */}
-        <section>
+        <section className='py-5'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Cost of Living and Tuition Fees</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -581,14 +581,14 @@ const StudyNewZealandPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-4 border border-blue-100">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
                   <Home className="h-6 w-6 text-blue-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Living Expenses</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-">
                 {livingCosts.map((cost, index) => (
                   <div key={index} className="flex justify-between items-center pb-3 border-b border-gray-100">
                     <span className="text-gray-700">{cost.item}</span>
@@ -683,7 +683,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Visa & Application Process Section */}
-        <section>
+        <section className='py-5'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Visa and Application Process</h2>
           
           <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-3xl p-12 text-white mb-12">

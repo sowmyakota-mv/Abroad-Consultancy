@@ -119,7 +119,7 @@ const StudyGermanyPage: React.FC = () => {
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
   <div className="max-w-xl text-center md:text-left">
-    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 max-w-3xl">
+    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb- max-w-3xl">
   Study in <br />
   <span className="block ml-16 mt-4">Germany</span>
 </h1>
@@ -127,7 +127,7 @@ const StudyGermanyPage: React.FC = () => {
 </div>
 </section>
       {/* Quick Stats */}
-      <section className='-mt-6 sm:mt-0 md:mt-0'>
+      <section className=' sm:mt-0 md:mt-0'>
         <div className="py-5 bg-gray-50 mt-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8">
