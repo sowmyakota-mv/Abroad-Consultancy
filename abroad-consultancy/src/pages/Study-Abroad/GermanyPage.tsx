@@ -129,7 +129,7 @@ const StudyGermanyPage: React.FC = () => {
       {/* Quick Stats */}
       <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-black mb-2">0€</div>
               <div className="text-gray-600">Tuition at Public Universities</div>
@@ -185,7 +185,7 @@ const StudyGermanyPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {[
               { icon: '🎓', title: 'Tuition-Free', desc: 'No tuition fees at public universities' },
               { icon: '🏭', title: 'Engineering Hub', desc: 'World leader in automotive & manufacturing' },
@@ -200,9 +200,9 @@ const StudyGermanyPage: React.FC = () => {
             ))}
           </div>
 <div className='py-5 '>
-          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-6 mt-8">
+          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-4 mt-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Germany?</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-4 rounded-xl">
                 <div className="text-2xl font-bold text-black mb-2">#1</div>
                 <div className="font-bold text-gray-900 mb-2">Engineering Education</div>
@@ -227,7 +227,7 @@ const StudyGermanyPage: React.FC = () => {
         <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 mt-4">Why Study in Germany?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
                   <Euro className="h-6 w-6 text-gray-600" />
@@ -255,7 +255,7 @@ const StudyGermanyPage: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100">
+            <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-6 border border-red-100">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
                   <Factory className="h-6 w-6 text-red-600" />
@@ -279,9 +279,9 @@ const StudyGermanyPage: React.FC = () => {
             </div>
           </div>
 <div className='py-5'>
-          <div className="mt-8 bg-gradient-to-r from-black to-red-900 rounded-3xl p-8 text-white">
+          <div className="mt-8 bg-gradient-to-r from-black to-red-900 rounded-3xl p-4 text-white">
             <h3 className="text-3xl font-bold mb-8 text-left">German Education Excellence</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🔬</div>
                 <h4 className="text-xl font-bold mb-3">Research Excellence</h4>
@@ -304,7 +304,7 @@ const StudyGermanyPage: React.FC = () => {
         {/* Key Points Section */}
         <section className='mt-8 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 ">Key Advantages of Studying in Germany</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all">
                 <div className="text-black mb-4">{point.icon}</div>
@@ -316,7 +316,7 @@ const StudyGermanyPage: React.FC = () => {
 
           <div className="bg-gray-50 rounded-2xl p-6 py-5">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">German Higher Education System</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               {institutionTypes.map((institution, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl">
                   <div className="text-2xl font-bold text-black mb-2">{institution.count}</div>
