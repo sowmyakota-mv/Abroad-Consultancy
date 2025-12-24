@@ -127,7 +127,8 @@ const StudyGermanyPage: React.FC = () => {
 </div>
 </section>
       {/* Quick Stats */}
-      <section className="py-5 bg-gray-50">
+      <section className='-mt-12 sm:mt-0 md:mt-0'>
+        <div className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -147,6 +148,7 @@ const StudyGermanyPage: React.FC = () => {
               <div className="text-gray-600">English-Taught Programs</div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -489,30 +491,33 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Language Requirements Section */}
         <section className='py-5 w-[92%] mx-auto'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Language Requirements</h2>
-          
-          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
-            <table className="w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="py-4 px-6 text-left font-bold text-gray-900">Language</th>
-                  <th className="py-4 px-6 text-left font-bold text-gray-900">Proficiency Test</th>
-                  <th className="py-4 px-6 text-left font-bold text-gray-900">Required Level</th>
-                  <th className="py-4 px-6 text-left font-bold text-gray-900">Program Type</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {languageRequirements.map((lang, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium">{lang.language}</td>
-                    <td className="py-4 px-6">{lang.test}</td>
-                    <td className="py-4 px-6">{lang.level}</td>
-                    <td className="py-4 px-6">{lang.programs}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+  <h2 className="text-4xl font-bold text-gray-900 mb-8">Language Requirements</h2>
+  
+  <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
+    {/* Add mobile scrolling wrapper */}
+    <div className="overflow-x-auto md:overflow-x-visible">
+      <table className="w-full min-w-[640px] md:min-w-0">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="py-4 px-6 text-left font-bold text-gray-900">Language</th>
+            <th className="py-4 px-6 text-left font-bold text-gray-900">Proficiency Test</th>
+            <th className="py-4 px-6 text-left font-bold text-gray-900">Required Level</th>
+            <th className="py-4 px-6 text-left font-bold text-gray-900">Program Type</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200">
+          {languageRequirements.map((lang, index) => (
+            <tr key={index} className="hover:bg-gray-50">
+              <td className="py-4 px-6 font-medium">{lang.language}</td>
+              <td className="py-4 px-6">{lang.test}</td>
+              <td className="py-4 px-6">{lang.level}</td>
+              <td className="py-4 px-6">{lang.programs}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-2xl p-6">
@@ -655,7 +660,7 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Work Opportunities Section */}
         <section className='py-5 w-[92%] mx-auto'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-8 ">Work Opportunities During Studies</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 mt-8 ">Work Opportunities During Studies</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
@@ -717,7 +722,7 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Visa & Application Process Section */}
         <section className='py-5 w-[92%] mx-auto'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-8">Visa and Application Process</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 mt-8">Visa and Application Process</h2>
           
           <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-4 text-white mb-12">
             {/* <div className="text-center mb-8">
@@ -880,7 +885,7 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Post-Study Work Section */}
         <section className='w-[92%] mx-auto py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Post-Study Work Opportunities</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8">Post-Study Work Opportunities</h2>
           
           <div className="bg-gradient-to-r from-red-900 to-yellow-600 rounded-3xl p-12 text-white mb-12">
             {/* <div className="text-center mb-8">
@@ -894,7 +899,7 @@ const StudyGermanyPage: React.FC = () => {
   </div>
   
   <div className="text-left">
-    <h3 className="text-3xl font-bold mb-4">Job Seeker Visa & Work Permits</h3>
+    <h3 className="text-2xl md:text-3xl font-bold mb-4">Job Seeker Visa & Work Permits</h3>
     <p className="text-xl text-gray-200">Stay and work in Germany after completing your studies</p>
   </div>
 </div>
@@ -1024,7 +1029,7 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Scholarships Section */}
         <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-4 w-[92%] mx-auto ">Scholarships in Germany</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 mt-4 w-[92%] mx-auto ">Scholarships in Germany</h2>
           
           <div className="space-y-2 mb-12 w-[92%] mx-auto ">
             {scholarships.map((scholarship, index) => (
