@@ -89,7 +89,7 @@ const StudyNewZealandPage: React.FC = () => {
   return (
     <div id='study-abroad/new-zealand' className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[30vh] sm:h-[60vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -156,16 +156,28 @@ const StudyNewZealandPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8">
         
         {/* Overview Section */}
-        <section>
-          <div className="text-center mb-12 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in New Zealand - Complete Overview</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              For international students seeking top-notch education amid breathtaking natural landscapes, 
+        <section className="w-[80%] mx-auto scroll-mt-20">
+  <div className="flex justify-center mt-12 sm:mt-12">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 ">Study in New Zealand - Complete Overview</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+           For international students seeking top-notch education amid breathtaking natural landscapes, 
               New Zealand emerges as a popular and compelling destination with a unique educational experience.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        <section className='py-5 mt-8'>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               { icon: '🏔️', title: 'Natural Beauty', desc: 'Stunning landscapes & outdoor lifestyle' },
               { icon: '🎓', title: 'Quality Education', desc: 'All universities in global top 500' },
@@ -260,7 +272,7 @@ const StudyNewZealandPage: React.FC = () => {
           </div>
 
           <div className="bg-gradient-to-r from-black to-green-900 rounded-3xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-8 text-center">New Zealand Education Advantages</h3>
+            <h3 className="text-3xl font-bold mb-8 text-left">New Zealand Education Advantages</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🏔️</div>
@@ -282,8 +294,8 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Key Advantages of Studying in New Zealand</h2>
+        <section className='py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Key Advantages of Studying in New Zealand</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all">
@@ -364,7 +376,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section> */}
 
         {/* Popular Courses Section */}
-        <section>
+        <section className='py-5'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in New Zealand</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
