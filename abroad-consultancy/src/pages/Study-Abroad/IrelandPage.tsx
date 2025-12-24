@@ -93,7 +93,7 @@ const StudyIrelandPage: React.FC = () => {
   return (
     <div id='study-abroad/ireland' className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -135,7 +135,7 @@ const StudyIrelandPage: React.FC = () => {
       {/* Quick Stats */}
       <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-green-700 mb-2">35,000+</div>
               <div className="text-gray-600">International Students</div>
@@ -157,19 +157,30 @@ const StudyIrelandPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16"> */}
         
         {/* Overview Section */}
-        <section>
-          <div className="text-center mb-12 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Ireland - Complete Overview</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ireland offers world-class education in an English-speaking EU country, 
+          <section className="scroll-mt-20">
+  <div className="flex justify-center mt-12 sm:mt-12 w-[80%] mx-auto ">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 ">Study in Ireland - Complete Overview</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+          Ireland offers world-class education in an English-speaking EU country, 
               with vibrant culture, leading multinational companies, and excellent graduate employment rates.
             </p>
-          </div>
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 mt-12">
             {[
               { icon: '💻', title: 'Tech Hub', desc: 'European HQ for tech giants' },
               { icon: '🇪🇺', title: 'EU Country', desc: 'English-speaking EU member' },
@@ -184,9 +195,9 @@ const StudyIrelandPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-green-50 to-white rounded-2xl p-8">
+          <div className="w-[92%] mx-auto bg-gradient-to-r from-green-50 to-white rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Ireland?</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-green-700 mb-2">#1</div>
                 <div className="font-bold text-gray-900 mb-2">Globalized Economy</div>
@@ -207,8 +218,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Why Ireland Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Study in Ireland?</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Why Study in Ireland?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
               <div className="flex items-center mb-6">
@@ -265,7 +276,7 @@ const StudyIrelandPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-green-700 to-orange-500 rounded-3xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-8 text-center">Irish Education Excellence</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🎓</div>
                 <h4 className="text-xl font-bold mb-3">Ancient Universities</h4>
@@ -286,9 +297,9 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Key Advantages of Studying in Ireland</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Key Advantages of Studying in Ireland</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all">
                 <div className="text-green-600 mb-4">{point.icon}</div>
@@ -298,9 +309,9 @@ const StudyIrelandPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-green-50 rounded-2xl p-8">
+          <div className="bg-green-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Irish Higher Education System</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-green-700 mb-2">Universities</div>
                 <div className="text-gray-700">7 universities offering comprehensive degree programs</div>
@@ -368,8 +379,8 @@ const StudyIrelandPage: React.FC = () => {
         </section> */}
 
         {/* Popular Courses Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in Ireland</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Popular Courses in Ireland</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {popularCourses.map((course, index) => (
@@ -401,9 +412,9 @@ const StudyIrelandPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-green-50 to-orange-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-green-50 to-orange-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Unique Study Fields in Ireland</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">💊</div>
                 <div className="font-bold text-gray-900 mb-2">Pharmaceutical Sciences</div>
@@ -424,8 +435,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Intakes Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Intake Periods in Ireland</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Intake Periods in Ireland</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {intakes.map((intake, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
@@ -476,8 +487,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* English Requirements Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">English Proficiency Requirements</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">English Proficiency Requirements</h2>
           
           <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
             <table className="w-full">
@@ -548,8 +559,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>     
 
         {/* Cost of Living Section - Continued from where it left off */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Cost of Living and Tuition Fees</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Cost of Living and Tuition Fees</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
@@ -580,9 +591,9 @@ const StudyIrelandPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-green-700 to-orange-600 rounded-3xl p-12 text-white mb-12">
-            <h3 className="text-3xl font-bold mb-8 text-center">Financial Planning Tips</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-gradient-to-r from-green-700 to-orange-600 rounded-3xl p-8 text-white mb-12">
+            <h3 className="text-3xl font-bold mb-8 text-left">Financial Planning Tips</h3>
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-4xl mb-4">💰</div>
                 <h4 className="text-xl font-bold mb-3">Student Budget</h4>
@@ -603,8 +614,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Scholarships Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Scholarships for International Students</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Scholarships for International Students</h2>
           
           <div className="space-y-6 mb-12">
             {scholarships.map((scholarship, index) => (
@@ -677,8 +688,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Major Companies Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Major Companies in Ireland</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Major Companies in Ireland</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {majorCompanies.map((company, index) => (
@@ -710,9 +721,9 @@ const StudyIrelandPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-green-800 to-orange-700 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-green-800 to-orange-700 rounded-3xl p-8 text-white">
             <h3 className="text-3xl font-bold mb-8 text-center">Career Opportunities in Ireland</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-4xl mb-4">💼</div>
                 <h4 className="text-xl font-bold mb-3">Work During Studies</h4>
@@ -733,8 +744,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Student Life Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Student Life in Ireland</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Student Life in Ireland</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
@@ -814,18 +825,18 @@ const StudyIrelandPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+          <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
               <div className="text-4xl mb-4">🍀</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Irish Hospitality</h3>
               <p className="text-gray-600">Famous for friendly locals and welcoming atmosphere</p>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+            <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
               <div className="text-4xl mb-4">🌍</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">International Community</h3>
               <p className="text-gray-600">Diverse student population from 160+ countries</p>
             </div>
-            <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+            <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
               <div className="text-4xl mb-4">🏙️</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Vibrant Cities</h3>
               <p className="text-gray-600">Modern amenities with rich historical heritage</p>
@@ -834,8 +845,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* Application Process Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Application Process</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 ">Application Process</h2>
           
           <div className="bg-gradient-to-r from-green-600 to-orange-500 rounded-3xl p-12 text-white mb-12">
             <h3 className="text-3xl font-bold mb-8 text-center">Step-by-Step Guide</h3>
@@ -935,8 +946,8 @@ const StudyIrelandPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="-mb-6">
-          <div className="bg-gradient-to-r from-green-700 to-orange-600 rounded-3xl p-12 text-white text-center">
+        <section className="w-full mt-8">
+          <div className="bg-gradient-to-r from-green-700 to-orange-600 p-12 text-white text-center">
             <h2 className="text-xl md:text-4xl font-bold mb-6">Start Your Irish Education Journey Today!</h2>
             <p className="text-sm md:text-xl mb-10 max-w-2xl mx-auto">
               Join thousands of international students experiencing world-class education 
@@ -950,10 +961,8 @@ const StudyIrelandPage: React.FC = () => {
               </div>
           </div>
         </section>
-      </div>
-
-      
-    </div>
+      </div>  
+    // </div>
   );
 };
 

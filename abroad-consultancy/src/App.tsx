@@ -37,12 +37,13 @@ import ScrollToTop from './components/Animations/ScrollToTop';
 function App() {
   return (
     <>
+    <div className="w-full overflow-x-hidden">
     <Router>
       <ScrollToTop/>
       <Header/>
       <Routes>
       <Route path='/' element={
-      <div className="w-full">  
+      <div className="w-full overflow-x-hidden">   
         <HeroSection/>
         <CountriesSection/>
         <ServicesSection/>
@@ -77,6 +78,7 @@ function App() {
        </Routes> 
         <FooterSection/>       
         </Router>
+        </div>
     </>
   );
 }

@@ -90,7 +90,7 @@ const StudyEuropePage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[44vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[44vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -154,19 +154,30 @@ const StudyEuropePage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible without navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-16"> */}
         
         {/* Overview Section */}
-        <section>
-          <div className="text-center mb-12 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Europe - Complete Overview</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Europe offers unparalleled academic diversity, cultural richness, and historic excellence 
+          <section className="scroll-mt-20">
+  <div className="flex justify-center mt-12 sm:mt-12 w-[80%] mx-auto ">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-4 md:p-4 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 ">Study in Europe - Complete Overview</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+          Europe offers unparalleled academic diversity, cultural richness, and historic excellence 
               across 44 countries, providing students with a truly global education experience.
             </p>
-          </div>
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="w-[92%] mx-auto mt-12 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               { icon: '🏛️', title: 'Historic Universities', desc: 'Founded as early as 1088 AD' },
               { icon: '🌍', title: 'Cultural Diversity', desc: 'Experience 44 different cultures' },
@@ -181,9 +192,9 @@ const StudyEuropePage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+          <div className="w-[92%] mx-auto bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Europe?</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-blue-600 mb-2">#1</div>
                 <div className="font-bold text-gray-900 mb-2">Global Education Hub</div>
@@ -204,8 +215,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Why Europe Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Study in Europe?</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Why Study in Europe?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
               <div className="flex items-center mb-6">
@@ -262,7 +273,7 @@ const StudyEuropePage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-3xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-8 text-center">European Education Advantages</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🏛️</div>
                 <h4 className="text-xl font-bold mb-3">Historic Excellence</h4>
@@ -283,9 +294,9 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Key Advantages of Studying in Europe</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Key Advantages of Studying in Europe</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all">
                 <div className="text-blue-600 mb-4">{point.icon}</div>
@@ -295,9 +306,9 @@ const StudyEuropePage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-blue-50 rounded-2xl p-8">
+          <div className="bg-blue-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">European Higher Education Area</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-blue-600 mb-2">Bologna Process</div>
                 <div className="text-gray-700">Standardized 3-cycle degree system (Bachelor, Master, PhD)</div>
@@ -315,8 +326,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Popular Countries Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Study Destinations in Europe</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Popular Study Destinations in Europe</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {popularCountries.map((country, index) => (
@@ -355,9 +366,9 @@ const StudyEuropePage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Tuition Fee Comparison</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600 mb-2">Free</div>
                 <div className="font-bold text-gray-900 mb-2">Germany & Norway</div>
@@ -378,8 +389,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Intakes Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Intake Periods in Europe</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Intake Periods in Europe</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {intakes.map((intake, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
@@ -430,8 +441,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Languages Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Language Options in Europe</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Language Options in Europe</h2>
           
           <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
             <table className="w-full">
@@ -556,8 +567,8 @@ const StudyEuropePage: React.FC = () => {
         </section> */}
 
         {/* Cost of Living Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Cost of Living in European Countries</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Cost of Living in European Countries</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
@@ -616,9 +627,9 @@ const StudyEuropePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-green-50 rounded-2xl p-8">
+          <div className="bg-green-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Student Discounts & Savings</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">🚆</div>
                 <div className="font-bold text-gray-900 mb-2">Transport Discounts</div>
@@ -639,8 +650,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Work Rights Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Work Opportunities During Studies</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Work Opportunities During Studies</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
@@ -697,8 +708,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Quality of Life Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Quality of Life in Europe</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Quality of Life in Europe</h2>
           
           <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-3xl p-12 text-white mb-12">
             <div className="text-center mb-8">
@@ -812,28 +823,28 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Post-Study Work Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Post-Graduation Work Opportunities</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Post-Graduation Work Opportunities</h2>
           
-          <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-white mb-12">
+          <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-6 text-white mb-12">
             <div className="text-center mb-8">
               <div className="text-5xl mb-4">🎓</div>
               <h3 className="text-3xl font-bold mb-4">Post-Study Work Permits in Europe</h3>
               <p className="text-xl text-blue-100">Stay and work in Europe after completing your studies</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                 <h4 className="text-xl font-bold mb-4">Germany</h4>
                 <div className="text-3xl font-bold mb-2">18 Months</div>
                 <p className="text-blue-100">Job seeker visa after graduation</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                 <h4 className="text-xl font-bold mb-4">Netherlands</h4>
                 <div className="text-3xl font-bold mb-2">1 Year</div>
                 <p className="text-blue-100">Orientation year for graduates</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                 <h4 className="text-xl font-bold mb-4">Sweden</h4>
                 <div className="text-3xl font-bold mb-2">1 Year</div>
                 <p className="text-blue-100">Extended residency for job seeking</p>
@@ -946,8 +957,8 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Popular Courses Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in Europe</h2>
+        <section className='w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Popular Courses in Europe</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {popularCourses.map((course, index) => (
@@ -979,9 +990,9 @@ const StudyEuropePage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Emerging Study Fields in Europe</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">🌱</div>
                 <div className="font-bold text-gray-900 mb-2">Sustainable Development</div>
@@ -1002,10 +1013,10 @@ const StudyEuropePage: React.FC = () => {
         </section>
 
         {/* Scholarships Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Scholarships in Europe</h2>
+        <section className=''>
+          <h2 className="text-4xl font-bold text-gray-900 mt-8 w-[92%] mx-auto ">Scholarships in Europe</h2>
           
-          <div className="space-y-6 mb-12">
+          {/* <div className="space-y-6 mb-12">
             {scholarships.map((scholarship, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -1032,9 +1043,9 @@ const StudyEuropePage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 w-[92%] mx-auto py-5">
             <div className="bg-blue-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Scholarship Categories</h3>
               <div className="space-y-4">
@@ -1080,7 +1091,7 @@ const StudyEuropePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-blue-900 to-purple-900 p-12 text-white">
             <div className="text-center">
               <h3 className="text-xl md:text-3xl font-bold mb-6">Study in Europe</h3>
               <p className="text-sm md:text-xl mb-8 max-w-3xl mx-auto">
@@ -1099,8 +1110,6 @@ const StudyEuropePage: React.FC = () => {
           </div>
         </section>
       </div>
-
-    </div>
   );
 };
 

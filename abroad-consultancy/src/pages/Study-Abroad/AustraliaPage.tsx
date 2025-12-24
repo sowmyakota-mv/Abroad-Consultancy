@@ -144,7 +144,7 @@ const StudyAustraliaPage: React.FC = () => {
 
       {/* Quick Stats */}
       <section className='-mt-8 sm:mt-0 md:mt-0'>
-        <div className="py-5 bg-gray-50 mt-4">
+        <div className="py-5 bg-gray-50 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -169,11 +169,11 @@ const StudyAustraliaPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections in one column without scrolling */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      {/* <div className="px-4 sm:px-6 lg:px-8 py-5"> */}
         <div className="space-y-2">
           
           {/* Check Eligibility Section - NEW */}
-          <section className="w-[90%] mx-auto scroll-mt-20">
+          <section className="w-[80%] mx-auto scroll-mt-20">
   <div className="flex justify-center mt-12 sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
@@ -196,7 +196,7 @@ const StudyAustraliaPage: React.FC = () => {
 </section>
           
           {/* Overview Section */}
-          <section id="overview" className="scroll-mt-20 py-5">
+          <section id="overview" className="scroll-mt-20 py-5 w-[92%] mx-auto">
             <div className="text-left mb-4 mt-8 ">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Overview</h2>
               <p className="text-lg text-gray-600 text-left">
@@ -223,7 +223,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Cost of Living and Healthcare Combined Section - NEW */}
-          <section className="grid md:grid-cols-2 gap-8 py-5">
+          <section className="grid md:grid-cols-2 gap-8 py-5 w-[92%] mx-auto">
             <div className="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-100 mt-8">
               <div className="flex items-center mb-4 ">
                 <DollarSign className="h-8 w-8 text-yellow-600 mr-3" />
@@ -259,7 +259,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Post-Study Work Section - Enhanced */}
-          <section id="post-study" className="scroll-mt-20 py-8">
+          <section id="post-study" className="scroll-mt-20 py-8 w-[92%] mx-auto">
             <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-2xl p-8 text-white">
               <div className="flex items-center mb-6">
                 <Briefcase className="h-10 w-10 text-yellow-300 mr-4" />
@@ -294,7 +294,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Multicultural Environment Section - NEW */}
-          <section className='py-5 mt-8'>
+          <section className='py-5 mt-8 w-[92%] mx-auto'>
           <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 py-5">
             <div className="text-left mb-8">
               <div className="flex mb-4">
@@ -329,7 +329,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* World-Class Education Section - Enhanced */}
-          <section className='py-5 mt-8'>
+          <section className='py-5 mt-8 w-[92%] mx-auto'>
           <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg ">
             <div className="flex items-center mb-6">
               <Trophy className="h-10 w-10 text-green-600 mr-4" />
@@ -374,7 +374,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Scholarships Section - Enhanced */}
-          <section id="scholarships" className="scroll-mt-20 py-5">
+          <section id="scholarships" className="scroll-mt-20 py-5 w-[92%] mx-auto">
             <div className="text-left  mb-8 mt-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Scholarships in Australia</h2>
               <p className="text-lg text-gray-600">
@@ -454,53 +454,9 @@ const StudyAustraliaPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Masters Visa Services Section - NEW */}       
-          <section className="mt-16 bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-white ">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Study in Australia with DartGlobe</h2>
-              <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
-                Explore the gateway to world-class education in Australia with our DartGlobe 
-                Overseas Education Consultancy. We simplify the complex process, providing expert 
-                guidance on admissions, visa procedures, and more.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-10">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-                <div className="text-4xl mb-4">🎓</div>
-                <h3 className="text-xl font-bold mb-3">Admissions Guidance</h3>
-                <p className="text-blue-100">Expert assistance with university applications</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-                <div className="text-4xl mb-4">📋</div>
-                <h3 className="text-xl font-bold mb-3">Visa Procedures</h3>
-                <p className="text-blue-100">Complete support for student visa applications</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-                <div className="text-4xl mb-4">🤝</div>
-                <h3 className="text-xl font-bold mb-3">Comprehensive Support</h3>
-                <p className="text-blue-100">End-to-end assistance for smooth transition</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <p className="text-xl font-semibold mb-8">
-                Elevate your academic journey with our comprehensive support, ensuring a smooth 
-                transition to Australian universities. Unleash your potential and embrace a 
-                vibrant learning experience in a culturally diverse environment.
-              </p>
-              
-              <button 
-                onClick={() => navigate('/contact')} 
-                className="bg-white text-blue-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 hover:shadow-2xl transition-all duration-300"
-              >
-                Contact Us for Australia
-              </button>
-            </div>
-          </section>
-
+         
           {/* Existing Compact Sections */}
-          <div className="grid md:grid-cols-3 gap-8 py-5 mt-8">
+          <div className="grid md:grid-cols-3 gap-8 py-5 mt-8 w-[92%] mx-auto">
             {/* Intakes Section */}
             <section id="intakes" className="scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Intake Periods</h2>
@@ -548,9 +504,54 @@ const StudyAustraliaPage: React.FC = () => {
             </section>
           </div>
 
+           {/* Masters Visa Services Section - NEW */}       
+          <section className="mt-16 bg-gradient-to-r from-blue-900 to-purple-900  p-12 text-white ">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Study in Australia with DartGlobe</h2>
+              <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
+                Explore the gateway to world-class education in Australia with our DartGlobe 
+                Overseas Education Consultancy. We simplify the complex process, providing expert 
+                guidance on admissions, visa procedures, and more.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-10">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-4">🎓</div>
+                <h3 className="text-xl font-bold mb-3">Admissions Guidance</h3>
+                <p className="text-blue-100">Expert assistance with university applications</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-4">📋</div>
+                <h3 className="text-xl font-bold mb-3">Visa Procedures</h3>
+                <p className="text-blue-100">Complete support for student visa applications</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-4">🤝</div>
+                <h3 className="text-xl font-bold mb-3">Comprehensive Support</h3>
+                <p className="text-blue-100">End-to-end assistance for smooth transition</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-xl font-semibold mb-8">
+                Elevate your academic journey with our comprehensive support, ensuring a smooth 
+                transition to Australian universities. Unleash your potential and embrace a 
+                vibrant learning experience in a culturally diverse environment.
+              </p>
+              
+              <button 
+                onClick={() => navigate('/contact')} 
+                className="bg-white text-blue-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 hover:shadow-2xl transition-all duration-300"
+              >
+                Contact Us for Australia
+              </button>
+            </div>
+          </section>
+
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

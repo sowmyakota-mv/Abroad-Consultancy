@@ -89,7 +89,7 @@ const StudyNewZealandPage: React.FC = () => {
   return (
     <div id='study-abroad/new-zealand' className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[30vh] sm:h-[60vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[30vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -131,7 +131,7 @@ const StudyNewZealandPage: React.FC = () => {
       {/* Quick Stats */}
       <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-green-900 mb-2">8</div>
               <div className="text-gray-600">World-Class Universities</div>
@@ -153,7 +153,7 @@ const StudyNewZealandPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8"> */}
         
         {/* Overview Section */}
         <section className="w-[80%] mx-auto scroll-mt-20">
@@ -176,8 +176,8 @@ const StudyNewZealandPage: React.FC = () => {
     </div>
   </div>
 </section>
-        <section className='py-5 mt-8'>
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <section className='py-5 mt-8 w-[92%] mx-auto'>
+    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               { icon: '🏔️', title: 'Natural Beauty', desc: 'Stunning landscapes & outdoor lifestyle' },
               { icon: '🎓', title: 'Quality Education', desc: 'All universities in global top 500' },
@@ -194,7 +194,7 @@ const StudyNewZealandPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose New Zealand?</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-green-600 mb-2">#1</div>
                 <div className="font-bold text-gray-900 mb-2">Peaceful Nation</div>
@@ -215,7 +215,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Why New Zealand Section */}
-        <section>
+        <section className=' w-[92%] mx-auto py-5 mt-8'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Study in New Zealand?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
@@ -273,7 +273,7 @@ const StudyNewZealandPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-black to-green-900 rounded-3xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-8 text-left">New Zealand Education Advantages</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🏔️</div>
                 <h4 className="text-xl font-bold mb-3">Natural Environment</h4>
@@ -294,9 +294,9 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section className='py-5'>
+        <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Key Advantages of Studying in New Zealand</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all">
                 <div className="text-green-600 mb-4">{point.icon}</div>
@@ -308,7 +308,7 @@ const StudyNewZealandPage: React.FC = () => {
 
           <div className="bg-green-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">New Zealand Qualifications Framework (NZQF)</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl">
                 <div className="text-2xl font-bold text-green-600 mb-2">Levels 1-10</div>
                 <div className="text-gray-700">Comprehensive qualification levels from certificates to doctorates</div>
@@ -376,8 +376,8 @@ const StudyNewZealandPage: React.FC = () => {
         </section> */}
 
         {/* Popular Courses Section */}
-        <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in New Zealand</h2>
+        <section className='py-5 w-[92%] mx-auto'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Popular Courses in New Zealand</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {popularCourses.map((course, index) => (
@@ -411,7 +411,7 @@ const StudyNewZealandPage: React.FC = () => {
 
           <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Unique Study Fields</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">🌿</div>
                 <div className="font-bold text-gray-900 mb-2">Sustainable Agriculture</div>
@@ -432,8 +432,8 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Intakes Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Intake Periods in New Zealand</h2>
+        <section className=' w-[92%] mx-auto py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Intake Periods in New Zealand</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {intakes.map((intake, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
@@ -484,7 +484,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* English Requirements Section */}
-        <section>
+        <section className=' w-[92%] mx-auto py-5 mt-8'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">English Proficiency Requirements</h2>
           
           <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
@@ -556,7 +556,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Cost of Living Section */}
-        <section className='py-5'>
+        <section className='py-5  w-[92%] mx-auto mt-8'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Cost of Living and Tuition Fees</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -609,19 +609,19 @@ const StudyNewZealandPage: React.FC = () => {
           <div className="bg-yellow-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Cost Comparison by City</h3>
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-2xl font-bold text-green-600 mb-2">Auckland</div>
                 <div className="text-gray-700">$25,000 - $35,000/year</div>
               </div>
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-2xl font-bold text-green-600 mb-2">Wellington</div>
                 <div className="text-gray-700">$22,000 - $30,000/year</div>
               </div>
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-2xl font-bold text-green-600 mb-2">Christchurch</div>
                 <div className="text-gray-700">$20,000 - $28,000/year</div>
               </div>
-              <div className="text-center">
+              <div className="text-left">
                 <div className="text-2xl font-bold text-green-600 mb-2">Dunedin</div>
                 <div className="text-gray-700">$18,000 - $25,000/year</div>
               </div>
@@ -630,7 +630,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Work Opportunities Section */}
-        <section>
+        <section className=' w-[92%] mx-auto py-5 mt-8'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Work Opportunities During Studies</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -683,7 +683,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Visa & Application Process Section */}
-        <section className='py-5'>
+        <section className='py-5  w-[92%] mx-auto py-5 mt-8 '>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Visa and Application Process</h2>
           
           <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-3xl p-12 text-white mb-12">
@@ -793,7 +793,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Post-Study Work Section */}
-        <section>
+        <section className=' w-[92%] mx-auto py-5 mt-8'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Post-Study Work Opportunities</h2>
           
           <div className="bg-gradient-to-r from-blue-900 to-green-900 rounded-3xl p-12 text-white mb-12">
@@ -927,10 +927,10 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
 
         {/* Scholarships Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Scholarships in New Zealand</h2>
+        <section >
+          <h2 className="text-4xl font-bold text-gray-900 w-[92%] mx-auto mt-8">Scholarships in New Zealand</h2>
           
-          <div className="space-y-6 mb-12">
+          {/* <div className="space-y-6 mb-12">
             {scholarships.map((scholarship, index) => (
               <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -957,9 +957,9 @@ const StudyNewZealandPage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 w-[92%] mx-auto mt-8">
             <div className="bg-green-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Scholarship Application Process</h3>
               <ol className="space-y-4">
@@ -1025,9 +1025,9 @@ const StudyNewZealandPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-green-900 to-blue-900 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-green-900 to-blue-900 p-12 text-white">
             <div className="text-center">
-              <h3 className="text-xl md:text-3xl font-bold mb-6">Study in UK / Study in USA</h3>
+              <h3 className="text-xl md:text-3xl font-bold mb-6">Study in New Zealand</h3>
               <p className="text-sm md:text-xl mb-8 max-w-3xl mx-auto">
                 For in-depth information on our New Zealand scholarships, eligibility criteria, and the application 
                 process, enroll with Masters Visa Overseas Education Consultancy. Our dedicated team will guide 
@@ -1045,7 +1045,7 @@ const StudyNewZealandPage: React.FC = () => {
         </section>
       </div>
 
-    </div>
+    // </div>
   );
 };
 
