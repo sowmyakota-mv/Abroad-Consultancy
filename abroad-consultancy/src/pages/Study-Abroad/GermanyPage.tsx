@@ -152,36 +152,58 @@ const StudyGermanyPage: React.FC = () => {
 
       {/* Main Content - All sections visible */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8">
+
+         <section className="w-[90%] mx-auto scroll-mt-20">
+  <div className="flex justify-center mt-12 sm:mt-12">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-4xl font-bold text-gray-900 ">Why study in Germany?</h2>
+        <div className="rounded-xl p-4 md:p-4 ">
+          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+            Study in Germany as an international student presents a unique and rewarding experience 
+                that sets it apart from other destinations. Here is a summary of what to expect when 
+                pursuing education in Australia.
+              </p>
+        </div>
+        <div className="mt-2 md:mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105">
+            Check Your Eligibility
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         
         {/* Overview Section */}
-        <section>
-          <div className="text-center mb-10 mt-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Study in Germany - Complete Overview</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <section className='py-5'>
+          <div className="text-left mb-4 mt-8">
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Study in Germany - Complete Overview</h2>
+            <p className="text-xl text-gray-600 text-left">
               Germany offers tuition-free education at public universities, world-class engineering programs, 
               and excellent career opportunities in Europe's economic powerhouse.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {[
               { icon: '🎓', title: 'Tuition-Free', desc: 'No tuition fees at public universities' },
               { icon: '🏭', title: 'Engineering Hub', desc: 'World leader in automotive & manufacturing' },
               { icon: '🌍', title: 'English Programs', desc: '1,800+ English-taught programs' },
               { icon: '💼', title: 'Strong Economy', desc: 'Largest economy in Europe' },
             ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 text-center hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{item.icon}</div>
+              <div key={index} className="bg-white rounded-xl p-4 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-3">{item.icon}</div>
                 <div className="font-bold text-gray-900 mb-2">{item.title}</div>
                 <div className="text-gray-600">{item.desc}</div>
               </div>
             ))}
           </div>
-
-          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-8">
+<div className='py-5 '>
+          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-6 mt-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Germany?</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-xl">
+              <div className="bg-white p-4 rounded-xl">
                 <div className="text-2xl font-bold text-black mb-2">#1</div>
                 <div className="font-bold text-gray-900 mb-2">Engineering Education</div>
                 <div className="text-gray-600">Top-ranked engineering programs worldwide</div>
@@ -198,11 +220,12 @@ const StudyGermanyPage: React.FC = () => {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* Why Germany Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-8">Why Study in Germany?</h2>
+        <section className='py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 mt-4">Why Study in Germany?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
               <div className="flex items-center mb-6">
@@ -255,9 +278,9 @@ const StudyGermanyPage: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-8 text-center">German Education Excellence</h3>
+<div className='py-5'>
+          <div className="mt-8 bg-gradient-to-r from-black to-red-900 rounded-3xl p-8 text-white">
+            <h3 className="text-3xl font-bold mb-8 text-left">German Education Excellence</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl mb-4">🔬</div>
@@ -275,7 +298,7 @@ const StudyGermanyPage: React.FC = () => {
                 <p className="text-gray-300">German degrees highly respected worldwide</p>
               </div>
             </div>
-          </div>
+          </div></div>
         </section>
 
         {/* Key Points Section */}
@@ -291,7 +314,7 @@ const StudyGermanyPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-8">
+          <div className="bg-gray-50 rounded-2xl p-6 py-5">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">German Higher Education System</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {institutionTypes.map((institution, index) => (
@@ -357,7 +380,7 @@ const StudyGermanyPage: React.FC = () => {
         </section> */}
 
         {/* Popular Courses Section */}
-        <section>
+        <section className='py-5'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in Germany</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -390,8 +413,8 @@ const StudyGermanyPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-red-50 to-yellow-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Unique Study Fields in Germany</h3>
+          <div className="bg-gradient-to-r from-red-50 to-yellow-50 rounded-2xl p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Unique Study Fields in Germany</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">🚗</div>
@@ -413,8 +436,8 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Intakes Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Intake Periods in Germany</h2>
+        <section className='py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Intake Periods in Germany</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {intakes.map((intake, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
@@ -435,8 +458,8 @@ const StudyGermanyPage: React.FC = () => {
               </div>
             ))}
           </div>
-
-          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-8">
+<div className='py-5'>
+          <div className="bg-gradient-to-r from-gray-50 to-red-50 rounded-2xl p-6 ">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Application Timeline for Germany</h3>
             <div className="space-y-6">
               <div className="flex items-center">
@@ -461,7 +484,7 @@ const StudyGermanyPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div></div>
         </section>
 
         {/* Language Requirements Section */}
@@ -492,7 +515,7 @@ const StudyGermanyPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="bg-gray-50 rounded-2xl p-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">German Language Preparation</h3>
               <ul className="space-y-4">
                 <li className="flex items-center">
@@ -514,7 +537,7 @@ const StudyGermanyPage: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-red-50 rounded-2xl p-8">
+            <div className="bg-red-50 rounded-2xl p-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">English-Taught Programs</h3>
               <ul className="space-y-4">
                 <li className="flex items-center">
@@ -541,18 +564,18 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Cost of Living Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Cost of Living in Germany</h2>
+        <section className='py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Cost of Living in Germany</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
-              <div className="flex items-center mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100">
+              <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
                   <Euro className="h-6 w-6 text-gray-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Monthly Living Costs by City</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {livingCosts.map((cost, index) => (
                   <div key={index} className="flex justify-between items-center pb-3 border-b border-gray-100">
                     <div>
@@ -568,8 +591,8 @@ const StudyGermanyPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100">
-              <div className="flex items-center mb-6">
+            <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-6 border border-red-100">
+              <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
                   <Home className="h-6 w-6 text-red-600" />
                 </div>
@@ -608,8 +631,8 @@ const StudyGermanyPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-yellow-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Financial Requirements for Student Visa</h3>
+          <div className="bg-yellow-50 rounded-2xl p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Financial Requirements for Student Visa</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-black mb-2">€11,208</div>
@@ -631,17 +654,17 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Work Opportunities Section */}
-        <section>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Work Opportunities During Studies</h2>
+        <section className='py-5'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Work Opportunities During Studies</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
               { role: 'Student Assistant', hours: '10-20 hrs/week', pay: '€12-€15/hour', type: 'University positions' },
               { role: 'Internships', hours: 'Full-time', pay: '€800-€1,500/month', type: 'During semester breaks' },
               { role: 'Working Student', hours: '20 hrs/week', pay: '€12-€20/hour', type: 'Industry positions' },
               { role: 'Mini Jobs', hours: 'Up to 520€/month', pay: '€9-€12/hour', type: 'Tax-free casual work' },
             ].map((option, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+              <div key={index} className="bg-white rounded-xl p-4 border border-gray-200">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
                     <Briefcase className="h-6 w-6 text-gray-600" />
@@ -665,8 +688,8 @@ const StudyGermanyPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-yellow-50 rounded-2xl p-8 border border-yellow-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Student Work Regulations</h3>
+          <div className="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Student Work Regulations</h3>
             <div className="space-y-4">
               <div className="flex items-center">
                 <Shield className="h-5 w-5 text-yellow-600 mr-3" />

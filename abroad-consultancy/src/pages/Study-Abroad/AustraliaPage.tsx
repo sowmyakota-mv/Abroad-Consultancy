@@ -103,7 +103,7 @@ const StudyAustraliaPage: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
      {/* Hero Section */}
-<section className="relative h-[36vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[30vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
