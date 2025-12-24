@@ -143,8 +143,8 @@ const StudyAustraliaPage: React.FC = () => {
 </section>
 
       {/* Quick Stats */}
-      <section className='-mt-6 sm:mt-0 md:mt-0'>
-        <div className="py-5 bg-gray-50">
+      <section className='-mt-12 sm:mt-0 md:mt-0'>
+        <div className="py-5 bg-gray-50 mt-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
