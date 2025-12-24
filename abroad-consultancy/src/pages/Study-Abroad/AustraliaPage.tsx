@@ -103,7 +103,7 @@ const StudyAustraliaPage: React.FC = () => {
   return (
     <div className="bg-white overflow-hidden">
      {/* Hero Section */}
-<section className="relative h-[36vh] sm:h-[68vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[36vh] sm:h-[48vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -134,7 +134,7 @@ const StudyAustraliaPage: React.FC = () => {
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
   <div className="max-w-xl text-center md:text-left">
-    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 max-w-3xl">
+    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold mb- max-w-3xl">
   Study in <br />
   <span className="block ml-16 mt-4">Australia</span>
 </h1>
@@ -147,19 +147,19 @@ const StudyAustraliaPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-900 mb-2">7</div>
+              <div className="text-xl md:text-3xl font-bold text-green-900 mb-2">7</div>
               <div className="text-gray-600">Top 100 Global Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-900 mb-2">720,000+</div>
+              <div className="text-xl md:text-3xl font-bold text-green-900 mb-2">720,000+</div>
               <div className="text-gray-600">International Students</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-900 mb-2">2-6 Years</div>
+              <div className="text-xl md:text-3xl font-bold text-green-900 mb-2">2-6 Years</div>
               <div className="text-gray-600">Post-Study Work Rights</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-900 mb-2">95%</div>
+              <div className="text-xl md:text-3xl font-bold text-green-900 mb-2">95%</div>
               <div className="text-gray-600">Graduate Employability</div>
             </div>
           </div>
@@ -172,7 +172,7 @@ const StudyAustraliaPage: React.FC = () => {
           
           {/* Check Eligibility Section - NEW */}
           <section className="w-[90%] mx-auto scroll-mt-20">
-  <div className="flex justify-center sm:mt-12">
+  <div className="flex justify-center mt-12 sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-4xl font-bold text-gray-900 ">Why study in Australia?</h2>
@@ -195,7 +195,7 @@ const StudyAustraliaPage: React.FC = () => {
           
           {/* Overview Section */}
           <section id="overview" className="scroll-mt-20 py-5">
-            <div className="text-left mb-4 mt-8 p-4">
+            <div className="text-left mb-4 mt-8 ">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Overview</h2>
               <p className="text-lg text-gray-600 text-left">
                 Australia offers world-class education with globally recognized degrees, 
@@ -204,7 +204,7 @@ const StudyAustraliaPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-4 ">
               {[
                 { icon: '🏫', title: 'Top Universities', desc: '7 in Top 100' },
                 { icon: '⏱️', title: 'Study Duration', desc: '3-4 years' },
@@ -270,16 +270,16 @@ const StudyAustraliaPage: React.FC = () => {
               </p>
               
               <div className="grid grid-cols-3 gap-6 mb-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold mb-2">2 Years</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 text-center">
+                  <div className="text-xl md:text-3xl font-bold mb-2">2 Years</div>
                   <div className="text-blue-100">Bachelor Degree</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold mb-2">3 Years</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 text-center">
+                  <div className="text-xl md:text-3xl font-bold mb-2">3 Years</div>
                   <div className="text-blue-100">Master Degree</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold mb-2">4 Years</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 text-center">
+                  <div className="text-xl md:text-3xl font-bold mb-2">4 Years</div>
                   <div className="text-blue-100">PhD Degree</div>
                 </div>
               </div>
@@ -306,19 +306,19 @@ const StudyAustraliaPage: React.FC = () => {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white rounded-lg p-4 text-center">
+              <div className="bg-white rounded-lg p-2 text-center">
                 <div className="text-2xl mb-2">🌏</div>
                 <div className="font-bold text-gray-900">Diverse Backgrounds</div>
               </div>
-              <div className="bg-white rounded-lg p-4 text-center">
+              <div className="bg-white rounded-lg p-2 text-center">
                 <div className="text-2xl mb-2">🤝</div>
                 <div className="font-bold text-gray-900">Cultural Exchange</div>
               </div>
-              <div className="bg-white rounded-lg p-4 text-center">
+              <div className="bg-white rounded-lg p-2 text-center">
                 <div className="text-2xl mb-2">🎯</div>
                 <div className="font-bold text-gray-900">Global Perspective</div>
               </div>
-              <div className="bg-white rounded-lg p-4 text-center">
+              <div className="bg-white rounded-lg p-2 text-center">
                 <div className="text-2xl mb-2">💡</div>
                 <div className="font-bold text-gray-900">Understanding</div>
               </div>
@@ -373,9 +373,9 @@ const StudyAustraliaPage: React.FC = () => {
 
           {/* Scholarships Section - Enhanced */}
           <section id="scholarships" className="scroll-mt-20 py-5">
-            <div className="text-left p-4 mb-8 mt-8">
+            <div className="text-left  mb-8 mt-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Scholarships in Australia</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600">
                 Discover exclusive scholarship opportunities for international students with Masters Visa. 
                 We provide specialized guidance to unlock financial aid for your academic journey.
               </p>
@@ -384,7 +384,7 @@ const StudyAustraliaPage: React.FC = () => {
             {/* Scholarship Application Process */}
             <div className="bg-gradient-to-r from-green-50 to-yellow-50 rounded-2xl p-8 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Scholarship Application Process</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-white p-4 rounded-lg border border-gray-200">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3 mx-auto">
                     <span className="font-bold text-green-600">1</span>
@@ -452,12 +452,12 @@ const StudyAustraliaPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Masters Visa Services Section - NEW */}
-          <section className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-white">
+          {/* Masters Visa Services Section - NEW */}       
+          <section className="mt-16 bg-gradient-to-r from-blue-900 to-purple-900 rounded-3xl p-12 text-white ">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Study in Australia with Masters Visa</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Study in Australia with DartGlobe</h2>
               <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
-                Explore the gateway to world-class education in Australia with our Masters Visa 
+                Explore the gateway to world-class education in Australia with our DartGlobe 
                 Overseas Education Consultancy. We simplify the complex process, providing expert 
                 guidance on admissions, visa procedures, and more.
               </p>
@@ -498,7 +498,7 @@ const StudyAustraliaPage: React.FC = () => {
           </section>
 
           {/* Existing Compact Sections */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 py-5 mt-8">
             {/* Intakes Section */}
             <section id="intakes" className="scroll-mt-20">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Intake Periods</h2>
@@ -538,7 +538,7 @@ const StudyAustraliaPage: React.FC = () => {
               <div className="space-y-3">
                 {popularCourses.map((course, index) => (
                   <div key={index} className="bg-white rounded-lg p-3 border border-gray-200">
-                    <h3 className="text-sm font-bold text-gray-900 mb-1">{course.field}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{course.field}</h3>
                     <div className="text-xs text-gray-600">{course.universities}</div>
                   </div>
                 ))}
