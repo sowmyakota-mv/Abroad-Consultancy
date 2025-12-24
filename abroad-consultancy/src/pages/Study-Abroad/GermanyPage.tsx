@@ -151,9 +151,9 @@ const StudyGermanyPage: React.FC = () => {
       </section>
 
       {/* Main Content - All sections visible */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-8"> */}
 
-         <section className="w-[90%] mx-auto scroll-mt-20">
+         <section className="w-[80%] mx-auto scroll-mt-20">
   <div className="flex justify-center mt-12 sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8 shadow-lg border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
@@ -176,7 +176,7 @@ const StudyGermanyPage: React.FC = () => {
 </section>
         
         {/* Overview Section */}
-        <section className='py-5'>
+        <section className='py-5 w-[92%] mx-auto'>
           <div className="text-left mb-4 mt-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-3">Study in Germany - Complete Overview</h2>
             <p className="text-xl text-gray-600 text-left">
@@ -224,7 +224,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Why Germany Section */}
-        <section className='py-5'>
+        <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-4 mt-4">Why Study in Germany?</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100">
@@ -302,7 +302,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Key Points Section */}
-        <section className='mt-8'>
+        <section className='mt-8 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8 ">Key Advantages of Studying in Germany</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {keyPoints.map((point, index) => (
@@ -380,7 +380,7 @@ const StudyGermanyPage: React.FC = () => {
         </section> */}
 
         {/* Popular Courses Section */}
-        <section className='py-5'>
+        <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Popular Courses in Germany</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -436,7 +436,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Intakes Section */}
-        <section className='py-5'>
+        <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Intake Periods in Germany</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {intakes.map((intake, index) => (
@@ -488,7 +488,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Language Requirements Section */}
-        <section>
+        <section className='py-5 w-[92%] mx-auto'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Language Requirements</h2>
           
           <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-12">
@@ -564,8 +564,8 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Cost of Living Section */}
-        <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Cost of Living in Germany</h2>
+        <section className='py-5 w-[92%] mx-auto'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-8">Cost of Living in Germany</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100">
@@ -654,8 +654,8 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Work Opportunities Section */}
-        <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Work Opportunities During Studies</h2>
+        <section className='py-5 w-[92%] mx-auto'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-8 ">Work Opportunities During Studies</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
@@ -716,8 +716,8 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Visa & Application Process Section */}
-        <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Visa and Application Process</h2>
+        <section className='py-5 w-[92%] mx-auto'>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 mt-8">Visa and Application Process</h2>
           
           <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-4 text-white mb-12">
             {/* <div className="text-center mb-8">
@@ -879,7 +879,7 @@ const StudyGermanyPage: React.FC = () => {
         </section>
 
         {/* Post-Study Work Section */}
-        <section>
+        <section className='w-[92%] mx-auto py-5'>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Post-Study Work Opportunities</h2>
           
           <div className="bg-gradient-to-r from-red-900 to-yellow-600 rounded-3xl p-12 text-white mb-12">
@@ -1024,9 +1024,9 @@ const StudyGermanyPage: React.FC = () => {
 
         {/* Scholarships Section */}
         <section className='py-5'>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-4">Scholarships in Germany</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 mt-4 w-[92%] mx-auto ">Scholarships in Germany</h2>
           
-          <div className="space-y-2 mb-12">
+          <div className="space-y-2 mb-12 w-[92%] mx-auto ">
             {scholarships.map((scholarship, index) => (
               <div key={index} className="bg-white rounded-xl p-4 border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -1055,7 +1055,7 @@ const StudyGermanyPage: React.FC = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 w-[92%] mx-auto ">
             <div className="bg-gray-50 rounded-2xl p-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">DAAD Scholarships</h3>
               <div className="space-y-4">
@@ -1101,9 +1101,9 @@ const StudyGermanyPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-black to-red-900 rounded-3xl p-8 text-white">
+          <div className="w-full bg-gradient-to-r from-black to-red-900 -mb-6 p-8 text-white">
             <div className="text-center">
-              <h3 className="text-xl md:text-3xl font-bold mb-4">Study in UK / Study in USA</h3>
+              <h3 className="text-xl md:text-3xl font-bold mb-4">Study in Germany</h3>
               <p className="text-sm md:text-xl mb-8 max-w-3xl mx-auto">
                 Compare your options and make the right choice for your international education journey. 
                 Germany offers unique advantages with tuition-free education, strong industry connections, 
@@ -1119,7 +1119,7 @@ const StudyGermanyPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </div>
+    // </div>
   );
 };
 
