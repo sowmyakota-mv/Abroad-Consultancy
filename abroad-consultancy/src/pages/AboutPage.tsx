@@ -81,13 +81,18 @@ const AboutUsPage: React.FC = () => {
             {/* Content Section */}
             <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Why Choose DartGlobe Consultation?
+                More Than Just Consultants - We Are Your Architects
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                We stand out as premier education consultants because of our personalized approach, extensive network of partner institutions, and unwavering commitment to student success. Our team of experienced counselors provides tailored guidance that aligns with your academic goals, financial capabilities, and career aspirations.
-              </p>
+               DartGlobe stands out because we treat your career goals as our own.
+                We skip the "one-size-fits-all" approach and provide a personalized roadmap
+                 based on your unique academic background and budget. Our strong network of partner
+                 institutions ensures your profile reaches the right decision-makers.
+               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
-                From selecting the right university to settling in a new country, we offer end-to-end support ensuring a seamless transition. Our success is measured by your achievements, and we take pride in being part of your journey to global education excellence.
+                Our support doesn't end with an admission letter. We offer complete lifecycle 
+                support from editing your SOPs to guiding you through visa interviews and helping 
+                you settle abroad. We are proud to be launchpad for your global education journey.
               </p>
             </div>
           </div>
@@ -127,16 +132,16 @@ const AboutUsPage: React.FC = () => {
                     </h3>
                     <div className="space-y-4">
                       {[
-                        "Free processing for all countries",
-                        "Language Proficiency Classes",
-                        "Scholarship Assistance",
-                        "Financial Aid",
-                        "Application Fee Waiver",
-                        "Visa Interview Guidance",
-                        "Job Placements",
-                        "Visiting & Dependents Visa Guide",
-                        "Accommodation Assistance",
-                        "Part Time Jobs"
+                        "Free Global processing",
+                        "Expert Test Prep(IELTS/PTE)",
+                        "Scholarship Sourcing",
+                        "Education Loan Support",
+                        "Application Fee Waivers",
+                        "Mock Visa Interview",
+                        "Post-Study Career Support",
+                        "Dependent Visa Guidance",
+                        "Student Housing Support",
+                        "Part-Time Job Assistance"
                       ].map((benefit, index) => (
                         <div key={index} className="flex items-start group">
                           <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1 mr-3 group-hover:bg-blue-500 transition-colors">
@@ -160,13 +165,16 @@ const AboutUsPage: React.FC = () => {
                     </h3>
                     <div className="space-y-4">
                       {[
-                        "Structured guidance will be given in filing your applications",
-                        "Admission will be tracked throughout every step",
-                        "Transcript evaluation will be carefully undertaken",
-                        "Statement of purpose will be personally altered",
-                        "Letter of Recommendation curated with experienced criteria",
-                        "Resume structured on a global acceptance level",
-                        "Visa processing in accordance with all the rules and policies by law"
+                        "Strategic Roadmap",
+                        "Live Status Tracking",
+                        "Academic Profile Audit",
+                        "SOP Review & Editing",
+                        "LOR Drafting Support",
+                        "Global Resume Building",
+                        "Document Verification",
+                        "Finance Documentation",
+                        "Compliant Visa Filing",
+                        "Pre-Departure Briefing"
                       ].map((item, index) => (
                         <div key={index} className="flex items-start group">
                           <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1 mr-3 group-hover:bg-green-500 transition-colors">
@@ -190,23 +198,23 @@ const AboutUsPage: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto transition-all duration-300 rounded-2xl p-4">
       {[
         {
-          title: "End to End Services",
-          description: "Our experts will guide you through each step of the admission process.",
+          title: "Your All-in-One Partner",
+          description: "We handle the stress so you don't have to. From university shortlisting to your first day on campus, we guide you through every single step.",
           icon: "🎯"
         },
         {
-          title: "Branches in AP & TS",
-          description: "We offer world-class education consultation services with 9 offices in AP and TS",
+          title: "Meet Us Anywhere",
+          description: "Hybrid counseling that fits your life. Visit our hubs in Hyderabad & Bangalore, or enjoy full-service expert counseling virtually from the comfort of your home.",
           icon: "🏢"
         },
         {
-          title: "High Visa Success Rate",
-          description: "We have the team, vision, energy & skill to deliver high visa success rate",
+          title: "Stress-Free Visa Success",
+          description: "Maximize your chances with zero panic. We use a data-driven approach for documentation and mock interviews to ensure your visa is approved seamlessly.",
           icon: "📈"
         },
         {
-          title: "24/7 Priority Support",
-          description: "Extremity direction existence as dashwoods do up. Always available for our students",
+          title: "Always BY Your Side",
+          description: "Support that doesn't sleep. Whether you are online or on campus, our dedicated team is available 24/7 to answer your questions instantly.",
           icon: "🕒"
         }
       ].map((point, index) => {

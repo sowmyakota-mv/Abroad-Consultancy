@@ -234,36 +234,47 @@ const TestimonialsSection: React.FC = () => {
           </button>
 
           {/* 3 Card Layout - 80% width with touch/swipe area */}
-          <div 
-            ref={containerRef}
-            className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {getDisplayTestimonials().map((testimonial, index) => (
-              <div
-  key={`${testimonial.id}-${index}`}
-  className={`absolute transition-all duration-500 ease-in-out touch-none ${
-    index === 0 
-      ? 'left-0 scale-90 opacity-30 blur-xxs -translate-y-8' 
-      : index === 1 
-      ? 'left-1/2 transform -translate-x-1/2 z-10 scale-100 opacity-100' 
-      : 'right-0 scale-90 opacity-30 blur-xxs -translate-y-8'
-  } ${
-    // Center card widths
-    index === 1 
-      ? 'w-[280px] sm:w-[320px] md:w-[380px]' 
-      : 'w-[220px] sm:w-[280px] md:w-[320px]'
-  }`}
+         <div 
+  ref={containerRef}
+  className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
 >
-                <TestimonialCard 
-                  testimonial={testimonial} 
-                  isCenter={index === 1}
-                />
-              </div>
-            ))}
-          </div>
+ {getDisplayTestimonials().map((testimonial, index) => (
+  <div
+    key={`${testimonial.id}-${index}`}
+    className={`absolute transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] touch-none ${
+      index === 0 
+        ? 'scale-90 opacity-30 blur-xxs -translate-y-8' 
+        : index === 1 
+        ? 'z-10 scale-100 opacity-100' 
+        : 'scale-90 opacity-30 blur-xxs -translate-y-8'
+    } ${
+      // Center card widths
+      index === 1 
+        ? 'w-[280px] sm:w-[320px] md:w-[380px]' 
+        : 'w-[220px] sm:w-[280px] md:w-[320px]'
+    }`}
+    style={{
+      left: '50%',
+      transform: index === 0 
+        ? 'translateX(-150%) scale(0.9)' 
+        : index === 1 
+        ? 'translateX(-50%) scale(1)' 
+        : 'translateX(50%) scale(0.9)',
+      transitionProperty: 'transform, opacity, filter',
+      transitionDuration: '700ms',
+      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+    }}
+  >
+    <TestimonialCard 
+      testimonial={testimonial} 
+      isCenter={index === 1}
+    />
+  </div>
+))}
+</div>
 
           {/* Right Arrow */}
           <button
