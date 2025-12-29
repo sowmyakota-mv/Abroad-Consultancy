@@ -6,6 +6,9 @@ const TestimonialsSection: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionDirection, setTransitionDirection] = useState<'left' | 'right' | null>(null);
+  const [cardPositions, setCardPositions] = useState(['left', 'center', 'right']);
   
   // Minimum swipe distance
   const minSwipeDistance = 50;
@@ -133,22 +136,56 @@ const TestimonialsSection: React.FC = () => {
     }
   ];
 
+  // Get indices for the 3 visible cards
+  const getCardIndices = () => {
+    const prevIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+    const nextIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
+    
+    return [prevIndex, currentIndex, nextIndex];
+  };
+
   const scrollLeft = () => {
-    setCurrentIndex(prev => {
-      if (prev <= 0) {
-        return testimonials.length - 1;
-      }
-      return prev - 1;
-    });
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTransitionDirection('right');
+    
+    // Update card positions for animation
+    setCardPositions(['center', 'right', 'out-right']);
+    
+    setTimeout(() => {
+      setCurrentIndex(prev => {
+        if (prev <= 0) {
+          return testimonials.length - 1;
+        }
+        return prev - 1;
+      });
+      // Reset positions after animation
+      setCardPositions(['left', 'center', 'right']);
+      setIsTransitioning(false);
+      setTransitionDirection(null);
+    }, 500);
   };
 
   const scrollRight = () => {
-    setCurrentIndex(prev => {
-      if (prev >= testimonials.length - 1) {
-        return 0;
-      }
-      return prev + 1;
-    });
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTransitionDirection('left');
+    
+    // Update card positions for animation
+    setCardPositions(['out-left', 'left', 'center']);
+    
+    setTimeout(() => {
+      setCurrentIndex(prev => {
+        if (prev >= testimonials.length - 1) {
+          return 0;
+        }
+        return prev + 1;
+      });
+      // Reset positions after animation
+      setCardPositions(['left', 'center', 'right']);
+      setIsTransitioning(false);
+      setTransitionDirection(null);
+    }, 500);
   };
 
   // Touch handlers for mobile swipe
@@ -162,7 +199,7 @@ const TestimonialsSection: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd || isTransitioning) return;
     
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
@@ -177,31 +214,22 @@ const TestimonialsSection: React.FC = () => {
     }
   };
 
-  // Get the three testimonials to display (left, center, right)
-  const getDisplayTestimonials = () => {
-    const prevIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
-    const nextIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
-    
-    return [
-      testimonials[prevIndex],
-      testimonials[currentIndex],
-      testimonials[nextIndex]
-    ];
-  };
-
   // Auto-scroll effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => {
-        if (prev >= testimonials.length - 1) {
-          return 0;
-        }
-        return prev + 1;
-      });
+      if (!isTransitioning) {
+        scrollRight();
+      }
     }, 5000); // Auto-scroll every 5 seconds
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [testimonials.length, isTransitioning]);
+
+  // Get the 3 testimonials to display
+  const getDisplayTestimonials = () => {
+    const indices = getCardIndices();
+    return indices.map(index => testimonials[index]);
+  };
 
   return (
     <section id="testimonials" className="w-full py-16 bg-gradient-to-b from-white to-gray-50">
@@ -225,64 +253,106 @@ const TestimonialsSection: React.FC = () => {
         {/* Testimonials Container - 80% width */}
         <div className="relative flex justify-center">
           {/* Left Arrow */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95 md:hidden lg:block"
-            aria-label="Previous testimonials"
-          >
-            <ChevronLeft className="h-6 w-6 text-gray-700" />
-          </button>
+{/* Left Arrow */}
+<button
+  onClick={scrollLeft}
+  className="absolute left-2 md:left-0 top-1/2 transform -translate-y-1/2 z-30 p-2 md:p-3 rounded-full bg-white/80 md:bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95"
+  aria-label="Previous testimonials"
+>
+  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-gray-700" />
+</button>
 
           {/* 3 Card Layout - 80% width with touch/swipe area */}
-         <div 
-  ref={containerRef}
-  className="w-3/5 md:w-4/5 relative h-[300px] flex items-center justify-center touch-pan-y"
-  onTouchStart={handleTouchStart}
-  onTouchMove={handleTouchMove}
-  onTouchEnd={handleTouchEnd}
->
- {getDisplayTestimonials().map((testimonial, index) => (
-  <div
-    key={`${testimonial.id}-${index}`}
-    className={`absolute transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] touch-none ${
-      index === 0 
-        ? 'scale-90 opacity-30 blur-xxs -translate-y-8' 
-        : index === 1 
-        ? 'z-10 scale-100 opacity-100' 
-        : 'scale-90 opacity-30 blur-xxs -translate-y-8'
-    } ${
-      // Center card widths
-      index === 1 
-        ? 'w-[280px] sm:w-[320px] md:w-[380px]' 
-        : 'w-[220px] sm:w-[280px] md:w-[320px]'
-    }`}
-    style={{
-      left: '50%',
-      transform: index === 0 
-        ? 'translateX(-150%) scale(0.9)' 
-        : index === 1 
-        ? 'translateX(-50%) scale(1)' 
-        : 'translateX(50%) scale(0.9)',
-      transitionProperty: 'transform, opacity, filter',
-      transitionDuration: '700ms',
-      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
-    }}
-  >
-    <TestimonialCard 
-      testimonial={testimonial} 
-      isCenter={index === 1}
-    />
-  </div>
-))}
-</div>
+          <div 
+            ref={containerRef}
+            className="w-5/5 md:w-4/5 relative h-[400px] md:h-[360px] flex items-center justify-center touch-pan-y overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="relative w-full h-full flex items-center justify-center">
+              {getDisplayTestimonials().map((testimonial, index) => {
+                const position = cardPositions[index];
+                
+                // Determine styles based on position
+                let positionStyles = '';
+                let scale = 1;
+                let opacity = 1;
+                let zIndex = 10;
+                let translateY = 0;
+                let widthClass = '';
+                
+                switch(position) {
+                  case 'left':
+                    positionStyles = 'left-0 md:left-[-10px] lg:left-[-10px] xl:left-[-10px]';
+                    scale = 0.9;
+                    opacity = 0.3;
+                    zIndex = 5;
+                    translateY = -8;
+                    widthClass = 'w-[220px] sm:w-[280px] md:w-[300px]';
+                    break;
+                  case 'center':
+                    positionStyles = 'left-1/2 transform -translate-x-1/2';
+                    scale = 1;
+                    opacity = 1;
+                    zIndex = 20;
+                    translateY = 0;
+                    widthClass = 'w-[280px] sm:w-[320px] md:w-[380px]';
+                    break;
+                  case 'right':
+                    positionStyles = 'right-0 md:right-[-10px] lg:right-[-10px] xl:right-[-10px]';
+                    scale = 0.9;
+                    opacity = 0.3;
+                    zIndex = 5;
+                    translateY = -8;
+                    widthClass = 'w-[220px] sm:w-[280px] md:w-[320px]';
+                    break;
+                  case 'out-left':
+                    positionStyles = 'left-[-300px]';
+                    scale = 0.9;
+                    opacity = 0;
+                    zIndex = 1;
+                    translateY = -8;
+                    widthClass = 'w-[220px] sm:w-[280px] md:w-[320px]';
+                    break;
+                  case 'out-right':
+                    positionStyles = 'right-[-300px]';
+                    scale = 0.9;
+                    opacity = 0;
+                    zIndex = 1;
+                    translateY = -8;
+                    widthClass = 'w-[220px] sm:w-[280px] md:w-[320px]';
+                    break;
+                }
+                
+                return (
+                  <div
+                    key={`${testimonial.id}-${index}`}
+                    className={`absolute transition-all duration-500 ease-in-out touch-none ${positionStyles} ${widthClass}`}
+                    style={{
+                      transform: `translateY(${translateY}px) scale(${scale})`,
+                      opacity: opacity,
+                      zIndex: zIndex,
+                    }}
+                  >
+                    <TestimonialCard 
+                      testimonial={testimonial} 
+                      isCenter={position === 'center'}
+                      isSide={position === 'left' || position === 'right'}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95 md:hidden lg:block"
+            className="absolute right-2 md:right-0 top-1/2 transform -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:scale-110 active:scale-95 md:hidden lg:block"
             aria-label="Next testimonials"
           >
-            <ChevronRight className="h-6 w-6 text-gray-700" />
+            <ChevronRight className="w-5 h-5 md:h-6 md:w-6 text-gray-700" />
           </button>
         </div>
       </div>
@@ -290,8 +360,12 @@ const TestimonialsSection: React.FC = () => {
   );
 };
 
-// Testimonial Card Component (unchanged)
-const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ testimonial, isCenter }) => {
+// Testimonial Card Component
+const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean; isSide?: boolean }> = ({ 
+  testimonial, 
+  isCenter, 
+  isSide = false
+}) => {
   return (
     <div className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 transition-all duration-500 ${
       isCenter 
@@ -311,7 +385,7 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ te
       
       {/* Content */}
       <div className={`${isCenter ? 'mb-6' : 'mb-4'}`}>
-        <p className={`text-gray-600 text-sm leading-relaxed italic text-center ${
+        <p className={`text-gray-600 leading-relaxed italic text-center ${
           isCenter 
             ? 'text-base line-clamp-5' 
             : 'text-sm line-clamp-4 opacity-80'
@@ -324,7 +398,7 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ te
       <div className="flex items-center">
         {/* Avatar */}
         <div className={`rounded-full bg-gradient-to-r from-orange-400 to-orange-500 flex items-center justify-center text-white font-bold mr-4 flex-shrink-0 ${
-          isCenter ? 'h-10 w-10 text-lg' : 'h-10 w-10 text-base'
+          isCenter ? 'h-10 w-10 text-lg' : 'h-8 w-8 text-base'
         }`}>
           {testimonial.name.charAt(0)}
         </div>
@@ -348,7 +422,7 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean }> = ({ te
               </div>
             </>
           ) : (
-            // For side cards, only show name and country
+            // For side cards, show name and country
             <div className="text-sm text-gray-500 truncate">
               Studying in {testimonial.country}
             </div>

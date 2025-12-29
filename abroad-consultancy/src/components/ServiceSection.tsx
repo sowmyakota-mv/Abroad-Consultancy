@@ -156,7 +156,7 @@ const ServicesSection: React.FC = () => {
     },
     {
       id: "loan-processing",
-      image: "/education-loan1.png",
+      image: "/loan-img1.png",
       title: "Education Loan Processing Support",
       description: "End-to-end support for bank loans and financial approval steps.",
       icon: <DollarSign className="h-8 w-8 text-emerald-500" />,
@@ -164,7 +164,7 @@ const ServicesSection: React.FC = () => {
       popupContent: {
         title: "Education Loan Processing Support",
         description: "We provide complete assistance in securing education loans through our network of partnered banks and financial institutions. Our services include loan eligibility assessment, documentation support, application processing, and follow-up with banks. We help you understand loan terms, interest rates, and repayment options to make informed financial decisions for your international education.",
-        image: "/education-loan1.png",
+        image: "/loan-img1.png",
       }
     },
     {
@@ -315,7 +315,7 @@ const ServicesSection: React.FC = () => {
                     <div className="mt-auto">
                       <button 
                         onClick={() => service.id && setSelectedService(service.id)}
-                        className="w-full py-0.5 sm:py-2 md:py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300"
+                        className="w-full py-0.5 sm:py-2 md:py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300  cursor-pointer"
                       >
                         Learn More
                       </button>

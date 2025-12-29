@@ -217,7 +217,7 @@ const Header: React.FC = () => {
                 {navLinks.map((link) =>
                   link.name === 'Study Abroad' ? (
                     <div key={link.name} className="relative group">
-                      <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600">
+                      <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600 cursor-pointer">
                         Study Abroad
                         <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
                       </button>
@@ -245,8 +245,8 @@ const Header: React.FC = () => {
                       }}
                       className={`font-medium ${
                         link.isCta
-                          ? 'bg-purple-700 md:bg-[#FB8234] text-white px-5 py-2.5 rounded-3xl'
-                          : 'text-gray-700 hover:text-blue-600'
+                          ? 'bg-purple-700 md:bg-[#FB8234] text-white px-5 py-2.5 rounded-3xl hover:scale-105'
+                          : 'text-gray-700 hover:text-blue-600 hover:scale-105'
                       }`}
                     >
                       {link.name}
@@ -306,9 +306,9 @@ const Header: React.FC = () => {
                     ))}
 
                   {/* Study Abroad */}
-                  <div className="pt-1">
+                  <div className="pt-1 cursor-pointer">
                     <button
-                      className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors "
                       onClick={() => setIsStudyOpen(!isStudyOpen)}
                     >
                       <span>Study Abroad</span>

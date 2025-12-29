@@ -178,7 +178,7 @@ const CountriesSection: React.FC = () => {
         </div>
 
         {/* Mobile & Tablet View: Carousel with arrows */}
-        <div className="sm:hidden lg:hidden relative">
+        <div className="sm:hidden lg:hidden relative ">
           {/* Navigation Arrows - Mobile & Tablet Only */}
           <button
             onClick={prevCard}
@@ -214,7 +214,7 @@ const CountriesSection: React.FC = () => {
                 key={index}
                 className="flex-shrink-0 w-[80%] mx-2 snap-center"
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
                   <div className="h-48 relative">
                     {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">
@@ -271,7 +271,7 @@ const CountriesSection: React.FC = () => {
             <div key={index}>
               {/* 60% WIDTH WRAPPER */}
               <div className="w-[80%] sm:w-[90%] md:w-full mx-auto">
-                <div className="relative overflow-hidden rounded-xl shadow-lg">
+                <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
                   <div className="h-48 relative">
                     {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">
