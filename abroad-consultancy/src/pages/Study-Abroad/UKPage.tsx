@@ -54,8 +54,8 @@ const StudyUKPage: React.FC = () => {
   // English Requirements
   const englishRequirements = [
     { test: 'IELTS', requirement: '6.0 – 6.5 Overall', Subtitle: 'The most widely accepted test. (No band less than 5.5 is the standard rule).' },
-    { test: 'TOEFL-iBT', requirement: '80 – 90',Subtitle: 'Accepted globally. (A score of 100+ is typically only required for top-tier universities like Oxford).' },
-    { test: 'PTE', requirement: '58 – 62', Subtitle: 'Fast results and widely accepted by UK Visa & Immigration (UKVI).' },
+    { test: 'TOEFL iBT', requirement: '80 – 90',Subtitle: 'Accepted globally. (A score of 100+ is typically only required for top-tier universities like Oxford).' },
+    { test: 'PTE Academic', requirement: '58 – 62', Subtitle: 'Fast results and widely accepted by UK Visa & Immigration (UKVI).' },
     { test: 'Duolingo', requirement: '105 – 120', Subtitle: 'A convenient, home-based testing option accepted by many modern universities.' },
   ];
 
@@ -98,15 +98,15 @@ const StudyUKPage: React.FC = () => {
   <div className="flex justify-center sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
+        <h2 className="text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
         <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-center md:text-left">
+          <p className="text-base text-gray-700 leading-relaxed text-center md:text-left">
             The UK is more than just a study destination; it’s a career launchpad. Benefit from globally recognized degrees, shorter course 
             durations, and a multicultural environment that prepares you for the international job market. We help you navigate admissions, 
             scholarships, and visas for a seamless transition.</p>
         </div>
-        <div className="mt-2 md:mt-2">
-          <button onClick={()=>navigate('/contact')} className="bg-gradient-to-r from-blue-600 to-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-xl font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
+        <div className="mt-2">
+          <button onClick={()=>navigate('/contact')} className="bg-[#FB8234] text-white font-semibold rounded-4xl shadow hover:bg-[#FF6603] text-white md:px-8 py-3 md:py-4  font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
           </button>
         </div>
@@ -116,21 +116,54 @@ const StudyUKPage: React.FC = () => {
 </section>
 
         {/* Major Benefits */}
-        <section>
-          <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4 text-left mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
-          <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
-            {majorBenefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all h-full flex flex-col">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2 md:mb-4">{benefit.title}</h3>
-                <p className="text-sm text-gray-700 flex-grow ">{benefit.description}</p>
-              </div>
-            ))}
+        <section className=''>
+  <h2 className="text-3xl font-bold text-gray-900 mb-4 text-left mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {majorBenefits.map((benefit, index) => {
+      // Define different light colors for each card
+      const cardColors = [
+        'bg-blue-50 border-blue-100 hover:border-blue-300', // Blue theme
+        'bg-green-50 border-green-100 hover:border-green-300', // Green theme
+        // 'bg-purple-50 border-purple-100 hover:border-purple-300', // Purple theme
+        // 'bg-orange-50 border-orange-100 hover:border-orange-300', // Orange theme
+        'bg-cyan-50 border-cyan-100 hover:border-cyan-300', // Cyan theme
+        // 'bg-pink-50 border-pink-100 hover:border-pink-300', // Pink theme
+        // 'bg-amber-50 border-amber-100 hover:border-amber-300', // Amber theme
+        'bg-indigo-50 border-indigo-100 hover:border-indigo-300', // Indigo theme
+      ];
+
+      const iconColors = [
+        'bg-blue-100 text-blue-600', // Blue icon
+        'bg-green-100 text-green-600', // Green icon
+        // 'bg-purple-100 text-purple-600', // Purple icon
+        // 'bg-orange-100 text-orange-600', // Orange icon
+        'bg-cyan-100 text-cyan-600', // Cyan icon
+        // 'bg-pink-100 text-pink-600', // Pink icon
+        // 'bg-amber-100 text-amber-600', // Amber icon
+        'bg-indigo-100 text-indigo-600', // Indigo icon
+      ];
+
+      const colorIndex = index % cardColors.length;
+      
+      return (
+        <div 
+          key={index} 
+          className={`rounded-xl p-4 ${cardColors[colorIndex]} hover:shadow-xl transition-all h-full flex flex-col`}
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <div className={`w-12 h-12 md:w-16 md:h-14 rounded-2xl flex items-center justify-center ${iconColors[colorIndex]}`}>
+              {benefit.icon}
+            </div>
+            <h3 className="text-lg font-bold text-gray-900">
+              {benefit.title}
+            </h3>
           </div>
-          
-        </section>
+          <p className="text-sm text-gray-700 flex-grow">{benefit.description}</p>
+        </div>
+      );
+    })}
+  </div>
+</section>
 
         {/* Intakes in the UK */}
 <section className="bg-gray-100 w-full min-h-screen py-5 md:py-5 mt-12">
@@ -140,32 +173,32 @@ const StudyUKPage: React.FC = () => {
     <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
       {/* Title and Paragraph inside table container */}
       <div className="p-8 pb-4 border-b border-gray-200">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
-        <p className="text-sm md:text-base text-gray-700 text-left">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
+        <p className="text-sm  text-gray-700 text-left">
           Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
           there is an intake that fits your timeline.
         </p>
       </div>
       
       <table className="w-full">
-        <thead className="bg-gradient-to-r from-blue-600 to-red-600 text-white">
+        <thead className="bg-blue-100">
           <tr>
-            <th className="py-6 px-8 text-left font-bold text-lg">#</th>
-            <th className="py-6 px-8 text-left font-bold text-lg">Intake Name</th>
-            <th className="py-6 px-8 text-left font-bold text-lg">Intake Type</th>
-            <th className="py-6 px-8 text-left font-bold text-lg">Applications Open</th>
+            <th className="py-6 px-6 text-center font-bold text-lg">#</th>
+            <th className="py-6 px-6 text-center font-bold text-lg">Intake Name</th>
+            <th className="py-6 px-6 text-center font-bold text-lg">Intake Type</th>
+            <th className="py-6 px-6 text-center font-bold text-lg">Applications Open</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
           {intakes.map((intake) => (
             <tr key={intake.id} className="hover:bg-gray-50 transition-colors">
-              <td className="py-6 px-8 font-bold text-lg">{intake.id}</td>
-              <td className="py-6 px-8">
-                <div className="font-bold text-gray-900 text-lg">{intake.term}</div>
+              <td className="py-6 px-6 font-bold text-lg text-center">{intake.id}</td>
+              <td className="py-6 px-6">
+                <div className="font-bold text-gray-900 text-lg text-center">{intake.term}</div>
               </td>
-              <td className="py-6 px-8 text-gray-700">{intake.duration}</td>
-              <td className="py-6 px-8">
-                <span className="font-medium text-gray-900">{intake.application}</span>
+              <td className="py-6 px-8 text-gray-700 text-center">{intake.duration}</td>
+              <td className="py-6 px-8 text-center">
+                <span className="font-medium text-gray-900 text-center">{intake.application}</span>
               </td>
             </tr>
           ))}
@@ -210,11 +243,11 @@ const StudyUKPage: React.FC = () => {
       ))}
     </div>
 
-    <div className="bg-gradient-to-r from-blue-50 to-red-50 rounded-2xl p-10 border border-blue-100">
+    <div className="bg-white rounded-2xl p-10 border border-blue-100">
   <h3 className="text-2xl font-bold text-gray-900 mb-6">The Intake Summary Cards</h3>
   <div className="grid md:grid-cols-3 gap-8">
     {/* Card 1 - Primary Intake */}
-    <div className="bg-white p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-blue-50 p-4 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-blue-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -236,7 +269,7 @@ const StudyUKPage: React.FC = () => {
     </div>
 
     {/* Card 2 - Secondary Intake */}
-    <div className="bg-white p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-green-50 p-4 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-green-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -258,7 +291,7 @@ const StudyUKPage: React.FC = () => {
     </div>
 
     {/* Card 3 - Seasonal Intake */}
-    <div className="bg-white p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-purple-50 p-4 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-purple-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -284,46 +317,47 @@ const StudyUKPage: React.FC = () => {
 </section>
 
         {/* English Requirements */}
-        <section className='py-5 mb-12 w-[92%] mx-auto mt-12'>
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4  text-left ">English Proficiency Requirements</h2>
-          <p className="text-base text-gray-700 mb-6 text-left ">
+        <section className=''>
+        <div className='py-5 mb-4 w-[92%] mx-auto mt-8 '>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3  text-left ">English Proficiency Requirements</h2>
+          <p className="text-sm text-gray-700 mb-4 text-left ">
             Most UK universities require proof of English proficiency for admission. While specific score requirements vary by course and university, aiming for these standard benchmarks will keep your options open.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {englishRequirements.map((test, index) => (
-              <div key={index} className="bg-white rounded-xl p-4 md:p-4 border border-gray-200 text-center hover:shadow-lg transition-shadow">
-                <div className="text-lg md:text-xl font-bold text-blue-700 ">{test.test}</div>
-                <div className="text-sm md:text-xl text-gray-700 font-bold">{test.requirement}</div>
+              <div key={index} className="bg-blue-100 rounded-xl p-3 border border-gray-200 text-center hover:shadow-lg transition-shadow">
+                <div className="text-lg font-bold text-blue-700 ">{test.test}</div>
+                <div className="text-lg text-gray-700 font-bold">{test.requirement}</div>
                 <div className='text-xs text-gray-700'>{test.Subtitle}</div> 
               </div>
             ))}
           </div>
 
-          <div className="bg-yellow-50 rounded-2xl p-8 border border-yellow-200">
+          <div className="bg-yellow-50 rounded-2xl p-3 border border-yellow-200">
             <div className="flex items-start">
               <div className="w-10 h-10 bg-yellow-100 rounded-3xl flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                 <span className="font-bold text-yellow-700 text-xl">💡</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Pro Tip: IELTS Waiver is Possible!</h3>
-                <p className="text-sm md:text-lgtext-gray-700">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">Pro Tip: IELTS Waiver is Possible!</h3>
+                <p className="text-sm text-gray-700">
                   Did you score 70% or higher in English in your 12th Grade (CBSE/ICSE)? Many UK universities accept this as proof of proficiency, allowing you to skip standardized tests entirely. Ask our counselors if you qualify for a waiver!</p>
               </div>
             </div>
           </div>
-        </section>
+        </div></section>
 
         {/* Part-time Work Opportunities */}
-<section className="bg-gray-100 w-full py-8 md:py-12">
-  <div className="w-[92%] mx-auto ">
-    <div className="mb-8 md:mb-12">
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
-      <p className="text-base  text-gray-700">
+<section className="bg-gray-100 w-full py-5 ">
+  <div className="w-[92%] mx-auto mt-8 mb-4">
+    <div className="mb-8">
+      <h2 className="text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
+      <p className="text-sm  text-gray-700">
         International students in the UK have the valuable advantage of legal work rights. This allows you to offset your living expenses while gaining international professional experience.</p>
     </div>
 
-    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
       <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 md:p-8 border border-blue-100">
         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Work Regulations</h3>
         <ul className="space-y-4 md:space-y-5">
@@ -397,17 +431,17 @@ const StudyUKPage: React.FC = () => {
 <section className='py-5 mt-12 w-[92%] mx-auto'>
   
   {/* 1. Quality Education - Image Left, Content Right */}
-  <div className="flex flex-col md:flex-row gap-8 mb-16">
+  <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-4/10">
+    <div className="md:w-3/10  -mt-12">
       <img 
-        src="/quality-education.jpg" 
+        src="/quality-uk2.png" 
         alt="UK Degree Prestige"
-        className="w-full h-64 md:h-full object-cover rounded-2xl shadow-xl"
+        className="w-full h-full object-contain"
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-7/10">
+    <div className="md:w-9/10">
       <h2 className="text-3xl font-bold text-gray-900 mb-2">Quality Education</h2>
       <h3 className="text-med font-semibold text-blue-700 mb-3">
         Focus on the global prestige and career impact of a UK degree.
@@ -422,17 +456,17 @@ const StudyUKPage: React.FC = () => {
   </div>
 
   {/* 2. Academic Structure - Image Right, Content Left */}
-  <div className="flex flex-col md:flex-row-reverse gap-8 mb-16">
+  <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-4/10">
+    <div className="md:w-3/10 ">
       <img 
-        src="/academic-structure.jpg" 
+        src="/academic-uk1.png" 
         alt="UK Degree Structure"
-        className="w-full h-64 md:h-full object-cover rounded-2xl shadow-xl"
+        className="w-full h-full object-contain"
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-7/10">
+    <div className="md:w-9/10">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Academic Structure</h2>
       <h3 className="text-med font-semibold text-green-700 mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
@@ -447,17 +481,17 @@ const StudyUKPage: React.FC = () => {
   </div>
 
   {/* 3. Support Services - Image Left, Content Right */}
-  <div className="flex flex-col md:flex-row gap-8 mb-16">
+  <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-4/10">
+    <div className="md:w-3/10 -mt-2">
       <img 
-        src="/support-services.jpg" 
+        src="/Service-uk.png" 
         alt="Student Support Services"
-        className="w-full h-64 md:h-full object-cover rounded-2xl shadow-xl"
+        className="w-full h-full object-contain "
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-7/10">
+    <div className="md:w-9/10">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Support Services</h2>
       <h3 className="text-med font-semibold text-orange-700 mb-3">
         Reassure students that they won't be alone and help is always available.
@@ -472,17 +506,17 @@ const StudyUKPage: React.FC = () => {
   </div>
 
   {/* 4. Research Opportunities - Image Right, Content Left */}
-  <div className="flex flex-col md:flex-row-reverse gap-8 mb-16">
+  <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-4/10">
+    <div className="md:w-3/10 -mt-8">
       <img 
-        src="/research-opportunities.jpg" 
+        src="/research-uk.png" 
         alt="Research Opportunities"
-        className="w-full h-64 md:h-full object-cover rounded-2xl shadow-xl"
+        className="w-full h-65 object-contain"
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-7/10">
+    <div className="md:w-9/10">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Research Opportunities</h2>
       <h3 className="text-med font-semibold text-purple-700 mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
@@ -497,17 +531,17 @@ const StudyUKPage: React.FC = () => {
   </div>
 
   {/* 5. Post-Study Work Options - Image Left, Content Right */}
-  <div className="flex flex-col md:flex-row gap-8">
+  <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-4/10">
+    <div className="md:w-3/10 -mt-8">
       <img 
-        src="/post-study-work.jpg" 
+        src="/Visa.png" 
         alt="Post-Study Work Visa"
-        className="w-full h-64 md:h-full object-cover rounded-2xl "
+        className="w-full h-56 object-contain "
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-7/10">
+    <div className="md:w-9/10">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Post-Study Work Options</h2>
       <h3 className="text-med font-semibold text-red-700 mb-3">
         Clearly explain the visa benefit as a career launchpad.
@@ -525,14 +559,14 @@ const StudyUKPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-3xl  font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
             <p className="text-base text-gray-700 text-left">
               Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
           </div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-left">The Process (How We Help)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-left">The Process (How We Help)</h3>
               <div className="space-y-2">
                 {scholarshipProcess.map((step) => (
                   <div key={step.step} className="bg-white rounded-2xl p-4 border border-gray-200 hover:shadow-xl transition-shadow">
@@ -551,7 +585,7 @@ const StudyUKPage: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-left">Scholarship Details (The Facts)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-left">Scholarship Details (The Facts)</h3>
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
@@ -604,7 +638,7 @@ const StudyUKPage: React.FC = () => {
              Stop dreaming and start planning. Let <strong className='text-red-400'>DartGlobe </strong> turn your study abroad ambitions into reality.</p>
             <p className="text-sm md:text-lg text-blue-100 mb-10 max-w-4xl mx-auto">
               Ready to take the next step? Don't navigate the complex admission process alone. From shortlisting the perfect university to securing your visa and scholarships, our experts are with you at every milestone.</p>
-            <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto">
+            <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto cursor-pointer hover:scale-105">
               🚀 Start My Free Application
             </button>
           </div>
