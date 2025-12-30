@@ -95,7 +95,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[80%] mx-auto scroll-mt-20">
-  <div className="flex justify-center sm:mt-12">
+  <div className="flex justify-center ">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
@@ -117,7 +117,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section className=''>
-  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
   <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
     {majorBenefits.map((benefit, index) => {
       // Define different light colors for each card
@@ -437,7 +437,7 @@ const StudyUKPage: React.FC = () => {
       <img 
         src="/quality-uk2.png" 
         alt="UK Degree Prestige"
-        className="w-full h-full object-contain"
+        className="w-full h-full sm:h-60 object-contain"
       />
     </div>
     {/* Content - 70% */}
@@ -462,7 +462,7 @@ const StudyUKPage: React.FC = () => {
       <img 
         src="/academic-uk1.png" 
         alt="UK Degree Structure"
-        className="w-full h-full object-contain"
+        className="w-full h-full sm:h-60 object-contain"
       />
     </div>
     {/* Content - 70% */}
@@ -487,7 +487,7 @@ const StudyUKPage: React.FC = () => {
       <img 
         src="/Service-uk.png" 
         alt="Student Support Services"
-        className="w-full h-full object-contain "
+        className="w-full h-full sm:h-60 object-contain "
       />
     </div>
     {/* Content - 70% */}
