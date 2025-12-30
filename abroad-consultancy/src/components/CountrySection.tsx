@@ -8,93 +8,11 @@ const CountriesSection: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Check if mobile on mount and resize
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // Changed to 1024 to include tablet
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Intersection Observer for animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
-
-  // Auto scroll to current card
-  useEffect(() => {
-    if (isMobile && scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const card = container.children[currentIndex] as HTMLElement;
-      if (card) {
-        const scrollLeft = card.offsetLeft - container.offsetLeft;
-        container.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth'
-        });
-      }
-    }
-  }, [currentIndex, isMobile]);
-
-  // Auto-scroll every 3 seconds
-  useEffect(() => {
-    if (isMobile) {
-      // Clear any existing interval
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current);
-      }
-      
-      // Set up new interval
-      autoScrollIntervalRef.current = setInterval(() => {
-        setCurrentIndex(prev => (prev + 1) % countries.length);
-      }, 3000);
-      
-      // Cleanup on unmount or when isMobile changes
-      return () => {
-        if (autoScrollIntervalRef.current) {
-          clearInterval(autoScrollIntervalRef.current);
-        }
-      };
-    }
-  }, [isMobile]);
-
-  // Pause auto-scroll on user interaction
-  const pauseAutoScroll = () => {
-    if (autoScrollIntervalRef.current) {
-      clearInterval(autoScrollIntervalRef.current);
-      autoScrollIntervalRef.current = null;
-      
-      // Resume auto-scroll after 5 seconds of inactivity
-      setTimeout(() => {
-        if (isMobile && !autoScrollIntervalRef.current) {
-          autoScrollIntervalRef.current = setInterval(() => {
-            setCurrentIndex(prev => (prev + 1) % countries.length);
-          }, 3000);
-        }
-      }, 5000);
-    }
-  };
+  
+  // Refs to manage auto-scroll
+  const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isAutoScrollActiveRef = useRef(true);
+  const lastInteractionTimeRef = useRef(Date.now());
 
   const countries = [
     { name: "Study in UK", image: "/uk-img.jpg" },
@@ -107,10 +25,91 @@ const CountriesSection: React.FC = () => {
     { name: "Study in Ireland", image: "/ireland-img.png" }
   ];
 
-  // Touch handlers for swipe
+  // Mobile detection
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
+  }, []);
+
+  // Handle physical scrolling when index changes
+  useEffect(() => {
+    if (isMobile && scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const card = container.children[currentIndex] as HTMLElement;
+      if (card) {
+        const scrollLeft = card.offsetLeft - container.offsetLeft;
+        container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }
+    }
+  }, [currentIndex, isMobile]);
+
+  // Start auto-scroll timer
+  const startAutoScrollTimer = () => {
+    if (!isMobile || !isAutoScrollActiveRef.current) return;
+    
+    // Clear any existing timeout
+    if (autoScrollTimeoutRef.current) {
+      clearTimeout(autoScrollTimeoutRef.current);
+    }
+    
+    // Calculate time since last interaction
+    const timeSinceLastInteraction = Date.now() - lastInteractionTimeRef.current;
+    const timeToWait = Math.max(0, 3000 - timeSinceLastInteraction);
+    
+    autoScrollTimeoutRef.current = setTimeout(() => {
+      if (isAutoScrollActiveRef.current && isMobile) {
+        setCurrentIndex((prev) => (prev + 1) % countries.length);
+        // Reset interaction time after auto-scroll
+        lastInteractionTimeRef.current = Date.now();
+        // Start next auto-scroll
+        startAutoScrollTimer();
+      }
+    }, timeToWait);
+  };
+
+  // Pause auto-scroll for user interaction
+  const pauseAutoScrollForInteraction = () => {
+    isAutoScrollActiveRef.current = false;
+    lastInteractionTimeRef.current = Date.now();
+    
+    if (autoScrollTimeoutRef.current) {
+      clearTimeout(autoScrollTimeoutRef.current);
+      autoScrollTimeoutRef.current = null;
+    }
+  };
+
+  // Resume auto-scroll after interaction
+  const resumeAutoScroll = () => {
+    isAutoScrollActiveRef.current = true;
+    // Start timer from current position
+    startAutoScrollTimer();
+  };
+
+  // Initialize auto-scroll
+  useEffect(() => {
+    if (isMobile) {
+      startAutoScrollTimer();
+    }
+    
+    return () => {
+      if (autoScrollTimeoutRef.current) {
+        clearTimeout(autoScrollTimeoutRef.current);
+      }
+    };
+  }, [isMobile, currentIndex]);
+
   const handleTouchStart = (e: TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
-    pauseAutoScroll();
+    pauseAutoScrollForInteraction();
   };
 
   const handleTouchMove = (e: TouchEvent) => {
@@ -118,56 +117,47 @@ const CountriesSection: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd || !isMobile) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      nextCard();
+    if (!touchStart || !touchEnd || !isMobile) {
+      // Resume auto-scroll if no valid swipe
+      setTimeout(resumeAutoScroll, 100);
+      return;
     }
     
-    if (isRightSwipe) {
-      prevCard();
+    const distance = touchStart - touchEnd;
+    if (Math.abs(distance) > 50) {
+      if (distance > 50) {
+        // Swipe left - next card
+        setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
+      } else if (distance < -50) {
+        // Swipe right - previous card
+        setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
+      }
     }
     
     setTouchStart(null);
     setTouchEnd(null);
+    
+    // Resume auto-scroll after interaction
+    setTimeout(resumeAutoScroll, 100);
   };
 
   const nextCard = () => {
-    pauseAutoScroll();
-    if (currentIndex < countries.length - 1) {
-      setCurrentIndex(prev => prev + 1);
-    } else {
-      setCurrentIndex(0); // Loop back to start
-    }
+    pauseAutoScrollForInteraction();
+    setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
+    // Resume auto-scroll
+    setTimeout(resumeAutoScroll, 100);
   };
 
   const prevCard = () => {
-    pauseAutoScroll();
-    if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1);
-    } else {
-      setCurrentIndex(countries.length - 1); // Loop to end
-    }
-  };
-
-  // Handle dot click
-  const handleDotClick = (index: number) => {
-    pauseAutoScroll();
-    setCurrentIndex(index);
+    pauseAutoScrollForInteraction();
+    setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
+    // Resume auto-scroll
+    setTimeout(resumeAutoScroll, 100);
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-16 bg-gradient-to-b from-white to-gray-50"
-    >
+    <section ref={sectionRef} className="w-full py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Empowering Your Global Ambitions
@@ -177,12 +167,11 @@ const CountriesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Mobile & Tablet View: Carousel with arrows */}
+        {/* Mobile & Tablet Carousel */}
         <div className="sm:hidden lg:hidden relative ">
-          {/* Navigation Arrows - Mobile & Tablet Only */}
           <button
             onClick={prevCard}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-100 z-20"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
             aria-label="Previous card"
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,7 +181,7 @@ const CountriesSection: React.FC = () => {
           
           <button
             onClick={nextCard}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-100 z-20"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
             aria-label="Next card"
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +189,6 @@ const CountriesSection: React.FC = () => {
             </svg>
           </button>
 
-          {/* Carousel Container - Mobile & Tablet */}
           <div
             ref={scrollContainerRef}
             className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
@@ -210,96 +198,36 @@ const CountriesSection: React.FC = () => {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {countries.map((country, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-[80%] mx-2 snap-center"
-              >
+              <div key={index} className="flex-shrink-0 w-[80%] mx-2 snap-center">
                 <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
                   <div className="h-48 relative">
-                    {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">
-                      <img
-                        src={country.image}
-                        alt={country.name}
-                        className="w-full h-full object-cover object-top"
-                      />
+                      <img src={country.image} alt={country.name} className="w-full h-full object-cover object-top" />
                     </div>
-
-                    {/* Overlay Animation */}
-                    <div
-                      className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
-                        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                      }`}
-                    ></div>
-
-                    {/* Title Animation */}
-                    <div
-                      className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
-                        isVisible
-                          ? "opacity-100 translate-y-0 scale-100"
-                          : "opacity-0 translate-y-6 scale-75"
-                      }`}
-                    >
-                      <h3 className="text-xl font-bold text-white">
-                        {country.name}
-                      </h3>
+                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}></div>
+                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"}`}>
+                      <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Dots Indicator - Mobile & Tablet Only */}
-          {/* <div className="flex justify-center mt-6 space-x-2">
-            {countries.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-blue-600 w-6' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to card ${index + 1}`}
-              />
-            ))}
-          </div> */}
         </div>
 
-        {/* Desktop View: Original Grid (unchanged) - Only on lg screens and above */}
+        {/* Desktop View */}
         <div className="hidden sm:grid lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {countries.map((country, index) => (
             <div key={index}>
-              {/* 60% WIDTH WRAPPER */}
               <div className="w-[80%] sm:w-[90%] md:w-full mx-auto">
                 <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
                   <div className="h-48 relative">
-                    {/* Image */}
                     <div className="absolute inset-0 overflow-hidden">
-                      <img
-                        src={country.image}
-                        alt={country.name}
-                        className="w-full h-full object-cover object-top"
-                      />
+                      <img src={country.image} alt={country.name} className="w-full h-full object-cover object-top" />
                     </div>
-
-                    {/* Overlay Animation */}
-                    <div
-                      className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
-                        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                      }`}
-                    ></div>
-
-                    {/* Title Animation */}
-                    <div
-                      className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
-                        isVisible
-                          ? "opacity-100 translate-y-0 scale-100"
-                          : "opacity-0 translate-y-6 scale-75"
-                      }`}
-                    >
-                      <h3 className="text-xl font-bold text-white">
-                        {country.name}
-                      </h3>
+                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}></div>
+                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"}`}>
+                      <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
                 </div>
@@ -308,13 +236,11 @@ const CountriesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Note */}
         <div className="text-center pt-8">
           <p className="text-gray-500 text-sm">
             Over 10,000+ students successfully placed in these destinations
           </p>
         </div>
-
       </div>
     </section>
   );

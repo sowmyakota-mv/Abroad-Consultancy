@@ -55,7 +55,7 @@ const WhyChooseUsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center ">
+          <div className="inline-flex items-center justify-center">
             <div className="w-20 h-1 bg-blue-200"></div>
             <span className="mx-4 text-blue-600 font-semibold">WHY CHOOSE US</span>
             <div className="w-20 h-1 bg-blue-200"></div>
@@ -63,12 +63,12 @@ const WhyChooseUsSection: React.FC = () => {
         </div>
 
         {/* Reasons Grid */}
-        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="p-2  hover:shadow-md hover:rounded-xl transition-all duration-300">
+            <div key={index} className="p-2 hover:shadow-md hover:rounded-xl transition-all duration-300">
               
-              {/* Number, Horizontal Line (w-12), and Title with gap-2 */}
-              <div className="flex items-start gap-2 mb-4">
+              {/* Desktop View: Number, Horizontal Line, and Title */}
+              <div className="hidden md:flex items-start gap-2 mb-4">
                 {/* Number */}
                 <div className="flex-shrink-0">
                   <span className="text-[#FF6603] font-bold text-xl">
@@ -76,21 +76,36 @@ const WhyChooseUsSection: React.FC = () => {
                   </span>
                 </div>
                 
-                {/* Horizontal Line - Fixed width w-12 */}
+                {/* Horizontal Line - Fixed width */}
                 <div className="flex-shrink-0 mt-3">
                   <div className="h-1 w-8 md:w-10 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
                 </div>
                 
-                {/* Title - Aligned with line with gap-2 */}
+                {/* Title */}
                 <div className="flex-shrink-0">
-                  <h3 className="text-med md:text-lg font-bold text-gray-900 ">
+                  <h3 className="text-med md:text-lg font-bold text-gray-900">
                     {reason.title}
                   </h3>
                 </div>
               </div>
 
-              {/* Paragraph - Starts from same position as title */}
-              <div className="ml-[calc(3rem+2.5rem)]"> {/* ml-[number width + line width + gaps] */}
+              {/* Mobile & Tablet View: Blue > Arrow and Title */}
+              <div className="md:hidden flex items-start gap-3 sm:gap-5 mb-1">
+                {/* Blue > Arrow */}
+                <div className="flex-shrink-0">
+                  <span className="text-indigo-400 font-bold text-xl">&gt;</span>
+                </div>
+                
+                {/* Title */}
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {reason.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Paragraph - Responsive margin */}
+              <div className="md:ml-[calc(3rem+2.5rem)] ml-8"> {/* ml-8 for mobile to align with arrow, md:ml-... for desktop */}
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {reason.description}
                 </p>

@@ -589,7 +589,6 @@ const StudyUKPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <h6 className='text-med font-bold text-gray-700 mb-2'>Know Your Options:</h6>
                   <div className=''>
                   <p className="text-gray-700 text-xs md:text-sm mb-1">
   <span className="font-bold text-gray-900 text-sm">
