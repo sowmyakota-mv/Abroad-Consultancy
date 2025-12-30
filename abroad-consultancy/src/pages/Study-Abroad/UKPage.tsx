@@ -443,11 +443,11 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-med font-semibold text-blue-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
         Focus on the global prestige and career impact of a UK degree.
       </h3>
-        <p className="text-gray-700 mb-3 text-xs md:text-med">
-  <span className="font-bold text-gray-900 text-sm md:text-med">
+        <p className="text-gray-700 mb-3 text-xs md:text-base">
+  <span className="font-bold text-gray-900 text-sm md:text-base">
     A Global Stamp of Excellence.
   </span>{" "}
   The UK is home to some of the world's oldest and most prestigious universities, consistently ranked in the global top 10. Earning a degree here isn't just about the education; it's a globally recognized credential that opens doors to top-tier employers worldwide.
@@ -458,21 +458,21 @@ const StudyUKPage: React.FC = () => {
   {/* 2. Academic Structure - Image Right, Content Left */}
   <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 order-2 md:order-1 -mt-4 md:mt-0">
+    <div className="md:w-3/10 order-2 md:order-1 -mt-4 md:mt-1">
       <img 
         src="/academic-uk1.png" 
         alt="UK Degree Structure"
-        className="w-full h-full sm:h-60 object-contain"
+        className="w-full h-full  object-contain"
       />
     </div>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-med font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
       </h3>
-      <p className="text-gray-700 mb-3 text-xs md:text-med">
-  <span className="font-bold text-gray-900 text-sm md:text-med">
+      <p className="text-gray-700 mb-3 text-xs md:text-base">
+  <span className="font-bold text-gray-900 text-sm md:text-base">
    Smarter, Faster Degrees.
   </span>{" "}
    Save significant time and tuition fees with the UK's intensive degree structures. You can graduate with a Master's in just one year or a Bachelor's in three years, giving you a head start on your career compared to peers studying in other countries.
@@ -487,17 +487,17 @@ const StudyUKPage: React.FC = () => {
       <img 
         src="/Service-uk.png" 
         alt="Student Support Services"
-        className="w-full h-full sm:h-60 object-contain "
+        className="w-full h-full sm:h-60 md:h-full object-contain "
       />
     </div>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-med font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
-      <p className="text-gray-700 mb-3 text-xs md:text-med">
-  <span className="font-bold text-gray-900 text-sm md:text-med">
+      <p className="text-gray-700 mb-3 text-xs md:text-base">
+  <span className="font-bold text-gray-900 text-sm md:text-base">
    We've Got Your Back.
   </span>{" "}
     Moving to a new country is a big step, but you're never alone. From dedicated international offices helping with visas and accommodation to personal tutors and wellbeing services, UK universities have a robust support network to ensure you thrive personally and academically.
@@ -518,11 +518,11 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-med font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
-      <p className="text-gray-700 mb-3 text-xs md:text-med">
-  <span className="font-bold text-gray-900 text-sm md:text-med">
+      <p className="text-gray-700 mb-3 text-xs md:text-base">
+  <span className="font-bold text-gray-900 text-sm md:text-base">
    Learn at the Cutting Edge.
   </span>{" "}
    Be part of an education system that leads global innovation. You'll be taught by academics who are actively researching the subjects you're studying, giving you access to the latest thinking, world-class facilities, and the critical analysis skills that employers value.
@@ -531,7 +531,7 @@ const StudyUKPage: React.FC = () => {
   </div>
 
   {/* 5. Post-Study Work Options - Image Left, Content Right */}
-  <div className="flex flex-col md:flex-row gap-8 mb-8">
+  <div className="flex flex-col md:flex-row gap-8 mb-8 md:mb-0">
     {/* Image - 30% */}
     <div className="md:w-3/10 -mt-8 order-2 md:order-1">
       <img 
@@ -543,11 +543,11 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-med font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
-      <p className="text-gray-700 mb-3 text-xs md:text-med">
-  <span className="font-bold text-gray-900 text-sm md:text-med">
+      <p className="text-gray-700 mb-3 text-xs md:text-base">
+  <span className="font-bold text-gray-900 text-sm md:text-base">
    Launch Your Global Career.
   </span>{" "}
    Your journey doesn't end with graduation. The Graduate Route Visa allows you to stay and work in the UK for 2 years (3 years for PhDs) after completing your degree. This is the perfect opportunity to gain invaluable international work experience and recover your investment.
