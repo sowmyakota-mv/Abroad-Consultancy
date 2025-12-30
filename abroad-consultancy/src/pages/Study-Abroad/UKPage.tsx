@@ -508,7 +508,7 @@ const StudyUKPage: React.FC = () => {
   {/* 4. Research Opportunities - Image Right, Content Left */}
   <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-8 order-2 md:order-1">
+    <div className="md:w-3/10 -mt-8 md:-mt-12 order-2 md:order-1">
       <img 
         src="/research-uk.png" 
         alt="Research Opportunities"
