@@ -85,9 +85,9 @@ const StudyUKPage: React.FC = () => {
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
   <div className="max-w-xl text-left sm:text-left md:text-left">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 max-w-3xl">
+    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-2 max-w-3xl">
   Study in <br />
-  <span className="block ml-12 sm:ml-12 md:ml-16 lg:ml-16 mt-4">United Kingdom</span>
+  <span className="block ml-12 sm:ml-12 md:ml-16 lg:ml-16 mt-2">United Kingdom</span>
 </h1>
   </div>
 </div>
@@ -98,15 +98,15 @@ const StudyUKPage: React.FC = () => {
   <div className="flex justify-center sm:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
-        <h2 className="text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
         <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-base text-gray-700 leading-relaxed text-center md:text-left">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
             The UK is more than just a study destination; it’s a career launchpad. Benefit from globally recognized degrees, shorter course 
             durations, and a multicultural environment that prepares you for the international job market. We help you navigate admissions, 
             scholarships, and visas for a seamless transition.</p>
         </div>
         <div className="mt-2">
-          <button onClick={()=>navigate('/contact')} className="bg-[#FB8234] text-white font-semibold rounded-4xl shadow hover:bg-[#FF6603] text-white md:px-8 py-3 md:py-4  font-bold text-md md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
+          <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
           </button>
         </div>
@@ -117,8 +117,8 @@ const StudyUKPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section className=''>
-  <h2 className="text-3xl font-bold text-gray-900 mb-4 text-left mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
-  <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
     {majorBenefits.map((benefit, index) => {
       // Define different light colors for each card
       const cardColors = [
@@ -173,7 +173,7 @@ const StudyUKPage: React.FC = () => {
     <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
       {/* Title and Paragraph inside table container */}
       <div className="p-8 pb-4 border-b border-gray-200">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
         <p className="text-sm  text-gray-700 text-left">
           Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
           there is an intake that fits your timeline.
@@ -319,7 +319,7 @@ const StudyUKPage: React.FC = () => {
         {/* English Requirements */}
         <section className=''>
         <div className='py-5 mb-4 w-[92%] mx-auto mt-8 '>
-          <h2 className="text-3xl font-bold text-gray-900 mb-3  text-left ">English Proficiency Requirements</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3  text-left ">English Proficiency Requirements</h2>
           <p className="text-sm text-gray-700 mb-4 text-left ">
             Most UK universities require proof of English proficiency for admission. While specific score requirements vary by course and university, aiming for these standard benchmarks will keep your options open.
           </p>
@@ -327,8 +327,8 @@ const StudyUKPage: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {englishRequirements.map((test, index) => (
               <div key={index} className="bg-blue-100 rounded-xl p-3 border border-gray-200 text-center hover:shadow-lg transition-shadow">
-                <div className="text-lg font-bold text-blue-700 ">{test.test}</div>
-                <div className="text-lg text-gray-700 font-bold">{test.requirement}</div>
+                <div className="text-med md:text-lg font-bold text-blue-700 ">{test.test}</div>
+                <div className="text-med md:text-lg text-gray-700 font-bold">{test.requirement}</div>
                 <div className='text-xs text-gray-700'>{test.Subtitle}</div> 
               </div>
             ))}
@@ -340,8 +340,8 @@ const StudyUKPage: React.FC = () => {
                 <span className="font-bold text-yellow-700 text-xl">💡</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Pro Tip: IELTS Waiver is Possible!</h3>
-                <p className="text-sm text-gray-700">
+                <h3 className="text-med md:text-lg font-bold text-gray-900 mb-3">Pro Tip: IELTS Waiver is Possible!</h3>
+                <p className="text-xs md:text-sm text-gray-700">
                   Did you score 70% or higher in English in your 12th Grade (CBSE/ICSE)? Many UK universities accept this as proof of proficiency, allowing you to skip standardized tests entirely. Ask our counselors if you qualify for a waiver!</p>
               </div>
             </div>
@@ -352,7 +352,7 @@ const StudyUKPage: React.FC = () => {
 <section className="bg-gray-100 w-full py-5 ">
   <div className="w-[92%] mx-auto mt-8 mb-4">
     <div className="mb-8">
-      <h2 className="text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
+      <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
       <p className="text-sm  text-gray-700">
         International students in the UK have the valuable advantage of legal work rights. This allows you to offset your living expenses while gaining international professional experience.</p>
     </div>
@@ -414,12 +414,12 @@ const StudyUKPage: React.FC = () => {
 
     <div className="bg-yellow-50 rounded-2xl p-6 md:p-8 border border-yellow-200">
       <div className="flex items-start">
-        <div className="w-8 h-8 md:w-10 md:h-10 bg-yellow-100 rounded-xl flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
+        <div className="w-10 h-10 md:w-16 md:h-16 bg-yellow-100 rounded-xl flex items-center justify-center mr-3 md:mr-4 mt-1 flex-shrink-0">
           <span className="font-bold text-yellow-700 text-lg md:text-xl">💷</span>
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Applies to You!</h3>
-          <p className="text-sm md:text-base text-gray-700">
+          <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Applies to You!</h3>
+          <p className="text-xs md:text-sm text-gray-700">
            International students are entitled to the UK National Minimum Wage. As of 2025, this is approximately £9.60 to £15.44 per hour (depending on your age), ensuring you are paid fairly for every hour you work.</p>
         </div>
       </div>
@@ -433,7 +433,7 @@ const StudyUKPage: React.FC = () => {
   {/* 1. Quality Education - Image Left, Content Right */}
   <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10  -mt-12">
+    <div className="md:w-3/10 order-2 md:order-1 -mt-12">
       <img 
         src="/quality-uk2.png" 
         alt="UK Degree Prestige"
@@ -441,13 +441,13 @@ const StudyUKPage: React.FC = () => {
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-9/10">
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">Quality Education</h2>
-      <h3 className="text-med font-semibold text-blue-700 mb-3">
+    <div className="md:w-9/10 order-1 md:order-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
+      <h3 className="text-sm md:text-med font-semibold text-blue-700 mb-3">
         Focus on the global prestige and career impact of a UK degree.
       </h3>
-        <p className="text-gray-700 mb-3">
-  <span className="font-bold text-gray-900">
+        <p className="text-gray-700 mb-3 text-xs md:text-med">
+  <span className="font-bold text-gray-900 text-sm md:text-med">
     A Global Stamp of Excellence.
   </span>{" "}
   The UK is home to some of the world's oldest and most prestigious universities, consistently ranked in the global top 10. Earning a degree here isn't just about the education; it's a globally recognized credential that opens doors to top-tier employers worldwide.
@@ -458,7 +458,7 @@ const StudyUKPage: React.FC = () => {
   {/* 2. Academic Structure - Image Right, Content Left */}
   <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 ">
+    <div className="md:w-3/10 order-2 md:order-1 -mt-4 md:mt-0">
       <img 
         src="/academic-uk1.png" 
         alt="UK Degree Structure"
@@ -466,13 +466,13 @@ const StudyUKPage: React.FC = () => {
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-9/10">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Academic Structure</h2>
-      <h3 className="text-med font-semibold text-green-700 mb-3">
+    <div className="md:w-9/10 order-1 md:order-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
+      <h3 className="text-sm md:text-med font-semibold text-green-700 mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
       </h3>
-      <p className="text-gray-700 mb-3">
-  <span className="font-bold text-gray-900">
+      <p className="text-gray-700 mb-3 text-xs md:text-med">
+  <span className="font-bold text-gray-900 text-sm md:text-med">
    Smarter, Faster Degrees.
   </span>{" "}
    Save significant time and tuition fees with the UK's intensive degree structures. You can graduate with a Master's in just one year or a Bachelor's in three years, giving you a head start on your career compared to peers studying in other countries.
@@ -483,7 +483,7 @@ const StudyUKPage: React.FC = () => {
   {/* 3. Support Services - Image Left, Content Right */}
   <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-2">
+    <div className="md:w-3/10 -mt-2 order-2 md:order-1">
       <img 
         src="/Service-uk.png" 
         alt="Student Support Services"
@@ -491,13 +491,13 @@ const StudyUKPage: React.FC = () => {
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-9/10">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Support Services</h2>
-      <h3 className="text-med font-semibold text-orange-700 mb-3">
+    <div className="md:w-9/10 order-1 md:order-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
+      <h3 className="text-sm md:text-med font-semibold text-orange-700 mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
-      <p className="text-gray-700 mb-3">
-  <span className="font-bold text-gray-900">
+      <p className="text-gray-700 mb-3 text-xs md:text-med">
+  <span className="font-bold text-gray-900 text-sm md:text-med">
    We've Got Your Back.
   </span>{" "}
     Moving to a new country is a big step, but you're never alone. From dedicated international offices helping with visas and accommodation to personal tutors and wellbeing services, UK universities have a robust support network to ensure you thrive personally and academically.
@@ -508,7 +508,7 @@ const StudyUKPage: React.FC = () => {
   {/* 4. Research Opportunities - Image Right, Content Left */}
   <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-8">
+    <div className="md:w-3/10 -mt-8 order-2 md:order-1">
       <img 
         src="/research-uk.png" 
         alt="Research Opportunities"
@@ -516,13 +516,13 @@ const StudyUKPage: React.FC = () => {
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-9/10">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Research Opportunities</h2>
-      <h3 className="text-med font-semibold text-purple-700 mb-3">
+    <div className="md:w-9/10 order-1 md:order-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
+      <h3 className="text-sm md:text-med font-semibold text-purple-700 mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
-      <p className="text-gray-700 mb-3">
-  <span className="font-bold text-gray-900">
+      <p className="text-gray-700 mb-3 text-xs md:text-med">
+  <span className="font-bold text-gray-900 text-sm md:text-med">
    Learn at the Cutting Edge.
   </span>{" "}
    Be part of an education system that leads global innovation. You'll be taught by academics who are actively researching the subjects you're studying, giving you access to the latest thinking, world-class facilities, and the critical analysis skills that employers value.
@@ -533,7 +533,7 @@ const StudyUKPage: React.FC = () => {
   {/* 5. Post-Study Work Options - Image Left, Content Right */}
   <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-8">
+    <div className="md:w-3/10 -mt-8 order-2 md:order-1">
       <img 
         src="/Visa.png" 
         alt="Post-Study Work Visa"
@@ -541,13 +541,13 @@ const StudyUKPage: React.FC = () => {
       />
     </div>
     {/* Content - 70% */}
-    <div className="md:w-9/10">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4">Post-Study Work Options</h2>
-      <h3 className="text-med font-semibold text-red-700 mb-3">
+    <div className="md:w-9/10 order-1 md:order-2">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
+      <h3 className="text-sm md:text-med font-semibold text-red-700 mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
-      <p className="text-gray-700 mb-3">
-  <span className="font-bold text-gray-900">
+      <p className="text-gray-700 mb-3 text-xs md:text-med">
+  <span className="font-bold text-gray-900 text-sm md:text-med">
    Launch Your Global Career.
   </span>{" "}
    Your journey doesn't end with graduation. The Graduate Route Visa allows you to stay and work in the UK for 2 years (3 years for PhDs) after completing your degree. This is the perfect opportunity to gain invaluable international work experience and recover your investment.
@@ -559,14 +559,14 @@ const StudyUKPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
-            <p className="text-base text-gray-700 text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <p className="text-sm md:text-base text-gray-700 text-left">
               Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
           </div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-left">The Process (How We Help)</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-left">The Process (How We Help)</h3>
               <div className="space-y-2">
                 {scholarshipProcess.map((step) => (
                   <div key={step.step} className="bg-white rounded-2xl p-4 border border-gray-200 hover:shadow-xl transition-shadow">
@@ -575,8 +575,8 @@ const StudyUKPage: React.FC = () => {
                         {step.step}
                       </div> */}
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
-                        <p className="text-sm text-gray-700">{step.description}</p>
+                        <h4 className="text-med md:text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
+                        <p className="text-xs md:text-sm text-gray-700">{step.description}</p>
                       </div>
                     </div>
                   </div>
@@ -585,23 +585,23 @@ const StudyUKPage: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-left">Scholarship Details (The Facts)</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 text-left">Scholarship Details (The Facts)</h3>
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <h6 className='text-sm font-bold text-gray-700 mb-2'>Know Your Options:</h6>
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
+                  <h6 className='text-med font-bold text-gray-700 mb-2'>Know Your Options:</h6>
                   <div className=''>
-                  <p className="text-gray-700 text-sm mb-1">
+                  <p className="text-gray-700 text-xs md:text-sm mb-1">
   <span className="font-bold text-gray-900 text-sm">
    Merit-Based:
   </span>{" "}
    For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-sm">
+        <p className="text-gray-700 mb-1 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
    University Discounts:
   </span>{" "}
    Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-sm">
+        <p className="text-gray-700 mb-1 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
    Government Awards:
   </span>{" "}
@@ -610,8 +610,8 @@ const StudyUKPage: React.FC = () => {
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Coverage & Value</h4>
-                  <p className="text-gray-700 mb-2 text-sm">
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
+                  <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
    What to Expect:
   </span>{" "}
@@ -619,9 +619,9 @@ const StudyUKPage: React.FC = () => {
                 </div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Eligibility Criteria</h4>
-                  <p className="text-gray-700 text-sm mb-2">
-  <span className="font-bold text-gray-900">
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
+                  <p className="text-gray-700 text-xs md:text-sm mb-2">
+  <span className="font-bold text-gray-900 text-sm">
    How to Qualify:
   </span>{" "}
    Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
@@ -633,12 +633,12 @@ const StudyUKPage: React.FC = () => {
 
 <section className='mt-16'>
           <div className="bg-gradient-to-r from-blue-900 to-red-800  p-10 text-white text-center ">
-            <h3 className="text-xl md:text-3xl font-bold mb-4">Your UK Success Story Starts Here</h3>
-            <p className="text-med text-blue-100 mb-4 max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-3xl font-bold mb-1">Your UK Success Story Starts Here</h3>
+            <p className="text-sm md:text-med text-blue-100 mb-3 max-w-3xl mx-auto">
              Stop dreaming and start planning. Let <strong className='text-red-400'>DartGlobe </strong> turn your study abroad ambitions into reality.</p>
-            <p className="text-sm md:text-lg text-blue-100 mb-10 max-w-4xl mx-auto">
+            <p className="text-xs md:text-sm md:text-lg text-blue-100 mb-4 max-w-4xl mx-auto">
               Ready to take the next step? Don't navigate the complex admission process alone. From shortlisting the perfect university to securing your visa and scholarships, our experts are with you at every milestone.</p>
-            <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto cursor-pointer hover:scale-105">
+            <button onClick={()=>navigate("/contact")} className="bg-white text-blue-900 px-6 md:px-12 py-5 rounded-xl font-bold text-sm md:text-xl hover:shadow-2xl transition-all flex items-center justify-center mx-auto cursor-pointer hover:scale-105">
               🚀 Start My Free Application
             </button>
           </div>
