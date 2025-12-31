@@ -13,7 +13,6 @@ const CountriesSection: React.FC = () => {
   const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isAutoScrollActiveRef = useRef(true);
   const lastInteractionTimeRef = useRef(Date.now());
-  const isDraggingRef = useRef(false);
 
   const countries = [
     { name: "Study in UK", image: "/uk-img.jpg" },
@@ -43,7 +42,7 @@ const CountriesSection: React.FC = () => {
 
   // Handle physical scrolling when index changes
   useEffect(() => {
-    if (isMobile && scrollContainerRef.current && !isDraggingRef.current) {
+    if (isMobile && scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const card = container.children[currentIndex] as HTMLElement;
       if (card) {
@@ -55,7 +54,7 @@ const CountriesSection: React.FC = () => {
 
   // Start auto-scroll timer
   const startAutoScrollTimer = () => {
-    if (!isMobile || !isAutoScrollActiveRef.current || isDraggingRef.current) return;
+    if (!isMobile || !isAutoScrollActiveRef.current) return;
     
     // Clear any existing timeout
     if (autoScrollTimeoutRef.current) {
@@ -67,7 +66,7 @@ const CountriesSection: React.FC = () => {
     const timeToWait = Math.max(0, 3000 - timeSinceLastInteraction);
     
     autoScrollTimeoutRef.current = setTimeout(() => {
-      if (isAutoScrollActiveRef.current && isMobile && !isDraggingRef.current) {
+      if (isAutoScrollActiveRef.current && isMobile) {
         setCurrentIndex((prev) => (prev + 1) % countries.length);
         // Reset interaction time after auto-scroll
         lastInteractionTimeRef.current = Date.now();
@@ -97,7 +96,7 @@ const CountriesSection: React.FC = () => {
 
   // Initialize auto-scroll
   useEffect(() => {
-    if (isMobile && !isDraggingRef.current) {
+    if (isMobile) {
       startAutoScrollTimer();
     }
     
@@ -110,30 +109,17 @@ const CountriesSection: React.FC = () => {
 
   const handleTouchStart = (e: TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
-    setTouchEnd(null);
-    isDraggingRef.current = true;
     pauseAutoScrollForInteraction();
   };
 
   const handleTouchMove = (e: TouchEvent) => {
-    if (touchStart !== null) {
-      setTouchEnd(e.targetTouches[0].clientX);
-    }
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !isMobile) {
-      // Resume auto-scroll if no valid touch
-      isDraggingRef.current = false;
+    if (!touchStart || !touchEnd || !isMobile) {
+      // Resume auto-scroll if no valid swipe
       setTimeout(resumeAutoScroll, 100);
-      return;
-    }
-    
-    // If touchEnd is null (user just tapped), don't change card
-    if (touchEnd === null) {
-      isDraggingRef.current = false;
-      setTimeout(resumeAutoScroll, 100);
-      setTouchStart(null);
       return;
     }
     
@@ -150,42 +136,9 @@ const CountriesSection: React.FC = () => {
     
     setTouchStart(null);
     setTouchEnd(null);
-    isDraggingRef.current = false;
     
     // Resume auto-scroll after interaction
     setTimeout(resumeAutoScroll, 100);
-  };
-
-  // Handle manual scroll (when user drags the container)
-  const handleScroll = () => {
-    if (!isMobile || !scrollContainerRef.current) return;
-    
-    const container = scrollContainerRef.current;
-    const scrollLeft = container.scrollLeft;
-    const containerWidth = container.offsetWidth;
-    
-    // Find which card is currently centered
-    let closestCardIndex = 0;
-    let minDistance = Infinity;
-    
-    // Check all cards to find which one is closest to center
-    for (let i = 0; i < container.children.length; i++) {
-      const card = container.children[i] as HTMLElement;
-      const cardLeft = card.offsetLeft - container.offsetLeft;
-      const cardCenter = cardLeft + card.offsetWidth / 2;
-      const containerCenter = scrollLeft + containerWidth / 2;
-      const distance = Math.abs(cardCenter - containerCenter);
-      
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestCardIndex = i;
-      }
-    }
-    
-    // Only update if the card has changed
-    if (closestCardIndex !== currentIndex) {
-      setCurrentIndex(closestCardIndex);
-    }
   };
 
   const nextCard = () => {
@@ -242,7 +195,6 @@ const CountriesSection: React.FC = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-            onScroll={handleScroll}
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {countries.map((country, index) => (
