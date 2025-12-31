@@ -8,14 +8,16 @@ const CountriesSection: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Refs to manage auto-scroll
- const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const isAutoScrollActiveRef = useRef(true);
   const lastInteractionTimeRef = useRef(Date.now());
   const isSwipingRef = useRef(false);
-  const swipeProcessedRef = useRef(false); // New ref to track if swipe was already processed
-  const autoScrollPausedRef = useRef(false); // NEW: Track if auto-scroll is explicitly paused
+  const swipeProcessedRef = useRef(false);
+  const autoScrollPausedRef = useRef(false);
+  const swipeConfirmationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const countries = [
     { name: "Study in UK", image: "/uk-img.jpg" },
@@ -27,6 +29,9 @@ const CountriesSection: React.FC = () => {
     { name: "Study in Europe", image: "/europe-img1.png" },
     { name: "Study in Ireland", image: "/ireland-img.png" }
   ];
+
+  // Minimum swipe distance
+  const minSwipeDistance = 50;
 
   // Mobile detection
   useEffect(() => {
@@ -45,7 +50,7 @@ const CountriesSection: React.FC = () => {
 
   // Handle physical scrolling when index changes
   useEffect(() => {
-    if (isMobile && scrollContainerRef.current) {
+    if (isMobile && scrollContainerRef.current && !isTransitioning) {
       const container = scrollContainerRef.current;
       const card = container.children[currentIndex] as HTMLElement;
       if (card) {
@@ -53,174 +58,189 @@ const CountriesSection: React.FC = () => {
         container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
       }
     }
-  }, [currentIndex, isMobile]);
+  }, [currentIndex, isMobile, isTransitioning]);
 
-  // Start auto-scroll timer
-  const startAutoScrollTimer = () => {
-    // NEW: Don't start if auto-scroll is paused
-    if (!isMobile || !isAutoScrollActiveRef.current || autoScrollPausedRef.current) return;
+  // Start auto-scroll
+  const startAutoScroll = () => {
+    if (!isMobile || autoScrollPausedRef.current || !isAutoScrollActiveRef.current) return;
     
-    // Clear any existing timeout
-    if (autoScrollTimeoutRef.current) {
-      clearTimeout(autoScrollTimeoutRef.current);
+    // Clear any existing interval
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
     }
     
-    // Calculate time since last interaction
-    const timeSinceLastInteraction = Date.now() - lastInteractionTimeRef.current;
-    const timeToWait = Math.max(0, 3000 - timeSinceLastInteraction);
-    
-    autoScrollTimeoutRef.current = setTimeout(() => {
-      if (isAutoScrollActiveRef.current && isMobile && !isSwipingRef.current && !autoScrollPausedRef.current) {
-        setCurrentIndex((prev) => (prev + 1) % countries.length);
-        // Reset interaction time after auto-scroll
-        lastInteractionTimeRef.current = Date.now();
-        // Start next auto-scroll
-        startAutoScrollTimer();
+    // Start new interval for auto-scroll
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (isAutoScrollActiveRef.current && !autoScrollPausedRef.current && !isSwipingRef.current && !isTransitioning) {
+        scrollRight();
       }
-    }, timeToWait);
+    }, 5000); // Auto-scroll every 5 seconds
   };
 
-  // Pause auto-scroll for user interaction
- const pauseAutoScrollForInteraction = () => {
-    autoScrollPausedRef.current = true; // NEW: Explicitly pause
-    isAutoScrollActiveRef.current = false;
-    lastInteractionTimeRef.current = Date.now();
-    
-    if (autoScrollTimeoutRef.current) {
-      clearTimeout(autoScrollTimeoutRef.current);
-      autoScrollTimeoutRef.current = null;
+  // Stop auto-scroll
+  const stopAutoScroll = () => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
     }
+    autoScrollPausedRef.current = true;
+    isAutoScrollActiveRef.current = false;
   };
 
-  // Resume auto-scroll after interaction
-  const resumeAutoScroll = () => {
-    autoScrollPausedRef.current=false;
-    isAutoScrollActiveRef.current = true;
-    // Start timer from current position
-    startAutoScrollTimer();
+  // Resume auto-scroll with confirmation delay
+  const resumeAutoScrollWithDelay = () => {
+    // Clear any existing confirmation timeout
+    if (swipeConfirmationTimeoutRef.current) {
+      clearTimeout(swipeConfirmationTimeoutRef.current);
+    }
+    
+    // Wait 2-3 seconds to confirm swipe has stopped before resuming auto-scroll
+    swipeConfirmationTimeoutRef.current = setTimeout(() => {
+      if (!isSwipingRef.current && !isTransitioning) {
+        autoScrollPausedRef.current = false;
+        isAutoScrollActiveRef.current = true;
+        lastInteractionTimeRef.current = Date.now();
+        startAutoScroll();
+      }
+    }, 3000); // 3 seconds delay to confirm swipe has stopped
   };
 
   // Initialize auto-scroll
   useEffect(() => {
     if (isMobile) {
-      startAutoScrollTimer();
+      startAutoScroll();
     }
     
     return () => {
-      if (autoScrollTimeoutRef.current) {
-        clearTimeout(autoScrollTimeoutRef.current);
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+      if (swipeConfirmationTimeoutRef.current) {
+        clearTimeout(swipeConfirmationTimeoutRef.current);
       }
     };
-  }, [isMobile, currentIndex]);
+  }, [isMobile]);
 
+  // Touch handlers for mobile swipe
   const handleTouchStart = (e: TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null);
     isSwipingRef.current = true;
-    swipeProcessedRef.current = false; // Reset swipe processed flag
-    pauseAutoScrollForInteraction();
+    swipeProcessedRef.current = false;
+    setIsTransitioning(false);
+    
+    // Stop auto-scroll immediately when swipe starts
+    stopAutoScroll();
   };
 
   const handleTouchMove = (e: TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (touchStart !== null) {
+      setTouchEnd(e.targetTouches[0].clientX);
+    }
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd || !isMobile) {
-      // If no valid swipe, resume auto-scroll after delay
+    if (!touchStart || !touchEnd || !isMobile || isTransitioning) {
       isSwipingRef.current = false;
-      setTimeout(() => {
-        if (!isSwipingRef.current) {
-          resumeAutoScroll();
-        }
-      }, 100);
+      resumeAutoScrollWithDelay();
       return;
     }
     
     const distance = touchStart - touchEnd;
-    const minSwipeDistance = 50;
-
-     // NEW: Process swipe immediately and prevent any auto-scroll during this time
-    if (!swipeProcessedRef.current && Math.abs(distance) > minSwipeDistance) {
-      swipeProcessedRef.current = true; // Mark swipe as processed
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (!swipeProcessedRef.current && (isLeftSwipe || isRightSwipe)) {
+      swipeProcessedRef.current = true;
+      setIsTransitioning(true);
       
-      // NEW: Clear any pending auto-scroll immediately
-      if (autoScrollTimeoutRef.current) {
-        clearTimeout(autoScrollTimeoutRef.current);
-        autoScrollTimeoutRef.current = null;
+      if (isLeftSwipe) {
+        scrollRight();
+      } else if (isRightSwipe) {
+        scrollLeft();
       }
-      
-      if (distance > minSwipeDistance) {
-        // Swipe left - move to next card (only one card)
-        setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
-      } else if (distance < -minSwipeDistance) {
-        // Swipe right - move to previous card (only one card)
-        setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
-      }
-      
-      // NEW: Update interaction time to prevent immediate auto-scroll
-      lastInteractionTimeRef.current = Date.now();
     } else {
-      // If swipe distance was too small, snap to current card
-      // This ensures the card stays centered even with small swipes
-      if (scrollContainerRef.current && !swipeProcessedRef.current) {
-        const container = scrollContainerRef.current;
-        const scrollLeft = container.scrollLeft;
-        const containerWidth = container.clientWidth;
-        
-        // Calculate which card is centered
-        const cardWidth = containerWidth * 0.8;
-        const gap = 16;
-        const totalCardWidth = cardWidth + gap;
-        const scrollPosition = scrollLeft + (containerWidth / 2);
-        
-        const finalCardIndex = Math.round(scrollPosition / totalCardWidth);
-        const clampedIndex = Math.max(0, Math.min(finalCardIndex, countries.length - 1));
-        
-        // Only update if it's different from current
-        if (clampedIndex !== currentIndex) {
-          setCurrentIndex(clampedIndex);
-          // NEW: Update interaction time
-          lastInteractionTimeRef.current = Date.now();
-        }
-      }
+      // If swipe distance was too small, resume auto-scroll
+      isSwipingRef.current = false;
+      resumeAutoScrollWithDelay();
     }
     
     setTouchStart(null);
     setTouchEnd(null);
-    isSwipingRef.current = false;
+  };
+
+  const scrollLeft = () => {
+    if (isTransitioning) return;
     
-    // NEW: Wait longer before resuming auto-scroll to ensure no conflict
-    setTimeout(() => {
-      if (!isSwipingRef.current) {
-        resumeAutoScroll();
+    setIsTransitioning(true);
+    setCurrentIndex(prev => {
+      if (prev <= 0) {
+        return countries.length - 1;
       }
-    }, 500); // Increased delay from 100ms to 500ms
+      return prev - 1;
+    });
+    
+    // After transition completes
+    setTimeout(() => {
+      setIsTransitioning(false);
+      isSwipingRef.current = false;
+      resumeAutoScrollWithDelay();
+    }, 300);
+  };
+
+  const scrollRight = () => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
+    setCurrentIndex(prev => {
+      if (prev >= countries.length - 1) {
+        return 0;
+      }
+      return prev + 1;
+    });
+    
+    // After transition completes
+    setTimeout(() => {
+      setIsTransitioning(false);
+      isSwipingRef.current = false;
+      resumeAutoScrollWithDelay();
+    }, 300);
   };
 
   const nextCard = () => {
-    pauseAutoScrollForInteraction();
-    setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
-    // NEW: Update interaction time
-    lastInteractionTimeRef.current = Date.now();
-    // Resume auto-scroll after longer delay
-    setTimeout(() => {
-      if (!isSwipingRef.current) {
-        resumeAutoScroll();
+    if (isTransitioning) return;
+    stopAutoScroll();
+    setIsTransitioning(true);
+    
+    setCurrentIndex(prev => {
+      if (prev >= countries.length - 1) {
+        return 0;
       }
-    }, 500);
+      return prev + 1;
+    });
+    
+    setTimeout(() => {
+      setIsTransitioning(false);
+      resumeAutoScrollWithDelay();
+    }, 300);
   };
 
   const prevCard = () => {
-    pauseAutoScrollForInteraction();
-    setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
-    // NEW: Update interaction time
-    lastInteractionTimeRef.current = Date.now();
-    // Resume auto-scroll after longer delay
-    setTimeout(() => {
-      if (!isSwipingRef.current) {
-        resumeAutoScroll();
+    if (isTransitioning) return;
+    stopAutoScroll();
+    setIsTransitioning(true);
+    
+    setCurrentIndex(prev => {
+      if (prev <= 0) {
+        return countries.length - 1;
       }
-    }, 500);
+      return prev - 1;
+    });
+    
+    setTimeout(() => {
+      setIsTransitioning(false);
+      resumeAutoScrollWithDelay();
+    }, 300);
   };
 
   return (
@@ -236,11 +256,12 @@ const CountriesSection: React.FC = () => {
         </div>
 
         {/* Mobile & Tablet Carousel */}
-        <div className="sm:hidden lg:hidden relative ">
+        <div className="sm:hidden lg:hidden relative">
           <button
             onClick={prevCard}
             className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
             aria-label="Previous card"
+            disabled={isTransitioning}
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -251,6 +272,7 @@ const CountriesSection: React.FC = () => {
             onClick={nextCard}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
             aria-label="Next card"
+            disabled={isTransitioning}
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -270,13 +292,23 @@ const CountriesSection: React.FC = () => {
                 key={index}
                 className="flex-shrink-0 w-[80%] mx-2 snap-center"
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
+                <div className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 ${
+                  index === currentIndex ? 'scale-100' : 'scale-95 opacity-80'
+                }`}>
                   <div className="h-48 relative">
                     <div className="absolute inset-0 overflow-hidden">
-                      <img src={country.image} alt={country.name} className="w-full h-full object-cover object-top" />
+                      <img 
+                        src={country.image} 
+                        alt={country.name} 
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
-                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}></div>
-                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"}`}>
+                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
+                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                    }`}></div>
+                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
+                      isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"
+                    }`}>
                       <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
@@ -296,8 +328,12 @@ const CountriesSection: React.FC = () => {
                     <div className="absolute inset-0 overflow-hidden">
                       <img src={country.image} alt={country.name} className="w-full h-full object-cover object-top" />
                     </div>
-                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}></div>
-                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"}`}>
+                    <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
+                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                    }`}></div>
+                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
+                      isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"
+                    }`}>
                       <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
