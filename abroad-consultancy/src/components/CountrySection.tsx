@@ -10,11 +10,12 @@ const CountriesSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   
   // Refs to manage auto-scroll
-  const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+ const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isAutoScrollActiveRef = useRef(true);
   const lastInteractionTimeRef = useRef(Date.now());
   const isSwipingRef = useRef(false);
   const swipeProcessedRef = useRef(false); // New ref to track if swipe was already processed
+  const autoScrollPausedRef = useRef(false); // NEW: Track if auto-scroll is explicitly paused
 
   const countries = [
     { name: "Study in UK", image: "/uk-img.jpg" },
@@ -56,7 +57,8 @@ const CountriesSection: React.FC = () => {
 
   // Start auto-scroll timer
   const startAutoScrollTimer = () => {
-    if (!isMobile || !isAutoScrollActiveRef.current) return;
+    // NEW: Don't start if auto-scroll is paused
+    if (!isMobile || !isAutoScrollActiveRef.current || autoScrollPausedRef.current) return;
     
     // Clear any existing timeout
     if (autoScrollTimeoutRef.current) {
@@ -68,7 +70,7 @@ const CountriesSection: React.FC = () => {
     const timeToWait = Math.max(0, 3000 - timeSinceLastInteraction);
     
     autoScrollTimeoutRef.current = setTimeout(() => {
-      if (isAutoScrollActiveRef.current && isMobile && !isSwipingRef.current) {
+      if (isAutoScrollActiveRef.current && isMobile && !isSwipingRef.current && !autoScrollPausedRef.current) {
         setCurrentIndex((prev) => (prev + 1) % countries.length);
         // Reset interaction time after auto-scroll
         lastInteractionTimeRef.current = Date.now();
@@ -79,7 +81,8 @@ const CountriesSection: React.FC = () => {
   };
 
   // Pause auto-scroll for user interaction
-  const pauseAutoScrollForInteraction = () => {
+ const pauseAutoScrollForInteraction = () => {
+    autoScrollPausedRef.current = true; // NEW: Explicitly pause
     isAutoScrollActiveRef.current = false;
     lastInteractionTimeRef.current = Date.now();
     
@@ -91,6 +94,7 @@ const CountriesSection: React.FC = () => {
 
   // Resume auto-scroll after interaction
   const resumeAutoScroll = () => {
+    autoScrollPausedRef.current=false;
     isAutoScrollActiveRef.current = true;
     // Start timer from current position
     startAutoScrollTimer();
@@ -122,18 +126,28 @@ const CountriesSection: React.FC = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd || !isMobile) {
-      // If no valid swipe, resume auto-scroll
+      // If no valid swipe, resume auto-scroll after delay
       isSwipingRef.current = false;
-      setTimeout(resumeAutoScroll, 100);
+      setTimeout(() => {
+        if (!isSwipingRef.current) {
+          resumeAutoScroll();
+        }
+      }, 100);
       return;
     }
     
     const distance = touchStart - touchEnd;
     const minSwipeDistance = 50;
-    
-    // Only process swipe if it hasn't been processed yet in this touch sequence
+
+     // NEW: Process swipe immediately and prevent any auto-scroll during this time
     if (!swipeProcessedRef.current && Math.abs(distance) > minSwipeDistance) {
       swipeProcessedRef.current = true; // Mark swipe as processed
+      
+      // NEW: Clear any pending auto-scroll immediately
+      if (autoScrollTimeoutRef.current) {
+        clearTimeout(autoScrollTimeoutRef.current);
+        autoScrollTimeoutRef.current = null;
+      }
       
       if (distance > minSwipeDistance) {
         // Swipe left - move to next card (only one card)
@@ -142,10 +156,13 @@ const CountriesSection: React.FC = () => {
         // Swipe right - move to previous card (only one card)
         setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
       }
+      
+      // NEW: Update interaction time to prevent immediate auto-scroll
+      lastInteractionTimeRef.current = Date.now();
     } else {
       // If swipe distance was too small, snap to current card
       // This ensures the card stays centered even with small swipes
-      if (scrollContainerRef.current) {
+      if (scrollContainerRef.current && !swipeProcessedRef.current) {
         const container = scrollContainerRef.current;
         const scrollLeft = container.scrollLeft;
         const containerWidth = container.clientWidth;
@@ -162,6 +179,8 @@ const CountriesSection: React.FC = () => {
         // Only update if it's different from current
         if (clampedIndex !== currentIndex) {
           setCurrentIndex(clampedIndex);
+          // NEW: Update interaction time
+          lastInteractionTimeRef.current = Date.now();
         }
       }
     }
@@ -170,22 +189,38 @@ const CountriesSection: React.FC = () => {
     setTouchEnd(null);
     isSwipingRef.current = false;
     
-    // Resume auto-scroll after interaction
-    setTimeout(resumeAutoScroll, 100);
+    // NEW: Wait longer before resuming auto-scroll to ensure no conflict
+    setTimeout(() => {
+      if (!isSwipingRef.current) {
+        resumeAutoScroll();
+      }
+    }, 500); // Increased delay from 100ms to 500ms
   };
 
   const nextCard = () => {
     pauseAutoScrollForInteraction();
     setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
-    // Resume auto-scroll
-    setTimeout(resumeAutoScroll, 100);
+    // NEW: Update interaction time
+    lastInteractionTimeRef.current = Date.now();
+    // Resume auto-scroll after longer delay
+    setTimeout(() => {
+      if (!isSwipingRef.current) {
+        resumeAutoScroll();
+      }
+    }, 500);
   };
 
   const prevCard = () => {
     pauseAutoScrollForInteraction();
     setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
-    // Resume auto-scroll
-    setTimeout(resumeAutoScroll, 100);
+    // NEW: Update interaction time
+    lastInteractionTimeRef.current = Date.now();
+    // Resume auto-scroll after longer delay
+    setTimeout(() => {
+      if (!isSwipingRef.current) {
+        resumeAutoScroll();
+      }
+    }, 500);
   };
 
   return (
