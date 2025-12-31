@@ -13,6 +13,7 @@ const CountriesSection: React.FC = () => {
   const autoScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isAutoScrollActiveRef = useRef(true);
   const lastInteractionTimeRef = useRef(Date.now());
+  const isSwipingRef = useRef(false);
 
   const countries = [
     { name: "Study in UK", image: "/uk-img.jpg" },
@@ -66,7 +67,7 @@ const CountriesSection: React.FC = () => {
     const timeToWait = Math.max(0, 3000 - timeSinceLastInteraction);
     
     autoScrollTimeoutRef.current = setTimeout(() => {
-      if (isAutoScrollActiveRef.current && isMobile) {
+      if (isAutoScrollActiveRef.current && isMobile && !isSwipingRef.current) {
         setCurrentIndex((prev) => (prev + 1) % countries.length);
         // Reset interaction time after auto-scroll
         lastInteractionTimeRef.current = Date.now();
@@ -109,26 +110,70 @@ const CountriesSection: React.FC = () => {
 
   const handleTouchStart = (e: TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
+    isSwipingRef.current = true;
     pauseAutoScrollForInteraction();
   };
 
   const handleTouchMove = (e: TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
+    
+    // Calculate scroll position during swipe to find current card
+    if (scrollContainerRef.current && touchStart) {
+      const container = scrollContainerRef.current;
+      const scrollLeft = container.scrollLeft;
+      const containerWidth = container.clientWidth;
+      
+      // Calculate which card is currently in view during swipe
+      const cardWidth = containerWidth * 0.8; // 80% width cards
+      const gap = 16; // mx-2 = 0.5rem = 8px each side = 16px total
+      const totalCardWidth = cardWidth + gap;
+      
+      const currentScrollCardIndex = Math.round(scrollLeft / totalCardWidth);
+      const clampedIndex = Math.max(0, Math.min(currentScrollCardIndex, countries.length - 1));
+      
+      // Update current index during swipe (for smooth tracking)
+      if (clampedIndex !== currentIndex) {
+        setCurrentIndex(clampedIndex);
+      }
+    }
   };
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd || !isMobile) {
-      // Resume auto-scroll if no valid swipe
+      // If no valid swipe, resume auto-scroll
+      isSwipingRef.current = false;
       setTimeout(resumeAutoScroll, 100);
       return;
     }
     
     const distance = touchStart - touchEnd;
-    if (Math.abs(distance) > 50) {
-      if (distance > 50) {
+    const minSwipeDistance = 50;
+    
+    // Determine final card position based on scroll position
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollLeft = container.scrollLeft;
+      const containerWidth = container.clientWidth;
+      
+      // Calculate which card is centered
+      const cardWidth = containerWidth * 0.8;
+      const gap = 16;
+      const totalCardWidth = cardWidth + gap;
+      const scrollPosition = scrollLeft + (containerWidth / 2);
+      
+      const finalCardIndex = Math.round(scrollPosition / totalCardWidth);
+      const clampedIndex = Math.max(0, Math.min(finalCardIndex, countries.length - 1));
+      
+      // Set to the card that's closest to center
+      setCurrentIndex(clampedIndex);
+    }
+    
+    // If it was a deliberate swipe, also handle direction
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > minSwipeDistance) {
         // Swipe left - next card
         setCurrentIndex(prev => (prev < countries.length - 1 ? prev + 1 : 0));
-      } else if (distance < -50) {
+      } else if (distance < -minSwipeDistance) {
         // Swipe right - previous card
         setCurrentIndex(prev => (prev > 0 ? prev - 1 : countries.length - 1));
       }
@@ -136,6 +181,7 @@ const CountriesSection: React.FC = () => {
     
     setTouchStart(null);
     setTouchEnd(null);
+    isSwipingRef.current = false;
     
     // Resume auto-scroll after interaction
     setTimeout(resumeAutoScroll, 100);
