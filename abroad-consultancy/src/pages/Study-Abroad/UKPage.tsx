@@ -95,7 +95,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[80%] mx-auto scroll-mt-20">
-  <div className="flex justify-center ">
+  <div className="flex justify-center py-5 mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
@@ -106,7 +106,7 @@ const StudyUKPage: React.FC = () => {
             scholarships, and visas for a seamless transition.</p>
         </div>
         <div className="mt-2">
-          <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
+          <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
           </button>
         </div>
@@ -483,9 +483,9 @@ const StudyUKPage: React.FC = () => {
   {/* 3. Support Services - Image Left, Content Right */}
   <div className="flex flex-col md:flex-row gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-2 order-2 md:order-1">
+    <div className="md:w-3/10 -mt-6 order-2 md:order-1">
       <img 
-        src="/Service-uk.png" 
+        src="/service-uk1.png" 
         alt="Student Support Services"
         className="w-full h-full sm:h-60 md:h-full object-contain "
       />
