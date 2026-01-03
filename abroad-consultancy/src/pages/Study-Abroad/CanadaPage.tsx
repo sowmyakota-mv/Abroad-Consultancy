@@ -829,7 +829,7 @@ const StudyCanadaPage: React.FC = () => {
 <section className="bg-gray-100 w-full py-5 ">
   <div className="w-[92%] mx-auto mt-8 mb-4">
     <div className="mb-8">
-      <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
+      <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the Canada</h2>
       <p className="text-sm  text-gray-700">
         International students in Canada can work to help cover costs and gain Canadian experience.</p>
     </div>
@@ -1101,7 +1101,7 @@ const StudyCanadaPage: React.FC = () => {
 
 <section className='mt-16'>
           <div className="bg-gradient-to-r from-blue-900 to-red-800  p-10 text-white text-center ">
-            <h3 className="text-xl md:text-3xl font-bold mb-1">Your UK Success Story Starts Here</h3>
+            <h3 className="text-xl md:text-3xl font-bold mb-1">Your Canada Success Story Starts Here</h3>
             <p className="text-sm md:text-med text-blue-100 mb-3 max-w-3xl mx-auto">
              Stop dreaming and start planning. Let <strong className='text-red-400'>DartGlobe </strong> turn your study abroad ambitions into reality.</p>
             <p className="text-xs md:text-sm md:text-lg text-blue-100 mb-4 max-w-4xl mx-auto">

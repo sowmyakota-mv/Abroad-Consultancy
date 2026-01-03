@@ -680,7 +680,7 @@ const StudyAustraliaPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section className=''>
-  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the Australia for Your Education?</h2>
   <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
     {majorBenefits.map((benefit, index) => {
       // Define different light colors for each card
@@ -913,7 +913,7 @@ const StudyAustraliaPage: React.FC = () => {
 <section className="bg-gray-100 w-full py-5 ">
   <div className="w-[92%] mx-auto mt-8 mb-4">
     <div className="mb-8">
-      <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the UK</h2>
+      <h2 className="text-2xl md:text-3xl  font-bold text-gray-900 mb-4">Earn While You Learn: Part-Time Work in the Australia</h2>
       <p className="text-sm  text-gray-700">
         Australia offers some of the most generous student work rights in the world.</p></div>
 
@@ -980,10 +980,9 @@ Top Student Job Sectors</span>
           <span className="font-bold text-yellow-700 text-lg md:text-xl">💷</span>
         </div>
         <div>
-          <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Applies to You!</h3>
+          <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Protections Apply to You!</h3>
           <p className="text-xs md:text-sm text-gray-700">
-           International students are entitled to the UK National Minimum Wage. As of 2025, this is approximately £9.60 to £15.44 per hour (depending on your age), ensuring you are paid fairly for every hour you work.</p>
-        </div>
+           As an international student in Australia, you are legally entitled to the same minimum wage as any Australian citizen. The National Minimum Wage is $24.95 per hour (for those 21 and older). If you are hired as a "casual" employee which is common for student roles you are also entitled to a 25% casual loading, bringing your minimum pay to $31.19 per hour. This ensures you are fairly compensated for your time and protected by the Fair Work Ombudsman.</p></div>
       </div>
     </div>
   </div>
@@ -1010,10 +1009,9 @@ Top Student Job Sectors</span>
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
-    A Global Stamp of Excellence.
+    A Global Stamp of Distinction for Your Career.
   </span>{" "}
-  The UK is home to some of the world's oldest and most prestigious universities, consistently ranked in the global top 10. Earning a degree here isn't just about the education; it's a globally recognized credential that opens doors to top-tier employers worldwide.
-</p>
+ Australia is home to a world-class education system where 9 universities are ranked in the Global Top 100 (QS 2026 Rankings). Earning an Australian degree isn't just about learning; it’s about holding a credential protected by the ESOS Act, which guarantees the highest quality of tuition and student protection. Recognized by employers worldwide, an Australian qualification is a powerful endorsement of your skills, opening doors to top-tier global corporations and innovation hubs.</p>
     </div>
   </div>
 
@@ -1031,14 +1029,13 @@ Top Student Job Sectors</span>
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
       <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
-        Highlight the biggest advantage: saving time and money with shorter degrees.
+        The Australian Qualifications Framework (AQF) Advantage.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
-   Smarter, Faster Degrees.
+   Smarter Pathways and Global Portability.
   </span>{" "}
-   Save significant time and tuition fees with the UK's intensive degree structures. You can graduate with a Master's in just one year or a Bachelor's in three years, giving you a head start on your career compared to peers studying in other countries.
-        </p>
+   Australia offers a unique, structured pathway called the AQF, which allows for seamless movement between vocational and higher education. Save time by choosing 2-year Fast-track Bachelors or specialized 1-year Graduate Diplomas. The 10-level AQF system ensures your credits are easily transferable worldwide, giving you a distinct head start over peers in traditional 4-year systems. Whether you choose a research-heavy University or a skills-focused TAFE, your education is directly mapped to the 2026 global job market.</p>
     </div>
   </div>
 
@@ -1060,17 +1057,16 @@ Top Student Job Sectors</span>
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
-   We've Got Your Back.
+   We’ve Got Your Back, Every Step of the Way.
   </span>{" "}
-    Moving to a new country is a big step, but you're never alone. From dedicated international offices helping with visas and accommodation to personal tutors and wellbeing services, UK universities have a robust support network to ensure you thrive personally and academically.
-        </p>
+    Moving to Australia is a life-changing step, but you are never alone. Australian institutions are world-leaders in student welfare, offering dedicated International Student Support Centers that assist with everything from "Safe-Space" accommodation to mental wellbeing and legal rights. With a multicultural society where nearly 30% of the population was born overseas, you’ll find a sense of belonging in a country consistently ranked as one of the safest and most livable destinations for international students.</p>
     </div>
   </div>
 
   {/* 4. Research Opportunities - Image Right, Content Left */}
   <div className="flex flex-col md:flex-row-reverse gap-8 mb-8">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-8 md:-mt-12 order-2 md:order-1">
+    <div className="md:w-3/10 -mt-8 md:-mt-6 order-2 md:order-1">
       <img 
         src="/research-uk.png" 
         alt="Research Opportunities"
@@ -1085,10 +1081,9 @@ Top Student Job Sectors</span>
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
-   Learn at the Cutting Edge.
+   Hands-On Learning at the Cutting Edge.
   </span>{" "}
-   Be part of an education system that leads global innovation. You'll be taught by academics who are actively researching the subjects you're studying, giving you access to the latest thinking, world-class facilities, and the critical analysis skills that employers value.
-        </p>
+  In Australia, research is the heartbeat of education. You won't just study history; you'll help write the future in sectors like Quantum Computing, Green Energy, and Medical Science. Under the guidance of world-leading academics, you’ll gain access to state-of-the-art facilities and "Industry-Integrated Research" projects. This hands-on approach builds the critical analysis and technical skills that are highly prized by modern employers looking for innovators, not just graduates.</p>
     </div>
   </div>
 
@@ -1110,10 +1105,10 @@ Top Student Job Sectors</span>
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
-   Launch Your Global Career.
+   The Ultimate Professional Launchpad.
   </span>{" "}
-   Your journey doesn't end with graduation. The Graduate Route Visa allows you to stay and work in the UK for 2 years (3 years for PhDs) after completing your degree. This is the perfect opportunity to gain invaluable international work experience and recover your investment.
-        </p>
+  The journey doesn't end with your degree. The Temporary Graduate Visa (Subclass 485) is your bridge to the Australian workforce.
+Bachelor’s and Master’s graduates can stay for 2 to 3 years, while PhD graduates can stay for up to 4 years. Study in designated regional areas (like Perth, Adelaide, or the Gold Coast) to unlock additional 1–2 years of stay-back rights. This is the perfect opportunity to gain invaluable international experience, recover your investment, and build a pathway toward Australian Permanent Residency (PR).</p>
     </div>
   </div>
 </section>
@@ -1194,7 +1189,7 @@ Top Student Job Sectors</span>
 
 <section className='mt-16'>
           <div className="bg-gradient-to-r from-blue-900 to-red-800  p-10 text-white text-center ">
-            <h3 className="text-xl md:text-3xl font-bold mb-1">Your UK Success Story Starts Here</h3>
+            <h3 className="text-xl md:text-3xl font-bold mb-1">Your Australia Success Story Starts Here</h3>
             <p className="text-sm md:text-med text-blue-100 mb-3 max-w-3xl mx-auto">
              Stop dreaming and start planning. Let <strong className='text-red-400'>DartGlobe </strong> turn your study abroad ambitions into reality.</p>
             <p className="text-xs md:text-sm md:text-lg text-blue-100 mb-4 max-w-4xl mx-auto">
