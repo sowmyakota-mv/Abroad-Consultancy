@@ -1100,9 +1100,9 @@ const StudyGermanyPage: React.FC = () => {
 
   // Intakes
   const intakes = [
-    { id: 1, term: 'September (Fall)', duration: 'Primary Intake', application: 'December to July (Best for Scholarships)' },
-    { id: 2, term: 'January (Winter)', duration: 'Secondary Intake', application: 'June to September' },
-    { id: 3, term: 'May (Spring)', duration: 'Limited Intake', application: 'October to January' },
+    { id: 1, term: 'September (Fall)', duration: 'Primary Intake', application: 'May to July (Best for Scholarships)' },
+    { id: 2, term: 'March (Winter)', duration: 'Secondary Intake', application: 'December to January' },
+    
   ];
 
   // English Requirements
@@ -1115,10 +1115,10 @@ const StudyGermanyPage: React.FC = () => {
 
   // Scholarship Process
   const scholarshipProcess = [
-    { step: 1, title: 'Smart Shortlisting', description: 'We dont just guess; we match your academic profile with high-value scholarships (University-specific, Government, and Private) where you have the highest chance of winning.' },
-    { step: 2, title: 'Essay Strategy', description: 'Scholarship essays are different from admission SOPs. Our editors help you craft a compelling narrative that highlights your leadership and merit to the committee.' },
-    { step: 3, title: 'Document Perfection', description: 'A single missing document can lead to rejection. We meticulously review your transcripts, recommendation letters, and financial proofs before submission.' },
-    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Chevening or Commonwealth), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
+    { step: 1, title: 'Smart Shortlisting', description: 'We match your profile with government-funded awards like the Deutschl and stipendium and university-specific grants.' },
+    { step: 2, title: 'Letter of Motivation (LOM)', description: 'German committees prefer directness over storytelling. We help you write a precise Letter of Motivation that focuses on your academic technicalities and future research intent.' },
+    { step: 3, title: 'Document Perfection', description: 'We ensure your Indian grades are correctly converted to the German Grading Scale (where 1.0 is excellent and 4.0 is passing) and handle your APS Certificate coordination.' },
+    { step: 4, title: 'Interview Prep', description: 'For elite awards (like DAAD or Erasmus+), we conduct technical mock interviews to ensure you can defend your Bachelors thesis and future research plans.' },
   ];
 
   return (
@@ -1229,11 +1229,9 @@ const StudyGermanyPage: React.FC = () => {
     <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
       {/* Title and Paragraph inside table container */}
       <div className="p-8 pb-4 border-b border-gray-200">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the Germany</h2>
         <p className="text-sm  text-gray-700 text-left">
-          Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
-          there is an intake that fits your timeline.
-        </p>
+         Germany offers a structured and predictable academic calendar. While public universities follow a standard two-intake policy, many private institutions and specialized English-taught programs provide additional flexibility to suit your professional and financial preparations.</p>
       </div>
       
       <table className="w-full">
@@ -1268,9 +1266,7 @@ const StudyGermanyPage: React.FC = () => {
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the UK</h2>
         <p className="text-sm text-gray-700 text-left mb-4">
-          Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
-          there is an intake that fits your timeline.
-        </p>
+          Germany offers a structured and predictable academic calendar. While public universities follow a standard two-intake policy, many private institutions and specialized English-taught programs provide additional flexibility to suit your professional and financial preparations.</p>
       </div>
       
       {intakes.map((intake) => (
@@ -1301,7 +1297,7 @@ const StudyGermanyPage: React.FC = () => {
 
     <div className="bg-white rounded-2xl p-10 border border-blue-100">
   <h3 className="text-2xl font-bold text-gray-900 mb-6">The Intake Summary Cards</h3>
-  <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-2 gap-10">
     {/* Card 1 - Primary Intake */}
     <div className="bg-blue-50 p-4 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
@@ -1337,7 +1333,7 @@ const StudyGermanyPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (January)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (March)</h4>
         <p className="text-gray-700 text-xs mb-1">Missed September? No problem. The January intake is ideal for students who need extra time for IELTS/PTE preparation or funding. While course options are slightly fewer, the competition is often lower.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -1347,18 +1343,18 @@ const StudyGermanyPage: React.FC = () => {
     </div>
 
     {/* Card 3 - Seasonal Intake */}
-    <div className="bg-purple-50 p-4 rounded-xl border border-gray-200 relative">
+    {/* <div className="bg-purple-50 p-4 rounded-xl border border-gray-200 relative"> */}
       {/* Tagline - Half inside, half outside */}
-      <div className="absolute -top-3 right-0 z-10">
+      {/* <div className="absolute -top-3 right-0 z-10">
         <div className="bg-purple-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
-          <span>Specialized</span>
+          <span>Specialized</span> */}
           {/* Diagonal cut effect on left side */}
-          <div className="absolute left-0 top-0 w-0 h-0 border-l-[12px] border-l-white border-t-[24px] border-t-purple-600 border-b-purple-600"></div>
+          {/* <div className="absolute left-0 top-0 w-0 h-0 border-l-[12px] border-l-white border-t-[24px] border-t-purple-600 border-b-purple-600"></div>
         </div>
-      </div>
+      </div> */}
       
       {/* Content with padding to accommodate tag */}
-      <div className="pt-1">
+      {/* <div className="pt-1">
         <h4 className="font-bold text-gray-900 mb-1 text-lg">The Seasonal Intake (May)</h4>
         <p className="text-gray-700 text-xs mb-1">A smaller, specialized intake offered by select universities. It is best suited for students targeting specific vocational courses or those who want to align their graduation with specific job market cycles.</p>
         <p className="text-gray-700">
@@ -1366,7 +1362,7 @@ const StudyGermanyPage: React.FC = () => {
           <span className='text-xs'>Limited competition for specific programs.</span>
         </p>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
   </div>
@@ -1497,8 +1493,8 @@ const StudyGermanyPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
-        Focus on the global prestige and career impact of a UK degree.
+      <h3 className="text-sm md:text-base font-semibold text-orange-500 mb-3">
+        Focus on the global prestige and career impact of a Germany degree.
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
@@ -1521,7 +1517,7 @@ const StudyGermanyPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-orange-500 mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1545,7 +1541,7 @@ const StudyGermanyPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-orange-500 mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1569,7 +1565,7 @@ const StudyGermanyPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-orange-500 mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1593,7 +1589,7 @@ const StudyGermanyPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-orange-500 mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1608,10 +1604,9 @@ const StudyGermanyPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the Germany</h2>
             <p className="text-sm md:text-base text-gray-700 text-left">
-              Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
-          </div>
+             Enjoy world-class education for (mostly) free. While tuition is often zero, Germany offers millions of Euros in stipends to cover your living costs. Our experts help you navigate the DAAD and university systems to secure your funding.</p></div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
@@ -1638,42 +1633,34 @@ const StudyGermanyPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
+                  <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    The largest funding organization in the world, offering monthly stipends (approx. €992 for Master's) + health insurance.
+  </li>
+
+  <li className="mb-1">
+     A merit-based award offering €300/month for top performers, regardless of income.</li>
+
+  <li className="mb-1">
+    For PhD students, fully funded positions (TV-L E13 scale) act as a salary rather than just a scholarship.</li>
+</ul>
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   
   </span>{" "}
-   While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
-                </div>
+   Since tuition is often free (except in Baden-Württemberg), scholarships cover living expenses. A typical award provides €992 to €1,400 per month, completely negating the need for a Blocked Account withdrawal.</p></div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+   {/* How to Qualify: */}
   </span>{" "}
-   Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
-                </div>
+   Grades are King. German universities are highly academic. A high CGPA (above 8.5/10) is the primary driver for scholarships. Work experience is valuable for Universities of Applied Sciences (Fachhochschulen).</p></div>
               </div>
             </div>
           </div>

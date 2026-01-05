@@ -443,7 +443,7 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Focus on the global prestige and career impact of a UK degree.
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -468,7 +468,7 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -493,7 +493,7 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -518,7 +518,7 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -543,7 +543,7 @@ const StudyUKPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -589,30 +589,27 @@ const StudyUKPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
+   <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    For high academic achievers.
+  </li>
+
+  <li className="mb-1">
+    Automatic bursaries (often £1,000–£3,000) for early applicants.
+  </li>
+
+  <li className="mb-1">
+    Prestigious full-funding options like Chevening and GREAT Scholarships.
+  </li>
+</ul>
+
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   
   </span>{" "}
    While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
                 </div>
@@ -621,7 +618,7 @@ const StudyUKPage: React.FC = () => {
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+  
   </span>{" "}
    Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
                 </div>

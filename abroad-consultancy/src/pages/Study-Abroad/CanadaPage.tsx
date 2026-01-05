@@ -538,10 +538,10 @@ const StudyCanadaPage: React.FC = () => {
 
   // Scholarship Process
   const scholarshipProcess = [
-    { step: 1, title: 'Smart Shortlisting', description: 'We dont just guess; we match your academic profile with high-value scholarships (University-specific, Government, and Private) where you have the highest chance of winning.' },
+    { step: 1, title: 'Smart Shortlisting', description: 'We match your profile with high-value awards (Entrance Scholarships, Government Grants, and Private Bursaries) where you have the highest win rate.' },
     { step: 2, title: 'Essay Strategy', description: 'Scholarship essays are different from admission SOPs. Our editors help you craft a compelling narrative that highlights your leadership and merit to the committee.' },
     { step: 3, title: 'Document Perfection', description: 'A single missing document can lead to rejection. We meticulously review your transcripts, recommendation letters, and financial proofs before submission.' },
-    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Chevening or Commonwealth), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
+    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Lester B. Pearson or Vanier Scholarships), we conduct mock interviews to ensure you articulate your vision confidently.' },
   ];
 
   return (
@@ -919,7 +919,7 @@ const StudyCanadaPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Focus on the world-class standards and high employability of a Canadian degree.</h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
@@ -942,7 +942,7 @@ const StudyCanadaPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Highlight the choice between research-intensive universities and career-focused colleges.</h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
@@ -965,7 +965,7 @@ const StudyCanadaPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Reassure students with Canada’s famous multicultural "wraparound" support.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -989,7 +989,7 @@ const StudyCanadaPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Frame Canada’s R&D leadership as a hands-on skill-building experience.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1013,7 +1013,7 @@ const StudyCanadaPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Highlight the PGWP as the most powerful career launchpad in North America.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1028,10 +1028,9 @@ const StudyCanadaPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the Canada</h2>
             <p className="text-sm md:text-base text-gray-700 text-left">
-              Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
-          </div>
+              Don’t let tuition fees hold you back. Canada offers millions of CAD in awards for international students. Our experts help you identify, target, and apply for the best financial aid packages to lower your education costs.</p></div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
@@ -1058,42 +1057,36 @@ const StudyCanadaPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
-                </div>
+                <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    Automatic merit awards (often $2,000–$5,000 CAD) based on your GPA/IELTS score. No separate application needed.
+  </li>
+
+  <li className="mb-1">
+    Prestigious fully-funded options like the Vanier Canada Graduate Scholarship and Shastri Indo-Canadian Fellowships.
+  </li>
+
+  <li className="mb-1">
+    Need-based aid offered by colleges/universities for students facing financial gaps.
+  </li>
+</ul></div>
+
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   
   </span>{" "}
-   While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
-                </div>
+   Full rides are rarer than in the US. Most Canadian university scholarships offer tuition credits ranging from $2,000 to $10,000 CAD. However, PhD students often receive fully funded stipends (approx. $25,000+ CAD/year).</p></div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+   
   </span>{" "}
-   Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
-                </div>
+   Canadian committees value Community Impact highly. For top awards (like UBC's International Leader of Tomorrow), they look for leadership, volunteerism, and ability to contribute to the campus community.</p></div>
               </div>
             </div>
           </div>

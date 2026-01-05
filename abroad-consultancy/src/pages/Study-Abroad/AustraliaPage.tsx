@@ -608,9 +608,9 @@ const StudyAustraliaPage: React.FC = () => {
 
   // Intakes
   const intakes = [
-    { id: 1, term: 'September (Fall)', duration: 'Primary Intake', application: 'December to July (Best for Scholarships)' },
-    { id: 2, term: 'January (Winter)', duration: 'Secondary Intake', application: 'June to September' },
-    { id: 3, term: 'May (Spring)', duration: 'Limited Intake', application: 'October to January' },
+    { id: 1, term: 'February / March (Autumn)', duration: 'Primary Intake', application: 'October - November (Best for Scholarships)' },
+    { id: 2, term: 'July (Winter)', duration: 'Secondary Intake', application: 'April - May' },
+    { id: 3, term: 'November (Spring)', duration: 'Limited Intake', application: 'August - September' },
   ];
 
   // English Requirements
@@ -623,10 +623,10 @@ const StudyAustraliaPage: React.FC = () => {
 
   // Scholarship Process
   const scholarshipProcess = [
-    { step: 1, title: 'Smart Shortlisting', description: 'We dont just guess; we match your academic profile with high-value scholarships (University-specific, Government, and Private) where you have the highest chance of winning.' },
-    { step: 2, title: 'Essay Strategy', description: 'Scholarship essays are different from admission SOPs. Our editors help you craft a compelling narrative that highlights your leadership and merit to the committee.' },
-    { step: 3, title: 'Document Perfection', description: 'A single missing document can lead to rejection. We meticulously review your transcripts, recommendation letters, and financial proofs before submission.' },
-    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Chevening or Commonwealth), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
+    { step: 1, title: 'Smart Shortlisting', description: 'We match your profile with high-probability awards, focusing on the "Group of Eight" universities and regional destination grants.' },
+    { step: 2, title: 'SOP & Research Proposal', description: '(Changed from Essay Strategy) Australian scholarships are often merit-based, but research awards require a solid Research Proposal. We help you refine your topic to align with university strengths.' },
+    { step: 3, title: 'Document Perfection', description: 'We ensure your academic transcripts and grading scales are converted correctly to the Australian GPA equivalent (7.0 scale) to maximize your ranking.' },
+    { step: 4, title: 'Interview Prep', description: 'For high-value awards (like the RTP or Vice-Chancellor’s Scholars), we prepare you to discuss your research impact and leadership goals.' },
   ];
 
   return (
@@ -736,10 +736,9 @@ const StudyAustraliaPage: React.FC = () => {
     <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
       {/* Title and Paragraph inside table container */}
       <div className="p-8 pb-4 border-b border-gray-200">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the Australia</h2>
         <p className="text-sm  text-gray-700 text-left">
-          Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
-          there is an intake that fits your timeline.
+          Australia offers a flexible academic calendar designed to welcome international students at multiple points throughout the year. Whether you are aiming for the major academic kick-off or a mid-year transition, Australia’s intake system ensures you can start your journey on your own terms.
         </p>
       </div>
       
@@ -773,11 +772,9 @@ const StudyAustraliaPage: React.FC = () => {
     <div className="md:hidden space-y-4 mb-10">
       {/* Title and Paragraph for mobile - outside the cards */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the Australia</h2>
         <p className="text-sm text-gray-700 text-left mb-4">
-          Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
-          there is an intake that fits your timeline.
-        </p>
+         Australia offers a flexible academic calendar designed to welcome international students at multiple points throughout the year. Whether you are aiming for the major academic kick-off or a mid-year transition, Australia’s intake system ensures you can start your journey on your own terms.</p>
       </div>
       
       {intakes.map((intake) => (
@@ -822,7 +819,7 @@ const StudyAustraliaPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (September)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (February/March)</h4>
         <p className="text-gray-700 text-xs mb-1">This is the largest intake cycle, offering the widest range of courses and the highest availability of university scholarships.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -844,7 +841,7 @@ const StudyAustraliaPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (January)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (July)</h4>
         <p className="text-gray-700 text-xs mb-1">An excellent choice for students needing extra time for test preparation; most major courses in Business, IT, and Engineering remain open.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -866,7 +863,7 @@ const StudyAustraliaPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Seasonal Intake (May)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Seasonal Intake (November)</h4>
         <p className="text-gray-700 text-xs mb-1">A smaller, specialized intake offered by select universities. It is best suited for students targeting specific vocational courses or those who want to align their graduation with specific job market cycles.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -1004,8 +1001,8 @@ Top Student Job Sectors</span>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
-        Focus on the global prestige and career impact of a UK degree.
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
+        Focus on the global prestige and career impact of a Australian degree.
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
@@ -1028,7 +1025,7 @@ Top Student Job Sectors</span>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         The Australian Qualifications Framework (AQF) Advantage.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1052,7 +1049,7 @@ Top Student Job Sectors</span>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1076,7 +1073,7 @@ Top Student Job Sectors</span>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1100,7 +1097,7 @@ Top Student Job Sectors</span>
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1116,10 +1113,9 @@ Bachelor’s and Master’s graduates can stay for 2 to 3 years, while PhD gradu
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the Australia</h2>
             <p className="text-sm md:text-base text-gray-700 text-left">
-              Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
-          </div>
+              Australia offers generous support for high achievers. From government-funded awards to university fee waivers, we help you secure the funding you need to manage your education costs in AUD.</p></div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
@@ -1146,42 +1142,37 @@ Bachelor’s and Master’s graduates can stay for 2 to 3 years, while PhD gradu
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
+                  
+   <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    Government funding (up to $15,000 AUD/year) for students studying in regional campuses (e.g., Gold Coast, Perth, Adelaide).
+  </li>
+
+  <li className="mb-1">
+   Common awards that deduct 15% – 25% from your total tuition fees automatically based on your undergraduate grades.
+  </li>
+
+  <li className="mb-1">
+   The "Holy Grail" for Masters by Research/PhD students—covers 100% tuition + a living stipend.</li>
+</ul>
+
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   
   </span>{" "}
-   While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
-                </div>
+   Full rides are rare for coursework (Bachelor/Master) degrees. Expect partial scholarships valued between $5,000 and $20,000 AUD. However, PhD students often receive full funding + living allowances (approx. $30k-$40k AUD/year).</p></div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+  
   </span>{" "}
-   Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
-                </div>
+  Australia is heavily Merit-Driven. A high GPA in your Bachelor's is the single biggest factor. Unlike the US, extracurriculars matter less for coursework scholarships but are vital for leadership-specific awards.</p></div>
               </div>
             </div>
           </div>

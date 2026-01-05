@@ -447,9 +447,9 @@ const StudyUSAPage: React.FC = () => {
 
   // Intakes
   const intakes = [
-    { id: 1, term: 'September (Fall)', duration: 'Primary Intake', application: 'December to July (Best for Scholarships)' },
-    { id: 2, term: 'January (Winter)', duration: 'Secondary Intake', application: 'June to September' },
-    { id: 3, term: 'May (Spring)', duration: 'Limited Intake', application: 'October to January' },
+    { id: 1, term: 'Fall Intake ', duration: 'Primary Intake', application: 'August / September (Best for Scholarships)' },
+    { id: 2, term: 'Spring Intake', duration: 'Secondary Intake', application: 'January / February' },
+    { id: 3, term: 'Summer Intake', duration: 'Limited Intake', application: 'May / June' },
   ];
 
   // English Requirements
@@ -465,7 +465,7 @@ const StudyUSAPage: React.FC = () => {
     { step: 1, title: 'Smart Shortlisting', description: 'We dont just guess; we match your academic profile with high-value scholarships (University-specific, Government, and Private) where you have the highest chance of winning.' },
     { step: 2, title: 'Essay Strategy', description: 'Scholarship essays are different from admission SOPs. Our editors help you craft a compelling narrative that highlights your leadership and merit to the committee.' },
     { step: 3, title: 'Document Perfection', description: 'A single missing document can lead to rejection. We meticulously review your transcripts, recommendation letters, and financial proofs before submission.' },
-    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Chevening or Commonwealth), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
+    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Fulbright or University Fellowships), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
   ];
 
   return (
@@ -486,7 +486,7 @@ const StudyUSAPage: React.FC = () => {
   {/* Content */}
   <div className="relative z-10 h-full container mx-auto px-6 flex items-center">
   <div className="max-w-xl text-left sm:text-left md:text-left">
-    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-2 max-w-3xl">
+    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 max-w-3xl">
   Study in <br />
   <span className="block ml-12 sm:ml-12 md:ml-16 lg:ml-16 mt-2">United States</span>
 </h1>
@@ -516,7 +516,7 @@ const StudyUSAPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section className=''>
-  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the USA for Your Education?</h2>
   <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
     {majorBenefits.map((benefit, index) => {
       // Define different light colors for each card
@@ -836,7 +836,7 @@ const StudyUSAPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Elite Academic Excellence</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Harness the Power of Global Prestige and Career Innovation.
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -860,7 +860,7 @@ const StudyUSAPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Flexibility</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Tailor Your Journey with a Customized and Versatile Curriculum.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -884,7 +884,7 @@ const StudyUSAPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Comprehensive Student Support</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         A Dedicated Network to Ensure Your Success from Day One.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -908,7 +908,7 @@ const StudyUSAPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research & Innovation</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Gain Hands-on Experience at the Forefront of Global Technology.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -932,7 +932,7 @@ const StudyUSAPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Leverage Practical Training to Launch Your Career in the World’s Largest Economy.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -947,10 +947,9 @@ const StudyUSAPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the USA</h2>
             <p className="text-sm md:text-base text-gray-700 text-left">
-              Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
-          </div>
+              Don’t let tuition fees hold you back. The USA offers billions of dollars in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p></div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
@@ -977,39 +976,35 @@ const StudyUSAPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
+                  <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    For high academic achievers.
+  </li>
+
+  <li className="mb-1">
+    Automatic awards (often $5,000–$20,000) or Graduate Assistantships that waive tuition in exchange for work.
+  </li>
+
+  <li className="mb-1">
+    Prestigious full-funding options like the Fulbright Program and Hubert H. Humphrey Fellowship.
+  </li>
+</ul>
+
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   
   </span>{" "}
-   While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
-                </div>
+   While full rides exist, most US university scholarships offer a tuition reduction ranging from $10,000 to $25,000. Top-tier candidates (especially PhDs) can secure 100% tuition waivers + stipends via Assistantships.</p></div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+   
   </span>{" "}
    Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
                 </div>
@@ -1020,7 +1015,7 @@ const StudyUSAPage: React.FC = () => {
 
 <section className='mt-16'>
           <div className="bg-gradient-to-r from-blue-900 to-red-800  p-10 text-white text-center ">
-            <h3 className="text-xl md:text-3xl font-bold mb-1">Your UK Success Story Starts Here</h3>
+            <h3 className="text-xl md:text-3xl font-bold mb-1">Your USA Success Story Starts Here</h3>
             <p className="text-sm md:text-med text-blue-100 mb-3 max-w-3xl mx-auto">
              Stop dreaming and start planning. Let <strong className='text-red-400'>DartGlobe </strong> turn your study abroad ambitions into reality.</p>
             <p className="text-xs md:text-sm md:text-lg text-blue-100 mb-4 max-w-4xl mx-auto">

@@ -1096,9 +1096,9 @@ const StudyNewZealandPage: React.FC = () => {
 
   // Intakes
   const intakes = [
-    { id: 1, term: 'September (Fall)', duration: 'Primary Intake', application: 'December to July (Best for Scholarships)' },
-    { id: 2, term: 'January (Winter)', duration: 'Secondary Intake', application: 'June to September' },
-    { id: 3, term: 'May (Spring)', duration: 'Limited Intake', application: 'October to January' },
+    { id: 1, term: 'February (Autumn)', duration: 'Primary Intake', application: 'August to November (Best for Scholarships)' },
+    { id: 2, term: 'July (Winter)', duration: 'Secondary Intake', application: 'January to April' },
+    { id: 3, term: 'November (Spring)', duration: 'Limited Intake', application: 'July to September' },
   ];
 
   // English Requirements
@@ -1111,10 +1111,10 @@ const StudyNewZealandPage: React.FC = () => {
 
   // Scholarship Process
   const scholarshipProcess = [
-    { step: 1, title: 'Smart Shortlisting', description: 'We dont just guess; we match your academic profile with high-value scholarships (University-specific, Government, and Private) where you have the highest chance of winning.' },
-    { step: 2, title: 'Essay Strategy', description: 'Scholarship essays are different from admission SOPs. Our editors help you craft a compelling narrative that highlights your leadership and merit to the committee.' },
-    { step: 3, title: 'Document Perfection', description: 'A single missing document can lead to rejection. We meticulously review your transcripts, recommendation letters, and financial proofs before submission.' },
-    { step: 4, title: 'Interview Prep', description: 'For prestigious awards (like Chevening or Commonwealth), we conduct mock interviews to ensure you can articulate your vision and goals confidently.' },
+    { step: 1, title: 'Smart Shortlisting', description: 'We target high-probability awards like the New Zealand Excellence Awards (NZEA) specifically designed for Indian students.' },
+    { step: 2, title: 'SOP & Impact Statement', description: 'NZ scholarships (especially Manaaki) focus heavily on "Development Impact." We help you write essays that prove how your degree will help you contribute back to India.' },
+    { step: 3, title: 'Document Perfection', description: 'We ensure your financial proofs meet the strict "Source of Funds" criteria required by NZ Immigration and scholarship committees.' },
+    { step: 4, title: 'Interview Prep', description: 'For the Manaaki Scholarship, we conduct behavioral mock interviews to help you demonstrate your resilience and leadership potential.' },
   ];
 
   return (
@@ -1226,10 +1226,9 @@ const StudyNewZealandPage: React.FC = () => {
     <div className="hidden md:block bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg mb-10">
       {/* Title and Paragraph inside table container */}
       <div className="p-8 pb-4 border-b border-gray-200">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left">Flexible Study Intakes in the New Zealand</h2>
         <p className="text-sm  text-gray-700 text-left">
-          Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
-          there is an intake that fits your timeline.
+         New Zealand universities align their primary academic calendar with the Southern Hemisphere summer. This offers a distinct advantage for students who want a fresh start at the beginning of the calendar year or a strategic mid-year entry.
         </p>
       </div>
       
@@ -1263,7 +1262,7 @@ const StudyNewZealandPage: React.FC = () => {
     <div className="md:hidden space-y-4 mb-10">
       {/* Title and Paragraph for mobile - outside the cards */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the New Zealand</h2>
         <p className="text-sm text-gray-700 text-left mb-4">
           Unlike many other countries, the UK offers multiple entry points throughout the year. Whether you want to start immediately or need more time to prepare your finances and documents, 
           there is an intake that fits your timeline.
@@ -1312,7 +1311,7 @@ const StudyNewZealandPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (September)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (February)</h4>
         <p className="text-gray-700 text-xs mb-1">This is the main intake for all UK universities. It offers the widest range of courses, maximum scholarship availability, and aligns perfectly with the end of the Indian academic year.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -1334,8 +1333,8 @@ const StudyNewZealandPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (January)</h4>
-        <p className="text-gray-700 text-xs mb-1">Missed September? No problem. The January intake is ideal for students who need extra time for IELTS/PTE preparation or funding. While course options are slightly fewer, the competition is often lower.</p>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Secondary Intake (July)</h4>
+        <p className="text-gray-700 text-xs mb-1">Missed February? No problem. The January intake is ideal for students who need extra time for IELTS/PTE preparation or funding. While course options are slightly fewer, the competition is often lower.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
           <span className='text-xs'>Extra preparation time without wasting a full year.</span>
@@ -1356,7 +1355,7 @@ const StudyNewZealandPage: React.FC = () => {
       
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
-        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Seasonal Intake (May)</h4>
+        <h4 className="font-bold text-gray-900 mb-1 text-lg">The Seasonal Intake (November)</h4>
         <p className="text-gray-700 text-xs mb-1">A smaller, specialized intake offered by select universities. It is best suited for students targeting specific vocational courses or those who want to align their graduation with specific job market cycles.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
@@ -1492,8 +1491,8 @@ const StudyNewZealandPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Quality Education</h2>
-      <h3 className="text-sm md:text-base font-semibold text-blue-700 mb-3">
-        Focus on the global prestige and career impact of a UK degree.
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
+        Focus on the global prestige and career impact of a New Zealand degree.
       </h3>
         <p className="text-gray-700 mb-3 text-xs md:text-base">
   <span className="font-bold text-gray-900 text-sm md:text-base">
@@ -1516,7 +1515,7 @@ const StudyNewZealandPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Academic Structure</h2>
-      <h3 className="text-sm md:text-base font-semibold text-green-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Highlight the biggest advantage: saving time and money with shorter degrees.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1540,7 +1539,7 @@ const StudyNewZealandPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Support Services</h2>
-      <h3 className="text-sm md:text-base font-semibold text-orange-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Reassure students that they won't be alone and help is always available.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1564,7 +1563,7 @@ const StudyNewZealandPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Research Opportunities</h2>
-      <h3 className="text-sm md:text-base font-semibold text-purple-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Frame research not just for academics, but as cutting-edge learning that builds skills.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1588,7 +1587,7 @@ const StudyNewZealandPage: React.FC = () => {
     {/* Content - 70% */}
     <div className="md:w-9/10 order-1 md:order-2">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Post-Study Work Options</h2>
-      <h3 className="text-sm md:text-base font-semibold text-red-700 mb-3">
+      <h3 className="text-sm md:text-base font-semibold text-[#FB8234] mb-3">
         Clearly explain the visa benefit as a career launchpad.
       </h3>
       <p className="text-gray-700 mb-3 text-xs md:text-base">
@@ -1603,10 +1602,9 @@ const StudyNewZealandPage: React.FC = () => {
         {/* Scholarships Section */}
         <section className='w-full bg-gray-100 py-5 mt-8'>
           <div className="w-[92%] mx-auto text-left mb-4 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the UK</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Scholarships & Financial Aid in the New Zealand</h2>
             <p className="text-sm md:text-base text-gray-700 text-left">
-              Don't let tuition fees hold you back. The UK offers millions of pounds in scholarships for international students. Our experts help you identify, target, and apply for the best financial aid packages to significantly lower your education costs.</p>
-          </div>
+              Experience world-class education with robust financial support. New Zealand offers millions of NZD in government and university awards to help international students thrive.</p></div>
 
           <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-12 mb-12">
             <div>
@@ -1633,42 +1631,32 @@ const StudyNewZealandPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-3 border border-blue-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Types of Scholarships</h4>
-                  <div className=''>
-                  <p className="text-gray-700 text-xs md:text-sm mb-1">
-  <span className="font-bold text-gray-900 text-sm">
-   Merit-Based:
-  </span>{" "}
-   For high academic achievers.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   University Discounts:
-  </span>{" "}
-   Automatic bursaries (often £1,000–£3,000) for early applicants.</p>
-        <p className="text-gray-700 mb-1 text-xs md:text-sm">
-  <span className="font-bold text-gray-900 text-sm">
-   Government Awards:
-  </span>{" "}
-   Prestigious full-funding options like Chevening and GREAT Scholarships.</p>
-   </div>
+                  <ul className="list-disc list-inside text-gray-700 text-xs md:text-sm">
+  <li className="mb-1">
+    The "Golden Ticket." Fully funded by the government for students from developing nations (including India). Covers Tuition + Living + Flights.</li>
+  <li className="mb-1">
+     Awards like the University of Auckland India High Achievers Scholarship offer up to $20,000 NZD towards tuition.</li>
+
+  <li className="mb-1">
+    Special partial scholarships for Indian students across all 8 NZ universities.</li></ul>
+                
                 </div>
 
                 <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-4 border border-red-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Coverage & Value</h4>
                   <p className="text-gray-700 mb-2 text-xs md:text-sm">
   <span className="font-bold text-gray-900 text-sm">
-   What to Expect:
+   {/* What to Expect: */}
   </span>{" "}
-   While full rides exist, most UK university scholarships offer a tuition reduction ranging from £1,000 to £5,000. Top-tier candidates can secure 50% to 100% waivers in competitive rounds.</p>
-                </div>
+   Full rides are rare outside of the Manaaki program. Most university awards are partial, ranging from $5,000 to $20,000 NZD. PhD students, however, pay domestic tuition fees (approx. $7k-$9k NZD/year) which is a massive saving compared to other countries.</p></div>
 
                 <div className="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-4 border border-purple-200">
                   <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Eligibility Criteria</h4>
                   <p className="text-gray-700 text-xs md:text-sm mb-2">
   <span className="font-bold text-gray-900 text-sm">
-   How to Qualify:
+   {/* How to Qualify: */}
   </span>{" "}
-   Committees look beyond just grades. They seek leadership potential, extracurricular achievements, and a clear vision of how you will use your degree to make an impact.</p>
-                </div>
+   For University awards, a high GPA (75%+) is key. For Government awards (Manaaki), work experience (usually 2 years) and a clear vision for your home country's development are strictly required.</p></div>
               </div>
             </div>
           </div>
