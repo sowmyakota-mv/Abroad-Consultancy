@@ -86,7 +86,7 @@ const StudyUKPage: React.FC = () => {
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
         <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
             The UK is more than just a study destination; it’s a career launchpad. Benefit from globally recognized degrees, shorter course 
             durations, and a multicultural environment that prepares you for the international job market. We help you navigate admissions, 
             scholarships, and visas for a seamless transition.</p>

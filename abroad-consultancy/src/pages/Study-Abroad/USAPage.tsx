@@ -86,10 +86,9 @@ const StudyUSAPage: React.FC = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United States</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-            The USA is more than just a study destination; it’s a global powerhouse for innovation and academic excellence. Benefit from world-leading research facilities, a flexible curriculum that allows you to explore diverse majors, and unparalleled networking opportunities within the world’s largest economy. Whether you are aiming for Ivy League prestige or cutting-edge STEM programs, we provide expert guidance on admissions, financial aid, and the F-1 visa process to ensure your American dream becomes a reality.</p>
-        </div>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+            The United States offers an unmatched educational experience defined by flexibility and scale. Unlike rigid systems elsewhere, the US allows you to customize your degree with "Majors and Minors," giving you a competitive edge in a $27 trillion economy. From Ivy League prestige to high-return STEM programs with 3-year work permits (STEM OPT), we guide you through every step optimizing your admission strategy, securing financial aid, and navigating the F-1 visa process to ensure your American Dream becomes a career reality.</p></div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
