@@ -270,7 +270,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main Header - Adjusted margin for contact header */}
-      <header className="fixed top-10 md:top-8 left-0 w-full z-40 bg-white shadow-[0_2px_10px_-2px_rgba(0,0,0,0.1)]">
+      <header className="fixed top-9 md:top-8 left-0 w-full z-40 bg-white shadow-[0_2px_10px_-2px_rgba(0,0,0,0.1)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-2">
             <div className="flex justify-between items-center">
@@ -283,6 +283,10 @@ const Header: React.FC = () => {
                   className="h-16 w-auto object-contain"
                   onClick={() => navigate('/')}
                 />
+                {/* <div className="flex flex-col">
+    <span className="text-xl font-bold text-blue-800">DartGlobe</span>
+    <span className="text-sm text-gray-600">Education Consultancy</span>
+  </div> */}
               </div>
 
               {/* Desktop Navigation */}
@@ -343,7 +347,7 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-              <div className="lg:hidden fixed inset-0 top-24 md:top-28 bg-white z-40 overflow-y-auto">
+              <div className="lg:hidden fixed inset-0 top-24 md:top-28 bg-white z-40 overflow-y-auto ">
                 <nav className="flex flex-col space-y-1 p-4">
                   
                   {/* Home */}
@@ -482,15 +486,19 @@ const Header: React.FC = () => {
                     .filter(link => link.isCta)
                     .map((link) => (
                       <button
-                        key={link.name}
-                        onClick={() => {
-                          if (link.onClick) link.onClick();
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
-                      >
-                        {link.name}
-                      </button>
+  key={link.name}
+  onClick={() => {
+    if (link.onClick) {
+      if (typeof link.onClick === 'function') {
+        link.onClick({ preventDefault: () => {} } as React.MouseEvent);
+      }
+    }
+    setIsMobileMenuOpen(false);
+  }}
+  className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
+>
+  {link.name}
+</button>
                     ))}
 
                 </nav>

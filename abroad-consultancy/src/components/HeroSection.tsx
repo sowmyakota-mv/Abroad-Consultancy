@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-10 gap-2 items-center">
         
         {/* LEFT CONTENT - 70% (7 columns out of 10) */}
-        <div className="md:col-span-7 mt-12 md:mt-28 text-left">
+        <div className="md:col-span-7 mt-20 md:mt-28 text-left">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight text-left">
             Build Your Global Future <span className="block">With Confidence</span>
           </h1>

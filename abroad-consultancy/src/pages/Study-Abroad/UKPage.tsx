@@ -1,24 +1,10 @@
 import React from 'react';
-import {
-  GraduationCap, PoundSterling, Home, Briefcase,
-  Award, Globe, Users, Calendar, BookOpen,
-  CheckCircle, Clock, MapPin, Star,
-  ChevronRight, Search, Download, Phone,
-  Mail, MessageSquare, Shield, Target,
-  Trophy, TrendingUp, Building, Heart
+import { Briefcase, Globe, CheckCircle, Trophy, Heart
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const StudyUKPage: React.FC = () => {
     const navigate=useNavigate()
-  // Top Universities
-  const topUniversities = [
-    { name: 'University of Oxford' },
-    { name: 'University of Cambridge' },
-    { name: 'Imperial College London' },
-    { name: 'London School of Economics (LSE)' },
-    { name: 'University College London (UCL)' },
-  ];
 
   // Major Benefits
   const majorBenefits = [
@@ -70,7 +56,7 @@ const StudyUKPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[44vh] sm:h-[76vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[50vh] sm:h-[76vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -95,7 +81,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[80%] mx-auto scroll-mt-20">
-  <div className="flex justify-center py-5 mt-12">
+  <div className="flex justify-center py-5 mt-8">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
@@ -117,7 +103,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Major Benefits */}
         <section className=''>
-  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-16 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
+  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-left sm:mt-12 mt-12 py-5 w-[92%] mx-auto">Why Choose the UK for Your Education?</h2>
   <div className="w-[92%] mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
     {majorBenefits.map((benefit, index) => {
       // Define different light colors for each card
