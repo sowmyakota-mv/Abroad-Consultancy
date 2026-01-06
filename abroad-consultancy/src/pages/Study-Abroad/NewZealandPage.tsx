@@ -59,7 +59,7 @@ const StudyNewZealandPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-<section className="relative h-[44vh] sm:h-[76vh] md:h-[80vh] text-white overflow-hidden bg-white">
+<section className="relative h-[50vh] sm:h-[76vh] md:h-[80vh] text-white overflow-hidden bg-white">
   
   {/* Background Image Wrapper */}
   <div
@@ -84,7 +84,7 @@ const StudyNewZealandPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[80%] mx-auto scroll-mt-20">
-  <div className="flex justify-center py-5 mt-12">
+  <div className="flex justify-center py-5 md:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the New Zealand</h2>
@@ -251,7 +251,7 @@ const StudyNewZealandPage: React.FC = () => {
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
         <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (February)</h4>
-        <p className="text-gray-700 text-xs mb-1">This is the main intake for all UK universities. It offers the widest range of courses, maximum scholarship availability, and aligns perfectly with the end of the Indian academic year.</p>
+        <p className="text-gray-700 text-xs mb-1">This is the main intake for all New Zealand universities. It offers the widest range of courses, maximum scholarship availability, and aligns perfectly with the end of the Indian academic year.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
           <span className='text-xs'>100% Course & University Availability.</span>

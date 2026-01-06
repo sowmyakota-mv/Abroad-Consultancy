@@ -199,7 +199,7 @@ const StudyEuropePage: React.FC = () => {
     <div className="md:hidden space-y-4 mb-10">
       {/* Title and Paragraph for mobile - outside the cards */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the UK</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-left mt-10">Flexible Study Intakes in the Europe</h2>
         <p className="text-sm text-gray-700 text-left mb-4">
          Europe offers a variety of entry points across its 48 member nations. Whether you are targeting a tuition-free public university in Germany, a luxury management school in France, or an innovation hub in Sweden, there is an intake that perfectly aligns with your financial and academic preparation.</p>
       </div>
@@ -247,7 +247,7 @@ const StudyEuropePage: React.FC = () => {
       {/* Content with padding to accommodate tag */}
       <div className="pt-1">
         <h4 className="font-bold text-gray-900 mb-1 text-lg">The Primary Intake (September)</h4>
-        <p className="text-gray-700 text-xs mb-1">This is the main intake for all UK universities. It offers the widest range of courses, maximum scholarship availability, and aligns perfectly with the end of the Indian academic year.</p>
+        <p className="text-gray-700 text-xs mb-1">This is the main intake for all Europe universities. It offers the widest range of courses, maximum scholarship availability, and aligns perfectly with the end of the Indian academic year.</p>
         <p className="text-gray-700">
           <span className="font-bold text-sm">Key Benefit :</span>{" "}
           <span className='text-xs'>100% Course & University Availability.</span>
