@@ -43,10 +43,10 @@ const StudyEuropePage: React.FC = () => {
 
   // English Requirements
   const englishRequirements = [
-    { test: 'IELTS Academic', requirement: '6.0 – 7.0 Overall', Subtitle: 'The gold standard across Europe. Most bachelors programs require a 6.0, while master’s degrees often look for 6.5 or higher.' },
-    { test: 'TOEFL iBT', requirement: '85 – 95',Subtitle: 'Widely recognized by research universities and business schools. Higher scores are generally required for competitive English-taught programs.' },
-    { test: 'PTE Academic', requirement: '59 – 65', Subtitle: 'A fast, computer-based alternative gaining massive popularity in countries like Germany, France, and Finland for its quick results.' },
-    { test: 'Cambridge English', requirement: '170 - 185 (B2/C1)', Subtitle: 'Highly regarded in Europe. Unlike other tests, Cambridge certifications (B2 First or C1 Advanced) often never expire.' },
+    { test: 'IELTS Academic', requirement: '6.0 – 7.0 Overall', Subtitle: 'Most bachelor’s programs require a 6.0, while competitive master’s degrees typically demand a 6.5 or higher.' },
+    { test: 'TOEFL iBT', requirement: '85 – 95',Subtitle: 'Scores of 85–95 are standard for research universities, with top-tier English-taught programs often requiring 100+.' },
+    { test: 'PTE Academic', requirement: '59 – 65', Subtitle: 'Gaining rapid acceptance across Germany and Finland, this computer-based test usually requires a score of 59–65.' },
+    { test: 'Cambridge English', requirement: '170 - 185 (B2/C1)', Subtitle: 'Recognized for life, C1 Advanced or C2 Proficiency certifications typically require a scale score of 170–185.' },
   ];
 
   // Scholarship Process
@@ -89,13 +89,9 @@ const StudyEuropePage: React.FC = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the Europe</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-           Europe is more than a study destination it’s a gateway to global careers. Home to world-class universities, internationally 
-           recognized degrees, and innovative teaching approaches, Europe offers high academic standards with flexible and often shorter 
-           program durations. Its rich cultural diversity and strong industry connections equip students with the skills and global exposure 
-           needed to succeed in the international job market. We guide you through university admissions, scholarships, and visa processes, ensuring 
-           a smooth and confident transition to your European education journey.</p></div>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+           Europe offers high-quality, internationally recognized degrees through world-leading universities and innovative teaching models. With flexible, shorter program durations and deep industry connections, students gain the global exposure and skills required for a successful international career. We provide expert support for admissions, scholarships, and visas to ensure your seamless transition to a world-class European education.</p></div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility

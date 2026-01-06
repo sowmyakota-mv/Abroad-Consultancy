@@ -84,15 +84,11 @@ const StudyAustraliaPage: React.FC = () => {
        <section className="w-[80%] mx-auto scroll-mt-20">
   <div className="flex justify-center py-5 md:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
-      <div className="text-center ">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the Australia</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-           Australia is more than just a study destination; it’s a premier gateway to the Asia-Pacific and the global economy. Benefit
-            from world-class education with nine universities ranked in the global top 100, industry-integrated learning, and an unbeatable
-             quality of life. With a strong focus on practical skills and future-ready innovation, an Australian degree prepares you to lead 
-             in the international job market. We help you navigate elite admissions, secure high-value scholarships, and manage your visa for 
-             a seamless transition to your new life Down Under.</p></div>
+      <div className="text-left md:text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 p-2">Study in Australia</h2>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+           Australia offers elite education with 9 universities in the global top 100, providing high-ROI pathways into AI and Healthcare sectors. We optimize your Genuine Student (GS) profile for 2026’s Subclass 500 reforms to secure admissions and exclusive scholarships. Our experts bridge the gap between world-class theory and lucrative post-study work rights in Australia’s booming economy.</p></div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
@@ -404,7 +400,8 @@ Top Student Job Sectors</span>
         <div>
           <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Protections Apply to You!</h3>
           <p className="text-xs md:text-sm text-gray-700">
-           As an international student in Australia, you are legally entitled to the same minimum wage as any Australian citizen. The National Minimum Wage is $24.95 per hour (for those 21 and older). If you are hired as a "casual" employee which is common for student roles you are also entitled to a 25% casual loading, bringing your minimum pay to $31.19 per hour. This ensures you are fairly compensated for your time and protected by the Fair Work Ombudsman.</p></div>
+           In Australia for 2026, international students (aged 21+) are entitled to a national minimum wage of $24.95 per hour. For common student roles, a 25% casual loading typically increases this rate to $31.19 per hour, all protected by the Fair Work Ombudsman.
+</p></div>
       </div>
     </div>
   </div>
@@ -433,7 +430,7 @@ Top Student Job Sectors</span>
   <span className="font-bold text-gray-900 text-sm md:text-base">
     A Global Stamp of Distinction for Your Career.
   </span>{" "}
- Australia is home to a world-class education system where 9 universities are ranked in the Global Top 100 (QS 2026 Rankings). Earning an Australian degree isn't just about learning; it’s about holding a credential protected by the ESOS Act, which guarantees the highest quality of tuition and student protection. Recognized by employers worldwide, an Australian qualification is a powerful endorsement of your skills, opening doors to top-tier global corporations and innovation hubs.</p>
+ Australia is a global education leader with 9 universities in the Top 100 (QS 2026), offering credentials respected by elite corporations worldwide. Your studies are uniquely protected by the ESOS Act, ensuring the highest standards of tuition, financial security, and student welfare. This blend of world-class prestige and legal protection provides a secure, high-ROI launchpad for an international career.</p>
     </div>
   </div>
 
@@ -457,7 +454,7 @@ Top Student Job Sectors</span>
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Smarter Pathways and Global Portability.
   </span>{" "}
-   Australia offers a unique, structured pathway called the AQF, which allows for seamless movement between vocational and higher education. Save time by choosing 2-year Fast-track Bachelors or specialized 1-year Graduate Diplomas. The 10-level AQF system ensures your credits are easily transferable worldwide, giving you a distinct head start over peers in traditional 4-year systems. Whether you choose a research-heavy University or a skills-focused TAFE, your education is directly mapped to the 2026 global job market.</p>
+   The Australian Qualifications Framework (AQF) provides a 10-level structured pathway for seamless transition between vocational and higher education. You can save time with 2-year fast-track Bachelors or 1-year Graduate Diplomas, both specifically mapped to 2026 global industry demands. This nationally consistent system ensures your credits are transferable worldwide, giving you a competitive career head start over traditional four-year models.</p>
     </div>
   </div>
 
@@ -481,7 +478,7 @@ Top Student Job Sectors</span>
   <span className="font-bold text-gray-900 text-sm md:text-base">
    We’ve Got Your Back, Every Step of the Way.
   </span>{" "}
-    Moving to Australia is a life-changing step, but you are never alone. Australian institutions are world-leaders in student welfare, offering dedicated International Student Support Centers that assist with everything from "Safe-Space" accommodation to mental wellbeing and legal rights. With a multicultural society where nearly 30% of the population was born overseas, you’ll find a sense of belonging in a country consistently ranked as one of the safest and most livable destinations for international students.</p>
+    Australian institutions lead in student welfare, providing comprehensive support centers for housing, mental health, and legal rights. As a top-ranked safe destination, Australia’s inclusive multicultural society where over 30% of residents are overseas-born ensures you feel at home. You are never alone in this world-class environment designed for your personal and academic success.</p>
     </div>
   </div>
 
@@ -505,7 +502,7 @@ Top Student Job Sectors</span>
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Hands-On Learning at the Cutting Edge.
   </span>{" "}
-  In Australia, research is the heartbeat of education. You won't just study history; you'll help write the future in sectors like Quantum Computing, Green Energy, and Medical Science. Under the guidance of world-leading academics, you’ll gain access to state-of-the-art facilities and "Industry-Integrated Research" projects. This hands-on approach builds the critical analysis and technical skills that are highly prized by modern employers looking for innovators, not just graduates.</p>
+  In Australia, research drives global breakthroughs in Quantum Computing, Green Energy, and Medical Science through "Industry-Integrated" projects. Under world-leading academics, you gain hands-on access to elite facilities, bridging the gap between laboratory discovery and commercial impact. This collaborative approach builds the technical and critical analysis skills that 2026 employers value, producing innovative leaders ready for the global workforce.</p>
     </div>
   </div>
 
@@ -529,8 +526,7 @@ Top Student Job Sectors</span>
   <span className="font-bold text-gray-900 text-sm md:text-base">
    The Ultimate Professional Launchpad.
   </span>{" "}
-  The journey doesn't end with your degree. The Temporary Graduate Visa (Subclass 485) is your bridge to the Australian workforce.
-Bachelor’s and Master’s graduates can stay for 2 to 3 years, while PhD graduates can stay for up to 4 years. Study in designated regional areas (like Perth, Adelaide, or the Gold Coast) to unlock additional 1–2 years of stay-back rights. This is the perfect opportunity to gain invaluable international experience, recover your investment, and build a pathway toward Australian Permanent Residency (PR).</p>
+  The Subclass 485 visa provides vital post-study work rights: 2 years for Bachelor’s and Master’s (coursework), 3 years for Master’s (research), and up to 4 years for PhD graduates. Studying in regional areas can unlock an additional 1–2 years of stay-back rights, offering a strategic pathway to international experience and Australian Permanent Residency.</p>
     </div>
   </div>
 </section>

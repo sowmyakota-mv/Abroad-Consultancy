@@ -40,10 +40,10 @@ const StudyUSAPage: React.FC = () => {
 
   // English Requirements
   const englishRequirements = [
-    { test: 'IELTS', requirement: '6.5 – 7.0 Overall', Subtitle: 'Widely accepted by thousands of US institutions (Typically, no band less than 6.0 is the standard for competitive schools).' },
-    { test: 'TOEFL iBT', requirement: '80 – 100',Subtitle: 'The gold standard for US admissions; a score of 100+ is usually required for Ivy League or top-30 universities.' },
-    { test: 'PTE Academic', requirement: '60 – 68', Subtitle: 'A computer-based test offering fast results, recognized by an increasing number of US colleges.' },
-    { test: 'Duolingo', requirement: '110 – 125', Subtitle: 'A fast, convenient, home-based testing option that has gained massive acceptance across modern US universities.' },
+    { test: 'IELTS', requirement: '6.5 – 7.0 Overall', Subtitle: 'Widely accepted by 3,400+ institutions; ideal for global multi-country applications.' },
+    { test: 'TOEFL iBT', requirement: '80 – 100',Subtitle: 'The US gold standard requiring a 100+ score for Ivy League and top-30 elite university placement.' },
+    { test: 'PTE Academic', requirement: '60 – 68', Subtitle: 'AI-scored and highly objective; results typically arrive in just 48 hours.' },
+    { test: 'Duolingo', requirement: '110 – 125', Subtitle: 'Most convenient and affordable ($70); accepted by the Ivy League and 2,200+ colleges.' },
   ];
 
   // Scholarship Process
@@ -88,8 +88,8 @@ const StudyUSAPage: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United States</h2>
         <div className="rounded-xl p-2 md:p-4 ">
           <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
-            The United States offers an unmatched educational experience defined by flexibility and scale. Unlike rigid systems elsewhere, the US allows you to customize your degree with "Majors and Minors," giving you a competitive edge in a $27 trillion economy. From Ivy League prestige to high-return STEM programs with 3-year work permits (STEM OPT), we guide you through every step optimizing your admission strategy, securing financial aid, and navigating the F-1 visa process to ensure your American Dream becomes a career reality.</p></div>
-        <div className="mt-2">
+            The USA defines academic freedom, allowing you to customize degrees with "Majors and Minors" in a massive $27 trillion economy. From Ivy League admissions to high-ROI STEM programs with 3-year work permits (STEM OPT), we optimize your strategy for financial aid and F-1 visas to ensure your American Dream becomes a career reality.</p>
+            </div><div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
           </button>
@@ -224,11 +224,11 @@ const StudyUSAPage: React.FC = () => {
       ))}
     </div>
 
-    <div className="bg-white rounded-2xl p-10 border border-blue-100">
+    <div className="bg-white rounded-2xl p-6 border border-blue-100">
   <h3 className="text-2xl font-bold text-gray-900 mb-6">The Intake Summary Cards</h3>
   <div className="grid md:grid-cols-3 gap-8">
     {/* Card 1 - Primary Intake */}
-    <div className="bg-blue-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-blue-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-blue-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -250,7 +250,7 @@ const StudyUSAPage: React.FC = () => {
     </div>
 
     {/* Card 2 - Secondary Intake */}
-    <div className="bg-green-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-green-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-green-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -272,7 +272,7 @@ const StudyUSAPage: React.FC = () => {
     </div>
 
     {/* Card 3 - Seasonal Intake */}
-    <div className="bg-purple-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-purple-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-purple-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -309,7 +309,7 @@ const StudyUSAPage: React.FC = () => {
               <div key={index} className="bg-blue-100 rounded-xl p-3 border border-gray-200 text-center hover:shadow-lg transition-shadow">
                 <div className="text-med md:text-lg font-bold text-blue-700 ">{test.test}</div>
                 <div className="text-med md:text-lg text-gray-700 font-bold">{test.requirement}</div>
-                <div className='text-xs text-gray-700'>{test.Subtitle}</div> 
+                <div className='text-xs  text-gray-700'>{test.Subtitle}</div> 
               </div>
             ))}
           </div>
@@ -398,8 +398,7 @@ const StudyUSAPage: React.FC = () => {
         <div>
           <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Federal & State Minimum Wages Apply!</h3>
           <p className="text-xs md:text-sm text-gray-700">
-           As an international student in the U.S., you are protected by the Fair Labor Standards Act (FLSA). You are entitled to at least the Federal Minimum Wage of $7.25 per hour, though many states like California or New York offer much higher rates - often ranging from $15.00 to $17.00 per hour. This ensures you receive fair compensation for all authorized on-campus or CPT work.</p>
-        </div>
+           International students are protected by the FLSA, guaranteeing the Federal Minimum Wage of $7.25/hr, though many study hubs offer significantly more. In states like California ($16.90) and New York ($17.00), on-campus and CPT work provides high-value compensation to support your journey.</p></div>
       </div>
     </div>
   </div>

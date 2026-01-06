@@ -40,10 +40,10 @@ const StudyIrelandPage: React.FC = () => {
 
   // English Requirements
   const englishRequirements = [
-    { test: 'IELTS', requirement: '6.0 – 6.5 Overall', Subtitle: 'The gold standard for Ireland. For Undergraduate, a 6.0 (no band < 5.5) is typical. For Postgraduate, 6.5 (no band < 6.0) is the general requirement.' },
-    { test: 'TOEFL iBT', requirement: '80 – 92',Subtitle: 'A trusted traditional test. Standard requirements range from 80 to 92, with a minimum of 21 in writing and 18-19 in other sections.' },
-    { test: 'PTE Academic', requirement: '59 – 65', Subtitle: 'Highly popular due to fast results. Most universities require a minimum of 59-63, while elite programs may look for 65+ with no skill below 59.' },
-    { test: 'Duolingo', requirement: '120 – 130 Overall', Subtitle: 'A fast, online alternative widely accepted for 2026. Most top universities require a 120 overall with sub-scores not falling below 110.' },
+    { test: 'IELTS', requirement: '6.0 – 6.5 Overall', Subtitle: 'The traditional "Gold Standard" for all Irish institutions.' },
+    { test: 'TOEFL iBT', requirement: '80 – 92',Subtitle: 'Widely trusted, with a typical minimum of 21 in Writing.' },
+    { test: 'PTE Academic', requirement: '59 – 65', Subtitle: 'Preferred for its 48-hour result turnaround.' },
+    { test: 'Duolingo', requirement: '120 – 130 Overall', Subtitle: 'Now accepted by top unis like TCD and UCD as a primary entry test.' },
   ];
 
   // Scholarship Process
@@ -86,9 +86,9 @@ const StudyIrelandPage: React.FC = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the Ireland</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-            As the primary English-speaking gateway to the European Union, Ireland offers a high-octane career environment where academic theory meets global industry. Home to the European headquarters of giants like Google, Apple, and Pfizer, the "Silicon Docks" provide an unmatched ecosystem for graduates in tech, pharma, and finance. With a generous 24-month post-study work visa for Master’s graduates and a thriving economy, Ireland doesn't just grant you a degree it bridges the gap to a high-earning international career in the heart of Europe.</p></div>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+            As the primary English-speaking hub in the EU, Ireland connects world-class education with global industry. Home to the European HQs of giants like Google, Apple, and Pfizer, the "Silicon Docks" offer a premier ecosystem for tech, pharma, and finance careers. Master’s graduates benefit from a 24-month post-study work visa (Stamp 1G), bridging the gap to high-earning international roles in the heart of Europe.</p></div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility

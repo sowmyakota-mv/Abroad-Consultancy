@@ -83,15 +83,11 @@ const StudyGermanyPage: React.FC = () => {
        <section className="w-[80%] mx-auto scroll-mt-20">
   <div className="flex justify-center py-5 md:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
-      <div className="text-center ">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the Germany</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-           Germany is far more than a study destination; it is a powerful career engine in the heart of Europe. Benefit from world-class, 
-           tuition-free education at prestigious public universities, where cutting-edge research meets practical industry application. With 
-           English-taught programs and a booming economy hungry for skilled professionals in Engineering, IT, and Healthcare, Germany prepares 
-           you for high-impact roles in the global job market. We guide you through the APS certification, university admissions, and the Blocked 
-           Account process for a smooth, stress-free transition to your German future.</p>
+      <div className="md:text-center text-left">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 p-2">Study in  Germany</h2>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+           Germany is a global leader in Engineering, IT, and Healthcare, offering world-class education with virtually no tuition fees at public universities. Beyond the classroom, its booming economy provides a high demand for skilled international talent, supported by an 18-month post-study work visa.</p>
         </div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
@@ -432,8 +428,7 @@ const StudyGermanyPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
     A Hallmark of Precision and Research Excellence.
   </span>{" "}
- Germany is home to some of the world’s most advanced technical institutions, with 15 universities ranked in the global top 250 (QS 2026). Earning a degree here signifies you have been trained within the "German Excellence Strategy"—a national initiative that funds elite clusters of research. Unlike other destinations, Germany offers world-class public education with no tuition fees for most programs, providing you with a high-prestige credential that is respected by global industry giants like Siemens, Volkswagen, and SAP.</p>
-    </div>
+ Germany is a global engineering powerhouse, with 15 universities in the top 250 (QS 2026) and a budget-boosted "Excellence Strategy" starting in 2026. Most public universities offer zero tuition fees, allowing students to gain high-prestige credentials respected by giants like Siemens and SAP. We help you navigate this low-cost, high-ROI landscape to secure your place in Europe’s most advanced technical ecosystem.</p></div>
   </div>
 
   {/* 2. Academic Structure - Image Right, Content Left */}
@@ -456,7 +451,7 @@ const StudyGermanyPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Industry-Ready Degrees with the Werkstudent Edge.
   </span>{" "}
-   The German academic structure is designed for depth. While UK Master's are typically one year, German Master's programs are usually two years, allowing ample time for the specialized "Werkstudent" (Working Student) system. Universities of Applied Sciences (Fachhochschulen) offer 50% theory and 50% practical application, often including a mandatory semester-long internship in a German firm. You graduate not just with a degree, but with significant professional experience, making you a "day-one ready" candidate for the international job market.</p>
+   German Master’s programs (typically 2 years) emphasize depth and practical integration through the specialized Werkstudent (Working Student) system. Universities of Applied Sciences offer a 50/50 theory-practice split, often including a mandatory semester-long internship within leading German firms. This structure ensures you graduate as a "day-one ready" professional with significant international experience and a strong competitive edge.</p>
     </div>
   </div>
 
@@ -480,7 +475,7 @@ const StudyGermanyPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    We've Got Your Back.
   </span>{" "}
-    Germany’s support system starts before you even arrive. For Indian students, the mandatory APS (Academic Evaluation Centre) certification ensures a transparent and verified pathway for your documents, speeding up visa processing. Once on campus, the Studierendenwerk (Student Services) provides affordable housing, subsidized meals, and legal advice. From dedicated international offices to "Buddy Programs" that pair you with local students, Germany’s robust welfare network ensures you are supported from enrollment through to your first job. </p>
+    Germany’s 2026 support system begins with APS certification, a mandatory pre-verification for Indian students that streamlines and accelerates visa processing. Once on campus, the Studierendenwerk provides essential welfare through affordable housing and subsidized meals, while Buddy Programs pair you with local mentors to ensure a smooth cultural and academic transition.</p>
     </div>
   </div>
 
@@ -504,14 +499,14 @@ const StudyGermanyPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Collaborating with Global Leaders in Science.
   </span>{" "}
-   In Germany, research isn't confined to a library; it happens in collaboration with world-renowned bodies like the Max Planck Society and the Fraunhofer Institute. You will be part of an ecosystem that leads the world in Artificial Intelligence, Green Energy, and Robotics. With the government investing billions in future-tech clusters, students gain access to state-of-the-art labs and are often paid to contribute to groundbreaking research, building the technical skills that command top-tier salaries.</p>
+   In Germany for 2026, research is a hands-on collaboration with global leaders like Max Planck and Fraunhofer, focusing on AI, Green Energy, and Robotics. Students access a €160 billion state-funded ecosystem, gaining world-class technical skills in cutting-edge labs. Many roles are paid, with research assistants earning an average of €48,000 annually, bridging the gap to top-tier international salaries.</p>
     </div>
   </div>
 
   {/* 5. Post-Study Work Options - Image Left, Content Right */}
   <div className="flex flex-col md:flex-row gap-8 mb-8 md:mb-0">
     {/* Image - 30% */}
-    <div className="md:w-3/10 -mt-4 order-2 md:order-1">
+    <div className="md:w-3/10 -mt-14 order-2 md:order-1">
       <img 
         src="/Visa.png" 
         alt="Post-Study Work Visa"
@@ -528,7 +523,7 @@ const StudyGermanyPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    18 Months to Find Your Future.
   </span>{" "}
-   Your German journey reaches its peak upon graduation. The 18-month Job Seeker Visa allows you to stay in Germany and work in any field while you hunt for a role that matches your academic qualifications. Unlike many other countries, you can work full-time without restrictions during these 18 months. Once you secure a job in your field, you can transition to an EU Blue Card or a German Skilled Worker Visa. With Germany’s 2026 streamlined immigration laws, you can qualify for Permanent Residency (PR) in as little as 21 months of professional work.</p>
+   Graduates of German universities benefit from an 18-month stay-back visa with full, unrestricted work rights to find a role matching their degree. Under 2026's streamlined laws, you can transition to an EU Blue Card or Skilled Worker Visa and qualify for Permanent Residency (PR) in just 21 months (with B1 German).</p>
     </div>
   </div>
 </section>

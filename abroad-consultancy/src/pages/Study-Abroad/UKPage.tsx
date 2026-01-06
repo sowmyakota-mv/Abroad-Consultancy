@@ -85,7 +85,7 @@ const StudyUKPage: React.FC = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
+        <div className="rounded-xl p-2 md:p-4 ">
           <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
             The UK is more than just a study destination; it’s a career launchpad. Benefit from globally recognized degrees, shorter course 
             durations, and a multicultural environment that prepares you for the international job market. We help you navigate admissions, 
@@ -229,11 +229,11 @@ const StudyUKPage: React.FC = () => {
       ))}
     </div>
 
-    <div className="bg-white rounded-2xl p-10 border border-blue-100">
+    <div className="bg-white rounded-2xl p-6 border border-blue-100">
   <h3 className="text-2xl font-bold text-gray-900 mb-6">The Intake Summary Cards</h3>
   <div className="grid md:grid-cols-3 gap-8">
     {/* Card 1 - Primary Intake */}
-    <div className="bg-blue-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-blue-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-blue-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -255,7 +255,7 @@ const StudyUKPage: React.FC = () => {
     </div>
 
     {/* Card 2 - Secondary Intake */}
-    <div className="bg-green-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-green-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-green-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">
@@ -277,7 +277,7 @@ const StudyUKPage: React.FC = () => {
     </div>
 
     {/* Card 3 - Seasonal Intake */}
-    <div className="bg-purple-50 p-4 rounded-xl border border-gray-200 relative">
+    <div className="bg-purple-50 p-3 rounded-xl border border-gray-200 relative">
       {/* Tagline - Half inside, half outside */}
       <div className="absolute -top-3 right-0 z-10">
         <div className="bg-purple-600 text-white pl-6 pr-3 py-1 text-xs font-semibold relative">

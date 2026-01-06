@@ -42,10 +42,10 @@ const StudyNewZealandPage: React.FC = () => {
 
   // English Requirements
   const englishRequirements = [
-    { test: 'IELTS', requirement: '6.0 - 6.5 Overall', Subtitle: 'The gold standard. Standard UG entry is 6.0 (no band < 5.5), while Master\'s typically requires 6.5 (no band < 6.0).' },
-    { test: 'TOEFL iBT', requirement: '80 - 90 Total',Subtitle: 'Widely accepted. A score of 80 is common for Bachelors, while 90+ is the benchmark for Research Master’s and PhDs.' },
-    { test: 'PTE Academic', requirement: '50 - 58 Overall', Subtitle: 'Preferred for fast results (48hrs). Aim for 58+ if you plan to transition to Permanent Residency (PR) after your studies.' },
-    { test: 'Duolingo', requirement: '105 - 115 Total', Subtitle: 'Accepted for admission by top unis like Auckland, Otago, and Waikato. Note: Always verify if your specific visa category accepts DET.' },
+    { test: 'IELTS', requirement: '6.0 - 6.5 Overall', Subtitle: '6.0 for Bachelors; 6.5+ for Masters (the universal standard).' },
+    { test: 'TOEFL iBT', requirement: '80 - 90 Total',Subtitle: '80 for standard entry; 90–100 for competitive or research programs.' },
+    { test: 'PTE Academic', requirement: '50 - 58 Overall', Subtitle: '50–58 for most degrees; 65+ recommended for high-demand or PR-track fields.' },
+    { test: 'Duolingo', requirement: '105 - 115 Total', Subtitle: '105–115 for entry-level; 120+ for top-tier universities (verify visa acceptance for your specific country).' },
   ];
 
   // Scholarship Process
@@ -86,16 +86,11 @@ const StudyNewZealandPage: React.FC = () => {
        <section className="w-[80%] mx-auto scroll-mt-20">
   <div className="flex justify-center py-5 md:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
-      <div className="text-center ">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the New Zealand</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-            New Zealand is more than just a scenic study destination; it is a stable and predictable career launchpad. Benefit from a 
-            world-class education system where all eight universities rank in the global top 3% (QS 2026), combined with a progressive 
-            immigration policy that values international talent. With increased part-time work rights (now 25 hours per week) and some 
-            of the world's most transparent pathways to Permanent Residency, New Zealand prepares you for a global career without the 
-            cut-throat competition of larger nations. We help you navigate admissions, secure Manaaki New Zealand Scholarships, and manage 
-            fast-track visa processing (often 2–4 weeks) for a seamless transition.</p>
+      <div className="text-left md:text-center ">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 p-2">Study in the New Zealand</h2>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+            New Zealand is a premier destination for students seeking academic excellence and a stable, high-growth career. With all eight universities in the global top 3% (QS 2026), you receive a world-class education within a supportive, high-innovation ecosystem. For 2026, the government has boosted part-time work rights to 25 hours per week, providing better financial support and professional exposure.</p>
         </div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
@@ -408,7 +403,7 @@ const StudyNewZealandPage: React.FC = () => {
         <div>
           <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Applies to You!</h3>
           <p className="text-xs md:text-sm text-gray-700">
-          The adult minimum wage in New Zealand has increased to NZD $23.95 per hour. This ensures that even with a part-time role, you can earn roughly $598 per week (gross) during the semester, providing a significant boost to your financial independence. Always ensure your employer provides a written employment agreement, as this is a legal requirement in New Zealand.</p></div>
+          New Zealand’s adult minimum wage increases to NZD 23.95 per hour, allowing part-time students to earn roughly $598.75 gross per week. To protect your rights, a written employment agreement is a mandatory legal requirement for all workers, ensuring fair compensation and professional security.</p></div>
       </div>
     </div>
   </div>
@@ -437,7 +432,7 @@ const StudyNewZealandPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
     A Legacy of Excellence
   </span>{" "}
- New Zealand is home to a world-class education system where all 8 public universities rank in the global top 3% (QS World University Rankings 2026). Earning a degree here isn't just about the scenery; it's a credential backed by the NZQA (New Zealand Qualifications Authority), ensuring your qualification is respected by elite employers across the UK, USA, and Australia. With the 2026 introduction of the integrated Quality Assurance Framework (iQAF), you can be certain that every program meets the highest international benchmarks for academic rigor.</p>
+ New Zealand offers an elite education system where all eight public universities rank in the global top 3%, providing qualifications respected by top employers worldwide. Programs are rigorously monitored by the NZQA and the 2026 iQAF framework to ensure every degree meets the highest international benchmarks for academic excellence. This unique blend of globally recognized credentials and high-impact learning makes New Zealand a premier destination for building a successful international career.</p>
     </div>
   </div>
 
@@ -461,7 +456,7 @@ const StudyNewZealandPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Flexible & Practical.
   </span>{" "}
-   New Zealand offers a balanced academic structure that emphasizes critical thinking and hands-on skills. Gain a head start with a focused three-year curriculum that mirrors the British model, allowing you to enter the workforce sooner.Choose between a Taught Master’s (fast-track professional skills) or a Research Master’s (specialized expertise), both designed to minimize your time out of the workforce while maximizing your specialized knowledge. Many programs integrate "Work-Integrated Learning" and internships, ensuring you graduate with a resume already filled with local experience.</p>
+   New Zealand’s 2026 academic framework mirrors the British model, offering high-ROI three-year Bachelor’s degrees that fast-track your entry into the global workforce. You can specialize via Taught Master’s for professional advancement or Research Master’s for technical expertise, both structured to maximize specialized knowledge in minimal time. Many programs now feature Work-Integrated Learning (WIL) and internships, ensuring you graduate with practical skills and local experience highly valued by employers.</p>
     </div>
   </div>
 
@@ -485,7 +480,7 @@ const StudyNewZealandPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    We've Got Your Back.
   </span>{" "}
-    In New Zealand, we don't just host you; we look after you. Under the Education (Pastoral Care) Code of Practice 2021, universities are legally required to ensure your safety and wellbeing. Access 24/7 emergency help, "Buddy Systems" with local students, and specialized international offices to help with visa renewals and accommodation. Many institutions provide free access to safety apps that offer instant support at the touch of a button. Benefit from high-trust visa processing, with 80% of applications handled in under 3 weeks as of 2026.</p>
+    Under the Education Code of Practice 2021, New Zealand universities are legally mandated to provide 24/7 wellbeing support, specialized international offices, and "Buddy Systems" to ensure a safe transition. Students benefit from advanced safety apps and high-trust visa processing, with many applications for top-tier institutions handled in under 20 working days. This ecosystem bridges the gap between arrival and success, offering dedicated guidance on everything from visa renewals to local accommodation.</p>
     </div>
   </div>
 
@@ -533,7 +528,7 @@ const StudyNewZealandPage: React.FC = () => {
   <span className="font-bold text-gray-900 text-sm md:text-base">
    Your Bridge to Residency
   </span>{" "}
-   New Zealand offers one of the most generous and stable post-study work frameworks in the world. Graduates of any Level 7 degree (Bachelors) or higher are eligible for a 3-year Post-Study Work Visa. Unlike other countries, this is an "open" visa, allowing you to work for any employer in any role. Your work experience in NZ can directly count toward a Skilled Migrant Category Resident Visa, especially in high-demand fields on the Green List like IT, Engineering, and Healthcare. With the 2026 minimum wage at $23.95/hr, the ability to work full-time after graduation provides a secure path to recover your educational investment quickly.</p>
+   New Zealand’s Level 7 graduates (Bachelors) and above qualify for a 3-year open post-study work visa, allowing them to work for any employer in any role across the country. Professional experience gained on this visa particularly in Green List sectors like IT, Engineering, and Healthcare provides a streamlined, 24-month pathway to permanent residency. With the adult minimum wage set at $23.95/hr (as of April 2026), graduates can maximize their ROI while building a secure long-term career in a top-ranked global economy.</p>
     </div>
   </div>
 </section>

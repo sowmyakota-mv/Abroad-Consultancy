@@ -40,10 +40,10 @@ const StudyCanadaPage: React.FC = () => {
 
   // English Requirements
   const englishRequirements = [
-    { test: 'IELTS', requirement: '6.5 Overall', Subtitle: 'The standard for most undergraduate and postgraduate programs, typically requiring no individual band less than 6.0.' },
-    { test: 'TOEFL iBT', requirement: '80 – 100',Subtitle: 'Widely accepted by over 95% of universities, with top schools often requiring scores above 90.' },
-    { test: 'PTE Academic', requirement: '58 – 65', Subtitle: 'A rapid, computer-based option widely recognized for both admission and study permits.' },
-    { test: 'Duolingo', requirement: '115 – 125', Subtitle: 'A modern, convenient online test gaining massive acceptance across Canadian institutions.' },
+    { test: 'IELTS', requirement: '6.5 Overall', Subtitle: 'Standard for SDS visa processing and most PG programs.' },
+    { test: 'TOEFL iBT', requirement: '80 – 100',Subtitle: 'Accepted by 100% of universities; top schools require 90+.' },
+    { test: 'PTE Academic', requirement: '58 – 65', Subtitle: 'AI-scored results in 48 hours; accepted for SDS since 2023.' },
+    { test: 'Duolingo', requirement: '115 – 125', Subtitle: 'Online-only; high production scores are key for Tier 1 universities.' },
   ];
 
   // Scholarship Process
@@ -86,14 +86,9 @@ const StudyCanadaPage: React.FC = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the Canada</h2>
-        <div className="rounded-xl p-4 md:p-4 ">
-          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
-           Canada is more than just a study destination; it’s a premier gateway to global career opportunities and permanent residency. 
-           Benefit from world-class education at top-ranked universities, affordable tuition compared to other major destinations, and a 
-           welcoming, multicultural society. With the ability to work part-time while you study and eligible graduates qualifying for up to 
-           three years of post-graduation work permits, Canada provides a seamless bridge from education to a professional career. We help 
-           you navigate admissions, secure merit-based scholarships, and manage the study permit process for a smooth transition to your new life in Canada.</p>
-        </div>
+        <div className="rounded-xl p-2 md:p-4 ">
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed text-left">
+           Canada is a premier destination combining top-tier education with a high quality of life. For 2026, it remains a strategic choice for students seeking affordable world-class tuition and a welcoming multicultural environment. Beyond the classroom, Canada provides a seamless career bridge: international students can work part-time (up to 24 hours/week) during studies and qualify for a 3-year Post-Graduation Work Permit (PGWP), opening a direct pathway to Permanent Residency (PR).</p></div>
         <div className="mt-2">
           <button onClick={()=>navigate('/contact')} className="bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-4xl shadow md:hover:bg-[#FF6603] hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4  font-bold text-med md:text-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer">
             Check My Eligibility
@@ -330,7 +325,7 @@ const StudyCanadaPage: React.FC = () => {
               <div>
                 <h3 className="text-med md:text-lg font-bold text-gray-900 mb-3">Pro Tip: Study in Canada Without IELTS!</h3>
                 <p className="text-xs md:text-sm text-gray-700">
-                 Did you score 75% or higher in English in your 12th Grade (CBSE/ICSE)? The top Canadian institutions (like the University of Toronto, University of Saskatchewan, and many colleges) typically look for 75% or higher to grant an English Language Proficiency (ELP) waiver. If you’ve studied in an English-medium school for the last 3–4 years, you may be eligible to skip the IELTS/TOEFL entirely for your admission!</p></div>
+                 Skip IELTS/TOEFL at top universities like UBC, Saskatchewan, or Manitoba if you have 75%+ in 12th-grade English (CBSE/ISC) or 3+ years of English-medium schooling. We guide you through these institutional waivers to save you significant testing time and costs for your 2026 application.</p></div>
             </div>
           </div>
         </div></section>
@@ -407,7 +402,7 @@ const StudyCanadaPage: React.FC = () => {
         <div>
           <h3 className="text-med md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Did You Know? Minimum Wage Protections Apply to You!</h3>
           <p className="text-xs md:text-sm text-gray-700">
-           As an international student in Canada, you are legally entitled to the same minimum wage as any Canadian citizen. In 2026, Canada’s federal minimum wage has risen to $17.75 per hour (effective April 1, 2025, with an expected increase to $18.10 on April 1, 2026). However, most student jobs follow Provincial Rates, which currently range from $15.00 to $19.75 per hour. These rates ensure you are fairly compensated for every hour of authorized work.</p></div>
+           In 2026, international students in Canada are legally entitled to provincial minimum wages ranging from $15.00 to $19.75 per hour, with the federal rate rising to $18.10 on April 1. These competitive rates ensure you are fairly compensated while working your authorized hours across any province or territory.</p></div>
       </div>
     </div>
   </div>

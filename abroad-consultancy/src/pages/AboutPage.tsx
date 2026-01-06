@@ -73,7 +73,7 @@ const AboutUsPage: React.FC = () => {
                 <img 
                   src="/about4.png" 
                   alt="DartGlobe Consultation" 
-                  className="w-full h-[70%] object-cover"
+                  className="w-full h-[76vh] object-contain"
                 />
               </div>
             </div>
@@ -83,13 +83,13 @@ const AboutUsPage: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 More Than Just Consultants - We Are Your Architects
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed mb-6">
                DartGlobe stands out because we treat your career goals as our own.
                 We skip the "one-size-fits-all" approach and provide a personalized roadmap
                  based on your unique academic background and budget. Our strong network of partner
                  institutions ensures your profile reaches the right decision-makers.
                </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
                 Our support doesn't end with an admission letter. We offer complete lifecycle 
                 support from editing your SOPs to guiding you through visa interviews and helping 
                 you settle abroad. We are proud to be launchpad for your global education journey.
@@ -118,7 +118,7 @@ const AboutUsPage: React.FC = () => {
             
             {/* Content Section - 60% */}
             <div className="lg:w-3/5">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-left">
                 Comprehensive Support for Your Journey
               </h2>
               
@@ -195,7 +195,7 @@ const AboutUsPage: React.FC = () => {
     {/* White Cards with Hover & Click Effects */}
 <section className="md:py-16 bg-white">
   <div className="container mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto transition-all duration-300 rounded-2xl p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto transition-all duration-300 rounded-2xl p-3">
       {[
         {
           title: "Your All-in-One Partner",
@@ -213,7 +213,7 @@ const AboutUsPage: React.FC = () => {
           icon: "📈"
         },
         {
-          title: "Always BY Your Side",
+          title: "Always By Your Side",
           description: "Support that doesn't sleep. Whether you are online or on campus, our dedicated team is available 24/7 to answer your questions instantly.",
           icon: "🕒"
         }
