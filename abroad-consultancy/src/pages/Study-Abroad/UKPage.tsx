@@ -81,7 +81,7 @@ const StudyUKPage: React.FC = () => {
 
         {/* Study in UK - Overview */}
        <section className="w-[80%] mx-auto scroll-mt-20">
-  <div className="flex justify-center py-5 mt-8">
+  <div className="flex justify-center py-5 md:mt-12">
     <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 md:p-8  border border-blue-100 w-fit max-w-6xl mx-auto">
       <div className="text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 ">Study in the United Kingdom</h2>
