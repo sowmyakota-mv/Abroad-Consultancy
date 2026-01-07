@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
           <div className="mt-6 flex gap-4 justify-start">
             
             {/* Filled Button */}
-            <button onClick={()=>navigate("/contact")} className="px-6 py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl shadow hover:bg-purple-700 md:hover:bg-[#FF6603] hover:scale-105 transition cursor-pointer">
+            <button onClick={()=>navigate("/contact")} className="px-6 py-3  border border-2 bg-[#EBF1FA] border-[#FF0000] text-black font-semibold rounded-4xl shadow  hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 transition cursor-pointer">
               Get Started
             </button>
 

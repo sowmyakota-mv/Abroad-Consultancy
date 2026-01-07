@@ -10,6 +10,18 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [isCounsellingOpen, setIsCounsellingOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Check scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Social media icons
   const socialMedia = [
@@ -207,7 +219,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Contact Details Header */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-blue-200 border-b border-gray-200">
+      <div className="top-0 left-0 w-full z-50 bg-black border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-2 md:py-2">
             <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
@@ -220,7 +232,7 @@ const Header: React.FC = () => {
                   className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   <Mail size={16} className="text-blue-800" />
-                  <span className='text-black font-semibold'>info@dartglobe.com</span>
+                  <span className='text-white font-semibold'>info@dartglobe.com</span>
                 </a>
                 
                 {/* Phone */}
@@ -229,7 +241,7 @@ const Header: React.FC = () => {
                   className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   <Phone size={16} className="text-green-600" />
-                  <span className='text-black font-semibold'>+91 1234567890</span>
+                  <span className='text-white font-semibold'>+91 1234567890</span>
                 </a>
               </div>
               
@@ -241,7 +253,7 @@ const Header: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-white hover:text-blue-600 transition-colors"
                     aria-label={social.name}
                   >
                     <social.icon />
@@ -257,7 +269,7 @@ const Header: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-white hover:text-blue-600 transition-colors transition-all duration-300 transform hover:-translate-y-0.5"
                     aria-label={social.name}
                   >
                     <social.icon />
@@ -269,241 +281,244 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Header - Adjusted margin for contact header */}
-      <header className="fixed top-9 md:top-8 left-0 w-full z-40 bg-white shadow-[0_2px_10px_-2px_rgba(0,0,0,0.1)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-2">
-            <div className="flex justify-between items-center">
+      {/* Main Header - White initially, transparent when scrolled */}
+      <header className={`fixed top-9 md:top-8 left-0 w-full z-40 transition-all duration-300 ${
+        scrolled ? 'bg-white/30 backdrop-blur-lg' : 'bg-white shadow-sm'
+      }`}>
+        <div className="relative max-w-7xl mx-auto flex items-center justify-between w-full py-0.5 px-6">
+          <div className={`w-[92%] mx-auto ${
+            scrolled ? 'bg-transparent' : 'bg-white'
+          } px-4 sm:px-6 lg:px-8 rounded-3xl transition-all duration-300`}>
+            <div className="py-2">
+              <div className="flex justify-between items-center">
 
-              {/* Logo */}
-              <div className="flex items-center">
-                <img
-                  src="/logo"
-                  alt="consultancy"
-                  className="h-16 w-auto object-contain"
-                  onClick={() => navigate('/')}
-                />
-                {/* <div className="flex flex-col">
-    <span className="text-xl font-bold text-blue-800">DartGlobe</span>
-    <span className="text-sm text-gray-600">Education Consultancy</span>
-  </div> */}
-              </div>
-
-              {/* Desktop Navigation */}
-              <nav className="hidden lg:flex items-center space-x-6">
-                {navLinks.map((link) =>
-                  link.name === 'Study Abroad' ? (
-                    <div key={link.name} className="relative group">
-                      <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600 cursor-pointer">
-                        Study Abroad
-                        <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
-                      </button>
-
-                      <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                        <ul className="py-2">
-                          {studyAbroadCountries.map((country) => (
-                            <li key={country.name}>
-                              <Link to={country.path} className="block px-4 py-2 hover:bg-blue-50">
-                                Study in {country.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ) : (
-                    <Link
-                      key={link.name}
-                      to={link.href}
-                      onClick={(e) => {
-                        if (link.onClick) {
-                          link.onClick(e);
-                        }
-                      }}
-                      className={`font-medium ${
-                        link.isCta
-                          ? 'bg-purple-700 md:bg-[#FB8234] text-white px-5 py-2.5 rounded-3xl hover:scale-105'
-                          : 'text-gray-700 hover:text-blue-600 hover:scale-105'
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  )
-                )}
-              </nav>
-
-              {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden p-2 rounded-lg hover:bg-blue-100"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              >
-                <div className="space-y-1.5">
-                  <span className="block w-6 h-0.5 bg-blue-700"></span>
-                  <span className="block w-6 h-0.5 bg-blue-700"></span>
-                  <span className="block w-6 h-0.5 bg-blue-700"></span>
+                {/* Logo */}
+                <div className="flex items-center">
+                  <img
+                    src="/logo"
+                    alt="consultancy"
+                    className="h-16 w-auto object-contain"
+                    onClick={() => navigate('/')}
+                  />
                 </div>
-              </button>
-            </div>
 
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-              <div className="lg:hidden fixed inset-0 top-24 md:top-28 bg-white z-40 overflow-y-auto ">
-                <nav className="flex flex-col space-y-1 p-4">
-                  
-                  {/* Home */}
-                  {navLinks
-                    .filter(link => link.name === 'Home')
-                    .map((link) => (
-                      <Link
-                        key={link.name}
-                        to={link.href}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
+                {/* Desktop Navigation */}
+                <nav className="hidden lg:flex items-center space-x-5">
+                  {navLinks.map((link) =>
+                    link.name === 'Study Abroad' ? (
+                      <div key={link.name} className="relative group">
+                        <button className="flex items-center gap- font-medium text-gray-700 hover:text-blue-600 cursor-pointer">
+                          Study Abroad
+                          <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
+                        </button>
 
-                  {/* About Us */}
-                  {navLinks
-                    .filter(link => link.name === 'About Us')
-                    .map((link) => (
-                      <Link
-                        key={link.name}
-                        to={link.href}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-
-                  {/* Study Abroad */}
-                  <div className="pt-1 cursor-pointer">
-                    <button
-                      className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors "
-                      onClick={() => setIsStudyOpen(!isStudyOpen)}
-                    >
-                      <span>Study Abroad</span>
-                      <ChevronDown className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
-                    </button>
-
-                    {isStudyOpen && (
-                      <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
-                        {studyAbroadCountries.map((c) => (
-                          <Link
-                            key={c.name}
-                            to={c.path}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
-                          >
-                            Study in {c.name}
-                          </Link>
-                        ))}
+                        <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                          <ul className="py-2">
+                            {studyAbroadCountries.map((country) => (
+                              <li key={country.name}>
+                                <Link to={country.path} className="block px-4 py-2 hover:bg-blue-50">
+                                  Study in {country.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                    )}
-                  </div>
-
-                  {/* Services - Now scrolls to section */}
-                  {navLinks
-                    .filter(link => link.name === 'Our Services')
-                    .map((link) => (
-                      <button
-                        key={link.name}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (link.onClick) {
-                            link.onClick(e);
-                          }
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                      >
-                        {link.name}
-                      </button>
-                    ))}
-
-                  {/* Why Choose Us */}
-                  {navLinks
-                    .filter(link => link.name === 'Why Choose Us')
-                    .map((link) => (
-                      <button
-                        key={link.name}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (link.onClick) {
-                            link.onClick(e);
-                          }
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                      >
-                        {link.name}
-                      </button>
-                    ))}
-
-                  {/* Our Success */}
-                  {navLinks
-                    .filter(link => link.name === 'Our Success')
-                    .map((link) => (
-                      <button
-                        key={link.name}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (link.onClick) {
-                            link.onClick(e);
-                          }
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                      >
-                        {link.name}
-                      </button>
-                    ))}
-
-                  {/* FAQ */}
-                  {navLinks
-                    .filter(link => link.name === 'FAQ')
-                    .map((link) => (
+                    ) : (
                       <Link
                         key={link.name}
                         to={link.href}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
+                        onClick={(e) => {
+                          if (link.onClick) {
+                            link.onClick(e);
+                          }
                         }}
-                        className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        className={`font-medium ${
+                          link.isCta
+                            ? `bg-purple-700 md:bg-white border border-2 md:border-[#FF0000] text-white md:text-black md:hover:text-white px-5 py-2.5 rounded-3xl hover:scale-105 md:hover:bg-[#FF0000] transition-all duration-300 transform hover:-translate-y-1 ${
+                                scrolled ? 'md:bg-white/80' : ''
+                              }`
+                            : 'text-gray-700 hover:text-blue-600 hover:scale-105'
+                        }`}
                       >
                         {link.name}
                       </Link>
-                    ))}
-
-                  {/* Book Free Counselling - CTA Button */}
-                  {navLinks
-                    .filter(link => link.isCta)
-                    .map((link) => (
-                      <button
-  key={link.name}
-  onClick={() => {
-    if (link.onClick) {
-      if (typeof link.onClick === 'function') {
-        link.onClick({ preventDefault: () => {} } as React.MouseEvent);
-      }
-    }
-    setIsMobileMenuOpen(false);
-  }}
-  className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
->
-  {link.name}
-</button>
-                    ))}
-
+                    )
+                  )}
                 </nav>
+
+                {/* Mobile Menu Button */}
+                <button
+                  className="lg:hidden p-2 rounded-lg hover:bg-blue-100"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                  <div className="space-y-1.5">
+                    <span className="block w-6 h-0.5 bg-blue-700"></span>
+                    <span className="block w-6 h-0.5 bg-blue-700"></span>
+                    <span className="block w-6 h-0.5 bg-blue-700"></span>
+                  </div>
+                </button>
               </div>
-            )}
+
+              {/* Mobile Menu */}
+              {isMobileMenuOpen && (
+                <div className="lg:hidden fixed inset-0 top-24 md:top-28 bg-white z-40 overflow-y-auto">
+                  <nav className="flex flex-col space-y-1 p-4">
+                    
+                    {/* Home */}
+                    {navLinks
+                      .filter(link => link.name === 'Home')
+                      .map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+
+                    {/* About Us */}
+                    {navLinks
+                      .filter(link => link.name === 'About Us')
+                      .map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+
+                    {/* Study Abroad */}
+                    <div className="pt-1 cursor-pointer">
+                      <button
+                        className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        onClick={() => setIsStudyOpen(!isStudyOpen)}
+                      >
+                        <span>Study Abroad</span>
+                        <ChevronDown className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
+                      </button>
+
+                      {isStudyOpen && (
+                        <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
+                          {studyAbroadCountries.map((c) => (
+                            <Link
+                              key={c.name}
+                              to={c.path}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
+                            >
+                              Study in {c.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Services - Now scrolls to section */}
+                    {navLinks
+                      .filter(link => link.name === 'Our Services')
+                      .map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (link.onClick) {
+                              link.onClick(e);
+                            }
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+
+                    {/* Why Choose Us */}
+                    {navLinks
+                      .filter(link => link.name === 'Why Choose Us')
+                      .map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (link.onClick) {
+                              link.onClick(e);
+                            }
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+
+                    {/* Our Success */}
+                    {navLinks
+                      .filter(link => link.name === 'Our Success')
+                      .map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (link.onClick) {
+                              link.onClick(e);
+                            }
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+
+                    {/* FAQ */}
+                    {navLinks
+                      .filter(link => link.name === 'FAQ')
+                      .map((link) => (
+                        <Link
+                          key={link.name}
+                          to={link.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+
+                    {/* Book Free Counselling - CTA Button */}
+                    {navLinks
+                      .filter(link => link.isCta)
+                      .map((link) => (
+                        <button
+                          key={link.name}
+                          onClick={() => {
+                            if (link.onClick) {
+                              if (typeof link.onClick === 'function') {
+                                link.onClick({ preventDefault: () => {} } as React.MouseEvent);
+                              }
+                            }
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
+                        >
+                          {link.name}
+                        </button>
+                      ))}
+                  </nav>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </header>
@@ -515,7 +530,7 @@ const Header: React.FC = () => {
             <button
               key={item.label}
               onClick={() => handleContactClick(item)}
-              className={`w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow hover:shadow-lg border-2 ${item.borderColor} ${item.hoverBorderColor}`}
+              className={`w-12 h-12 rounded-full bg-white/30 backdrop-blur-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow hover:shadow-lg border-2 ${item.borderColor} ${item.hoverBorderColor}`}
               title={item.label}
             >
               {renderIcon(item)}

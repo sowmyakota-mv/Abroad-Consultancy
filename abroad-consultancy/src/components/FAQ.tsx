@@ -439,7 +439,7 @@ const FAQ: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+                className="w-full text-lg  font-semibold py-3 px-6 rounded-4xl border border-2 border-[#FF0000] bg-white text-black hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
               >
                 Submit Query
               </button>

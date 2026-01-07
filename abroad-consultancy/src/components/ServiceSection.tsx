@@ -282,7 +282,7 @@ const ServicesSection: React.FC = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 md:border-[#FB8234] hover:border-purple-700 md:hover:border-[#FF6603] group transform hover:scale-105 h-full flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-[#FF0000] hover:border-[#FF0000] group transform hover:scale-105 h-full flex flex-col"
                 >
                   {/* Row 1: Image - Fixed height */}
                   <div className="w-full h-24 sm:h-36 md:h-36 relative overflow-hidden">
@@ -315,7 +315,7 @@ const ServicesSection: React.FC = () => {
                     <div className="mt-auto">
                       <button 
                         onClick={() => service.id && setSelectedService(service.id)}
-                        className="w-full py-0.5 sm:py-2 md:py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl group-hover:bg-purple-700 md:group-hover:bg-[#FF6603] transition-all duration-300  cursor-pointer"
+                        className="w-full text-lg py-0.5 sm:py-2 md:py-3  border border-2 border-[#FF0000] bg-white text-black  font-semibold rounded-3xl group-hover:bg-[#FF0000] group-hover:text-white ttransition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
                       >
                         Learn More
                       </button>

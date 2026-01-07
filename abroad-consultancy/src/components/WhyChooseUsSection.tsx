@@ -71,14 +71,14 @@ const WhyChooseUsSection: React.FC = () => {
               <div className="hidden md:flex items-start gap-2 mb-4">
                 {/* Number */}
                 <div className="flex-shrink-0">
-                  <span className="text-[#FF6603] font-bold text-xl">
+                  <span className="text-[#FF0000] font-bold text-xl">
                     {reason.number}
                   </span>
                 </div>
                 
                 {/* Horizontal Line - Fixed width */}
                 <div className="flex-shrink-0 mt-3">
-                  <div className="h-1 w-8 md:w-10 bg-gradient-to-r from-orange-400 to-orange-200 rounded-full"></div>
+                  <div className="h-1 w-8 md:w-10 bg-gradient-to-r from-red-400 to-red-200 rounded-full"></div>
                 </div>
                 
                 {/* Title */}
