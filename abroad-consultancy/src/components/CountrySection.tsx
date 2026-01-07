@@ -305,15 +305,15 @@ const CountriesSection: React.FC = () => {
                     </div>
                     {/* <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
                       isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}></div>
-                    <div className={`absolute inset-0 flex items-center justify-center text-center px-4 transition-all duration-700 ${
-                      isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75"
-                    }`}> */}
+                    }`}></div> */}
+                    <div className={`absolute inset-0 flex items-bottom mt-32 justify-center text-center px-4 transition-all duration-700 
+                      
+                    }`}>
                       <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
                 </div>
-              // </div>
+               </div>
             ))}
           </div>
         </div>
