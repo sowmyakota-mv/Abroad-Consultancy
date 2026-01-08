@@ -335,7 +335,7 @@ const Header: React.FC = () => {
                         }}
                         className={`font-medium ${
                           link.isCta
-                            ? `bg-purple-700 md:bg-white border border-2 md:border-[#FF0000] text-white md:text-black md:hover:text-white px-5 py-2.5 rounded-3xl hover:scale-105 md:hover:bg-[#FF0000] transition-all duration-300 transform hover:-translate-y-1 ${
+                            ? `bg-white border border-2 border-[#FF0000] text-black hover:text-white px-5 py-2.5 rounded-3xl hover:scale-105 hover:bg-[#FF0000] transition-all duration-300 transform hover:-translate-y-1 ${
                                 scrolled ? 'md:bg-white/80' : ''
                               }`
                             : 'text-gray-700 hover:text-blue-600 hover:scale-105'
@@ -498,23 +498,23 @@ const Header: React.FC = () => {
 
                     {/* Book Free Counselling - CTA Button */}
                     {navLinks
-                      .filter(link => link.isCta)
-                      .map((link) => (
-                        <button
-                          key={link.name}
-                          onClick={() => {
-                            if (link.onClick) {
-                              if (typeof link.onClick === 'function') {
-                                link.onClick({ preventDefault: () => {} } as React.MouseEvent);
-                              }
-                            }
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="mt-2 bg-purple-700 text-white px-6 py-3.5 rounded-lg font-medium hover:bg-purple-800 transition-colors text-center"
-                        >
-                          {link.name}
-                        </button>
-                      ))}
+  .filter(link => link.isCta)
+  .map((link) => (
+    <button
+      key={link.name}
+      onClick={() => {
+        if (link.onClick) {
+          if (typeof link.onClick === 'function') {
+            link.onClick({ preventDefault: () => {} } as React.MouseEvent);
+          }
+        }
+        setIsMobileMenuOpen(false);
+      }}
+      className="mt-2 border border-2 border-purple-700 bg-white text-black px-6 py-3.5 rounded-4xl font-medium hover:bg-[#FF0000] active:bg-[#FF0000] transition-colors text-center"
+    >
+      {link.name}
+    </button>
+  ))}
                   </nav>
                 </div>
               )}
