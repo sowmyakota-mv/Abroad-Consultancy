@@ -114,7 +114,7 @@ const FAQ: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Left Column - 60% width (3/5 of the grid) */}
           <div className="lg:col-span-3 relative overflow-hidden">
-            <div className="relative z-10 h-full p-8 flex flex-col">
+            <div className="relative z-10 h-full p-6 flex flex-col">
               {/* Top Title Section */}
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -134,62 +134,62 @@ const FAQ: React.FC = () => {
               </div>
 
               {/* Bottom Contact Information */}
-              <div className="backdrop-blur-sm mt-16">
-                <div className="grid grid-cols-2 ">
-                  {/* 1*1 - Location */}
-                  <div className="flex items-start space-x-2 p-4 -ml-12 md:ml-0">
-                    <div className="bg-blue-100 p-1 md:p-3 rounded-full">
-                      <FaMapMarkerAlt className="text-blue-600 text-xl" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-sm text-gray-700">Our Location</p>
-                      <p className="text-gray-600 text-xs">
-                        123 Business Street, Suite 100 <br />
-                        New York, NY 10001
-                      </p>
-                    </div>
-                  </div>
+<div className="backdrop-blur-sm mt-16">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-">
+    {/* 1*1 - Location */}
+    <div className="flex items-start space-x-3 p-4">
+      <div className="bg-blue-100 p-3 rounded-full flex-shrink-0">
+        <FaMapMarkerAlt className="text-blue-600 text-xl" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="font-medium text-sm text-gray-700">Our Location</p>
+        <p className="text-gray-600 text-xs break-words">
+          123 Business Street, Suite 100<br />
+          New York, NY 10001
+        </p>
+      </div>
+    </div>
 
-                  {/* 1*2 - Social Media */}
-                  <div className="p-4">
-                    <p className="font-medium text-sm text-gray-700 ">Follow Us</p>
-                    <div className="flex ">
-                      {socialLinks.map((social, index) => (
-                        <a
-                          key={index}
-                          href={social.href}
-                          aria-label={social.label}
-                          className="p-2 md:p-3 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1"
-                        >
-                          <social.icon className="text-gray-600 text-xl hover:text-blue-600" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
- 
-                  {/* 2*1 - Email */}
-                  <div className="flex items-start space-x-2 p-4">
-                    <div className="bg-yellow-100 p-2 md:p-3 rounded-full -ml-12 md:ml-0">
-                      <FaEnvelope className="text-yellow-600 text-xl" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-sm text-gray-700">Email Address</p>
-                      <p className="text-gray-600 text-xs">info@services.com</p>
-                    </div>
-                  </div>
+    {/* 1*2 - Social Media */}
+    <div className="p-4">
+      <p className="font-medium text-sm text-gray-700 mb-2">Follow Us</p>
+      <div className="flex space-x-2">
+        {socialLinks.map((social, index) => (
+          <a
+            key={index}
+            href={social.href}
+            aria-label={social.label}
+            className="p-2 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1 bg-gray-50"
+          >
+            <social.icon className="text-gray-600 text-xl hover:text-blue-600" />
+          </a>
+        ))}
+      </div>
+    </div>
 
-                  {/* 2*2 - Contact Number */}
-                  <div className="flex items-start space-x-2 p-4">
-                    <div className="bg-green-100 p-2 md:p-3 rounded-full -ml-2 md:ml-0">
-                      <FaPhone className="text-green-600 text-xl" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-sm text-gray-700">Contact Number</p>
-                      <p className="text-gray-600 text-xs">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* 2*1 - Email */}
+    <div className="flex items-start space-x-3 p-4">
+      <div className="bg-yellow-100 p-3 rounded-full flex-shrink-0">
+        <FaEnvelope className="text-yellow-600 text-xl" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="font-medium text-sm text-gray-700">Email Address</p>
+        <p className="text-gray-600 text-xs break-all">info@services.com</p>
+      </div>
+    </div>
+
+    {/* 2*2 - Contact Number */}
+    <div className="flex items-start space-x-3 p-4">
+      <div className="bg-green-100 p-3 rounded-full flex-shrink-0">
+        <FaPhone className="text-green-600 text-xl" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="font-medium text-sm text-gray-700">Contact Number</p>
+        <p className="text-gray-600 text-xs break-all">+1 (555) 123-4567</p>
+      </div>
+    </div>
+  </div>
+</div>
             </div>
           </div>
 
@@ -439,8 +439,7 @@ const FAQ: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full text-lg  font-semibold py-3 px-6 rounded-4xl border border-2 border-[#FF0000] bg-white text-black hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
-              >
+                className="w-full text-lg font-semibold py-3 px-6 rounded-4xl border border-2 border-purple-800 md:border-[#FF0000] bg-white text-black hover:bg-purple-800 active:bg-purple-800 active:-translate-y-1 md:hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                 Submit Query
               </button>
             </form>

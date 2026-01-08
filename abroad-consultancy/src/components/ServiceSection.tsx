@@ -4,10 +4,12 @@ import {
   GraduationCap, Globe, Target, HeartHandshake, ClipboardList,
   X
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ServicesSection: React.FC = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate=useNavigate()
 
   // Check if mobile on mount and resize - Only true for small mobile screens
   useEffect(() => {
@@ -24,56 +26,56 @@ const ServicesSection: React.FC = () => {
   }, []);
 
   // Stats highlighting free services (8 stats only + PNG image icons)
-  const stats = [
-    {
-      icon: "/services-icon.png",
-      count: "12+",
-      title: "Services Support",
-      description: "Core assistance for every student"
-    },
-    {
-      icon: "/application-icon.png",
-      count: "25,000+",
-      title: "Applications Processed",
-      description: "Successfully submitted student applications globally."
-    },
-    {
-      icon: "/visa-interview-icon.png",
-      count: "100%",
-      title: "Visa Interview Success ",
-      description: "Expert coaching to help students clear visa interviews confidently."
-    },
-    {
-      icon: "/admission-icon.png",
-      count: "100%",
-      title: "Admission & Visa Success",
-      description: "High success rate with expert guidance"
-    },
-    {
-      icon: "/loan-support-icon.png",
-      count: "100%",
-      title: "Loan Approvals Support",
-      description: "Through partnered banks & NBFCs"
-    },
-    {
-      icon: "/exam-icon.png",
-      count: "10,000+",
-      title: "IELTS Training + Applications",
-      description: "Test prep & university submissions"
-    },
-    {
-      icon: "/accomodation-icon.png",
-      count: "3000+",
-      title: "Accommodation Support",
-      description: "Hostels, PGs & apartments"
-    },
-    {
-      icon: "/scholarship-icon.png",
-      count: "5000+",
-      title: "Scholarships Guided",
-      description: "University & government grants"
-    }
-  ];
+  // const stats = [
+  //   {
+  //     icon: "/services-icon.png",
+  //     count: "12+",
+  //     title: "Services Support",
+  //     description: "Core assistance for every student"
+  //   },
+  //   {
+  //     icon: "/application-icon.png",
+  //     count: "25,000+",
+  //     title: "Applications Processed",
+  //     description: "Successfully submitted student applications globally."
+  //   },
+  //   {
+  //     icon: "/visa-interview-icon.png",
+  //     count: "100%",
+  //     title: "Visa Interview Success ",
+  //     description: "Expert coaching to help students clear visa interviews confidently."
+  //   },
+  //   {
+  //     icon: "/admission-icon.png",
+  //     count: "100%",
+  //     title: "Admission & Visa Success",
+  //     description: "High success rate with expert guidance"
+  //   },
+  //   {
+  //     icon: "/loan-support-icon.png",
+  //     count: "100%",
+  //     title: "Loan Approvals Support",
+  //     description: "Through partnered banks & NBFCs"
+  //   },
+  //   {
+  //     icon: "/exam-icon.png",
+  //     count: "10,000+",
+  //     title: "IELTS Training + Applications",
+  //     description: "Test prep & university submissions"
+  //   },
+  //   {
+  //     icon: "/accomodation-icon.png",
+  //     count: "3000+",
+  //     title: "Accommodation Support",
+  //     description: "Hostels, PGs & apartments"
+  //   },
+  //   {
+  //     icon: "/scholarship-icon.png",
+  //     count: "5000+",
+  //     title: "Scholarships Guided",
+  //     description: "University & government grants"
+  //   }
+  // ];
 
   const services = [
     {
@@ -282,7 +284,7 @@ const ServicesSection: React.FC = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-[#FF0000] hover:border-[#FF0000] group transform hover:scale-105 h-full flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-purple-700 md:border-[#FF0000] hover:border-[#FF0000] hover:border-purple-800 md:hover:border-[#FF0000] active:border-purple-800 active:scale-105 group transform hover:scale-105 h-full flex flex-col"
                 >
                   {/* Row 1: Image - Fixed height */}
                   <div className="w-full h-24 sm:h-36 md:h-36 relative overflow-hidden">
@@ -315,7 +317,7 @@ const ServicesSection: React.FC = () => {
                     <div className="mt-auto">
                       <button 
                         onClick={() => service.id && setSelectedService(service.id)}
-                        className="w-full text-lg py-0.5 sm:py-2 md:py-3  border border-2 border-[#FF0000] bg-white text-black  font-semibold rounded-3xl group-hover:bg-[#FF0000] group-hover:text-white ttransition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
+                        className="w-full text-lg py-0.5 sm:py-2 md:py-3  border border-2 border-purple-700 md:border-[#FF0000] bg-white text-black  font-semibold rounded-3xl md:group-hover:bg-[#FF0000] md:group-hover:bg-[#FF0000] group-hover:bg-purple-800 active:bg-purple-800 active:bg-scale-105 active:-translate-y-1 hover:-translate-y-1  group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
                       >
                         Learn More
                       </button>
@@ -373,7 +375,7 @@ const ServicesSection: React.FC = () => {
 
                     {/* Call to Action Button */}
                     <div className="mt-3 sm:mt-4">
-                      <button className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-purple-700 md:bg-[#FB8234] text-white font-semibold rounded-3xl hover:bg-purple-800 md:hover:bg-[#FF6603] transition-all duration-300 text-sm sm:text-base">
+                      <button onClick={()=>navigate("/contact")} className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-2 border-purple-700 md:border-[#FF0000] text-black font-semibold rounded-3xl hover:bg-purple-800 md:hover:bg-[#FF0000] hover:text-white active:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 active:-translate-y-1 text-sm sm:text-base">
                         Book Free Consultation
                       </button>
                     </div>

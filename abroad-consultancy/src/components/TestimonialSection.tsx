@@ -238,9 +238,9 @@ const TestimonialsSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center mb-4">
-            <div className="w-20 h-1 bg-red-200"></div>
-            <span className="mx-4 text-[#FF0000] font-semibold">SUCCESS STORIES</span>
-            <div className="w-20 h-1 bg-red-200"></div>
+            <div className="w-20 h-1 bg-purple-200 md:bg-red-200"></div>
+            <span className="mx-4 text-purple-800 md:text-[#FF0000] font-semibold">SUCCESS STORIES</span>
+            <div className="w-20 h-1 bg-purple-200 md:bg-red-200"></div>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What Our Students Say
@@ -397,7 +397,7 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean; isSide?: 
       {/* Student Info */}
       <div className="flex items-center">
         {/* Avatar */}
-        <div className={`rounded-full bg-[#FF0000] flex items-center justify-center text-white font-bold mr-4 flex-shrink-0 ${
+        <div className={`rounded-full bg-purple-800 md:bg-[#FF0000] flex items-center justify-center text-white font-bold mr-4 flex-shrink-0 ${
           isCenter ? 'h-10 w-10 text-lg' : 'h-8 w-8 text-base'
         }`}>
           {testimonial.name.charAt(0)}
@@ -434,7 +434,7 @@ const TestimonialCard: React.FC<{ testimonial: any; isCenter: boolean; isSide?: 
       {isCenter && (
         <div className="absolute -bottom-6 right-6 z-10">
           <div className="relative">
-            <div className="h-12 w-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+            <div className="h-12 w-12 rounded-full bg-purple-800 md:bg-[#FF0000] flex items-center justify-center shadow-lg">
               <Quote className="h-6 w-6 text-white" />
             </div>
           </div>
