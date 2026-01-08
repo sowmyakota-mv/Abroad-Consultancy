@@ -510,7 +510,7 @@ const Header: React.FC = () => {
         }
         setIsMobileMenuOpen(false);
       }}
-      className="mt-2 border border-2 border-purple-700 bg-white text-black px-6 py-3.5 rounded-4xl font-medium hover:bg-[#FF0000] active:bg-[#FF0000] transition-colors text-center"
+      className="mt-2 border border-2 border-purple-700 bg-white text-black px-6 py-3.5 rounded-4xl font-medium hover:bg-purple-800 hover:text-white active:bg-purple-800 active:text-white active:scale-[0.98] transition-all duration-300 transform hover:-translate-y-1 text-center"
     >
       {link.name}
     </button>
