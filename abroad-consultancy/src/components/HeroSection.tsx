@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
         <div className="md:col-span-3 flex justify-center md:justify-end mt-12 md:mt-30 relative">
           <div className="relative">
             <img
-              src="/right-hero.png"
+              src="/herosection-img.png"
               alt="Students"
               className="w-full h-[300px] max-w-sm relative z-10"
             />
