@@ -35,12 +35,12 @@ const HeroSection: React.FC = () => {
         {/* RIGHT IMAGE - 30% (3 columns out of 10) */}
         <div className="md:col-span-3 flex justify-center md:justify-end mt-12 md:mt-30 relative">
           <div className="relative">
-            <img
-              src="/herosection-img.png"
-              alt="Students"
-              className="w-full h-[300px] max-w-sm relative z-10"
-            />
-          </div>
+  <img
+    src="/herosection3.png"
+    alt="Students"
+    className="w-full h-[240px] max-w-sm relative z-10 -mt-20"
+  />
+</div>
         </div>
         
       </div>

@@ -284,7 +284,7 @@ const AboutUsPage: React.FC = () => {
             Our expert consultants are here to guide you through every step of your international education journey.
           </p>
           <div className="mt-auto">
-            <button onClick={()=>navigate("/contact")} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-sm md:text-base transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
+            <button onClick={()=>navigate("/contact")} className="border border-2 border-blue-600 hover:bg-blue-700 hover:text-white font-bold py-3 px-8 rounded-full text-sm md:text-base transition-all duration-300 transform hover:-translate-y-1 transform hover:scale-105 w-full sm:w-auto">
               Contact Us
             </button>
           </div>
