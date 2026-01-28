@@ -343,18 +343,23 @@ const Header: React.FC = () => {
         <div className="relative max-w-7xl mx-auto flex items-center justify-between w-full py-0.5 px-6">
           <div className={`w-[92%] mx-auto ${
             scrolled ? 'bg-transparent' : 'bg-white'
-          } px-4 sm:px-6 lg:px-8 rounded-3xl transition-all duration-300`}>
-            <div className="py-2">
+          } px-4 sm:px-6 lg:px-6 rounded-3xl transition-all duration-300`}>
+            <div className="py-4">
               <div className="flex justify-between items-center">
 
-                {/* Logo */}
-                <div className="flex items-center">
-                  <img
+                {/* Logo with Dart Globe Title */}
+                <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
+                  {/* <img
                     src="/logo"
                     alt="consultancy"
                     className="h-16 w-auto object-contain"
-                    onClick={() => navigate('/')}
-                  />
+                  /> */}
+                  <div className="flex flex-col">
+                    <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                      DART GLOBE
+                    </h1>
+                    {/* <p className="text-xs text-gray-500 font-medium">Global Education Consultancy</p> */}
+                  </div>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -440,7 +445,14 @@ const Header: React.FC = () => {
       
       {/* Header with Close Button */}
       <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center flex-shrink-0">
-        <h3 className="text-lg font-bold text-gray-900">Menu</h3>
+        <div className="flex items-center space-x-2">
+          <img
+            src="/logo"
+            alt="consultancy"
+            className="h-10 w-auto object-contain"
+          />
+          <h3 className="text-lg font-bold text-gray-900">DART GLOBE</h3>
+        </div>
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="p-2 rounded-full hover:bg-gray-100 transition-colors"
