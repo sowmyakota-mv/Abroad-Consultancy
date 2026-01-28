@@ -177,7 +177,7 @@ const FAQSection: React.FC = () => {
                   <div className="p-4">
                     {/* Questions for Documents category */}
                     <div className="flex flex-col space-y-0">
-                      {faqData[0].questions.map((item, questionIndex) => (
+                      {faqData[0].questions.map((item) => (
                         <React.Fragment key={item.id}>
                           {/* Question container with borders */}
                           <div 
@@ -243,7 +243,7 @@ const FAQSection: React.FC = () => {
                   <div className="p-4">
                     {/* Questions for Admission category */}
                     <div className="flex flex-col space-y-0">
-                      {faqData[1].questions.map((item, questionIndex) => (
+                      {faqData[1].questions.map((item) => (
                         <React.Fragment key={item.id}>
                           {/* Question container with borders */}
                           <div 
@@ -309,7 +309,7 @@ const FAQSection: React.FC = () => {
                   <div className="p-4">
                     {/* Questions for Finance category */}
                     <div className="flex flex-col space-y-0">
-                      {faqData[2].questions.map((item, questionIndex) => (
+                      {faqData[2].questions.map((item) => (
                         <React.Fragment key={item.id}>
                           {/* Question container with borders */}
                           <div 

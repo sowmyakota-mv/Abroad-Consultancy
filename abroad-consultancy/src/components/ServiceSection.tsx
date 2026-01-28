@@ -317,7 +317,7 @@ const ServicesSection: React.FC = () => {
                     <div className="mt-auto">
                       <button 
                         onClick={() => service.id && setSelectedService(service.id)}
-                        className="w-full text-lg py-0.5 sm:py-2 md:py-3  border border-2 border-purple-700 md:border-[#FF0000] bg-white text-black  font-semibold rounded-3xl md:group-hover:bg-[#FF0000] md:group-hover:bg-[#FF0000] group-hover:bg-purple-800 active:bg-purple-800 active:bg-scale-105 active:-translate-y-1 hover:-translate-y-1  group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
+                        className="w-full text-lg py-0.5 sm:py-2 md:py-3  border border-2 border-purple-700 md:border-[#FF0000] bg-white text-black  font-semibold rounded-3xl md:group-hover:bg-[#FF0000] md:group-hover:bg-[#FF0000] group-hover:bg-purple-800 active:bg-purple-800 active:text-white active:bg-scale-105 active:-translate-y-1 hover:-translate-y-1  group-hover:text-white transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer"
                       >
                         Learn More
                       </button>
@@ -375,7 +375,7 @@ const ServicesSection: React.FC = () => {
 
                     {/* Call to Action Button */}
                     <div className="mt-3 sm:mt-4">
-                      <button onClick={()=>navigate("/contact")} className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-2 border-purple-700 md:border-[#FF0000] text-black font-semibold rounded-3xl hover:bg-purple-800 md:hover:bg-[#FF0000] hover:text-white active:bg-purple-800 transition-all duration-300 transform hover:-translate-y-1 active:-translate-y-1 text-sm sm:text-base">
+                      <button onClick={()=>navigate("/contact")} className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-2 border-purple-700 md:border-[#FF0000] text-black font-semibold rounded-3xl hover:bg-purple-800 md:hover:bg-[#FF0000] hover:text-white active:bg-purple-800 active:text-white active:-translate-y-1 active:bg-scale-105 transition-all duration-300 transform hover:-translate-y-1  text-sm sm:text-base">
                         Book Free Consultation
                       </button>
                     </div>

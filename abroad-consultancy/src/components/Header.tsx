@@ -1,5 +1,5 @@
 import { ChevronDown, MessageCircleMore, X, Mail, Phone } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import ContactForm from './ContactForm';
 
@@ -11,17 +11,61 @@ const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isCounsellingOpen, setIsCounsellingOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [contactHeaderVisible, setContactHeaderVisible] = useState(true);
+  
+  // Ref for the modal container
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  // Check scroll position
+  // Handle click outside modal
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsCounsellingOpen(false);
+      }
+    };
+
+    // Only add event listener when modal is open
+    if (isCounsellingOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isCounsellingOpen]);
+
+  // Check scroll position and direction
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const currentScrollY = window.scrollY;
+      const isScrolled = currentScrollY > 10;
       setScrolled(isScrolled);
+
+      // Only apply scroll hide/show logic on desktop (min-width: 1024px)
+      if (window.innerWidth >= 1024) {
+        if (currentScrollY <= 10) {
+          // At top of page - show contact header
+          setContactHeaderVisible(true);
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down and past 100px - hide contact header
+          setContactHeaderVisible(false);
+        } else if (currentScrollY < lastScrollY && currentScrollY > 100) {
+          // Scrolling up but not at top - keep contact header hidden
+          setContactHeaderVisible(false);
+        }
+      } else {
+        // On mobile/tablet, keep contact header visible
+        setContactHeaderVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Social media icons
   const socialMedia = [
@@ -218,8 +262,15 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Contact Details Header */}
-      <div className="top-0 left-0 w-full z-50 bg-black border-b border-gray-200">
+      {/* Contact Details Header - Fixed on desktop, static on mobile/tablet */}
+      <div 
+        className={`top-0 left-0 w-full z-50 bg-black border-b border-gray-200 transition-all duration-300 ${
+          contactHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${
+          // Fixed on desktop, static on mobile/tablet
+          window.innerWidth >= 1024 ? 'fixed' : 'relative'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-2 md:py-2">
             <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
@@ -253,7 +304,7 @@ const Header: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-600 transition-colors"
+                    className="text-white hover:text-Purple-700 transition-colors"
                     aria-label={social.name}
                   >
                     <social.icon />
@@ -269,7 +320,7 @@ const Header: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-blue-600 transition-colors transition-all duration-300 transform hover:-translate-y-0.5"
+                    className="text-white hover:text-[#FF0000] transition-colors transition-all duration-300 transform hover:-translate-y-0.5"
                     aria-label={social.name}
                   >
                     <social.icon />
@@ -281,10 +332,14 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Header - White initially, transparent when scrolled */}
-      <header className={`fixed top-9 md:top-8 left-0 w-full z-40 transition-all duration-300 ${
-        scrolled ? 'bg-white/30 backdrop-blur-lg' : 'bg-white shadow-sm'
-      }`}>
+      {/* Main Header - Fixed at top when contact header hides on desktop */}
+      <header 
+        className={`fixed left-0 w-full z-40 transition-all duration-300 ${
+          contactHeaderVisible ? 'top-9 md:top-8' : 'top-0'
+        } ${
+          scrolled ? 'bg-white/30 backdrop-blur-lg' : 'bg-white shadow-sm'
+        }`}
+      >
         <div className="relative max-w-7xl mx-auto flex items-center justify-between w-full py-0.5 px-6">
           <div className={`w-[92%] mx-auto ${
             scrolled ? 'bg-transparent' : 'bg-white'
@@ -303,49 +358,55 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center space-x-5">
-                  {navLinks.map((link) =>
-                    link.name === 'Study Abroad' ? (
-                      <div key={link.name} className="relative group">
-                        <button className="flex items-center gap- font-medium text-gray-700 hover:text-blue-600 cursor-pointer">
-                          Study Abroad
-                          <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
-                        </button>
+<nav className="hidden lg:flex items-center space-x-5">
+  {navLinks.map((link) =>
+    link.name === 'Study Abroad' ? (
+      <div key={link.name} className="relative group">
+        <button className="flex items-center gap- font-medium text-gray-700 hover:text-blue-600 cursor-pointer">
+          Study Abroad
+          <ChevronDown size={18} className="group-hover:rotate-180 transition-transform" />
+        </button>
 
-                        <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                          <ul className="py-2">
-                            {studyAbroadCountries.map((country) => (
-                              <li key={country.name}>
-                                <Link to={country.path} className="block px-4 py-2 hover:bg-blue-50">
-                                  Study in {country.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        key={link.name}
-                        to={link.href}
-                        onClick={(e) => {
-                          if (link.onClick) {
-                            link.onClick(e);
-                          }
-                        }}
-                        className={`font-medium ${
-                          link.isCta
-                            ? `bg-white border border-2 border-[#FF0000] text-black hover:text-white px-5 py-2.5 rounded-3xl hover:scale-105 hover:bg-[#FF0000] transition-all duration-300 transform hover:-translate-y-1 ${
-                                scrolled ? 'md:bg-white/80' : ''
-                              }`
-                            : 'text-gray-700 hover:text-blue-600 hover:scale-105'
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                    )
-                  )}
-                </nav>
+        <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border border-gray-100">
+          <ul className="py-2">
+            {studyAbroadCountries.map((country, index) => (
+              <React.Fragment key={country.name}>
+                <li>
+                  <Link to={country.path} className="block px-4 py-3 hover:bg-blue-50">
+                    Study in {country.name}
+                  </Link>
+                </li>
+                {/* Horizontal line after each item except the last */}
+                {index < studyAbroadCountries.length - 1 && (
+                  <li className="border-t border-dashed border-gray-200"></li>
+                )}
+              </React.Fragment>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ) : (
+      <Link
+        key={link.name}
+        to={link.href}
+        onClick={(e) => {
+          if (link.onClick) {
+            link.onClick(e);
+          }
+        }}
+        className={`font-medium ${
+          link.isCta
+            ? `bg-white border border-2 border-[#FF0000] text-black hover:text-white px-5 py-2.5 rounded-3xl hover:scale-105 hover:bg-[#FF0000] transition-all duration-300 transform hover:-translate-y-1 ${
+                scrolled ? 'md:bg-white/80' : ''
+              }`
+            : 'text-gray-700 hover:text-blue-600 hover:scale-105'
+        }`}
+      >
+        {link.name}
+      </Link>
+    )
+  )}
+</nav>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -360,165 +421,212 @@ const Header: React.FC = () => {
                 </button>
               </div>
 
-              {/* Mobile Menu */}
-              {isMobileMenuOpen && (
-                <div className="lg:hidden fixed inset-0 top-24 md:top-28 bg-white z-40 overflow-y-auto">
-                  <nav className="flex flex-col space-y-1 p-4">
-                    
-                    {/* Home */}
-                    {navLinks
-                      .filter(link => link.name === 'Home')
-                      .map((link) => (
-                        <Link
-                          key={link.name}
-                          to={link.href}
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-
-                    {/* About Us */}
-                    {navLinks
-                      .filter(link => link.name === 'About Us')
-                      .map((link) => (
-                        <Link
-                          key={link.name}
-                          to={link.href}
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-
-                    {/* Study Abroad */}
-                    <div className="pt-1 cursor-pointer">
-                      <button
-                        className="flex items-center justify-between w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        onClick={() => setIsStudyOpen(!isStudyOpen)}
-                      >
-                        <span>Study Abroad</span>
-                        <ChevronDown className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} size={16} />
-                      </button>
-
-                      {isStudyOpen && (
-                        <div className="mt-1 ml-4 space-y-1 border-l-2 border-blue-100 pl-4">
-                          {studyAbroadCountries.map((c) => (
-                            <Link
-                              key={c.name}
-                              to={c.path}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="block py-2.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4"
-                            >
-                              Study in {c.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Services - Now scrolls to section */}
-                    {navLinks
-                      .filter(link => link.name === 'Our Services')
-                      .map((link) => (
-                        <button
-                          key={link.name}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            if (link.onClick) {
-                              link.onClick(e);
-                            }
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                        >
-                          {link.name}
-                        </button>
-                      ))}
-
-                    {/* Why Choose Us */}
-                    {navLinks
-                      .filter(link => link.name === 'Why Choose Us')
-                      .map((link) => (
-                        <button
-                          key={link.name}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            if (link.onClick) {
-                              link.onClick(e);
-                            }
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                        >
-                          {link.name}
-                        </button>
-                      ))}
-
-                    {/* Our Success */}
-                    {navLinks
-                      .filter(link => link.name === 'Our Success')
-                      .map((link) => (
-                        <button
-                          key={link.name}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            if (link.onClick) {
-                              link.onClick(e);
-                            }
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
-                        >
-                          {link.name}
-                        </button>
-                      ))}
-
-                    {/* FAQ */}
-                    {navLinks
-                      .filter(link => link.name === 'FAQ')
-                      .map((link) => (
-                        <Link
-                          key={link.name}
-                          to={link.href}
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-
-                    {/* Book Free Counselling - CTA Button */}
-                    {navLinks
-  .filter(link => link.isCta)
-  .map((link) => (
-    <button
-      key={link.name}
-      onClick={() => {
-        if (link.onClick) {
-          if (typeof link.onClick === 'function') {
-            link.onClick({ preventDefault: () => {} } as React.MouseEvent);
-          }
-        }
-        setIsMobileMenuOpen(false);
+             {/* Mobile Menu */}
+{isMobileMenuOpen && (
+  <div className="lg:hidden fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm">
+    {/* Mobile Menu Container - Start below contact header when at top */}
+    <div 
+      className="bg-white shadow-2xl w-full h-[100vh] overflow-hidden animate-slideDown"
+      style={{ 
+        position: 'fixed',
+        top: window.scrollY <= 10 ? '3.5rem' : '0', // Start below contact header at top
+        left: '0',
+        right: '0',
+        maxHeight: 'calc(100vh - 3.5rem)',
+        borderBottomLeftRadius: '1rem',
+        borderBottomRightRadius: '1rem'
       }}
-      className="mt-2 border border-2 border-purple-700 bg-white text-black px-6 py-3.5 rounded-4xl font-medium hover:bg-purple-800 hover:text-white active:bg-purple-800 active:text-white active:scale-[0.98] transition-all duration-300 transform hover:-translate-y-1 text-center"
     >
-      {link.name}
-    </button>
-  ))}
-                  </nav>
-                </div>
-              )}
-            </div>
+      
+      {/* Header with Close Button */}
+      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center flex-shrink-0">
+        <h3 className="text-lg font-bold text-gray-900">Menu</h3>
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+          aria-label="Close menu"
+        >
+          <X size={24} className="text-gray-600" />
+        </button>
+      </div>
+
+      {/* Scrollable Menu Content */}
+      <div 
+        className="overflow-y-auto h-full"
+        style={{ 
+          maxHeight: 'calc(100vh - 140px)', // Adjusted for the contact header
+          scrollbarWidth: 'thin',
+          scrollbarColor: '#cbd5e0 #f1f5f9'
+        }}
+      >
+        <nav className="flex flex-col space-y-0 p-4">
+          
+          {/* Home */}
+          {navLinks
+            .filter(link => link.name === 'Home')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors flex items-center"
+                >
+                  {link.name}
+                </Link>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* About Us */}
+          {navLinks
+            .filter(link => link.name === 'About Us')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors flex items-center"
+                >
+                  {link.name}
+                </Link>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* Study Abroad */}
+          <div className="pt-1 cursor-pointer">
+            <button
+              className="flex items-center justify-between w-full py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              onClick={() => setIsStudyOpen(!isStudyOpen)}
+            >
+              <span className="flex items-center">
+                <span>Study Abroad</span>
+              </span>
+              <ChevronDown 
+                className={`${isStudyOpen ? 'rotate-180' : ''} transition-transform duration-200`} 
+                size={18} 
+              />
+            </button>
+            <div className="border-t border-gray-100"></div>
+
+            {isStudyOpen && (
+              <div className="mt-0 ml-4 space-y-0 border-l-2 border-blue-100 pl-4 pb-2">
+                {studyAbroadCountries.map((c, index) => (
+                  <React.Fragment key={c.name}>
+                    <Link
+                      to={c.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block py-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors pl-4 flex items-center"
+                    >
+                      <span className="mr-2">•</span>
+                      Study in {c.name}
+                    </Link>
+                    {index < studyAbroadCountries.length - 1 && (
+                      <div className="border-t border-dashed border-gray-100 ml-4"></div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Services */}
+          {navLinks
+            .filter(link => link.name === 'Our Services')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.onClick) link.onClick(e);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="py-4 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer flex items-center"
+                >
+                  {link.name}
+                </button>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* Why Choose Us */}
+          {navLinks
+            .filter(link => link.name === 'Why Choose Us')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.onClick) link.onClick(e);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="py-4 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer flex items-center"
+                >
+                  {link.name}
+                </button>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* Our Success */}
+          {navLinks
+            .filter(link => link.name === 'Our Success')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.onClick) link.onClick(e);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="py-4 px-4 text-left text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer flex items-center"
+                >
+                  {link.name}
+                </button>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* FAQ */}
+          {navLinks
+            .filter(link => link.name === 'FAQ')
+            .map((link) => (
+              <React.Fragment key={link.name}>
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors flex items-center"
+                >
+                  {link.name}
+                </Link>
+                <div className="border-t border-gray-100"></div>
+              </React.Fragment>
+            ))}
+
+          {/* Book Free Counselling - CTA Button */}
+          {navLinks
+            .filter(link => link.isCta)
+            .map((link) => (
+              <button
+                key={link.name}
+                onClick={() => {
+                  if (link.onClick) {
+                    if (typeof link.onClick === 'function') {
+                      link.onClick({ preventDefault: () => {} } as React.MouseEvent);
+                    }
+                  }
+                  setIsMobileMenuOpen(false);
+                }}
+                className="mt-4 mb-6 mx-4 border-2 border-[#FF0000] bg-white text-black px-6 py-3.5 rounded-3xl font-medium hover:bg-[#FF0000] hover:text-white active:bg-[#FF0000] active:text-white transition-all duration-300 transform hover:scale-105 text-center shadow-md"
+              >
+                {link.name}
+              </button>
+            ))}
+        </nav>
+      </div>
+    </div>
+  </div>
+)}    </div>
           </div>
         </div>
       </header>
@@ -541,8 +649,15 @@ const Header: React.FC = () => {
 
       {/* Free Counselling Modal - Pass isModal prop to ContactForm */}
       {isCounsellingOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 animate-fadeIn">
-          <div className="relative w-full max-w-5xl animate-slideUp">
+        <div 
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 p-4 animate-fadeIn"
+          onClick={() => setIsCounsellingOpen(false)}
+        >
+          <div 
+            ref={modalRef}
+            className="relative w-full max-w-5xl animate-slideUp"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Container - Full height scrolling for mobile */}
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden h-full max-h-[95vh] flex flex-col">
               

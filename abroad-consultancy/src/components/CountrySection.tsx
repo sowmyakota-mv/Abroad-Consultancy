@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState, TouchEvent } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CountriesSection: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,26 +9,32 @@ const CountriesSection: React.FC = () => {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
   
-  // Refs to manage auto-scroll
-  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  // Refs to manage auto-scroll - use ReturnType<typeof setTimeout> for NodeJS.Timeout
+  const autoScrollIntervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isAutoScrollActiveRef = useRef(true);
   const lastInteractionTimeRef = useRef(Date.now());
   const isSwipingRef = useRef(false);
   const swipeProcessedRef = useRef(false);
   const autoScrollPausedRef = useRef(false);
-  const swipeConfirmationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const swipeConfirmationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const countries = [
-    { name: "Study in UK", image: "/uk-img.jpg" },
-    { name: "Study in USA", image: "/usa-img.jpg" },
-    { name: "Study in Canada", image: "/canada-img.jpg" },
-    { name: "Study in Australia", image: "/australia-img2.png" },
-    { name: "Study in Germany", image: "/germany-img2.png" },
-    { name: "Study in New Zealand", image: "/newzealand-img2.png" },
-    { name: "Study in Europe", image: "/europe-img1.png" },
-    { name: "Study in Ireland", image: "/ireland-img.png" }
+    { name: "Study in UK", image: "/uk-img.jpg", path: "/study-abroad/uk" },
+    { name: "Study in USA", image: "/usa-img.jpg", path: "/study-abroad/usa" },
+    { name: "Study in Canada", image: "/canada-img.jpg", path: "/study-abroad/canada" },
+    { name: "Study in Australia", image: "/australia-img2.png", path: "/study-abroad/australia" },
+    { name: "Study in Germany", image: "/germany-img2.png", path: "/study-abroad/germany" },
+    { name: "Study in New Zealand", image: "/newzealand-img2.png", path: "/study-abroad/new-zealand" },
+    { name: "Study in Europe", image: "/europe-img1.png", path: "/study-abroad/europe" },
+    { name: "Study in Ireland", image: "/ireland-img.png", path: "/study-abroad/ireland" }
   ];
+
+  // Function to handle image click
+  const handleCountryClick = (path: string) => {
+    navigate(path);
+  };
 
   // Minimum swipe distance
   const minSwipeDistance = 50;
@@ -39,13 +45,6 @@ const CountriesSection: React.FC = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Animation observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
   }, []);
 
   // Handle physical scrolling when index changes
@@ -122,7 +121,7 @@ const CountriesSection: React.FC = () => {
   }, [isMobile]);
 
   // Touch handlers for mobile swipe
-  const handleTouchStart = (e: TouchEvent) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
     setTouchEnd(null);
     isSwipingRef.current = true;
@@ -133,7 +132,7 @@ const CountriesSection: React.FC = () => {
     stopAutoScroll();
   };
 
-  const handleTouchMove = (e: TouchEvent) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     if (touchStart !== null) {
       setTouchEnd(e.targetTouches[0].clientX);
     }
@@ -292,9 +291,13 @@ const CountriesSection: React.FC = () => {
                 key={index}
                 className="flex-shrink-0 w-[80%] mx-2 snap-center"
               >
-                <div className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 ${
-                  index === currentIndex ? 'scale-100' : 'scale-95 opacity-80'
-                }`}>
+                <div 
+                  className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 ${
+                    index === currentIndex ? 'scale-100' : 'scale-95 opacity-80'
+                  }`}
+                  onClick={() => handleCountryClick(country.path)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <div className="h-48 relative">
                     <div className="absolute inset-0 overflow-hidden">
                       <img 
@@ -303,12 +306,7 @@ const CountriesSection: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
-                    {/* <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
-                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}></div> */}
-                    <div className={`absolute inset-0 flex items-bottom mt-32 justify-center text-center px-4 transition-all duration-700 
-                      
-                    }`}>
+                    <div className={`absolute inset-0 flex items-bottom mt-32 justify-center text-center px-4 transition-all duration-700`}>
                       <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>
@@ -323,17 +321,20 @@ const CountriesSection: React.FC = () => {
           {countries.map((country, index) => (
             <div key={index}>
               <div className="w-[80%] sm:w-[90%] md:w-full mx-auto">
-                <div className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300">
+                <div 
+                  className="relative overflow-hidden rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
+                  onClick={() => handleCountryClick(country.path)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <div className="h-48 relative">
                     <div className="absolute inset-0 overflow-hidden">
-                      <img src={country.image} alt={country.name} className="w-full h-full object-cover object-top" />
+                      <img 
+                        src={country.image} 
+                        alt={country.name} 
+                        className="w-full h-full object-cover object-top" 
+                      />
                     </div>
-                    {/* <div className={`absolute inset-0 bg-black/50 transition-all duration-700 rounded-xl ${
-                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}></div> */}
-                    <div className={`absolute inset-0 flex mt-28 items-center justify-center text-bottom text-black px-4 transition-all duration-700 
-                      
-                    }`}>
+                    <div className={`absolute inset-0 flex mt-28 items-center justify-center text-bottom text-black px-4 transition-all duration-700`}>
                       <h3 className="text-xl font-bold text-white">{country.name}</h3>
                     </div>
                   </div>

@@ -159,9 +159,9 @@ const FAQ: React.FC = () => {
             key={index}
             href={social.href}
             aria-label={social.label}
-            className="p-2 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1 bg-gray-50"
+            className="p-2 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1 bg-gray-50 active:bg-blue-800 active:bg-scale-105 active:-translate-y-1"
           >
-            <social.icon className="text-gray-600 text-xl hover:text-blue-600" />
+            <social.icon className="text-gray-600 text-xl hover:text-[#FF0000]" />
           </a>
         ))}
       </div>
@@ -214,7 +214,7 @@ const FAQ: React.FC = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder:text-sm"
                     placeholder="Enter your First Name"
                   />
                 </div>
@@ -229,7 +229,7 @@ const FAQ: React.FC = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder:text-sm"
                     placeholder="Enter your Last Name"
                   />
                 </div>
@@ -372,7 +372,7 @@ const FAQ: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder:text-sm"
                   placeholder="Enter Your Email Address"
                 />
               </div>
@@ -388,7 +388,7 @@ const FAQ: React.FC = () => {
         key={type.value}
         className={`flex items-center justify-center space-x-2 p-2 rounded-lg border-2 cursor-pointer transition-all ${
           formData.queryType === type.value
-            ? 'border-blue-500 bg-blue-50'
+            ? 'border-[#FF0000] bg-red-50'
             : 'border-gray-200 hover:border-gray-300'
         }`}
       >
@@ -439,7 +439,7 @@ const FAQ: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full text-lg font-semibold py-3 px-6 rounded-4xl border border-2 border-purple-800 md:border-[#FF0000] bg-white text-black hover:bg-purple-800 active:bg-purple-800 active:-translate-y-1 md:hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                className="w-full text-lg font-semibold py-3 px-6 rounded-4xl border border-2 border-purple-800 md:border-[#FF0000] bg-white text-black hover:bg-purple-800 active:bg-purple-800 active:text-white active:-translate-y-1 active:scale-105 md:hover:bg-[#FF0000] hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                 Submit Query
               </button>
             </form>

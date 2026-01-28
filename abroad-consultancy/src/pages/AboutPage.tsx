@@ -12,7 +12,7 @@ const AboutUsPage: React.FC = () => {
   <div
     className="absolute inset-0 flex items-center justify-center bg-no-repeat bg-bottom"
     style={{
-      backgroundImage: "url('/about-bg2.png')",
+      backgroundImage: "url('/about-bg3.png')",
       backgroundSize: "100% auto" // ✅ shows full image
     }}
   >
@@ -284,7 +284,7 @@ const AboutUsPage: React.FC = () => {
             Our expert consultants are here to guide you through every step of your international education journey.
           </p>
           <div className="mt-auto">
-            <button onClick={()=>navigate("/contact")} className="border border-2 border-blue-600 hover:bg-blue-700 hover:text-white font-bold py-3 px-8 rounded-full text-sm md:text-base transition-all duration-300 transform hover:-translate-y-1 transform hover:scale-105 w-full sm:w-auto">
+            <button onClick={()=>navigate("/contact")} className="border border-2 border-blue-600 hover:bg-blue-700 hover:text-white font-bold py-3 px-8 rounded-full text-sm md:text-base transition-all duration-300 transform hover:-translate-y-1  transform active:bg-purple-800 active:text-white active:-translate-y-1 active:bg-scale-105 hover:scale-105 w-full sm:w-auto">
               Contact Us
             </button>
           </div>

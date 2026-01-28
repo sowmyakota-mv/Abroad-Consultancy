@@ -1,277 +1,274 @@
-import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import React from 'react';
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaLinkedinIn, 
+  FaInstagram,
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaArrowRight
+} from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const FooterSection: React.FC = () => {
+const Footer: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Function to handle section navigation
+  const handleSectionNavigation = (sectionId: string) => {
+    // If we're already on the homepage, scroll to section
+    if (location.pathname === '/') {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const yOffset = -80; // Adjust for header height
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      // Navigate to homepage with hash
+      navigate(`/#${sectionId}`);
+    }
+  };
+
+  // Function to handle regular page navigation
+  const handlePageNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Navigation links configuration
+  const navLinks = [
+    { 
+      name: 'Home', 
+      type: 'page',
+      path: '/',
+      onClick: () => handlePageNavigation('/')
+    },
+    { 
+      name: 'About Us', 
+      type: 'page',
+      path: '/about-dartglobe',
+      onClick: () => handlePageNavigation('/about-dartglobe')
+    },
+    { 
+      name: 'Our Services', 
+      type: 'section',
+      sectionId: 'services',
+      onClick: () => handleSectionNavigation('services')
+    },
+    { 
+      name: 'Study Abroad', 
+      type: 'page',
+      path: '/study-abroad',
+      onClick: () => handlePageNavigation('/study-abroad')
+    },
+    { 
+      name: 'Our Success', 
+      type: 'section',
+      sectionId: 'testimonials',
+      onClick: () => handleSectionNavigation('testimonials')
+    },
+    { 
+      name: 'Why Choose Us', 
+      type: 'section',
+      sectionId: 'why-choose-us',
+      onClick: () => handleSectionNavigation('why-choose-us')
+    },
+    { 
+      name: 'FAQ', 
+      type: 'page',
+      path: '/faq',
+      onClick: () => handlePageNavigation('/faq')
+    },
+    { 
+      name: 'Contact', 
+      type: 'section',
+      sectionId: 'contact',
+      onClick: () => handlePageNavigation('/contact')
+    }
+  ];
+
+  // Split navlinks into two columns
+  const leftColumnLinks = navLinks.slice(0, 4);
+  const rightColumnLinks = navLinks.slice(4);
+
   return (
-    <footer className="w-full bg-gray-900 text-white pt-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-gradient-to-br from-[#1a365d] via-[#2d3748] to-[#4a5568] text-slate-100 pt-12 pb-6">
+      <div className="container mx-auto px-4">
+        {/* First Row: 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           
-          {/* Left Column - 30% width - Company Details */}
-          <div className="lg:col-span-1">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-2">Consultancy</h2>
-              <p className="text-gray-400 text-sm">
-                Your trusted partner for study abroad guidance and IELTS preparation.
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <Phone className="h-5 w-5 text-orange-500 mt-0.5 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400 text-sm">Call us on:</p>
-                  <p className="font-medium">91 9876543210</p>
-                  <p className="text-gray-400 text-xs">(10am to 7pm)</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <Phone className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400 text-sm">Whatsapp us on:</p>
-                  <p className="font-medium">+91 9876543210</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-400 text-sm">Mail us on:</p>
-                  <p className="font-medium">contact@contact.com</p>
-                </div>
+          {/* Column 1: Company Info */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 mb-4">
+              <div>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  DARTGLOBE
+                </h2>
               </div>
             </div>
-
-            {/* Social Media */}
-            <div>
-              <h3 className="font-semibold mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-orange-600 transition-colors">
-                  <Facebook className="h-5 w-5" />
+            
+            <p className="text-slate-300 leading-relaxed">
+              Building bridges to brighter futures worldwide. We've been the catalyst for 
+              countless success stories, empowering ambitious individuals to transcend borders 
+              and achieve extraordinary global careers
+            </p>
+            
+            <div className="pt-4">
+              <div className="flex space-x-3">
+                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                  <FaFacebookF className="text-slate-300 hover:text-white" />
                 </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition-colors">
-                  <Twitter className="h-5 w-5" />
+                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-400 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                  <FaTwitter className="text-slate-300 hover:text-white" />
                 </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors">
-                  <Instagram className="h-5 w-5" />
+                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                  <FaLinkedinIn className="text-slate-300 hover:text-white" />
                 </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <Linkedin className="h-5 w-5" />
+                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-pink-600 hover:to-purple-600 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                  <FaInstagram className="text-slate-300 hover:text-white" />
                 </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-colors">
-                  <Youtube className="h-5 w-5" />
+                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-red-600 hover:to-red-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                  <FaYoutube className="text-slate-300 hover:text-white" />
                 </a>
               </div>
             </div>
           </div>
-
-          {/* Right Columns - 70% width - Links Grid */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              
-              {/* Countries Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-4 text-orange-500">COUNTRIES</h3>
-                <ul className="space-y-3">
-                  {['USA', 'UK', 'Canada', 'Australia', 'Ireland', 'Germany', 'New Zealand'].map((country) => (
-                    <li key={country}>
-                      <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center">
-                        <ChevronRight className="h-3 w-3 mr-2" />
-                        {country}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+          
+          {/* Column 2: Navigation Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Quick Links
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-3">
+                {leftColumnLinks.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={link.onClick}
+                    className="flex items-center text-slate-300 hover:text-blue-300 transition-colors duration-300 group w-full text-left"
+                  >
+                    <FaArrowRight className="mr-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span>{link.name}</span>
+                  </button>
+                ))}
               </div>
-
-              {/* Top Universities Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-4 text-orange-500">TOP UNIVERSITIES</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Top Universities in USA',
-                    'Top Universities in UK',
-                    'Top Universities in Canada',
-                    'Top Universities in Australia',
-                    'Top Universities in Ireland',
-                    'Top Universities in Germany'
-                  ].map((university) => (
-                    <li key={university}>
-                      <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center">
-                        <ChevronRight className="h-3 w-3 mr-2" />
-                        {university}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-3">
+                {rightColumnLinks.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={link.onClick}
+                    className="flex items-center text-slate-300 hover:text-blue-300 transition-colors duration-300 group w-full text-left"
+                  >
+                    <FaArrowRight className="mr-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span>{link.name}</span>
+                  </button>
+                ))}
               </div>
-
-              {/* Company Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-4 text-orange-500">COMPANY</h3>
-                <ul className="space-y-3">
-                  {['About Us', 'Careers', 'Leap in the news!', 'Press & Media', 'Contact Us'].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center">
-                        <ChevronRight className="h-3 w-3 mr-2" />
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Our Offerings Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-4 text-orange-500">OUR OFFERINGS</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Free IELTS Masterclass',
-                    'Talk to a counsellor',
-                    'Twinning Programs',
-                    'Cost Calculator',
-                    'Blog',
-                    'Study Abroad Knowledge Center',
-                    'Events'
-                  ].map((offering) => (
-                    <li key={offering}>
-                      <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center">
-                        <ChevronRight className="h-3 w-3 mr-2" />
-                        {offering}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Exam Information Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-4 text-orange-500">EXAM INFORMATION</h3>
-                <ul className="space-y-3">
-                  {['IELTS', 'TOEFL', 'SAT', 'PTE', 'DET', 'GRE', 'GMAT', 'ACT'].map((exam) => (
-                    <li key={exam}>
-                      <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center">
-                        <ChevronRight className="h-3 w-3 mr-2" />
-                        {exam}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
             </div>
-
-            {/* Download Apps Section */}
-            {/* <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8"> */}
-              {/* Study Abroad App */}
-              {/* <div className="bg-gray-800 rounded-xl p-6">
-                <div className="flex items-start">
-                  <Download className="h-10 w-10 text-orange-500 mr-4 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Download Study Abroad App</h3>
-                    <div className="flex space-x-4 mt-4">
-                      <button className="px-6 py-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors flex items-center">
-                        <div className="text-left">
-                          <div className="text-xs text-gray-400">Download on</div>
-                          <div className="font-semibold">Google Play</div>
-                        </div>
-                      </button>
-                      <button className="px-6 py-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors flex items-center">
-                        <div className="text-left">
-                          <div className="text-xs text-gray-400">Download on</div>
-                          <div className="font-semibold">App Store</div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
-              {/* </div> */}
-
-              {/* IELTS Prep App */}
-              {/* <div className="bg-gray-800 rounded-xl p-6">
-                <div className="flex items-start">
-                  <Download className="h-10 w-10 text-green-500 mr-4 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Download IELTS Prep App</h3>
-                    <div className="flex space-x-4 mt-4">
-                      <button className="px-6 py-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors flex items-center">
-                        <div className="text-left">
-                          <div className="text-xs text-gray-400">Download on</div>
-                          <div className="font-semibold">Google Play</div>
-                        </div>
-                      </button>
-                      <button className="px-6 py-3 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors flex items-center">
-                        <div className="text-left">
-                          <div className="text-xs text-gray-400">Download on</div>
-                          <div className="font-semibold">App Store</div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+          </div>
+          
+          {/* Column 3: Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Contact Us
+            </h3>
+            
+            {/* Two Addresses Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {/* Bangalore Address */}
+              <div className="flex items-start space-x-3 group">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300 flex-shrink-0">
+                  <FaMapMarkerAlt className="text-white text-lg" />
                 </div>
-              </div> */}
-            {/* </div> */}
+                <div>
+                  <p className="font-semibold text-blue-300 mb-1">Bangalore Office</p>
+                  <p className="text-slate-300 text-xs leading-tight">
+                    No. 90/3, 2nd Floor,<br />
+                    Outer Ring Rd,<br />
+                    Opp. Innovative Multiplex,<br />
+                    Marathahalli,<br />
+                    Bangalore - 560037
+                  </p>
+                </div>
+              </div>
+              
+              {/* Hyderabad Address */}
+              <div className="flex items-start space-x-3 group">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300 flex-shrink-0">
+                  <FaMapMarkerAlt className="text-white text-lg" />
+                </div>
+                <div>
+                  <p className="font-semibold text-blue-300 mb-1">Hyderabad Office</p>
+                  <p className="text-slate-300 text-xs leading-tight">
+                    #918, 8th Floor,<br />
+                    Vasavi MPM Grand,<br />
+                    Beside Ameerpet Metro,<br />
+                    (Pillar 1062 & 1063),<br />
+                    Ameerpet, Hyderabad - 500073
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Phone & Email Below Addresses */}
+            <div className="space-y-4">
+              {/* Phone Number */}
+              <div className="flex items-center space-x-3 group">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300">
+                  <FaPhone className="text-white text-lg" />
+                </div>
+                <div>
+                  <p className="font-semibold text-blue-300">Phone Number</p>
+                  <p className="text-slate-300">+1 (555) 123-4567</p>
+                </div>
+              </div>
+              
+              {/* Email Address */}
+              <div className="flex items-center space-x-3 group">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300">
+                  <FaEnvelope className="text-white text-lg" />
+                </div>
+                <div>
+                  <p className="font-semibold text-blue-300">Email Address</p>
+                  <p className="text-slate-300">info@dartglobe.com</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Location Section */}
-        <div className="border-t border-gray-800 pt-8 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Bangalore HQ */}
-            <div>
-              <div className="flex items-center mb-4">
-                <MapPin className="h-5 w-5 text-orange-500 mr-2" />
-                <h4 className="font-bold">BANGALORE</h4>
-              </div>
-              <p className="text-gray-400 text-sm">
-                 Bengaluru, Karnataka 560102
-              </p>
-            </div>
         
-            {/* Singapore */}
-            <div>
-              <div className="flex items-center mb-4">
-                <MapPin className="h-5 w-5 text-red-500 mr-2" />
-                <h4 className="font-bold">UK (International)</h4>
-              </div>
-              <p className="text-gray-400 text-sm">
-                London, UK
-              </p>
-            </div>
+        {/* Divider */}
+        <div className="border-t border-slate-700 my-8"></div>
+        
+        {/* Second Row: Copyright & Legal */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className="text-slate-400 text-sm">
+              &copy; {new Date().getFullYear()} <span className="text-blue-300 font-semibold">DARTGLOBE</span>. All rights reserved.
+            </p>
           </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            {/* Copyright */}
-            <div className="mb-4 md:mb-0">
-              <p className="text-gray-400 text-sm">
-                © 2025 Consultancy. All rights reserved
-              </p>
-            </div>
-
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Terms and Conditions
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Refund Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Cookie Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                Disclaimer
-              </a>
-            </div>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            <button onClick={() => handlePageNavigation('/privacy-policy')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+              Privacy Policy
+            </button>
+            <button onClick={() => handlePageNavigation('/terms')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+              Terms of Service
+            </button>
+            <button onClick={() => handlePageNavigation('/cookies')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+              Cookie Policy
+            </button>
+            <button onClick={() => handlePageNavigation('/disclaimer')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+              Disclaimer
+            </button>
+            <button onClick={() => handlePageNavigation('/sitemap')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+              Sitemap
+            </button>
           </div>
         </div>
       </div>
@@ -279,4 +276,4 @@ const FooterSection: React.FC = () => {
   );
 };
 
-export default FooterSection;
+export default Footer;
