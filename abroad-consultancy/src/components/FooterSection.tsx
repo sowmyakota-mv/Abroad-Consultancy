@@ -113,10 +113,9 @@ const Footer: React.FC = () => {
             </div>
             
             <p className="text-slate-300 leading-relaxed">
-              Building bridges to brighter futures worldwide. We've been the catalyst for 
-              countless success stories, empowering ambitious individuals to transcend borders 
-              and achieve extraordinary global careers
-            </p>
+              Futures Without Borders.Empowering you to study, work, and thrive anywhere in the world. We are the catalyst 
+              for your international success, providing end-to-end support for your global education and career goals.
+              </p>
             
             <div className="pt-4">
               <div className="flex space-x-3">
