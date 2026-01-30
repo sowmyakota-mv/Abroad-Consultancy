@@ -112,21 +112,21 @@ const Footer: React.FC = () => {
               </div>
             </div>
             
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               <strong className="text-gray-300">Dream Locally, Achieve Globally.</strong> Transform your ambition into reality. DartGlobe bridges the gap between your 
               potential and the world's top universities. Join a community of countless success stories and let us guide your journey from application to admission and beyond.
             </p>
             
             <div className="pt-4">
               <div className="flex space-x-3">
-                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
-                  <FaTwitter className="text-gray-700" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-[#FF0000] rounded-full transition-all duration-300">
+                  <FaTwitter className="text-gray-700 hover:text-gray-300" />
                 </a>
-                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
-                  <FaLinkedinIn className="text-gray-700" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-[#FF0000] rounded-full transition-all duration-300">
+                  <FaLinkedinIn className="text-gray-700 hover:text-gray-300" />
                 </a>
-                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
-                  <FaFacebookF className="text-gray-700" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-[#FF0000] rounded-full transition-all duration-300">
+                  <FaFacebookF className="text-gray-700 hover:text-gray-300" />
                 </a>
               </div>
             </div>
@@ -143,7 +143,7 @@ const Footer: React.FC = () => {
                   <button
                     key={link.name}
                     onClick={link.onClick}
-                    className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-300 group w-full text-left"
+                    className="flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-300 group w-full text-left"
                   >
                     <FaArrowRight className="mr-2 text-sm text-gray-500" />
                     <span>{link.name}</span>
@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
                   <button
                     key={link.name}
                     onClick={link.onClick}
-                    className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-300 group w-full text-left"
+                    className="flex items-center text-gray-400 hover:text-gray-600 transition-colors duration-300 group w-full text-left"
                   >
                     <FaArrowRight className="mr-2 text-sm text-gray-500" />
                     <span>{link.name}</span>
@@ -241,7 +241,7 @@ const Footer: React.FC = () => {
         {/* Second Row: Copyright & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} <span className="text-gray-200 font-semibold">DART GLOBE</span>. All Rights Reserved.
             </p>
           </div>
@@ -249,31 +249,31 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <button 
               onClick={() => handlePageNavigation('/privacy-policy')} 
-              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+              className="text-gray-400 hover:text-gray-600 text-sm transition-colors duration-300"
             >
               Privacy Policy
             </button>
             <button 
               onClick={() => handlePageNavigation('/terms')} 
-              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+              className="text-gray-400 hover:text-gray-600 text-sm transition-colors duration-300"
             >
               Terms of Service
             </button>
             <button 
               onClick={() => handlePageNavigation('/cookies')} 
-              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+              className="text-gray-400 hover:text-gray-600 text-sm transition-colors duration-300"
             >
               Cookie Policy
             </button>
             <button 
               onClick={() => handlePageNavigation('/disclaimer')} 
-              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+              className="text-gray-400 hover:text-gray-600 text-sm transition-colors duration-300"
             >
               Disclaimer
             </button>
             <button 
               onClick={() => handlePageNavigation('/sitemap')} 
-              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+              className="text-gray-400 hover:text-gray-600 text-sm transition-colors duration-300"
             >
               Sitemap
             </button>
