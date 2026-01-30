@@ -103,18 +103,17 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           
           {/* Column 1: Company Info */}
-          <div className="p-4 space-y-4">
+          <div className="space-y-4">
             <div className="flex items-center space-x-3 mb-4">
               <div>
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent">
                   DARTGLOBE
                 </h2>
               </div>
             </div>
             
             <p className="text-gray-400 leading-relaxed">
-              <strong className="text-gray-300">Dream Locally, Achieve Globally.</strong> Transform your ambition into reality. DartGlobe bridges the gap between your 
-              potential and the world's top universities. Join a community of countless success stories and let us guide your journey from application to admission and beyond.
+              <strong className="text-gray-300">Dream Locally, Achieve Globally.</strong> Transform your future with DartGlobe. We provide the bridge to top-tier universities and the expert guidance to get you there.
             </p>
             
             <div className="pt-4">
@@ -133,7 +132,7 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Column 2: Navigation Links */}
-          <div className='p-4'>
+          <div className=''>
             <h3 className="text-lg font-semibold mb-6 text-gray-200">
               Quick Links
             </h3>
@@ -166,8 +165,8 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Column 3: Contact Info */}
-          <div className='bg-white rounded-xl p-4 shadow-md'>
-            <h3 className="text-lg font-semibold mb-6 text-gray-800">
+          <div className='shadow-md'>
+            <h3 className="text-lg font-semibold mb-6 text-gray-300">
               Contact Us
             </h3>
 
@@ -175,12 +174,12 @@ const Footer: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {/* Bangalore Address */}
               <div className="flex items-start space-x-3 group">
-                <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
+                {/* <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
                   <FaMapMarkerAlt className="text-gray-700 text-lg" />
-                </div>
+                </div> */}
                 <div>
-                  <p className="font-semibold text-gray-800 mb-1">Bangalore Office</p>
-                  <p className="text-gray-600 text-xs leading-tight">
+                  <p className="font-semibold text-gray-400 mb-1 hover:text-gray-600">Bangalore Office</p>
+                  <p className="text-gray-400 text-xs leading-tight">
                     No. 90/3, 2nd Floor,<br />
                     Outer Ring Rd,<br />
                     Opp. Innovative Multiplex,<br />
@@ -192,12 +191,12 @@ const Footer: React.FC = () => {
               
               {/* Hyderabad Address */}
               <div className="flex items-start space-x-3 group">
-                <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
+                {/* <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
                   <FaMapMarkerAlt className="text-gray-700 text-lg" />
-                </div>
+                </div> */}
                 <div>
-                  <p className="font-semibold text-gray-800 mb-1">Hyderabad Office</p>
-                  <p className="text-gray-600 text-xs leading-tight">
+                  <p className="font-semibold text-gray-400 mb-1 hover:text-gray-600">Hyderabad Office</p>
+                  <p className="text-gray-400 text-xs leading-tight">
                     #918, 8th Floor,<br />
                     Vasavi MPM Grand,<br />
                     Beside Ameerpet Metro,<br />
@@ -212,23 +211,23 @@ const Footer: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Phone Number */}
               <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-gray-200 rounded-lg">
+                {/* <div className="p-2 bg-gray-200 rounded-lg">
                   <FaPhone className="text-gray-700 text-lg" />
-                </div>
+                </div> */}
                 <div>
-                  <p className="font-semibold text-gray-800">Phone Number</p>
-                  <p className="text-gray-600">+91 91333 29955</p>
+                  <p className="font-semibold text-gray-400 hover:text-gray-600">Phone Number</p>
+                  <p className="text-gray-400">+91 91333 29955</p>
                 </div>
               </div>
               
               {/* Email Address */}
               <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-gray-200 rounded-lg">
+                {/* <div className="p-2 bg-gray-200 rounded-lg">
                   <FaEnvelope className="text-gray-700 text-lg" />
-                </div>
+                </div> */}
                 <div>
-                  <p className="font-semibold text-gray-800">Email Address</p>
-                  <p className="text-gray-600 text-sm">info@dartglobe.com</p>
+                  <p className="font-semibold text-gray-400 hover:text-gray-600">Email Address</p>
+                  <p className="text-gray-400 text-sm">info@dartglobe.com</p>
                 </div>
               </div>
             </div>
@@ -236,7 +235,7 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Divider */}
-        <div className="border-t border-gray-300 my-8"></div>
+        <div className="border-t border-gray-700 my-2"></div>
         
         {/* Second Row: Copyright & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center">
