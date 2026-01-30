@@ -142,10 +142,10 @@ const FAQ: React.FC = () => {
         <FaMapMarkerAlt className="text-blue-600 text-xl" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="font-medium text-sm text-gray-700">Our Location</p>
+        <p className="font-medium text-sm text-gray-700">International Office</p>
         <p className="text-gray-600 text-xs break-words">
-          123 Business Street, Suite 100<br />
-          New York, NY 10001
+          297 High Street North<br/>
+London, E12 6SL
         </p>
       </div>
     </div>

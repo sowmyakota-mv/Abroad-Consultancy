@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
       name: 'Study Abroad', 
       type: 'page',
       path: '/study-abroad',
-      onClick: () => handlePageNavigation('/study-abroad')
+      onClick: () => handlePageNavigation('/study-abroad/uk')
     },
     { 
       name: 'Our Success', 

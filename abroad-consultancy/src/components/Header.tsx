@@ -201,6 +201,7 @@ const Header: React.FC = () => {
         handleSectionNavigation('testimonials');
       }
     },
+    { name: 'Contact', href: '/contact'},
     { name: 'FAQ', href: '/faq' },
     { name: 'Book Free Counselling', href: '#', isCta: true, onClick: () => setIsCounsellingOpen(true) }
   ];
@@ -340,8 +341,8 @@ const Header: React.FC = () => {
           scrolled ? 'bg-white/30 backdrop-blur-lg' : 'bg-white shadow-sm'
         }`}
       >
-        <div className="relative max-w-7xl mx-auto flex items-center justify-between w-full py-0.5 px-6">
-          <div className={`w-[92%] mx-auto ${
+        <div className="relative w-full flex items-center justify-between w-full py-0.5 px-6">
+          <div className={`w-[100%] mx-auto ${
             scrolled ? 'bg-transparent' : 'bg-white'
           } px-4 sm:px-6 lg:px-6 rounded-3xl transition-all duration-300`}>
             <div className="py-4">

@@ -199,7 +199,7 @@ setFormData({
                 </div>
                 <div>
                   <p className="font-medium text-gray-700">Phone Support</p>
-                  <p className="text-sm text-gray-500">Mon-Fri, 9AM-6PM EST</p>
+                  <p className="text-sm text-gray-500">Mon-Sun, 09:00 AM - 06:00 PM IST</p>
                 </div>
               </div>
               

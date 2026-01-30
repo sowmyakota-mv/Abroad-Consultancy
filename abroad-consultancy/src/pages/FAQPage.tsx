@@ -186,12 +186,12 @@ const FAQPage: React.FC = () => {
   return (
     <div id='faq' className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-r from-blue-900 via-purple-800 to-indigo-900 text-white">
+      <section className="relative py-24  bg-gradient-to-r from-blue-900 via-purple-800 to-indigo-900 text-white">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-12">
               Frequently Asked Questions
             </h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto mb-10">

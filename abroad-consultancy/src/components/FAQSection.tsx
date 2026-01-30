@@ -76,13 +76,13 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16">
+    <section className="w-full py-16 ">
       {/* Hero Section - UNCHANGED */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div className="max-w-6xl mx-auto  px-4 sm:px-6 lg:px-8 mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Title & Description */}
           <div>
-            <div className="inline-flex items-center mb-2">
+            <div className="inline-flex items-center mb-2 ">
               <div className="w-12 h-1 bg-orange-200"></div>
               <span className="mx-4 text-orange-600 font-semibold">GET ANSWERS</span>
               <div className="w-12 h-1 bg-orange-200"></div>
