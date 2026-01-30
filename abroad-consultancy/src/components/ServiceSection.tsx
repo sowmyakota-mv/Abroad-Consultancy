@@ -271,10 +271,10 @@ const ServicesSection: React.FC = () => {
           {/* Section Header */}
           <div className="w-[90%] mx-auto text-left md:text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Complete Free Study Abroad Services
+              World-Class Guidance. Zero Cost.
             </h2>
-            <p className="w-[90%] mx-auto -ml-0  text-lg text-gray-600">
-              End-to-end free support from application to arrival.
+            <p className="w-full mx-auto -ml-0  text-lg text-gray-600">
+              From your first application to your first day on campus - our expert support is 100% free.
             </p>
           </div>
 

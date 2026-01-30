@@ -97,50 +97,44 @@ const Footer: React.FC = () => {
   const rightColumnLinks = navLinks.slice(4);
 
   return (
-    <footer className="bg-gradient-to-br from-[#1a365d] via-[#2d3748] to-[#4a5568] text-slate-100 pt-12 pb-6">
+    <footer className="bg-[#20212B] text-slate-100 pt-12 pb-6">
       <div className="container mx-auto px-4">
         {/* First Row: 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           
           {/* Column 1: Company Info */}
-          <div className="space-y-4">
+          <div className="p-4 space-y-4">
             <div className="flex items-center space-x-3 mb-4">
               <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">
                   DARTGLOBE
                 </h2>
               </div>
             </div>
             
-            <p className="text-slate-300 leading-relaxed">
-              Futures Without Borders.Empowering you to study, work, and thrive anywhere in the world. We are the catalyst 
-              for your international success, providing end-to-end support for your global education and career goals.
-              </p>
+            <p className="text-gray-600 leading-relaxed">
+              <strong className="text-gray-300">Dream Locally, Achieve Globally.</strong> Transform your ambition into reality. DartGlobe bridges the gap between your 
+              potential and the world's top universities. Join a community of countless success stories and let us guide your journey from application to admission and beyond.
+            </p>
             
             <div className="pt-4">
               <div className="flex space-x-3">
-                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                  <FaFacebookF className="text-slate-300 hover:text-white" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
+                  <FaTwitter className="text-gray-700" />
                 </a>
-                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-400 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                  <FaTwitter className="text-slate-300 hover:text-white" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
+                  <FaLinkedinIn className="text-gray-700" />
                 </a>
-                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                  <FaLinkedinIn className="text-slate-300 hover:text-white" />
-                </a>
-                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-pink-600 hover:to-purple-600 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                  <FaInstagram className="text-slate-300 hover:text-white" />
-                </a>
-                <a href="#" className="p-2 bg-slate-800 hover:bg-gradient-to-r hover:from-red-600 hover:to-red-500 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                  <FaYoutube className="text-slate-300 hover:text-white" />
+                <a href="#" className="p-2 bg-gray-300 hover:bg-gray-400 rounded-full transition-all duration-300">
+                  <FaFacebookF className="text-gray-700" />
                 </a>
               </div>
             </div>
           </div>
           
           {/* Column 2: Navigation Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <div className='p-4'>
+            <h3 className="text-lg font-semibold mb-6 text-gray-200">
               Quick Links
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -149,9 +143,9 @@ const Footer: React.FC = () => {
                   <button
                     key={link.name}
                     onClick={link.onClick}
-                    className="flex items-center text-slate-300 hover:text-blue-300 transition-colors duration-300 group w-full text-left"
+                    className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-300 group w-full text-left"
                   >
-                    <FaArrowRight className="mr-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <FaArrowRight className="mr-2 text-sm text-gray-500" />
                     <span>{link.name}</span>
                   </button>
                 ))}
@@ -161,9 +155,9 @@ const Footer: React.FC = () => {
                   <button
                     key={link.name}
                     onClick={link.onClick}
-                    className="flex items-center text-slate-300 hover:text-blue-300 transition-colors duration-300 group w-full text-left"
+                    className="flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-300 group w-full text-left"
                   >
-                    <FaArrowRight className="mr-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <FaArrowRight className="mr-2 text-sm text-gray-500" />
                     <span>{link.name}</span>
                   </button>
                 ))}
@@ -172,21 +166,21 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Column 3: Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <div className='bg-white rounded-xl p-4 shadow-md'>
+            <h3 className="text-lg font-semibold mb-6 text-gray-800">
               Contact Us
             </h3>
-            
+
             {/* Two Addresses Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               {/* Bangalore Address */}
               <div className="flex items-start space-x-3 group">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300 flex-shrink-0">
-                  <FaMapMarkerAlt className="text-white text-lg" />
+                <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
+                  <FaMapMarkerAlt className="text-gray-700 text-lg" />
                 </div>
                 <div>
-                  <p className="font-semibold text-blue-300 mb-1">Bangalore Office</p>
-                  <p className="text-slate-300 text-xs leading-tight">
+                  <p className="font-semibold text-gray-800 mb-1">Bangalore Office</p>
+                  <p className="text-gray-600 text-xs leading-tight">
                     No. 90/3, 2nd Floor,<br />
                     Outer Ring Rd,<br />
                     Opp. Innovative Multiplex,<br />
@@ -198,12 +192,12 @@ const Footer: React.FC = () => {
               
               {/* Hyderabad Address */}
               <div className="flex items-start space-x-3 group">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300 flex-shrink-0">
-                  <FaMapMarkerAlt className="text-white text-lg" />
+                <div className="p-2 bg-gray-200 rounded-lg flex-shrink-0">
+                  <FaMapMarkerAlt className="text-gray-700 text-lg" />
                 </div>
                 <div>
-                  <p className="font-semibold text-blue-300 mb-1">Hyderabad Office</p>
-                  <p className="text-slate-300 text-xs leading-tight">
+                  <p className="font-semibold text-gray-800 mb-1">Hyderabad Office</p>
+                  <p className="text-gray-600 text-xs leading-tight">
                     #918, 8th Floor,<br />
                     Vasavi MPM Grand,<br />
                     Beside Ameerpet Metro,<br />
@@ -213,28 +207,28 @@ const Footer: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Phone & Email Below Addresses */}
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Phone Number */}
               <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300">
-                  <FaPhone className="text-white text-lg" />
+                <div className="p-2 bg-gray-200 rounded-lg">
+                  <FaPhone className="text-gray-700 text-lg" />
                 </div>
                 <div>
-                  <p className="font-semibold text-blue-300">Phone Number</p>
-                  <p className="text-slate-300">+1 (555) 123-4567</p>
+                  <p className="font-semibold text-gray-800">Phone Number</p>
+                  <p className="text-gray-600">+91 91333 29955</p>
                 </div>
               </div>
               
               {/* Email Address */}
               <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300">
-                  <FaEnvelope className="text-white text-lg" />
+                <div className="p-2 bg-gray-200 rounded-lg">
+                  <FaEnvelope className="text-gray-700 text-lg" />
                 </div>
                 <div>
-                  <p className="font-semibold text-blue-300">Email Address</p>
-                  <p className="text-slate-300">info@dartglobe.com</p>
+                  <p className="font-semibold text-gray-800">Email Address</p>
+                  <p className="text-gray-600 text-sm">info@dartglobe.com</p>
                 </div>
               </div>
             </div>
@@ -242,30 +236,45 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Divider */}
-        <div className="border-t border-slate-700 my-8"></div>
+        <div className="border-t border-gray-300 my-8"></div>
         
         {/* Second Row: Copyright & Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-slate-400 text-sm">
-              &copy; {new Date().getFullYear()} <span className="text-blue-300 font-semibold">DARTGLOBE</span>. All rights reserved.
+            <p className="text-gray-600 text-sm">
+              &copy; {new Date().getFullYear()} <span className="text-gray-200 font-semibold">DART GLOBE</span>. All Rights Reserved.
             </p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-6">
-            <button onClick={() => handlePageNavigation('/privacy-policy')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+            <button 
+              onClick={() => handlePageNavigation('/privacy-policy')} 
+              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+            >
               Privacy Policy
             </button>
-            <button onClick={() => handlePageNavigation('/terms')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+            <button 
+              onClick={() => handlePageNavigation('/terms')} 
+              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+            >
               Terms of Service
             </button>
-            <button onClick={() => handlePageNavigation('/cookies')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+            <button 
+              onClick={() => handlePageNavigation('/cookies')} 
+              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+            >
               Cookie Policy
             </button>
-            <button onClick={() => handlePageNavigation('/disclaimer')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+            <button 
+              onClick={() => handlePageNavigation('/disclaimer')} 
+              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+            >
               Disclaimer
             </button>
-            <button onClick={() => handlePageNavigation('/sitemap')} className="text-slate-400 hover:text-blue-300 text-sm transition-colors duration-300">
+            <button 
+              onClick={() => handlePageNavigation('/sitemap')} 
+              className="text-gray-600 hover:text-gray-800 text-sm transition-colors duration-300"
+            >
               Sitemap
             </button>
           </div>

@@ -220,23 +220,23 @@ const Header: React.FC = () => {
     { 
       icon: Phone, 
       label: 'Contact', 
-      href: 'tel:+911234567890',
+      href: 'tel:+91 9133329955',
       iconColor: 'text-green-600',
       borderColor: 'border-green-600',
       hoverBorderColor: 'hover:border-green-700',
       onClick: () => {
-        window.location.href = 'tel:+911234567890';
+        window.location.href = 'tel:+91 9133329955';
       }
     },
     { 
       icon: MessageCircleMore, 
       label: 'WhatsApp', 
-      href: 'https://wa.me/911234567890',
+      href: 'https://wa.me/+91 9133329955',
       iconColor: 'text-green-500',
       borderColor: 'border-green-500',
       hoverBorderColor: 'hover:border-green-600',
       onClick: () => {
-        window.open('https://wa.me/911234567890?text=Hello%20DartGlobe,%20I%20would%20like%20to%20know%20more%20about%20your%20services.', '_blank');
+        window.open('https://wa.me/919133329955?text=Hello%20DartGlobe,%20I%20would%20like%20to%20know%20more%20about%20your%20services.', '_blank');
       }
     }
   ];
@@ -288,11 +288,11 @@ const Header: React.FC = () => {
                 
                 {/* Phone */}
                 <a 
-                  href="tel:+911234567890" 
+                  href="tel:+91 9133329955" 
                   className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   <Phone size={16} className="text-green-600" />
-                  <span className='text-white font-semibold'>+91 1234567890</span>
+                  <span className='text-white font-semibold'>+91 91333 29955</span>
                 </a>
               </div>
               

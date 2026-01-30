@@ -63,7 +63,7 @@ const WhyChooseUsSection: React.FC = () => {
         </div>
 
         {/* Reasons Grid */}
-        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 rounded-xl shadow-md p-4">
           {reasons.map((reason, index) => (
             <div key={index} className="p-2 hover:shadow-md hover:rounded-xl transition-all duration-300">
               

@@ -100,14 +100,14 @@ const FAQSection: React.FC = () => {
                 <Phone className="h-5 w-5 text-orange-600 mr-3" />
                 <div>
                   <p className="text-sm text-gray-600">Call Us</p>
-                  <p className="font-semibold text-gray-900">+91 98765 43210</p>
+                  <p className="font-semibold text-gray-900">+91 91333 29955</p>
                 </div>
               </div>
               <div className="flex items-center bg-orange-50 rounded-lg px-4 py-3">
                 <Mail className="h-5 w-5 text-orange-600 mr-3" />
                 <div>
                   <p className="text-sm text-gray-600">Email Us</p>
-                  <p className="font-semibold text-gray-900">info@studyabroad.com</p>
+                  <p className="font-semibold text-gray-900">info@dartglobe.com</p>
                 </div>
               </div>
             </div>
